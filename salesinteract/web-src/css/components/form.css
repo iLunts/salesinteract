@@ -1,0 +1,1 @@
+.form{position:relative}.form .form__item{display:flex;align-items:center;margin-bottom:20px}.form .form__label{width:30%;margin:0}.form .form__label.form__label--required{position:relative}.form .form__label.form__label--required:after{content:'*';color:#f44336;margin-left:6px}.form .form__input{width:70%;margin:0}.form .form__input .input-group{margin-bottom:0}

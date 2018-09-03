@@ -1,0 +1,117 @@
+@import '../../../../web-src/less/variables.less';
+
+// ----------------------------------------------------
+// Block '.aside'
+// ----------------------------------------------------
+.aside{
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    width: @aside-width;
+    background-color: #fff;
+    box-shadow: 2px 0 20px 0 rgba(0, 0, 0, 0.05);
+
+    // Element '.aside .aside__header'
+    & &__header{
+        background-color: @color-blue;
+        padding: 30px 20px;
+        color: #fff;
+        
+        display: flex;
+        align-items: center;
+        
+        // Element '.aside .aside__header-avatar'
+        &-avatar{
+            margin-right: 20px;
+            width: 60px;
+            min-width: 60px;
+            height: 60px;
+            border: none;
+            background-color: #fff;
+            box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.15);
+        }
+        
+        // Element '.aside .aside__header-name'
+        &-name{
+            margin: 0;
+            font-size: 15px;
+            font-weight: 600;
+        }
+        
+        // Element '.aside .aside__header-role'
+        &-role{
+            margin: 0;
+            font-size: 13px;
+            font-size: 300;
+            opacity: .6;
+        }
+    }
+
+    // Element '.aside .aside__menu'
+    & &__menu{
+        padding: 30px 0;
+    }
+    
+    // Element '.aside .aside__link'
+    & &__link{
+        display: block;
+        text-decoration: none;
+        color: #252841;
+        outline: none;
+        box-shadow: none;
+        font-weight: 600;
+        padding: 15px 20px;
+        transition: all .3s;
+        
+        &:hover{
+            background-color: #fafafa;
+        }
+    }
+    
+    // Element '.aside .aside__footer'
+    & &__footer{
+        
+        // Element '.aside .aside__footer .aside__menu'
+        .aside__menu{
+            position: relative;
+            
+            &:before,
+            &:after{
+                content: '';
+                position: absolute;
+                left: 25px;
+                right: 25px;
+                border-top: 1px solid #F0F0F0;
+            }
+            
+            &:before{
+                top: 15px;
+            }
+            
+            &:after{
+                bottom: 15px;
+            }
+        }
+    }
+    
+    // Element '.aside .aside__copyright'
+    & &__copyright{
+        padding: 20px;
+        font-size: 14px;
+        line-height: 1;
+        font-weight: 400;
+        color: #A5C1D4;
+        
+        // Element '.aside .aside__copyright .link'
+        .link{
+            border-bottom: 1px solid @color-blue;
+            color: @color-blue;
+        }
+    }
+}

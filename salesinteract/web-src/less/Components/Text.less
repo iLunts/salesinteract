@@ -1,0 +1,278 @@
+// out: ../../css/components/text.css, compress: true
+@import '../variables.less';
+
+// ------------------------------------------------------
+// Block '.t'
+// ------------------------------------------------------
+.t{
+    &--c{
+        text-align: center !important;
+    }
+    &--r{
+        text-align: right !important;
+    }
+    &--l{
+        text-align: left !important;
+    }
+
+    // ****** Text color variation;
+    &--black{
+        color: #000 !important;
+    }
+    &--green{
+        color: @color-green !important;
+    }
+    &--green-dark{
+        color: #005003 !important;
+    }
+    &--red{
+        color: @text-color-red !important;
+        
+        &-dark{
+            color: @color-red-dark !important;
+        }
+    }
+    &--blue{
+        color: @text-color-blue !important;
+    }
+    &--yellow{
+        color: @color-yellow !important;
+    }
+    &--orange{
+        color: @text-color-orange !important;
+    }
+    &--red {
+        color: #da314b !important;
+        
+        &-hover{
+            transition: all 300ms;
+            
+            &:hover{
+                color: #da314b !important;
+                fill: #da314b !important;
+            }
+        }
+    }
+    &--muted {
+        color: @text-color-muted !important;
+    }
+    &--white{
+        color: #fff !important;
+    }
+    &--mini {
+        font-size: 65% !important;
+        line-height: 1;
+    }
+    &--sm {
+        font-size: 75% !important;
+        line-height: 1.2;
+    }
+    &--md {
+        font-size: 85% !important;
+        line-height: 1.35;
+    }
+    &--semi-bold {
+        font-weight: 600 !important;
+    }
+    &--bold {
+        font-weight: 700 !important;
+    }
+    &--italic{
+        font-style: italic !important;
+    }
+    &--light{
+        font-weight: 100 !important;
+    }
+    &--regular{
+        font-weight: 400 !important;
+    }
+    &--capitalize{
+        text-transform: capitalize !important;
+    }
+
+    // Modifiers:       `text--h*`
+    // ***** h1-h6
+    &--h1 {
+        font-size: 3.25rem !important;
+        line-height: 3.625rem !important;
+    }
+    &--h2 {
+        font-size: 2.5rem !important;
+        line-height: 2.875rem !important;
+    }
+    &--h3 {
+        font-size: 2.125rem !important;
+        line-height: 2.5rem !important;
+    }
+    &--h4 {
+        font-size: 1.5rem !important;
+        line-height: 1.75rem !important;
+    }
+    &--h5 {
+        font-size: 1.175rem !important;
+        line-height: 1.3rem !important;
+    }
+    &--h6 {
+        font-size: 1rem !important;
+        line-height: 1.2rem !important;
+    }
+    &--h7 {
+        font-size: .85rem !important;
+        line-height: 1rem !important;
+    }
+    &--title {
+        font-weight: 900;
+        text-transform: uppercase;
+        font-size: 5rem;
+        line-height: 5rem;
+        color: #fff;
+    }
+    &--nowrap{
+        white-space: nowrap !important;
+    }
+    &--truncate{
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+    }
+    &--uppercase{
+        text-transform: uppercase !important;
+    }
+
+    &--red-line{
+        &::first-letter{
+            padding-left: 20px;
+        }
+    }
+}
+
+p{
+    font-size: 1.15rem;
+    line-height: 1.5rem;
+}
+
+h1 {
+    font-size: 2.25rem;
+    line-height: 2.625rem;
+}
+h2 {
+    font-size: 1.5rem;
+    line-height: 1.875rem;
+}
+h3 {
+    font-size: 1.125rem;
+    line-height: 1.5rem;
+}
+h4 {
+    font-size: 1rem;
+    line-height: 1.375rem;
+}
+h5 {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+}
+h6 {
+    font-size: 0.75rem;
+    line-height: 1.125rem;
+}
+
+
+// ---------------------------------------------------------------------------
+// Size 'xSmall'
+// ---------------------------------------------------------------------------
+
+@media only screen and (min-width: @breakpoint-xs-min) and (max-width: @breakpoint-xs-max) {
+
+    // Block '.t-xs' ~ .text
+    .t-xs{
+        
+        &--l{
+            text-align: left !important;
+        }
+        
+        &--c{
+            text-align: center !important;
+        }
+        
+        &--r{
+            text-align: right !important;
+        }
+    }
+
+    // Block '.t-xs' ~ text
+    .t-xs{
+
+        // Modificator '.text--h1'
+        &--h1 {
+            font-size: 2.2rem !important;
+            line-height: 2.8rem !important;
+        }
+
+        // Modificator '.text--h1'
+        &--h2 {
+            font-size: 2rem !important;
+            line-height: 2.4rem !important;
+        }
+
+        // Modificator '.text--h1'
+        &--h3 {
+            font-size: 1.8rem !important;
+            line-height: 2rem !important;
+        }
+
+        // Modificator '.text--h1'
+        &--h4 {
+            font-size: 1.4rem !important;
+            line-height: 1.6rem !important;
+        }
+
+        // Modificator '.text--h1'
+        &--h5 {
+            font-size: 1.2rem !important;
+            line-height: 1.4rem !important;
+        }
+
+        // Modificator '.text--h1'
+        &--h6 {
+            font-size: 1rem !important;
+            line-height: 1.2rem !important;
+        }
+    }
+
+    // Modificator 'h1'
+    h1 {
+        font-size: 36px;
+        line-height: 42px;
+    }
+
+    // Modificator 'h1'
+    h2 {
+        font-size: 24px;
+        line-height: 30px;
+    }
+
+    // Modificator 'h1'
+    h3 {
+        font-size: 18px;
+        line-height: 24px;
+    }
+
+    // Modificator 'h1'
+    h4 {
+        font-size: 16px;
+        line-height: 22px;
+    }
+
+    // Modificator 'h1'
+    h5 {
+        font-size: 14px;
+        line-height: 20px;
+    }
+
+    // Modificator 'h1'
+    h6 {
+        font-size: 12px;
+        line-height: 18px;
+    }
+
+}

@@ -1,0 +1,51 @@
+@import '../../../../web-src/less/variables.less';
+
+// ----------------------------------------------------
+// Block '.top-menu'
+// ----------------------------------------------------
+.top-menu{
+    position: fixed;
+    left: @aside-width;
+    right: 0;
+    top: 0;
+    padding: 0 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    height: 56px;
+    background-color: #fff;
+    box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.05);
+
+    // Element '.top-menu .top-menu__search'
+    & &__search{
+        display: inline-block;
+        vertical-align: middle;
+        
+        margin-left: 30px;
+        padding-left: 30px;
+        border-left: 1px solid #ddd;
+        
+        // Element '.top-menu .top-menu__search .input'
+        .input{
+            background: #F5F5F5;
+            border-radius: 0;
+            border: none;
+            outline: none;
+            margin: 0;
+            box-shadow: none;
+            padding-left: 40px;
+            width: 250px;
+            transition: all .6s;
+
+            &:focus,
+            &:hover{
+                box-shadow: none;
+                border: none;
+                width: 400px;
+            }
+        }
+    }
+}
+
