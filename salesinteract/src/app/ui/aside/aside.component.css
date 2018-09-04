@@ -22,9 +22,14 @@
   width: 60px;
   min-width: 60px;
   height: 60px;
+  line-height: 70px;
   border: none;
   background-color: #fff;
   box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.15);
+}
+.aside .aside__header-avatar .avatar__icon {
+  font-size: 25px;
+  color: #2EAEFE;
 }
 .aside .aside__header-name {
   margin: 0;
@@ -42,6 +47,8 @@
 }
 .aside .aside__link {
   display: block;
+  display: flex;
+  align-items: center;
   text-decoration: none;
   color: #252841;
   outline: none;
@@ -52,6 +59,19 @@
 }
 .aside .aside__link:hover {
   background-color: #fafafa;
+  color: #2EAEFE;
+}
+.aside .aside__link:hover .aside__link-icon {
+  color: #2EAEFE;
+}
+.aside .aside__link-icon {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  font-size: 16px;
+  margin-right: 14px;
+  color: #A5C1D4;
+  transition: all .3s;
 }
 .aside .aside__footer .aside__menu {
   position: relative;

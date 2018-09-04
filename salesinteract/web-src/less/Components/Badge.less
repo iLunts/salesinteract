@@ -95,7 +95,12 @@
     // Modificator '.badge.badge--gray'
     &&--gray {
         background-color: @badge-background-gray;
-        color: #fff;
+        color: #99AEBF;
+        
+        // Element '.badge.badge--gray .badge__icon'
+        .badge__icon{
+            color: #B2C8DB;
+        }
     }
 
     // Modificator '.badge.badge--light-gray'
@@ -132,6 +137,15 @@
             height: 21px;
             width: 21px;
             line-height: 21px;
+        }
+        &.badge--lg{
+            height: 50px;
+            width: 50px;
+            line-height: 60px;
+
+            .badge__icon{
+                font-size: 20px;
+            }
         }
     }
 

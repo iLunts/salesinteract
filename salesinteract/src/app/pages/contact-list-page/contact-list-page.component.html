@@ -1,0 +1,94 @@
+<div class="container-fluid">
+
+	<div class="row">
+		<div class="col-lg-9">
+			<section class="header">
+
+			<div class="header__left">
+				<div class="header__icon">
+				<i class="header__icon-icon icon-profile"></i>
+				</div>
+				<div>
+				<p class="header__title">Bewerk contact</p>
+				<ul class="header__breadcrumbs">
+					<li class="header__breadcrumbs-item">
+					<a href="" class="header__breadcrumbs-link">
+						Home page
+					</a>
+					</li>
+					<li class="header__breadcrumbs-item">
+					<a href="" class="header__breadcrumbs-link">
+						Catalog company
+					</a>
+					</li>
+					<li class="header__breadcrumbs-item">
+					<span href="" class="header__breadcrumbs-span">
+						Contact list
+					</span>
+					</li>
+				</ul>
+				</div>
+			</div>
+
+			<div>
+				<button class="btn btn--blue btn--new">
+				<i class="btn__icon icon-plus"></i>
+				<span class="btn__text">
+					<span class="btn__text-text">Create new task</span>
+					<span class="btn__text-text btn__text-text--second">Click what you need adding</span>
+				</span>
+				</button>
+			</div>
+
+			</section>
+
+			<div class="row">
+			<div class="col-lg-12">
+				<tabset>
+				<tab heading="Task history">
+
+					<app-task-item [task]="task" *ngFor="let task of taskList"></app-task-item>
+
+				</tab>
+				<tab>
+					<ng-template tabHeading>
+					Shared files
+					<span class="badge">2</span>
+					</ng-template>
+
+					Shared files!
+				</tab>
+				<tab>
+					<ng-template tabHeading>
+					Products
+					<span class="badge">5</span>
+					</ng-template>
+
+					Products
+				</tab>
+				</tabset>
+			</div>
+			</div>
+
+			<div class="row">
+			<div class="col-lg-12">
+				<pagination [totalItems]="100"></pagination>
+			</div>
+			</div>
+		</div>
+		
+		<div class="col-lg-3">
+			
+			<!-- Contact information -->
+			<app-contact-information></app-contact-information>
+			
+			<!-- Account manager information -->
+			<app-manager-information></app-manager-information>
+
+			<!-- Company information -->
+			<app-company-information></app-company-information>
+			
+		</div>
+	</div>
+</div>
+

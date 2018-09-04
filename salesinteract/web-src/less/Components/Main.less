@@ -4,7 +4,7 @@
 // ------------------------------------------------
 // Block 'body' and other elements
 // ------------------------------------------------
-body{
+html, body{
     height: 100%;
     width: 100%;
     margin: 0;
@@ -21,17 +21,29 @@ body{
     box-sizing: border-box;
 }
 
+p{
+    font-size: 1rem;
+    line-height: 1.2;
+}
+
 ul{
     padding: 0;
     margin: 0;
     list-style: none;
 }
 
+.container-fluid{
+    padding: 0 30px !important;
+}
+
 // ------------------------------------------------
 // Block '.main'
 // ------------------------------------------------
 .main{
-    
+    position: relative;
+    margin-left: @aside-width;
+    padding-top: (@top-menu-height * 1.5);
+    height: 100vh;
 }
 
 

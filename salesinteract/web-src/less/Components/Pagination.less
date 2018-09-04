@@ -1,0 +1,83 @@
+// out: ../../css/components/pagination.css, compress: true
+@import '../variables.less';
+
+// --------------------------------------------------------------------------
+// Block '.pagination'
+// --------------------------------------------------------------------------
+.pagination{
+    position: relative;
+    border-radius: 0;
+    width: 100%;
+    text-align: center;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#f3f6f8+0,e1ebf0+50,f3f6f8+100 */
+    background: #f3f6f8; /* Old browsers */
+    background: -moz-linear-gradient(left, #f3f6f8 0%, #e1ebf0 50%, #f3f6f8 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(left, #f3f6f8 0%,#e1ebf0 50%,#f3f6f8 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to right, #f3f6f8 0%,#e1ebf0 50%,#f3f6f8 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    // filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f3f6f8', endColorstr='#f3f6f8',GradientType=1 ); /* IE6-9 */
+
+    > li{
+        display: inline-block;
+
+        &.disabled{
+            > a{
+                background: transparent;
+
+                &:hover,
+                &:focus{
+                    background: transparent;
+                    font-weight: 400;
+                }
+            }
+        }
+
+        &.active{
+            > a{
+                background: none;
+                font-weight: 700;
+                color: #252841;
+
+                &:before{
+                    content: '';
+                    position: absolute;
+                    left: 50%;
+                    top: 0;
+                    background-color: #fff;
+                    width: 40px;
+                    height: 40px;
+                    border-radius: 8px;
+                    z-index: -1;
+                    margin-left: -20px;
+                    transform: rotate(45deg);
+                    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
+                }
+
+                &:hover{
+                    background: transparent;
+                    color: #252841;
+                }
+            }
+        }
+
+        > a{
+            position: relative;
+            background: transparent;
+            border: none;
+            color: #252841;
+            font-weight: 400;
+            font-size: 16px;
+            padding: 10px 20px;
+
+            &:hover{
+                background: transparent;
+                color: inherit;
+                font-weight: 700;
+            }
+        }
+    }
+}

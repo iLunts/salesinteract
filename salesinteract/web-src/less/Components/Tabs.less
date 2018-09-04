@@ -1,0 +1,68 @@
+// out: ../../css/components/tabs.css, compress: true
+@import '../variables.less';
+
+.nav{
+    position: relative;
+
+    &.nav-tabs{
+        border-bottom: 2px solid #DBE6ED;
+
+        > li{
+            margin-bottom: -2px;
+
+            &.active{
+                > a{
+                    background-color: transparent;
+                    color: #252841;
+                    border-bottom: 2px solid @color-blue;
+                    
+                    &:hover{
+                        border: none;
+                    }
+                    &:focus{
+                        border: none;
+                        outline: none;
+                        box-shadow: none;
+                        border-bottom: 2px solid @color-blue;
+                    }
+
+                    .badge{
+                        background-color: @color-blue;
+                        color: #fff;
+                    }
+                }
+            }
+
+            > a{
+                height: 42px;
+                margin: 0;
+                border: none;
+                color: #777A8A;
+                font-weight: 500;
+                font-size: 16px;
+                line-height: 1;
+                padding: 12px 25px;
+
+                &:hover{
+                    background: transparent;
+                    border-bottom: 2px solid lighten(@color-blue, 25%);
+                }
+
+                .badge{
+                    margin-left: 6px;
+                    width: 24px;
+                    height: 24px;
+                    line-height: 20px;
+                    border-radius: 100px;
+                    font-weight: 600;
+                    background-color: #CBDBE5;
+                    color: #252841;
+                }
+            }
+        }
+    }
+}
+
+.tab-content{
+    margin-top: 10px;
+}

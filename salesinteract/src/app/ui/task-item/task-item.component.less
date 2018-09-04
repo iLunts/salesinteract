@@ -1,0 +1,40 @@
+
+// ----------------------------------------------------
+// Block '.task-item'
+// ----------------------------------------------------
+.task-item{
+    position: relative;
+    margin-bottom: 10px;
+
+    // Element '.task-item .task-item__manager'
+    & &__manager{
+        font-size: 16px;
+        font-weight: 400;
+        margin-bottom: 6px;
+        
+        // Element '.task-item .task-item__manager-icon'
+        &-icon{
+            color: #A5C1D4;
+            margin-right: 6px;
+        }
+    }
+    
+    // Element '.task-item .task-item__status'
+    & &__status{
+        
+        // Element '.task-item .task-item__status-badge'
+        &-badge{
+            height: 22px;
+            line-height: 18px;
+            padding: 2px 20px;
+            font-size: 12px;
+            min-width: 88px;
+        }
+        
+        // Element '.task-item .task-item__status-arrow'
+        &-arrow{
+            margin: 0 10px;
+            color: #A5C1D4;
+        }
+    }
+}
