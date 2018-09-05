@@ -1,0 +1,33 @@
+.contact-list {
+  position: relative;
+}
+.contact-list .contact-list__list {
+  margin: 0;
+  padding: 10px 5px;
+  max-height: 230px;
+  overflow-y: auto;
+}
+.contact-list .contact-list__search {
+  margin-bottom: 20px;
+}
+.contact-list .contact-list__item {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.contact-list .contact-list__item + .contact-list__item {
+  margin-top: 10px;
+  padding-top: 10px;
+}
+.contact-list .contact-list__item + .contact-list__item:before {
+  content: '';
+  position: absolute;
+  left: 25px;
+  right: 25px;
+  top: 0;
+  border-top: 1px solid #E9F1F5;
+}
+.contact-list .contact-list__avatar {
+  margin-right: 10px;
+}
