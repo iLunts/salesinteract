@@ -1,17 +1,134 @@
 <div class="panel">
 
 	<!-- ********* -->
-	<!-- Show mode -->
+	<!-- Edit mode -->
 	<!-- ********* -->
 	<div *ngIf="isEdit">
 		
+		<div class="panel__header">
+			<span class="panel__header-text">
+				Contact information
+			</span>
+			<div class="panel__header-btns">
+				<button class="btn btn--circle btn--red btn--sm">
+					<i class="btn__icon icon-delete"></i>
+				</button>
+			</div>
+		</div>
+
+		<div class="panel__body">
+
+			<div class="row">
+				<div class="col-lg-4">
+					<div class="avatar avatar--xlg avatar--empty avatar--edit">
+						<img class="avatar__img" src="http://higher-ed.us/wp-content/uploads/2017/12/people-pictures-8-impressive-inspiration-pt7rq4qgc-jpg.jpg" alt="">
+						<div class="avatar__btns">
+							<button class="btn btn--sm btn--circle btn--white">
+								<i class="btn__icon icon-edit"></i>
+							</button>
+							<button class="btn btn--sm btn--circle btn--white">
+								<i class="btn__icon icon-delete"></i>
+							</button>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-8">
+					<div>
+						<label class="label">First Name:</label>
+						<input type="text" class="input">
+					</div>
+					<div>
+						<label class="label">Last Name:</label>
+						<input type="text" class="input">
+					</div>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-lg-12">
+					<div>
+						<label class="label">E-mail address:</label>
+						<input type="text" class="input">
+					</div>
+					<div>
+						<label class="label">Phone number:</label>
+						<input type="text" class="input">
+					</div>
+					<div>
+						<label class="label">Function:</label>
+						<input type="text" class="input">
+					</div>
+					
+					<div>
+						<label class="label">Sex:</label>
+						<div class="row">
+							<div class="col-lg-6">
+								<div class="checkbox">
+									<input type="radio" class="checkbox__input" name="sex" id="man">
+									<label for="man" name="sex" class="checkbox__label">Man</label>
+								</div>
+							</div>
+							<div class="col-lg-6">
+								<div class="checkbox">
+									<input type="radio" class="checkbox__input" name="sex" id="woman">
+									<label for="woman" name="sex" class="checkbox__label">Woman</label>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div>
+						<label class="label">Standard language:</label>
+						<input type="text" class="input">
+					</div>
+					<div>
+						<label class="label">Time zone:</label>
+						<input type="text" class="input">
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="panel__header">
+			<span class="panel__header-text">
+				Online / Social links
+			</span>
+		</div>
+		<div class="panel__body">
+			<div>
+				<label class="label">LinkedIn:</label>
+				<input type="text" class="input" placeholder="https://www.linkedin.com/test">
+			</div>
+			<div>
+				<label class="label">Facebook:</label>
+				<input type="text" class="input" placeholder="https://www.facebook.com/test">
+			</div>
+			<div>
+				<label class="label">Twitter:</label>
+				<input type="text" class="input" placeholder="https://twitter.com/test">
+			</div>
+		</div>
+
+		<div class="panel__header">
+			<span class="panel__header-text">
+				Description
+			</span>
+		</div>
 		
+		<div class="panel__body">
+			<textarea class="input" rows="6" placeholder="Lorem Ipsum is simply dummy text of the printing"></textarea>
+			
+			<div class="t--c m--t">
+				<button class="btn btn--link btn--sm" (click)="edit()">Cancel</button>
+				<button class="btn btn--blue btn--sm" (click)="edit()">Save</button>
+			</div>
+		</div>
 
 	</div>
 	
 
 	<!-- ********* -->
-	<!-- Edit mode -->
+	<!-- Show mode -->
 	<!-- ********* -->
 	<div *ngIf="!isEdit">
 		
@@ -28,12 +145,13 @@
 		<div class="panel__body">
 
 			<div class="row">
-				<div class="col-lg-3">
-					<div class="avatar avatar--md avatar--empty">
+				<div class="col-lg-4">
+					<div class="avatar avatar--xlg avatar--empty">
+						<img class="avatar__img" src="http://higher-ed.us/wp-content/uploads/2017/12/people-pictures-8-impressive-inspiration-pt7rq4qgc-jpg.jpg" alt="">
 						<span class="avatar__online"></span>
 					</div>
 				</div>
-				<div class="col-lg-9">
+				<div class="col-lg-8">
 					<p class="m--b-sm t--h4 t--semi-bold">Grant Marshall</p>
 					
 					<p class="m--b-sm">

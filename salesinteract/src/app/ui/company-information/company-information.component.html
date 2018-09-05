@@ -1,17 +1,207 @@
 <div class="panel">
 
 	<!-- ********* -->
-	<!-- Show mode -->
+	<!-- Edit mode -->
 	<!-- ********* -->
 	<div *ngIf="isEdit">
 	
-		!@2312
+		<div class="panel__header">
+			<span class="panel__header-text">
+				Company information
+			</span>
+		</div>
+		<div class="panel__body">
+			<div class="row">
+				<div class="col-lg-4">
+					<div class="avatar avatar--xlg avatar--square avatar--edit">
+						<img src="http://www.wald.co.jp/img/ogp_logo_bk.png" alt="" class="avatar__img">
+						<div class="avatar__btns">
+							<button class="btn btn--sm btn--circle">
+								<i class="btn__icon icon-edit"></i>
+							</button>
+							<button class="btn btn--sm btn--circle">
+								<i class="btn__icon icon-delete"></i>
+							</button>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-8">
+					<div class="m--t-md">
+						<label class="label">Company Name:</label>
+						<input type="text" class="input" value="WALD Internationals edit text">
+					</div>
+				</div>
+			</div>
+			
+			<div class="row">
+				<div class="col-lg-12 m--t">
+					<div>
+						<label class="label">Web site:</label>
+						<input type="text" class="input" value="www.example.com">
+					</div>
+					<div>
+						<label class="label">E-mail address:</label>
+						<input type="text" class="input" value="marshall@yahoo.com">
+					</div>
+					<div>
+						<label class="label">Phone number:</label>
+						<input type="text" class="input" value="+1 (928) 123 445 345">
+					</div>
+				</div>
+			</div>
+		</div>
 	
+		<!-- Details information -->
+		<div class="panel__header">
+			<span class="panel__header-text">
+				Details information
+			</span>
+		</div>
+		<div class="panel__body">
+			<div>
+				<label class="label">VAT number:</label>
+				<input type="text" class="input" value="12%">
+			</div>
+			<div>
+				<label class="label">Chamber of Commerce:</label>
+				<input type="text" class="input" value="Europe / Amsterdam">
+			</div>
+			<div>
+				<label class="label">RSIN:</label>
+				<input type="text" class="input" value="434568">
+			</div>
+
+			<div>
+				<label class="label">Classification:</label>
+				<div class="row">
+					<div class="col-lg-3">
+						<div class="checkbox">
+							<input type="radio" class="checkbox__input" name="сlassification" id="a" checked>
+							<label for="a" name="сlassification" class="checkbox__label">A</label>
+						</div>
+					</div>
+					<div class="col-lg-3">
+						<div class="checkbox">
+							<input type="radio" class="checkbox__input" name="сlassification" id="b">
+							<label for="b" name="сlassification" class="checkbox__label">B</label>
+						</div>
+					</div>
+					<div class="col-lg-3">
+						<div class="checkbox">
+							<input type="radio" class="checkbox__input" name="сlassification" id="c">
+							<label for="c" name="сlassification" class="checkbox__label">C</label>
+						</div>
+					</div>
+					<div class="col-lg-3">
+						<div class="checkbox">
+							<input type="radio" class="checkbox__input" name="сlassification" id="d">
+							<label for="d" name="сlassification" class="checkbox__label">D</label>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div>
+				<label class="label">Customer number:</label>
+				<input type="text" class="input">
+			</div>
+
+		</div>
+	
+		<!-- Details information -->
+		<div class="panel__header">
+			<span class="panel__header-text">
+				Details information
+			</span>
+		</div>
+		<div class="panel__body">
+			<textarea class="input" rows="6" placeholder="Lorem Ipsum is simply dummy text of the printing"></textarea>			
+		</div>
+	
+		<!-- Action information -->
+		<div class="panel__header">
+			<span class="panel__header-text">
+				Actions
+			</span>
+		</div>
+		<div class="panel__body">
+			<div>
+				<label class="label">Promote to:</label>
+				<input type="text" class="input" value="Suspect">
+			</div>		
+		</div>
+
+		<!-- Online / Social links -->
+		<div class="panel__header">
+			<span class="panel__header-text">
+				Online / Social links
+			</span>
+		</div>
+		<div class="panel__body">
+			<div>
+				<label class="label">LinkedIn:</label>
+				<input type="text" class="input" placeholder="https://www.linkedin.com/test">
+			</div>
+			<div>
+				<label class="label">Facebook:</label>
+				<input type="text" class="input" placeholder="https://www.facebook.com/test">
+			</div>
+			<div>
+				<label class="label">Twitter:</label>
+				<input type="text" class="input" placeholder="https://twitter.com/test">
+			</div>
+		</div>
+
+		<!-- Billing address information -->
+		<div class="panel__header">
+			<span class="panel__header-text">
+				Billing address
+			</span>
+		</div>
+		<div class="panel__body">
+			<div>
+				<label class="label">Address:</label>
+				<input type="text" class="input" value="226 Kingsland Avenue, Winchester">
+			</div>
+			<div>
+				<label class="label">Zipcode city:</label>
+				<input type="text" class="input" value="9948">
+			</div>
+			<div>
+				<label class="label">Country:</label>
+				<input type="text" class="input" value="Netherlands">
+			</div>
+		</div>
+
+		<!-- Visiting address information -->
+		<div class="panel__header">
+			<span class="panel__header-text">
+				Visiting address
+			</span>
+		</div>
+		<div class="panel__body">
+			<div>
+				<label class="label">Address:</label>
+				<input type="text" class="input" value="43799-12 Winchester, Kingsland Avenue">
+			</div>
+			<div>
+				<label class="label">Zipcode city:</label>
+				<input type="text" class="input" value="32467">
+			</div>
+			<div>
+				<label class="label">Country:</label>
+				<input type="text" class="input" value="Netherlands">
+			</div>
+			<div class="t--c m--t">
+				<button class="btn btn--link btn--sm" (click)="edit()">Cancel</button>
+				<button class="btn btn--blue btn--sm" (click)="edit()">Save</button>
+			</div>
+		</div>
 	</div>
 
 
 	<!-- ********* -->
-	<!-- Edit mode -->
+	<!-- Show mode -->
 	<!-- ********* -->
 	<div *ngIf="!isEdit">
 	
@@ -27,10 +217,12 @@
 		</div>
 		<div class="panel__body">
 			<div class="row">
-				<div class="col-lg-3">
-					<div class="avatar avatar--md avatar--square avatar--empty"></div>
+				<div class="col-lg-4">
+					<div class="avatar avatar--xlg avatar--square avatar--empty">
+						<img class="avatar__img" src="http://www.wald.co.jp/img/ogp_logo_bk.png" alt="">
+					</div>
 				</div>
-				<div class="col-lg-9">
+				<div class="col-lg-8">
 					<p class="m--b-sm t--h4 t--semi-bold">WALD International</p>
 					
 					<p class="m--b-sm">
