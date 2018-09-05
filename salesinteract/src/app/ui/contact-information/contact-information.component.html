@@ -3,7 +3,7 @@
 	<!-- ********* -->
 	<!-- Edit mode -->
 	<!-- ********* -->
-	<div *ngIf="isEdit">
+	<div *ngIf="isEdit && !isMoreContacts">
 		
 		<div class="panel__header">
 			<span class="panel__header-text">
@@ -123,14 +123,13 @@
 				<button class="btn btn--blue btn--sm" (click)="edit()">Save</button>
 			</div>
 		</div>
-
 	</div>
 	
 
 	<!-- ********* -->
 	<!-- Show mode -->
 	<!-- ********* -->
-	<div *ngIf="!isEdit">
+	<div *ngIf="!isEdit && !isMoreContacts">
 		
 		<div class="panel__header">
 			<span class="panel__header-text">
@@ -191,11 +190,52 @@
 
 			<p class="m--v-sm">Roident est duis duis sit occaecat ea eiusmod laboris mollit ullamco mollit nisi veniam…</p>
 			<div class="t--c">
-				<button class="btn btn--blue btn--sm">
+				<button class="btn btn--blue btn--sm" (click)="showMoreContacts()">
 					<i class="btn__icon icon-contacts"></i>
 					<span class="btn__text">Show other contacts</span>
 				</button>
 			</div>
+		</div>
+	</div>
+
+	<!-- ************* -->
+	<!-- More contacts -->
+	<!-- ************* -->
+	<div *ngIf="isMoreContacts">
+		<div class="panel__header">
+			<span class="panel__header-text">
+				Contacts list
+				<span class="badge badge--gray badge--rounded">23</span>
+			</span>
+			<div class="panel__header-btns">
+				<button class="btn btn--circle btn--blue btn--sm" (click)="showMoreContacts()">
+					<i class="btn__icon icon-close"></i>
+				</button>
+			</div>
+		</div>
+		<div class="panel__body contact-list">
+			<ul class="contact-list__list">
+				<li class="contact-list__item" *ngFor="let contact of contactList">
+					<div class="flex flex--middle">
+						<div class="contact-list__avatar avatar avatar--empty">
+							<img [src]="contact.image" alt="" class="avatar__img">
+							<span class="avatar__online" *ngIf="contact.online"></span>
+						</div>
+						<div>
+							<p class="t--h5 t--semi-bold m--b-mini">{{contact.name}}</p>
+							<p class="t--md m--reset">
+								<i class="icon-phone m--r-mini"></i>
+								{{contact.phone}}
+							</p>
+						</div>
+					</div>
+					<div>
+						<button class="btn btn--gray btn--sm btn--circle">
+							<i class="btn__icon icon-arrow-right-fill"></i>
+						</button>
+					</div>
+				</li>
+			</ul>
 		</div>
 		
 	</div>

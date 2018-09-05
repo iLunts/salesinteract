@@ -1,0 +1,43 @@
+// ------------------------------------------------
+// Block '.contact-list'
+// ------------------------------------------------
+.contact-list{
+    position: relative;
+
+    // Element '.contact-list .contact-list__list'
+    & &__list{
+        margin: 0;
+        padding: 0;
+        max-height: 230px;
+        overflow-y: auto;
+    }
+
+    & &__search{
+        margin-bottom: 20px;
+    }
+
+    & &__item{
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        & + .contact-list__item{
+            margin-top: 10px;
+            padding-top: 10px;
+
+            &:before{
+                content: '';
+                position: absolute;
+                left: 25px;
+                right: 25px;
+                top: 0;
+                border-top: 1px solid #E9F1F5;
+            }
+        }
+    }
+
+    & &__avatar{
+        margin-right: 10px;
+    }
+}
