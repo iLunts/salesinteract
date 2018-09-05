@@ -1,0 +1,25 @@
+<div class="panel product-item">
+	<div class="panel__body">
+		<div class="flex flex--middle flex--space-between">
+			<div class="flex flex--middle">
+				<span class="product-item__color" [ngStyle]="{'background-color': product.color}"></span>
+				<div>
+					<p class="t--semi-bold m--reset">{{product.title}}</p>
+					<p class="m--reset t--md">{{product.desc}}</p>
+				</div>
+			</div>
+			
+			<span class="product-item__status badge badge--green badge--md" *ngIf="product.status == '0'">Active</span>
+			<span class="product-item__status badge badge--gray badge--md" *ngIf="product.status == '1'">Inactive</span>
+			
+			<div class="product-item__btns">
+				<button class="btn btn--gray btn--circle btn--sm">
+					<i class="btn__icon icon-edit"></i>
+				</button>
+				<button class="btn btn--gray btn--circle btn--sm">
+					<i class="btn__icon icon-delete"></i>
+				</button>
+			</div>
+		</div>
+	</div>
+</div>

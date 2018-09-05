@@ -187,15 +187,10 @@ button{
         }
     }
 
-    // Modificator '.btn.btn--notification'
-    &&--notification{
-        overflow: visible;
-    }
-
     // Modificator '.btn.btn--gray'
     &&--gray{
         background: #DAE6ED;
-        color: #666;
+        color: #252841;
         box-shadow: none;
         outline: none;
         
@@ -248,9 +243,9 @@ button{
         background: @color-red;
         color: #fff;
 
-        &:focus{
-            box-shadow: 0 0 0 3px lighten(@color-red, 30%);
-        }
+        // &:focus{
+        //     box-shadow: 0 0 0 3px lighten(@color-red, 30%);
+        // }
 
         &.btn--border{
             border-color: @color-red;
@@ -258,11 +253,15 @@ button{
             text-shadow: none;
 
             &:hover{
+                outline: none;
                 background: lighten(@color-red, 48%);                
+                box-shadow: none;
             }
-
+            
             &:focus{
-                box-shadow: 0 0 0 3px lighten(@color-red, 30%);
+                outline: none;
+                box-shadow: none;
+            //     box-shadow: 0 0 0 3px lighten(@color-red, 30%);
             }
 
             &:disabled{
@@ -270,6 +269,11 @@ button{
                 color: #bbb;
             }
         }
+    }
+
+    // Modificator '.btn.btn--rounded'
+    &&--rounded{
+        border-radius: 100px;
     }
 
     // Modificator '.btn.btn--circle'
@@ -312,18 +316,23 @@ button{
     }
 
     // Modificator '.btn.btn--dropdown'
-    &&--dropdown{
-        position: relative;
+    // &&--dropdown{
+    //     position: relative;
 
-        &:before{
-            content: '';
-            position: absolute;
-            right: 10px;
-            top: 50%;
-            border: 6px solid transparent;
-            border-top-color: #bbb;
-            margin-top: -2px;
-        }
+    //     &:before{
+    //         content: '';
+    //         position: absolute;
+    //         right: 10px;
+    //         top: 50%;
+    //         border: 6px solid transparent;
+    //         border-top-color: #bbb;
+    //         margin-top: -2px;
+    //     }
+    // }
+
+    // Modificator '.btn.btn--notification'
+    &&--notification{
+        overflow: visible;
     }
 
     // Modificator '.btn.btn--new'
@@ -408,6 +417,9 @@ button{
         }
     }
 
+    // --------------------------------------------------------
+    // All elements
+    // --------------------------------------------------------
     // Element '.btn .icon'
     .icon{
         line-height: 1;

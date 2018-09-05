@@ -1,0 +1,31 @@
+.manager {
+  position: relative;
+}
+.manager .manager__list {
+  margin: 0;
+  padding: 0;
+}
+.manager .manager__search {
+  margin-bottom: 20px;
+}
+.manager .manager__item {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.manager .manager__item + .manager__item {
+  margin-top: 10px;
+  padding-top: 10px;
+}
+.manager .manager__item + .manager__item:before {
+  content: '';
+  position: absolute;
+  left: 25px;
+  right: 25px;
+  top: 0;
+  border-top: 1px solid #E9F1F5;
+}
+.manager .manager__avatar {
+  margin-right: 10px;
+}

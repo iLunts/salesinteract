@@ -6,10 +6,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./company-information.component.less']
 })
 export class CompanyInformationComponent implements OnInit {
+  isEdit: boolean = false;
 
   constructor() { }
 
   ngOnInit() {
+  }
+
+  edit(){
+    this.isEdit = !this.isEdit;
   }
 
 }

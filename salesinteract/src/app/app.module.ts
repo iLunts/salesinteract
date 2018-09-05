@@ -14,6 +14,8 @@ import { TaskItemComponent } from './ui/task-item/task-item.component';
 import { ContactInformationComponent } from './ui/contact-information/contact-information.component';
 import { ManagerInformationComponent } from './ui/manager-information/manager-information.component';
 import { CompanyInformationComponent } from './ui/company-information/company-information.component';
+import { FileItemComponent } from './ui/file-item/file-item.component';
+import { ProductItemComponent } from './ui/product-item/product-item.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +27,9 @@ import { CompanyInformationComponent } from './ui/company-information/company-in
     TaskItemComponent,
     ContactInformationComponent,
     ManagerInformationComponent,
-    CompanyInformationComponent
+    CompanyInformationComponent,
+    FileItemComponent,
+    ProductItemComponent
   ],
   imports: [
     BrowserModule,

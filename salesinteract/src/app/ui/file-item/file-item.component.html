@@ -1,0 +1,22 @@
+<div class="panel file-item">
+	<div class="panel__teaser">
+		<img src="{{file.image}}" class="panel__teaser-img" alt="">
+
+		<div class="panel__teaser-btns">
+			<button class="btn btn--white btn--circle">
+				<i class="btn__icon icon-view"></i>
+			</button>
+			<button class="btn btn--white btn--circle">
+				<i class="btn__icon icon-edit"></i>
+			</button>
+			<button class="btn btn--white btn--circle">
+				<i class="btn__icon icon-delete"></i>
+			</button>
+		</div>
+	</div>
+	<div class="panel__body">
+		<p class="file-item__name">{{file.name}}</p>
+		<p class="file-item__added">Added: <b>{{file.added}}</b></p>
+		<p class="file-item__view">Last viewed: <b>{{file.view}}</b></p>
+	</div>
+</div>

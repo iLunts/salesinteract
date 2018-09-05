@@ -1,0 +1,35 @@
+// ----------------------------------------
+// Block '.product-item'
+// ----------------------------------------
+.product-item{
+    // display: flex;
+    // align-items: center;
+    // justify-content: space-between;
+
+    // Element '.product-item .product-item__color'
+    & &__color{
+        display: inline-block;
+        min-width: 35px;
+        width: 35px;
+        height: 35px;
+        border-radius: 100%;
+        margin-right: 10px;
+    }
+
+    & &__status{
+        width: 80px;
+        margin: 0 20px;
+    }
+
+    & &__btns{
+        width: 30px;
+
+        .btn{
+
+            & + .btn{
+                margin-left: 0;
+                margin-top: 6px;
+            }
+        }
+    }
+}

@@ -1,15 +1,84 @@
 <div class="panel">
-	<div class="panel__header">
-		<span class="panel__header-text">
-			Contact information
-		</span>
-		<div class="panel__header-btn">
-			<button class="btn btn--circle btn--blue btn--sm">
-				<i class="btn__icon icon-edit"></i>
-			</button>
-		</div>
+
+	<!-- ********* -->
+	<!-- Show mode -->
+	<!-- ********* -->
+	<div *ngIf="isEdit">
+		
+		
+
 	</div>
-	<div class="panel__body">
-		contact-information works!
+	
+
+	<!-- ********* -->
+	<!-- Edit mode -->
+	<!-- ********* -->
+	<div *ngIf="!isEdit">
+		
+		<div class="panel__header">
+			<span class="panel__header-text">
+				Contact information
+			</span>
+			<div class="panel__header-btns">
+				<button class="btn btn--circle btn--blue btn--sm" (click)="edit()">
+					<i class="btn__icon icon-edit"></i>
+				</button>
+			</div>
+		</div>
+		<div class="panel__body">
+
+			<div class="row">
+				<div class="col-lg-3">
+					<div class="avatar avatar--md avatar--empty">
+						<span class="avatar__online"></span>
+					</div>
+				</div>
+				<div class="col-lg-9">
+					<p class="m--b-sm t--h4 t--semi-bold">Grant Marshall</p>
+					
+					<p class="m--b-sm">
+						<i class="icon-mail m--r-mini t--gray"></i>
+						marshall@yahoo.com
+					</p>
+					<p class="m--b-sm">
+						<i class="icon-phone m--r-mini t--gray"></i>
+						+1 (928) 123 445 345
+					</p>
+					<p class="m--b-sm">
+						<i class="icon-role m--r-mini t--gray"></i>
+						Art director
+					</p>
+					<p class="m--b-sm">
+						<i class="icon-sex m--r-mini t--gray"></i>
+						Man
+					</p>
+					<p class="m--b-sm">
+						<i class="icon-language m--r-mini t--gray"></i>
+						Dutch
+					</p>
+					<p class="m--b-sm">
+						<i class="icon-time-zone m--r-mini t--gray"></i>
+						Africa/Addis_Ababa
+					</p>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-lg-12">
+
+				</div>
+			</div>
+
+
+
+			<p class="m--v-sm">Roident est duis duis sit occaecat ea eiusmod laboris mollit ullamco mollit nisi veniam…</p>
+			<div class="t--c">
+				<button class="btn btn--blue btn--sm">
+					<i class="btn__icon icon-contacts"></i>
+					<span class="btn__text">Show other contacts</span>
+				</button>
+			</div>
+		</div>
+		
 	</div>
 </div>

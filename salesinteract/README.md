@@ -4,6 +4,9 @@ Deploy GitHub pages:
 1. `ng build --prod --base-href https://ilunts.github.io/salesinteract/`
 2. `gh-pages -d dist`
 
+For generate new component
+1. `ng g c [folder]/[name-component or page] --module app`
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.8.
 
 ## Development server

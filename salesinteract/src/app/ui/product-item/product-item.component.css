@@ -1,0 +1,19 @@
+.product-item .product-item__color {
+  display: inline-block;
+  min-width: 35px;
+  width: 35px;
+  height: 35px;
+  border-radius: 100%;
+  margin-right: 10px;
+}
+.product-item .product-item__status {
+  width: 80px;
+  margin: 0 20px;
+}
+.product-item .product-item__btns {
+  width: 30px;
+}
+.product-item .product-item__btns .btn + .btn {
+  margin-left: 0;
+  margin-top: 6px;
+}

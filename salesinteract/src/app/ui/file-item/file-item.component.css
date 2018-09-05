@@ -1,0 +1,9 @@
+.file-item .file-item__name {
+  font-size: 13px;
+  font-weight: 700;
+}
+.file-item .file-item__added,
+.file-item .file-item__view {
+  font-size: 13px;
+  margin: 0;
+}

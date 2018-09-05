@@ -1,5 +1,33 @@
-<div class="panel">
+<div class="panel manager">
+	<div class="panel__header">
+		<span class="panel__header-text">
+			Account managers 
+			<span class="badge badge--gray badge--rounded">12</span>
+		</span>
+	</div>
 	<div class="panel__body">
-		manager-information works!
+		<input class="manager__search input input--sm" type="text" placeholder="Please type name" />
+
+		<ul class="manager__list">
+			<li class="manager__item" *ngFor="let manager of managerList">
+				<div class="flex flex--middle">
+					<div class="manager__avatar avatar avatar--empty"></div>
+					<div>
+						<p class="t--h5 t--semi-bold m--reset">{{manager.name}}</p>
+						<p class="t--md m--reset">{{manager.email}}</p>
+					</div>
+				</div>
+				<div class="manager__btns">
+					<button class="btn btn--red btn--circle btn--sm">
+						<i class="btn__icon icon-delete"></i>
+					</button>
+				</div>
+			</li>
+		</ul>
+
+		<div class="t--c m--t">
+			<button class="btn btn--link btn--sm">Cancel</button>
+			<button class="btn btn--blue btn--sm">Save</button>
+		</div>
 	</div>
 </div>

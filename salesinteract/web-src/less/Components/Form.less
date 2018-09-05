@@ -14,31 +14,41 @@
 
     // Element '.form .form__label'
     & &__label{
-        width: 30%;
+        width: 40%;
         margin: 0;
+        font-weight: 300;
+        font-size: 14px;
         
         // Modificator '.form .form__label.form__label--required'
-        &.form__label--required{
-            position: relative;
+        // &.form__label--required{
+        //     position: relative;
             
-            // Element '.form .form__label.form__label--required:after'
-            &:after{
-                content: '*';
-                color: @color-red;
-                margin-left: 6px;
-            }
-        }
+        //     // Element '.form .form__label.form__label--required:after'
+        //     &:after{
+        //         content: '*';
+        //         color: @color-red;
+        //         margin-left: 6px;
+        //     }
+        // }
     }
 
     // Element '.form .form__input'
     & &__input{
-        width: 70%;
+        width: 60%;
         margin: 0;
         
         // Element '.form .form__input .input-group'
         .input-group{
             margin-bottom: 0;
         }
+    }
+    
+    // Element '.form .form__text'
+    & &__text{
+        width: 60%;
+        margin: 0;
+        font-weight: 700;
+        font-size: 14px;
     }
 }
 

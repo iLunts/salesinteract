@@ -1,5 +1,133 @@
 <div class="panel">
-	<div class="panel__body">
-		company-information works!
+
+	<!-- ********* -->
+	<!-- Show mode -->
+	<!-- ********* -->
+	<div *ngIf="isEdit">
+	
+		!@2312
+	
+	</div>
+
+
+	<!-- ********* -->
+	<!-- Edit mode -->
+	<!-- ********* -->
+	<div *ngIf="!isEdit">
+	
+		<div class="panel__header">
+			<span class="panel__header-text">
+				Company information
+			</span>
+			<div class="panel__header-btns">
+				<button class="btn btn--circle btn--blue btn--sm" (click)="edit()">
+					<i class="btn__icon icon-edit"></i>
+				</button>
+			</div>
+		</div>
+		<div class="panel__body">
+			<div class="row">
+				<div class="col-lg-3">
+					<div class="avatar avatar--md avatar--square avatar--empty"></div>
+				</div>
+				<div class="col-lg-9">
+					<p class="m--b-sm t--h4 t--semi-bold">WALD International</p>
+					
+					<p class="m--b-sm">
+						<i class="icon-mail m--r-mini t--gray"></i>
+						marshall@yahoo.com
+					</p>
+					<p class="m--b-sm">
+						<i class="icon-www m--r-mini t--gray"></i>
+						www.website.com
+					</p>
+					<p class="m--b-sm">
+						<i class="icon-phone m--r-mini t--gray"></i>
+						+1 (928) 123 445 345
+					</p>
+				</div>
+			</div>
+		</div>
+	
+		<!-- Adress company -->
+		<div class="panel__header">
+			<span class="panel__header-text">
+				Adresses company
+			</span>
+		</div>
+		<div class="panel__body">
+			<p>Netherlands, 226 Kingsland Avenue, Winchester, Virgin Islands, 9948</p>
+			<div class="t--c m--t-sm">
+				<button class="btn btn--gray btn--sm btn--rounded">
+					Show all adresses company
+				</button>
+			</div>
+		</div>
+	
+		<!-- Details information -->
+		<div class="panel__header">
+			<span class="panel__header-text">
+				Details information
+			</span>
+		</div>
+		<div class="panel__body">
+			
+			<div class="form">
+				<div class="form__item">
+					<label class="form__label">VAT number:</label>
+					<p class="form__text">23%</p>
+				</div>
+				<div class="form__item">
+					<label class="form__label">Chamber of Commerce:</label>
+					<p class="form__text">#2345-1234-NL-2018</p>
+				</div>
+				<div class="form__item">
+					<label class="form__label">RSIN:</label>
+					<p class="form__text">2345</p>
+				</div>
+				<div class="form__item">
+					<label class="form__label">Classification:</label>
+					<p class="form__text">
+						<span class="badge badge--gray badge--circle badge--md">
+							B
+						</span>
+					</p>
+				</div>
+				<div class="form__item">
+					<label class="form__label">Customer number:</label>
+					<p class="form__text">
+						<span class="t--muted t--regular">not set</span>
+					</p>
+				</div>
+			</div>
+			
+			<p>
+				Roident est duis duis sit occaecat ea eiusmod laboris mollit ullamco mollit nisi veniam. it officia commodo ex quis
+				ex fugiat ullamco in enim labore...
+			</p>
+	
+			<div class="t--c m--t-sm">
+				<button class="btn btn--gray btn--sm btn--rounded">
+					Show more information...
+				</button>
+			</div>
+		</div>
+	
+		<!-- Actions information -->
+		<div class="panel__header">
+			<span class="panel__header-text">
+				Actions
+			</span>
+		</div>
+		<div class="panel__body">
+			
+			<div class="form">
+				<div class="form__item">
+					<label class="form__label">Promote to:</label>
+					<p class="form__text">Suspect</p>
+				</div>
+			</div>		
+		</div>
+		
 	</div>
 </div>

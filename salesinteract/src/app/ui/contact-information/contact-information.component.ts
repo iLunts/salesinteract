@@ -6,10 +6,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./contact-information.component.less']
 })
 export class ContactInformationComponent implements OnInit {
+  isEdit: boolean = false;
 
   constructor() { }
 
   ngOnInit() {
   }
 
+  edit() {
+    this.isEdit = !this.isEdit;
+  }
 }
