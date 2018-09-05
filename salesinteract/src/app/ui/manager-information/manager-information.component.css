@@ -4,6 +4,9 @@
 .manager .manager__list {
   margin: 0;
   padding: 0;
+  padding: 10px 5px;
+  max-height: 230px;
+  overflow-y: auto;
 }
 .manager .manager__search {
   margin-bottom: 20px;
