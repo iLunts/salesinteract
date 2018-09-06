@@ -50,10 +50,18 @@
         
         // Element '.checkbox .checkbox__input[type="radio"]'
         &[type="radio"]{
+
+            &:checked{
+
+                & + .checkbox__label:before,
+                & + .checkbox__label:after{
+                    border-radius: 100%;
+                }
+            }
             
-            // Element '.checkbox .checkbox__input[type="radio"] + .checkbox__label:before'
-            & + .checkbox__label:before{
-                border-radius: 40px;
+            & + .checkbox__label:before,
+            & + .checkbox__label:after{
+                border-radius: 100%;
             }
         }
         
@@ -77,7 +85,7 @@
                     top: 6px;
                     width: @checkbox-height / 2;
                     height: @checkbox-height / 2;
-                    border-radius: 100%;
+                    border-radius: 2px;
                     background-color: @color-blue;
                     z-index: 2;
                 }

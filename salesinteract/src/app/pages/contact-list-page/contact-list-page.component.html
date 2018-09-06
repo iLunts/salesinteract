@@ -31,7 +31,7 @@
 				</div>
 
 				<div>
-					<button class="btn btn--blue btn--new">
+					<button class="btn btn--blue btn--new" (click)="openSidebar()">
 						<i class="btn__icon icon-new-plus"></i>
 						<span class="btn__text">
 							<span class="btn__text-text">Create new task</span>
@@ -98,3 +98,5 @@
 	</div>
 </div>
 
+<!-- Sidebar panel -->
+<app-sidebar [ngClass]="{'open': isOpenSidebar}"></app-sidebar>

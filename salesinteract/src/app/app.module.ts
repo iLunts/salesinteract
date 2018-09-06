@@ -16,6 +16,10 @@ import { ManagerInformationComponent } from './ui/manager-information/manager-in
 import { CompanyInformationComponent } from './ui/company-information/company-information.component';
 import { FileItemComponent } from './ui/file-item/file-item.component';
 import { ProductItemComponent } from './ui/product-item/product-item.component';
+import { SidebarComponent } from './ui/sidebar/sidebar.component';
+import { NewTaskTabComponent } from './components/new-task-tab/new-task-tab.component';
+import { NewFileTabComponent } from './components/new-file-tab/new-file-tab.component';
+import { NewMessageTabComponent } from './components/new-message-tab/new-message-tab.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +33,11 @@ import { ProductItemComponent } from './ui/product-item/product-item.component';
     ManagerInformationComponent,
     CompanyInformationComponent,
     FileItemComponent,
-    ProductItemComponent
+    ProductItemComponent,
+    SidebarComponent,
+    NewTaskTabComponent,
+    NewFileTabComponent,
+    NewMessageTabComponent
   ],
   imports: [
     BrowserModule,

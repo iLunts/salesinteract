@@ -215,7 +215,7 @@
 		</div>
 		<div class="panel__body contact-list">
 			<ul class="contact-list__list">
-				<li class="contact-list__item" *ngFor="let contact of contactList">
+				<li class="contact-list__item" *ngFor="let contact of contactList" (click)="showMoreContacts()">
 					<div class="flex flex--middle">
 						<div class="contact-list__avatar avatar avatar--empty">
 							<img [src]="contact.image" alt="" class="avatar__img">

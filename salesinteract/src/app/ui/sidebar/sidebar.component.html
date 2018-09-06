@@ -1,0 +1,29 @@
+<section class="sidebar">
+	<div class="sidebar__overlay"></div>
+
+	<div class="sidebar__panel">
+		<header class="sidebar__header">
+			<p class="sidebar__header-title">Create new task</p>
+			<a href="/" class="sidebar__close">
+				<i class="icon-close"></i>
+			</a>
+		</header>
+		<div class="sidebar__panel-body">
+
+			<tabset>
+				<tab heading="Task">
+					<app-new-task-tab></app-new-task-tab>
+				</tab>
+				
+				<tab heading="Files">
+					<app-new-file-tab></app-new-file-tab>
+				</tab>
+
+				<tab heading="Messages">
+					<app-new-message-tab></app-new-message-tab>
+				</tab>
+			</tabset>
+
+		</div>
+	</div>
+</section>

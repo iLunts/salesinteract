@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 
 export class ContactListPageComponent implements OnInit {
+	isOpenSidebar: boolean = false;
 
   	taskList: any = [
 		{ 
@@ -56,6 +57,10 @@ export class ContactListPageComponent implements OnInit {
 
 	ngOnInit() {
 
+	}
+
+	openSidebar(){
+		this.isOpenSidebar = !this.isOpenSidebar;
 	}
 
 }
