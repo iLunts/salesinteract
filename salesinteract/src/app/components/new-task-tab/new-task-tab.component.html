@@ -10,43 +10,43 @@
 		<div class="row">
 			<div class="col-lg-6">
 				<div class="checkbox">
-					<input type="radio" class="checkbox__input" name="task-type" id="type-np">
+					<input type="radio" class="checkbox__input" name="task-type" id="type-np" [checked]="taskType == 'np'" (change)="changeTaskType('np')" />
 					<label for="type-np" class="checkbox__label">Not present</label>
 				</div>
 			</div>
 			<div class="col-lg-6">
 				<div class="checkbox">
-					<input type="radio" class="checkbox__input" name="task-type" id="type-sdht">
+					<input type="radio" class="checkbox__input" name="task-type" id="type-sdht" [checked]="taskType == 'sdht'" (change)="changeTaskType('sdht')" />
 					<label for="type-sdht" class="checkbox__label">Sales do not have time</label>
 				</div>
 			</div>
 			<div class="col-lg-6">
 				<div class="checkbox">
-					<input type="radio" class="checkbox__input" name="task-type" id="type-ni">
+					<input type="radio" class="checkbox__input" name="task-type" id="type-ni" [checked]="taskType == 'ni'" (change)="changeTaskType('ni')" />
 					<label for="type-ni" class="checkbox__label">Not interested</label>
 				</div>
 			</div>
 			<div class="col-lg-6">
 				<div class="checkbox">
-					<input type="radio" class="checkbox__input" name="task-type" id="type-se">
+					<input type="radio" class="checkbox__input" name="task-type" id="type-se" [checked]="taskType == 'se'" (change)="changeTaskType('si')" />
 					<label for="type-se" class="checkbox__label">Send information</label>
 				</div>
 			</div>
 			<div class="col-lg-6">
 				<div class="checkbox">
-					<input type="radio" class="checkbox__input" name="task-type" id="type-nt">
+					<input type="radio" class="checkbox__input" name="task-type" id="type-nt" [checked]="taskType == 'nt'" (change)="changeTaskType('nt')" />
 					<label for="type-nt" class="checkbox__label">No time</label>
 				</div>
 			</div>
 			<div class="col-lg-6">
 				<div class="checkbox">
-					<input type="radio" class="checkbox__input" name="task-type" id="type-cbl">
+					<input type="radio" class="checkbox__input" name="task-type" id="type-cbl" [checked]="taskType == 'cbl'" (change)="changeTaskType('cbl')" />
 					<label for="type-cbl" class="checkbox__label">Call back later</label>
 				</div>
 			</div>
 			<div class="col-lg-6">
 				<div class="checkbox">
-					<input type="radio" class="checkbox__input" name="task-type" id="type-v">
+					<input type="radio" class="checkbox__input" name="task-type" id="type-v" [checked]="taskType == 'v'" (change)="changeTaskType('v')" />
 					<label for="type-v" class="checkbox__label">Visit</label>
 				</div>
 			</div>
@@ -54,71 +54,58 @@
 
 	</div>
 
-	<div *ngIf="true">
-		<div class="panel__header">
-			<span class="panel__header-text">
-				Call back on
-			</span>
-		</div>
+	<!-- ************ -->
+	<!-- Not Present -->
+	<!-- ************ -->
+	<div *ngIf="taskType == 'np'">
+		<app-not-present></app-not-present>
+	</div>
 
-		<div class="panel__body">
-			<div class="row flex flex--middle">
-				<div class="col-lg-6">
-					<div class="checkbox">
-						<input type="radio" class="checkbox__input" name="call-back" id="call-back-tommorow">
-						<label for="call-back-tommorow" class="checkbox__label">Tomorrow</label>
-					</div>
-					<div class="checkbox">
-						<input type="radio" class="checkbox__input" name="call-back" id="call-back-next-week">
-						<label for="call-back-next-week" class="checkbox__label">Next week</label>
-					</div>
-					<div class="checkbox">
-						<input type="radio" class="checkbox__input" name="call-back" id="call-back-different">
-						<label for="call-back-different" class="checkbox__label">Different</label>
-					</div>
-				</div>
-				<div class="col-lg-6">
-					<div class="input-group">
-						<i class="input-group__icon icon-calendar"></i>
-						<input type="text" class="input-group__input t--c" placeholder="09-06-2019 18:55">
-					</div>
-				</div>
-			</div>
-		</div>
 
-		<div class="panel__header">
-			<span class="panel__header-text">
-				Note (internal)
-			</span>
-		</div>
-		<div class="panel__body">
-			<textarea class="input" rows="5"></textarea>
-		</div>
+	<!-- ************ -->
+	<!-- Not interested -->
+	<!-- ************ -->
+	<div *ngIf="taskType == 'ni'">
+		<app-not-interested></app-not-interested>
+	</div>
 
-		<div class="panel__header">
-			<span class="panel__header-text">
-				Message for contact
-			</span>
-		</div>
-		<div class="panel__body">
-			<textarea class="input" rows="5"></textarea>
-		</div>
 
-		<div class="panel__header">
-			<span class="panel__header-text">
-				Message for contact
-			</span>
-		</div>
-		<div class="panel__body">
-			<div class="checkbox">
-				<input type="checkbox" class="checkbox__input" id="send-email">
-				<label for="send-email" class="checkbox__label">Send an e-mail update to the customer</label>
-			</div>
+	<!-- ************ -->
+	<!-- Not time -->
+	<!-- ************ -->
+	<div *ngIf="taskType == 'nt'">
+		<app-not-time></app-not-time>
+	</div>
 
-			<div class="m--t-md t--c">
-				<button class="btn btn--link">Clear date</button>
-				<button class="btn btn--blue">Save</button>
-			</div>
-		</div>
+
+	<!-- ************ -->
+	<!-- Visit -->
+	<!-- ************ -->
+	<div *ngIf="taskType == 'v'">
+		<app-visit></app-visit>
+	</div>
+
+
+	<!-- ************ -->
+	<!-- Sales do not have time -->
+	<!-- ************ -->
+	<div *ngIf="taskType == 'sdht'">
+		<app-sales-do-not-have-time></app-sales-do-not-have-time>
+	</div>
+
+
+	<!-- ************ -->
+	<!-- Send information -->
+	<!-- ************ -->
+	<div *ngIf="taskType == 'si'">
+		<app-send-information></app-send-information>
+	</div>
+
+
+	<!-- ************ -->
+	<!-- Call back later -->
+	<!-- ************ -->
+	<div *ngIf="taskType == 'cbl'">
+		<app-call-back-later></app-call-back-later>
 	</div>
 </div>

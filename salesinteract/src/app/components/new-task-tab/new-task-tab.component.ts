@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-new-task-tab',
@@ -6,10 +7,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./new-task-tab.component.less']
 })
 export class NewTaskTabComponent implements OnInit {
+  taskType = '';
 
   constructor() { }
 
   ngOnInit() {
+
   }
+    changeTaskType(type){
+      this.taskType = type;
+    }
 
 }

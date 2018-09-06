@@ -9,7 +9,7 @@ import { RoutingModule } from './routing.module';
 import { ContactListPageComponent } from './pages/contact-list-page/contact-list-page.component';
 
 // Bootstrap
-import { TabsModule, PaginationModule } from 'ngx-bootstrap';
+import { TabsModule, PaginationModule, ButtonsModule } from 'ngx-bootstrap';
 import { TaskItemComponent } from './ui/task-item/task-item.component';
 import { ContactInformationComponent } from './ui/contact-information/contact-information.component';
 import { ManagerInformationComponent } from './ui/manager-information/manager-information.component';
@@ -20,6 +20,13 @@ import { SidebarComponent } from './ui/sidebar/sidebar.component';
 import { NewTaskTabComponent } from './components/new-task-tab/new-task-tab.component';
 import { NewFileTabComponent } from './components/new-file-tab/new-file-tab.component';
 import { NewMessageTabComponent } from './components/new-message-tab/new-message-tab.component';
+import { NotPresentComponent } from './components/new-task-tab/not-present/not-present.component';
+import { NotInterestedComponent } from './components/new-task-tab/not-interested/not-interested.component';
+import { NotTimeComponent } from './components/new-task-tab/not-time/not-time.component';
+import { VisitComponent } from './components/new-task-tab/visit/visit.component';
+import { SalesDoNotHaveTimeComponent } from './components/new-task-tab/sales-do-not-have-time/sales-do-not-have-time.component';
+import { SendInformationComponent } from './components/new-task-tab/send-information/send-information.component';
+import { CallBackLaterComponent } from './components/new-task-tab/call-back-later/call-back-later.component';
 
 @NgModule({
   declarations: [
@@ -37,13 +44,21 @@ import { NewMessageTabComponent } from './components/new-message-tab/new-message
     SidebarComponent,
     NewTaskTabComponent,
     NewFileTabComponent,
-    NewMessageTabComponent
+    NewMessageTabComponent,
+    NotPresentComponent,
+    NotInterestedComponent,
+    NotTimeComponent,
+    VisitComponent,
+    SalesDoNotHaveTimeComponent,
+    SendInformationComponent,
+    CallBackLaterComponent
   ],
   imports: [
     BrowserModule,
     RoutingModule,
     TabsModule.forRoot(),
     PaginationModule.forRoot(),
+    ButtonsModule.forRoot(),
   ],
   providers: [],
   bootstrap: [AppComponent]
