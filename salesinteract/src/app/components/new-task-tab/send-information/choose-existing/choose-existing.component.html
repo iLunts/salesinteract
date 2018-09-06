@@ -1,12 +1,12 @@
-<div class="panel panel--tab">
+<div>
     <div class="panel__header">
         <span class="panel__header-text">
-            Upload new file
+            Select information
         </span>
     </div>
     <div class="panel__body">
 
-        <ul class="file-list m--b">
+        <ul class="file-list">
             <li class="file-list__item">
                 <div class="flex flex--middle">
                     <img class="file-list__img" src="https://media-cdn.tripadvisor.com/media/photo-s/05/de/d1/83/vvf-villages-rochefort.jpg" alt="">
@@ -33,21 +33,46 @@
             </li>
         </ul>
 
-        <div class="placeholder placeholder--sm">
-            <div class="placeholder__img"></div>
-            <p class="placeholder__title">
-                Click to select file
-            </p>
-            <p class="placeholder__desc">
-                (Max file size: 25 MB; Allowed formats: Documents, presentations and images)
-            </p>
-            <input class="placeholder__input" type="file">
+    </div>
+    <div class="panel__header">
+        <span class="panel__header-text">
+            Call back on
+        </span>
+        <div class="panel__header-btns">
+            <div class="input-group">
+                <i class="input-group__icon icon-calendar"></i>
+                <input type="text" class="input-group__input" value="09-06-2019 18:55">
+            </div>
         </div>
+    </div>
 
+    <div class="panel__header">
+        <span class="panel__header-text">
+            Note (internal)
+        </span>
+    </div>
+    <div class="panel__body">
+        <textarea class="input" rows="5"></textarea>
+    </div>
 
-        <div class="m--t-md t--c">
-            <button class="btn btn--link">Clear date</button>
-            <button class="btn btn--blue">Save</button>
+    <div class="panel__header">
+        <span class="panel__header-text">
+            Message for contact
+        </span>
+    </div>
+    <div class="panel__body">
+        <textarea class="input" rows="5"></textarea>
+    </div>
+
+    <div class="panel__header">
+        <span class="panel__header-text">
+            Message for contact
+        </span>
+    </div>
+    <div class="panel__body">
+        <div class="checkbox">
+            <input type="checkbox" class="checkbox__input" id="send-email">
+            <label for="send-email" class="checkbox__label">Send an e-mail update to the customer</label>
         </div>
     </div>
 </div>

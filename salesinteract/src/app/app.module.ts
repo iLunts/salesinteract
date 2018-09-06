@@ -27,6 +27,9 @@ import { VisitComponent } from './components/new-task-tab/visit/visit.component'
 import { SalesDoNotHaveTimeComponent } from './components/new-task-tab/sales-do-not-have-time/sales-do-not-have-time.component';
 import { SendInformationComponent } from './components/new-task-tab/send-information/send-information.component';
 import { CallBackLaterComponent } from './components/new-task-tab/call-back-later/call-back-later.component';
+import { ChooseExistingComponent } from './components/new-task-tab/send-information/choose-existing/choose-existing.component';
+import { UploadNewFileComponent } from './components/new-task-tab/send-information/upload-new-file/upload-new-file.component';
+import { QuotationComponent } from './components/new-task-tab/send-information/quotation/quotation.component';
 
 @NgModule({
   declarations: [
@@ -51,7 +54,10 @@ import { CallBackLaterComponent } from './components/new-task-tab/call-back-late
     VisitComponent,
     SalesDoNotHaveTimeComponent,
     SendInformationComponent,
-    CallBackLaterComponent
+    CallBackLaterComponent,
+    ChooseExistingComponent,
+    UploadNewFileComponent,
+    QuotationComponent
   ],
   imports: [
     BrowserModule,

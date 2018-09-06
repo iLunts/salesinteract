@@ -6,10 +6,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./send-information.component.less']
 })
 export class SendInformationComponent implements OnInit {
+  sendInformation: string = '';
 
   constructor() { }
 
   ngOnInit() {
+  }
+
+  changeSendInformation(item) {
+    this.sendInformation = item;
   }
 
 }

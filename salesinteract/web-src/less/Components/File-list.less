@@ -1,0 +1,62 @@
+// out: ../../css/components/file-list.css, compress: true
+@import '../variables.less';
+
+// ---------------------------------------------
+// Block '.file-list'
+// ---------------------------------------------
+.file-list{
+    position: relative;
+
+    & &__item{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        padding: 10px 0;
+
+        & + .file-list__item{
+            border-top: 1px solid #E9F1F5;
+        }
+    }
+    
+    & &__img{
+        display: inline-block;
+        width: 40px;
+        height: 40px;
+        margin-right: 10px;
+        border-radius: 4px;
+        border: 2px solid #fff;
+        box-shadow: 0 3px 6px rgba(0, 0, 0, .15);
+    }
+
+    & &__text{
+
+        &-name{
+            font-size: 14px;
+            line-height: 1;
+            font-weight: 600;
+            color: #66687A;
+            margin: 0 0 4px 0;
+        }
+
+        &-size{
+            font-size: 12px;
+            line-height: 1;
+            font-weight: 400;
+            color: #66687A;
+            margin: 0;
+        }
+
+    }
+}
+
+
+// ---------------------------------------------------------------------------
+// size: xSmall
+// ----------------------------------------------------------------------------
+@media only screen and (max-width: @breakpoint-xs-max) and (min-width: @breakpoint-xs-min) {
+
+
+
+}
+

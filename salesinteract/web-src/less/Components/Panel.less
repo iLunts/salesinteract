@@ -180,6 +180,18 @@
     // Element '.panel .panel__body'
     & &__body{
         padding: @panel-padding;
+
+        .panel__header,
+        .panel__body{
+            padding-left: 0;
+            padding-right: 0;    
+        }
+        .panel__header{
+            &:before{
+                right: 0;
+                left: 0;
+            }
+        }
     }
     
     // // Element '.panel .panel__list'
