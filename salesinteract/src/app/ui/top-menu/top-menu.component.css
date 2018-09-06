@@ -12,10 +12,72 @@
   box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.05);
   z-index: 100;
 }
+.top-menu .top-menu__dropdown {
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  right: -10px;
+  padding-top: 56px;
+  background-color: #fff;
+  opacity: 0;
+  visibility: hidden;
+  box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.2);
+  z-index: 200;
+  transition: all .4s;
+}
+.top-menu .top-menu__dropdown-title {
+  background-color: #F5F5F5;
+  padding: 4px 25px;
+  font-size: 14px;
+  line-height: 1;
+  color: #949494;
+}
+.top-menu .top-menu__dropdown-list {
+  margin-bottom: 15px;
+}
+.top-menu .top-menu__dropdown-item {
+  position: relative;
+}
+.top-menu .top-menu__dropdown-item + .top-menu__dropdown-item:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 60px;
+  right: 0;
+  border-top: 1px solid #E2E2E2;
+}
+.top-menu .top-menu__dropdown-link {
+  position: relative;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  outline: none;
+  box-shadow: none;
+  padding: 10px 25px;
+  color: #333;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.top-menu .top-menu__dropdown-link img {
+  border: 1px solid #eee;
+  border-radius: 4px;
+  min-width: 26px;
+  width: 26px;
+  height: 26px;
+  margin-right: 10px;
+  object-fit: cover;
+}
+.top-menu .top-menu__dropdown-link p {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
 .top-menu .top-menu__search {
   position: relative;
   display: inline-block;
   vertical-align: middle;
+  z-index: 101;
   margin-left: 30px;
 }
 .top-menu .top-menu__search-icon {
@@ -29,6 +91,7 @@
   top: 50%;
   margin-top: -9px;
   transition: all .3s;
+  z-index: 201;
 }
 .top-menu .top-menu__search-clear {
   position: absolute;
@@ -47,8 +110,10 @@
   background-color: #E0E0E0;
   visibility: hidden;
   transition: all .3s;
+  z-index: 201;
 }
 .top-menu .top-menu__search .input {
+  position: relative;
   background: #F5F5F5;
   border-radius: 0;
   border: none;
@@ -58,6 +123,7 @@
   padding-left: 40px;
   width: 250px;
   transition: all .6s;
+  z-index: 201;
 }
 .top-menu .top-menu__search .input:focus,
 .top-menu .top-menu__search .input:hover {
@@ -70,6 +136,19 @@
 }
 .top-menu .top-menu__search .input:focus ~ .top-menu__search-clear {
   visibility: visible;
+}
+.top-menu .top-menu__search .input:focus ~ .top-menu__dropdown {
+  opacity: 1;
+  visibility: visible;
+}
+.top-menu .top-menu__search .input:focus ~ .top-menu__overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(46, 174, 254, 0.5);
+  z-index: 99;
 }
 .top-menu .btn + .btn {
   margin-left: 15px;
