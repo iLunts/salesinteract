@@ -61,3 +61,8 @@
   line-height: 1;
   color: #7C7E8D;
 }
+@media only screen and (max-width: 767px) and (min-width: 320px) {
+  .sidebar .sidebar__panel {
+    width: 100%;
+  }
+}
