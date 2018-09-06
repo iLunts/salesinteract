@@ -101,3 +101,8 @@
   border-bottom: 1px solid #2EAEFE;
   color: #2EAEFE;
 }
+@media only screen and (max-width: 767px) and (min-width: 320px) {
+  .aside {
+    left: -100%;
+  }
+}

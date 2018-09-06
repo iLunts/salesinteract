@@ -1,12 +1,8 @@
 <div class="panel panel--sm task-item">
 	<div class="panel__body">
 		
-		<div class="row flex flex--middle">
-			<div class="col-lg-3 flex flex--middle">
-				<!-- <button class="btn btn--gray btn--border btn--square btn--ssm m--r-sm">
-					<i class="btn__icon icon-plus"></i>
-				</button> -->
-
+		<div class="row flex flex--middle task-item__flex">
+			<div class="col-lg-3 col-sm-12 flex flex--middle task-item__flex-title">
 				<span class="badge badge--gray badge--circle badge--lg m--r-sm">
 					<i class="badge__icon icon-phone-forwarded"></i>
 				</span>
@@ -16,7 +12,7 @@
 					<p class="t--md m--reset">Was not interested</p>
 				</div>
 			</div>
-			<div class="col-lg-4">
+			<div class="col-lg-4 col-sm-12 task-item__flex-manager">
 				<div class="task-item__manager">
 					<i class="task-item__manager-icon icon-profile"></i> {{task.manager}}
 				</div>
@@ -32,7 +28,7 @@
 					<span class="t--semi-bold t--md">{{task.date}}</span>
 				</div>
 			</div>
-			<div class="col-lg-5">
+			<div class="col-lg-5 col-sm-12 task-item__flex-note">
 				<p class="t--md m--b-mini"><b>Internal note:</b> {{task.internal}}</p>
 				<p class="t--md m--reset"><b>External note:</b> {{task.external}}</p>
 			</div>

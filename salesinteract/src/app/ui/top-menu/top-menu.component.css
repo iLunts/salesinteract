@@ -153,3 +153,11 @@
 .top-menu .btn + .btn {
   margin-left: 15px;
 }
+@media only screen and (max-width: 767px) and (min-width: 320px) {
+  .top-menu {
+    left: 0;
+  }
+  .top-menu .top-menu__search {
+    display: none;
+  }
+}

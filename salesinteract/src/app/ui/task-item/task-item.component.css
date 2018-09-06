@@ -22,3 +22,14 @@
   margin: 0 10px;
   color: #A5C1D4;
 }
+@media only screen and (max-width: 767px) and (min-width: 320px) {
+  .task-item .task-item__flex {
+    flex-wrap: wrap;
+  }
+  .task-item .task-item__flex-title {
+    margin-bottom: 15px;
+  }
+  .task-item .task-item__flex-manager {
+    margin-bottom: 15px;
+  }
+}

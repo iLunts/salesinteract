@@ -81,3 +81,29 @@
     }
 }
 
+
+
+
+// ---------------------------------------------------------------------------
+// size: xSmall
+// ----------------------------------------------------------------------------
+@media only screen and (max-width: @breakpoint-xs-max) and (min-width: @breakpoint-xs-min) {
+
+    // ----------------------------------------------------
+    // Block '.header'
+    // ----------------------------------------------------
+    .header{
+        flex-wrap: wrap;
+
+        // Element '.header .header__left'
+        & &__left{
+            margin-bottom: 10px;
+        }
+        
+        // Element '.header .header__breadcrumbs'
+        & &__breadcrumbs{
+            display: none;
+        }
+    }
+
+}
