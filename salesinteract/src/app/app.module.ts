@@ -9,7 +9,7 @@ import { RoutingModule } from './routing.module';
 import { ContactListPageComponent } from './pages/contact-list-page/contact-list-page.component';
 
 // Bootstrap
-import { TabsModule, PaginationModule, ButtonsModule } from 'ngx-bootstrap';
+import { TabsModule, PaginationModule, ButtonsModule, ModalModule } from 'ngx-bootstrap';
 import { TaskItemComponent } from './ui/task-item/task-item.component';
 import { ContactInformationComponent } from './ui/contact-information/contact-information.component';
 import { ManagerInformationComponent } from './ui/manager-information/manager-information.component';
@@ -59,6 +59,7 @@ import { CallBackLaterComponent } from './components/new-task-tab/call-back-late
     TabsModule.forRoot(),
     PaginationModule.forRoot(),
     ButtonsModule.forRoot(),
+    ModalModule.forRoot(),
   ],
   providers: [],
   bootstrap: [AppComponent]

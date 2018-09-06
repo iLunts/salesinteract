@@ -1,5 +1,7 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, TemplateRef } from '@angular/core';
 import { FileItem } from '../../model/many-models';
+import { BsModalService } from 'ngx-bootstrap/modal';
+import { BsModalRef } from 'ngx-bootstrap/modal/bs-modal-ref.service';
 
 @Component({
   selector: 'app-file-item',
@@ -7,9 +9,14 @@ import { FileItem } from '../../model/many-models';
   styleUrls: ['./file-item.component.less']
 })
 export class FileItemComponent implements OnInit {
-  private _file: FileItem;
-
-  constructor() { }
+  _file: FileItem;
+  modalRef: BsModalRef;
+  config = {
+    backdrop: true,
+    ignoreBackdropClick: false
+  };
+  
+  constructor(private modalService: BsModalService) { }
 
   ngOnInit() { }
 
@@ -20,6 +27,10 @@ export class FileItemComponent implements OnInit {
   
   get file(): FileItem {
     return this._file;
+  }
+
+  openModal(template: TemplateRef<any>) {
+    this.modalRef = this.modalService.show(template, this.config);
   }
 
 }
