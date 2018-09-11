@@ -1,0 +1,30 @@
+.account-list .account-list__item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.account-list .account-list__avatar {
+  margin-right: 10px;
+  width: 30px;
+  height: 30px;
+  border-radius: 30px;
+  object-fit: cover;
+}
+.account-list a.account-list__name {
+  border-bottom: 1px solid;
+  color: #2EAEFE;
+}
+.account-list a.account-list__name:hover {
+  text-decoration: none;
+  box-shadow: none;
+  outline: none;
+}
+.account-list .account-list__name {
+  font-weight: 600;
+  font-size: 1rem;
+  line-height: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin: 0;
+}

@@ -1,0 +1,42 @@
+@import '../../../../web-src/less/variables.less';
+
+// ------------------------------------------------
+// Block '.manager'
+// ------------------------------------------------
+.account-list{
+
+    & &__item{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    
+    & &__avatar{
+        margin-right: 10px;
+        width: 30px;
+        height: 30px;
+        border-radius: 30px;
+        object-fit: cover;
+    }
+
+    a.account-list__name{
+        border-bottom: 1px solid;
+        color: @color-blue;
+
+        &:hover{
+            text-decoration: none;
+            box-shadow: none;
+            outline: none;
+        }
+    }
+
+    & &__name{
+        font-weight: 600;
+        font-size: 1rem;
+        line-height: 1;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        margin: 0;
+    }
+}
