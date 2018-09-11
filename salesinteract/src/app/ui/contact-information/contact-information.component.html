@@ -5,11 +5,11 @@
 	<!-- ********* -->
 	<div *ngIf="isEdit && !isMoreContacts">
 		
-		<div class="panel__header">
-			<span class="panel__header-text">
+		<div class="panel__group">
+			<span class="panel__group-text">
 				Contact information
 			</span>
-			<div class="panel__header-btns">
+			<div class="panel__group-btns">
 				<button class="btn btn--circle btn--red btn--sm">
 					<i class="btn__icon icon-delete"></i>
 				</button>
@@ -89,8 +89,8 @@
 			</div>
 		</div>
 
-		<div class="panel__header">
-			<span class="panel__header-text">
+		<div class="panel__group">
+			<span class="panel__group-text">
 				Online / Social links
 			</span>
 		</div>
@@ -109,8 +109,8 @@
 			</div>
 		</div>
 
-		<div class="panel__header">
-			<span class="panel__header-text">
+		<div class="panel__group">
+			<span class="panel__group-text">
 				Description
 			</span>
 		</div>
@@ -131,11 +131,11 @@
 	<!-- ********* -->
 	<div *ngIf="!isEdit && !isMoreContacts">
 		
-		<div class="panel__header">
-			<span class="panel__header-text">
+		<div class="panel__group">
+			<span class="panel__group-text">
 				Contact information
 			</span>
-			<div class="panel__header-btns">
+			<div class="panel__group-btns">
 				<button class="btn btn--circle btn--blue btn--sm" (click)="edit()">
 					<i class="btn__icon icon-edit"></i>
 				</button>
@@ -202,12 +202,12 @@
 	<!-- More contacts -->
 	<!-- ************* -->
 	<div *ngIf="isMoreContacts">
-		<div class="panel__header">
-			<span class="panel__header-text">
+		<div class="panel__group">
+			<span class="panel__group-text">
 				Contacts list
 				<span class="badge badge--gray badge--rounded">23</span>
 			</span>
-			<div class="panel__header-btns">
+			<div class="panel__group-btns">
 				<button class="btn btn--circle btn--blue btn--sm" (click)="showMoreContacts()">
 					<i class="btn__icon icon-close"></i>
 				</button>

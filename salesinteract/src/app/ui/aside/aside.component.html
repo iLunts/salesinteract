@@ -11,13 +11,13 @@
         </div>
         <ul class="aside__menu">
             <li class="aside__item">
-                <a href="" class="aside__link">
+                <a [routerLink]="['dashboard']" routerLinkActive="active" class="aside__link">
                     <i class="aside__link-icon icon-dashboard"></i>
                     Dashboard
                 </a>
             </li>
             <li class="aside__item">
-                <a href="" class="aside__link">
+                <a [routerLink]="['crm']" class="aside__link" routerLinkActive="active">
                     <i class="aside__link-icon icon-dashboard"></i>
                     CRM
                 </a>
@@ -26,6 +26,12 @@
                 <a href="" class="aside__link">
                     <i class="aside__link-icon icon-calendar"></i>
                     Kalendar
+                </a>
+            </li>
+            <li class="aside__item">
+                <a href="" class="aside__link">
+                    <i class="aside__link-icon icon-box"></i>
+                    Productgroepen
                 </a>
             </li>
             <li class="aside__item">

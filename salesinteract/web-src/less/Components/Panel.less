@@ -114,12 +114,39 @@
     
     // Element '.panel.panel__header'
     & &__header{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 15px;
+        border-bottom: 1px solid #f5f5f5;
+        
+        // Element '.panel.panel__header-title'
+        &-title{
+            margin: 0;
+            font-weight: 600;
+            // color: #555;
+            color: #6e8696;
+            font-size: 1.2rem;
+        }
+        
+        // Element '.panel.panel__header-text'
+        &-text{
+            margin: 0;
+            font-weight: 400;
+            // color: #999;
+            // color: #a5c1d4;
+            color: #a4bdcc;
+            font-size: .9rem;
+        }
+    }
+    
+    // Element '.panel.panel__group'
+    & &__group{
         position: relative;
         display: flex;
         align-items: center;
         justify-content: space-between;
         padding: 10px 15px;
-        // margin: 0 0 15px 0;
         margin: 0;
 
         &:before{
@@ -132,15 +159,7 @@
             z-index: 1;
         }
         
-        // Element '.panel.panel__header-title'
-        // &-title{
-        //     font-weight: 300;
-        //     margin: 0;
-        //     font-weight: 400;
-        //     color: #555;
-        // }
-            
-        // Element '.panel.panel__header-text'
+        // Element '.panel.panel__group-text'
         &-text{
             position: relative;
             margin: 0;
@@ -153,7 +172,7 @@
             z-index: 2;
         }
         
-        // Element '.panel.panel__header-btns'
+        // Element '.panel.panel__group-btns'
         &-btns{
             position: relative;
             background: #fff;
@@ -165,12 +184,12 @@
             }
         }
         
-        // Element '.panel.panel__header + .panel__body'
+        // Element '.panel.panel__group + .panel__body'
         & + .panel__body{
             padding-top: 0;
         }
         
-        // Element '.panel.panel__header + .badge'
+        // Element '.panel.panel__group + .badge'
         .badge{
             margin-left: 6px;
             padding: 2px 12px;
@@ -181,49 +200,18 @@
     & &__body{
         padding: @panel-padding;
 
-        .panel__header,
+        .panel__group,
         .panel__body{
             padding-left: 0;
             padding-right: 0;    
         }
-        .panel__header{
+        .panel__group{
             &:before{
                 right: 0;
                 left: 0;
             }
         }
     }
-    
-    // // Element '.panel .panel__list'
-    // & &__list{
-        
-    //     .list__item{
-    //         display: flex;
-    //         align-items: center;
-    //         justify-content: space-between;
-
-    //         & + .list__item{
-    //             margin-top: 10px;
-    //             padding-top: 10px;
-    //             border-top: 1px solid #ddd;
-    //         }
-    //     }
-    // }
-
-    // & &__footer{
-    //     display: flex;
-    //     align-items: center;
-    //     justify-content: space-between;
-
-    //     border-top: 1px solid #eee;
-    //     padding: @panel-padding 0;
-    //     margin: 0 @panel-padding;
-    
-    //     p{
-    //         margin: 0;
-    //     }
-    // }
-
 }
 
 // ---------------------------------------------------------------------------

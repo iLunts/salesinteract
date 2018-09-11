@@ -55,7 +55,15 @@
   box-shadow: none;
   font-weight: 600;
   padding: 15px 20px;
+  border-left: 3px solid transparent;
   transition: all .3s;
+}
+.aside .aside__link.active {
+  color: #2EAEFE;
+  border-left-color: #2EAEFE;
+}
+.aside .aside__link.active .aside__link-icon {
+  color: #2EAEFE;
 }
 .aside .aside__link:hover {
   background-color: #fafafa;

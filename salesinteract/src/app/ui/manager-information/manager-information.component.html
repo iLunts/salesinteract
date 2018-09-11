@@ -4,8 +4,8 @@
 	<!-- Edit mode -->
 	<!-- ********* -->
 	<div *ngIf="isEdit">
-		<div class="panel__header">
-			<span class="panel__header-text">
+		<div class="panel__group">
+			<span class="panel__group-text">
 				Account managers 
 				<span class="badge badge--gray badge--rounded">12</span>
 			</span>
@@ -44,12 +44,12 @@
 	<!-- Show mode -->
 	<!-- ********* -->
 	<div *ngIf="!isEdit">
-		<div class="panel__header">
-			<span class="panel__header-text">
+		<div class="panel__group">
+			<span class="panel__group-text">
 				Account managers 
 				<span class="badge badge--gray badge--rounded">12</span>
 			</span>
-			<div class="panel__header-btns">
+			<div class="panel__group-btns">
 				<button class="btn btn--circle btn--blue btn--sm" (click)="edit()">
 					<i class="btn__icon icon-edit"></i>
 				</button>

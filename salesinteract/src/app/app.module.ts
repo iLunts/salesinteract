@@ -30,6 +30,8 @@ import { CallBackLaterComponent } from './components/new-task-tab/call-back-late
 import { ChooseExistingComponent } from './components/new-task-tab/send-information/choose-existing/choose-existing.component';
 import { UploadNewFileComponent } from './components/new-task-tab/send-information/upload-new-file/upload-new-file.component';
 import { QuotationComponent } from './components/new-task-tab/send-information/quotation/quotation.component';
+import { DashboardPageComponent } from './pages/dashboard-page/dashboard-page.component';
+import { FullCalendarModule } from 'ng-fullcalendar';
 
 @NgModule({
   declarations: [
@@ -57,7 +59,8 @@ import { QuotationComponent } from './components/new-task-tab/send-information/q
     CallBackLaterComponent,
     ChooseExistingComponent,
     UploadNewFileComponent,
-    QuotationComponent
+    QuotationComponent,
+    DashboardPageComponent
   ],
   imports: [
     BrowserModule,
@@ -66,6 +69,7 @@ import { QuotationComponent } from './components/new-task-tab/send-information/q
     PaginationModule.forRoot(),
     ButtonsModule.forRoot(),
     ModalModule.forRoot(),
+    FullCalendarModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
