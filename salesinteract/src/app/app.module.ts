@@ -9,7 +9,7 @@ import { RoutingModule } from './routing.module';
 import { ContactListPageComponent } from './pages/contact-list-page/contact-list-page.component';
 
 // Bootstrap
-import { TabsModule, PaginationModule, ButtonsModule, ModalModule, PopoverModule } from 'ngx-bootstrap';
+import { TabsModule, PaginationModule, ButtonsModule, ModalModule, PopoverModule, CollapseModule } from 'ngx-bootstrap';
 import { TaskItemComponent } from './ui/task-item/task-item.component';
 import { ContactInformationComponent } from './ui/contact-information/contact-information.component';
 import { ManagerInformationComponent } from './ui/manager-information/manager-information.component';
@@ -35,6 +35,7 @@ import { FullCalendarModule } from 'ng-fullcalendar';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgxChartsModule } from '@swimlane/ngx-charts';
 import { EventSesrvice } from './services/event.service';
+import { StatisticsPageComponent } from './pages/statistics-page/statistics-page.component';
 
 @NgModule({
   declarations: [
@@ -63,7 +64,8 @@ import { EventSesrvice } from './services/event.service';
     ChooseExistingComponent,
     UploadNewFileComponent,
     QuotationComponent,
-    DashboardPageComponent
+    DashboardPageComponent,
+    StatisticsPageComponent
   ],
   imports: [
     BrowserModule,
@@ -73,6 +75,7 @@ import { EventSesrvice } from './services/event.service';
     ButtonsModule.forRoot(),
     ModalModule.forRoot(),
     PopoverModule.forRoot(),
+    CollapseModule.forRoot(),
     FullCalendarModule,
     NgxChartsModule,
     BrowserAnimationsModule

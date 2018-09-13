@@ -45,18 +45,51 @@
 .aside .aside__menu {
   padding: 30px 0;
 }
+.aside .aside__item .aside__menu {
+  padding: 0;
+}
+.aside .aside__item .aside__menu .aside__link {
+  padding-left: 50px;
+}
+.aside .aside__item .aside__menu .aside__link:before {
+  content: '';
+  position: absolute;
+  left: 25px;
+  top: 50%;
+  display: block;
+  width: 6px;
+  height: 6px;
+  margin-top: -3px;
+  border-radius: 100%;
+  border: 2px solid #A5C1D4;
+  transition: all .3s;
+}
+.aside .aside__item .aside__menu .aside__link.active:before {
+  border-color: #2EAEFE;
+}
 .aside .aside__link {
+  position: relative;
   display: block;
   display: flex;
+  width: 100%;
   align-items: center;
   text-decoration: none;
   color: #252841;
-  outline: none;
-  box-shadow: none;
   font-weight: 600;
   padding: 15px 20px;
+  border: none;
   border-left: 3px solid transparent;
+  box-shadow: none;
+  outline: none;
   transition: all .3s;
+}
+.aside .aside__link.aside__link--collapse {
+  padding-right: 0;
+  justify-content: space-between;
+}
+.aside .aside__link.aside__link--collapse .aside__link-icon.aside__link-icon--arrow {
+  font-size: 12px;
+  line-height: 18px;
 }
 .aside .aside__link.active {
   color: #2EAEFE;

@@ -11,14 +11,42 @@
         </div>
         <ul class="aside__menu">
             <li class="aside__item">
+                <button type="button" class="aside__link aside__link--collapse" (click)="isCollapsed = !isCollapsed"
+                        [attr.aria-expanded]="!isCollapsed" aria-controls="collapseBasic">
+                        <span>
+                            <i class="aside__link-icon icon-dashboard"></i>
+                            Dashboard
+                        </span>
+                        <i class="aside__link-icon aside__link-icon--arrow icon-arrow-down-fill"></i>
+                </button>
+
+                <ul class="aside__menu" [collapse]="!isCollapsed">
+                    <li class="aside__item">
+                        <a [routerLink]="['dashboard']" routerLinkActive="active" class="aside__link">
+                            Main dashboard
+                        </a>
+                    </li>
+                    <li class="aside__item">
+                        <a [routerLink]="['statistics']" routerLinkActive="active" class="aside__link">
+                            Statistics
+                        </a>
+                    </li>
+                    <li class="aside__item">
+                        <a [routerLink]="['overviews']" routerLinkActive="active" class="aside__link">
+                            Quick overviews
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <!-- <li class="aside__item">
                 <a [routerLink]="['dashboard']" routerLinkActive="active" class="aside__link">
                     <i class="aside__link-icon icon-dashboard"></i>
                     Dashboard
                 </a>
-            </li>
+            </li> -->
             <li class="aside__item">
                 <a [routerLink]="['crm']" class="aside__link" routerLinkActive="active">
-                    <i class="aside__link-icon icon-dashboard"></i>
+                    <i class="aside__link-icon icon-crm"></i>
                     CRM
                 </a>
             </li>
