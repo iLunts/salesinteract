@@ -1,0 +1,149 @@
+// out: ../../css/components/calendar.css, compress: true
+@import '../variables.less';
+
+// ---------------------------------------------
+// Block '.calendar'
+// ---------------------------------------------
+.calendar{
+    position: relative;
+
+    .fc-toolbar{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        h2{
+            color: #333;
+            font-weight: 300;
+        }
+
+        .fc-right,
+        .fc-left,
+        .fc-center{
+            float: none;
+        }
+
+        .fc-clear{
+            display: none;
+        }
+
+        .fc-button{
+            border: none;
+            background: #e8f1f5;
+            box-shadow: none;
+            font-weight: 500;
+            text-shadow: none;
+            outline: none;
+            box-shadow: none;
+            
+            visibility: visible;
+            opacity: 1;
+
+            transition: all .4s;
+
+            &:disabled{
+                visibility: hidden;
+                opacity: 0;
+            }
+
+        }
+
+        button{
+
+            .fc-icon{
+                color: #666;
+                text-shadow: none;
+                font-size: 10px;
+            }
+        }
+    }
+
+    .fc-day-header,
+    .fc-row,
+    .fc-head-container,
+    .fc-body,
+    .fc-widget-content{
+        border-color: transparent;
+    }
+
+    .fc-head-container{
+        border-bottom: 1px solid #ddd;
+    }
+
+    .fc-day{
+        border-radius: 4px;
+    }
+    
+    .fc-day-number{
+        font-weight: 500;
+    }
+
+    .fc-basic-view .fc-day-number, 
+    .fc-basic-view .fc-week-number{
+        padding: 0;
+        border-radius: 100%;
+        background-color: #f5f5f5;
+        width: 25px;
+        height: 25px;
+        line-height: 25px;
+        text-align: center;
+        display: inline-block;
+    }
+
+    .fc-row .fc-content-skeleton{
+
+
+
+        .fc-day-top{
+            text-align: center;
+
+            &.fc-today{
+                .fc-day-number{
+                    background: @color-blue;
+                    color: #fff;
+                    box-shadow: 0 2px 10px rgba(46, 174, 254, .5);
+                }
+            }
+
+            .fc-day-number{
+                float: none;
+                font-size: .8rem;
+                margin-top: 6px;
+            }
+        }
+    }
+
+    td.fc-today{
+        background-color: transparent;
+    }
+
+    .fc-event-container{
+        text-align: center;
+
+        .fc-day-grid-event{
+            display: inline-block;
+            width: 6px;
+            height: 6px;
+            margin: 0;
+            padding: 0;
+            font-size: 0;
+            border-radius: 100%;
+            background-color: @color-red;
+            border: none;
+            outline: none;
+            box-shadow: none;
+            box-shadow: none;
+        }
+    }
+}
+
+
+// ---------------------------------------------------------------------------
+// size: xSmall
+// ----------------------------------------------------------------------------
+@media only screen and (max-width: @breakpoint-xs-max) and (min-width: @breakpoint-xs-min) {
+
+
+
+}
+

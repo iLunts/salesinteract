@@ -23,3 +23,96 @@ export class ProductItem{
     color: string;
     status: number;
 }
+
+export var contacten = [
+    {
+        "name": "Suspects",
+        "value": 14
+    },
+    {
+        "name": "Prospects",
+        "value": 9
+    },
+    {
+        "name": "Customers",
+        "value": 3
+    }
+];
+
+export var afgeronde = [
+    {
+        "name": "Informatie verstuurd",
+        "value": 22
+    },
+    {
+        "name": "Offerte verstuurd",
+        "value": 9
+    },
+    {
+        "name": "Offerte",
+        "value": 23
+    },
+    {
+        "name": "Was niet bereikbaar",
+        "value": 2
+    },
+];
+
+export var single = [
+    {
+        "name": "Germany",
+        "value": 8940000
+    },
+    {
+        "name": "USA",
+        "value": 5000000
+    },
+    {
+        "name": "France",
+        "value": 7200000
+    }
+];
+
+export var multi = [
+    {
+        "name": "Germany",
+        "series": [
+            {
+                "name": "2010",
+                "value": 7300000
+            },
+            {
+                "name": "2011",
+                "value": 8940000
+            }
+        ]
+    },
+
+    {
+        "name": "USA",
+        "series": [
+            {
+                "name": "2010",
+                "value": 7870000
+            },
+            {
+                "name": "2011",
+                "value": 8270000
+            }
+        ]
+    },
+
+    {
+        "name": "France",
+        "series": [
+            {
+                "name": "2010",
+                "value": 5000002
+            },
+            {
+                "name": "2011",
+                "value": 5800000
+            }
+        ]
+    }
+];

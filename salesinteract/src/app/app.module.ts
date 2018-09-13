@@ -9,7 +9,7 @@ import { RoutingModule } from './routing.module';
 import { ContactListPageComponent } from './pages/contact-list-page/contact-list-page.component';
 
 // Bootstrap
-import { TabsModule, PaginationModule, ButtonsModule, ModalModule } from 'ngx-bootstrap';
+import { TabsModule, PaginationModule, ButtonsModule, ModalModule, PopoverModule } from 'ngx-bootstrap';
 import { TaskItemComponent } from './ui/task-item/task-item.component';
 import { ContactInformationComponent } from './ui/contact-information/contact-information.component';
 import { ManagerInformationComponent } from './ui/manager-information/manager-information.component';
@@ -32,6 +32,9 @@ import { UploadNewFileComponent } from './components/new-task-tab/send-informati
 import { QuotationComponent } from './components/new-task-tab/send-information/quotation/quotation.component';
 import { DashboardPageComponent } from './pages/dashboard-page/dashboard-page.component';
 import { FullCalendarModule } from 'ng-fullcalendar';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NgxChartsModule } from '@swimlane/ngx-charts';
+import { EventSesrvice } from './services/event.service';
 
 @NgModule({
   declarations: [
@@ -69,9 +72,12 @@ import { FullCalendarModule } from 'ng-fullcalendar';
     PaginationModule.forRoot(),
     ButtonsModule.forRoot(),
     ModalModule.forRoot(),
+    PopoverModule.forRoot(),
     FullCalendarModule,
+    NgxChartsModule,
+    BrowserAnimationsModule
   ],
-  providers: [],
+  providers: [EventSesrvice],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
