@@ -39,6 +39,49 @@ export var contacten = [
     }
 ];
 
+export var stat1 = [
+    {
+        "name": "Suspects",
+        "value": 27
+    },
+    {
+        "name": "Prospects",
+        "value": 19
+    },
+    {
+        "name": "Customers",
+        "value": 13
+    }
+];
+export var stat2 = [
+    {
+        "name": "Suspects",
+        "value": 22
+    },
+    {
+        "name": "Prospects",
+        "value": 12
+    },
+    {
+        "name": "Customers",
+        "value": 7
+    }
+];
+export var stat3 = [
+    {
+        "name": "Suspects",
+        "value": 14
+    },
+    {
+        "name": "Prospects",
+        "value": 9
+    },
+    {
+        "name": "Customers",
+        "value": 3
+    }
+];
+
 export var afgeronde = [
     {
         "name": "Informatie verstuurd",

@@ -1,26 +1,297 @@
 <div class="container-fluid">
 
 	<div class="row">
-		<div class="col-lg-12">
+		<div class="col-lg-12 col-xs-12">
 			<section class="header">
 
 				<div class="header__left">
-				<div class="header__icon">
-					<i class="header__icon-icon icon-chart"></i>
-				</div>
-				<div>
-					<p class="header__title">Statistics page</p>
-					<ul class="header__breadcrumbs">
-					<li class="header__breadcrumbs-item">
-						<span href="" class="header__breadcrumbs-span">
-						Home page
-						</span>
-					</li>
-					</ul>
-				</div>
+					<div class="header__icon">
+						<i class="header__icon-icon icon-chart"></i>
+					</div>
+					<div>
+						<p class="header__title">Statistics page</p>
+						<ul class="header__breadcrumbs">
+							<li class="header__breadcrumbs-item">
+								<span href="" class="header__breadcrumbs-span">
+									Home page
+								</span>
+							</li>
+						</ul>
+					</div>
 				</div>
 
 			</section>
+		</div>
+	</div>
+
+	<div class="row">	
+		<div class="col-lg-12 col-xs-12">
+			<div class="panel">
+				<div class="panel__header">
+					<p class="panel__header-title">
+						Compare you team
+					</p>
+					
+					<span class="btn btn--circle btn--ssm btn--gray m--l"
+							popover="Vivamus sagittis lacus vel augue laoreet rutrum faucibus."
+							triggers="mouseenter:mouseleave"
+							container="body"
+							placement="auto">
+						<i class="btn__icon icon-question"></i>
+					</span>
+				</div>
+				<div class="panel__body">
+
+					<div class="row">
+						<div class="col-lg-4 col-sm-12 col-xs-12">
+							<div class="flex flex--middle">
+								<img class="avatar avatar--sm m--r-sm" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSqz278M8YGJUktDKHCgvDRY9v4VBtNah51s2tWSxg59QgwhGFz" alt="">
+								<p class="t--semi-bold m--reset">Coen van der Kolk</p>
+							</div>
+							<div>
+								<ngx-charts-advanced-pie-chart
+									[view]="view"
+									[scheme]="colorSchemeCircle"
+									[results]="stat1"
+									[gradient]="false"
+									(select)="onSelect($event)"
+									>
+								</ngx-charts-advanced-pie-chart>
+							</div>
+						</div>
+						<div class="col-lg-4 col-sm-12 col-xs-12">
+							<div class="flex flex--middle">
+								<img class="avatar avatar--sm m--r-sm" src="https://media.licdn.com/mpr/mpr/gcrc/dms/image/C5612AQERGOc2jrBmOQ/article-cover_image-shrink_600_2000/0?e=1542240000&v=beta&t=viWYZsCOPqIKp4Gl9UFuT-47Q-QOjFdPaAU40p_kSrI" alt="">
+								<p class="t--semi-bold m--reset">Bevan Aneurin</p>
+							</div>
+							<div>
+								<ngx-charts-advanced-pie-chart
+									[view]="view"
+									[scheme]="colorSchemeCircle"
+									[results]="stat2"
+									[gradient]="false"
+									(select)="onSelect($event)"
+									>
+								</ngx-charts-advanced-pie-chart>
+							</div>
+						</div>
+						<div class="col-lg-4 col-sm-12 col-xs-12">
+							<div class="flex flex--middle">
+								<img class="avatar avatar--sm m--r-sm" src="http://cdn.redalertpolitics.com/files/2012/08/Justin-Amash.jpg" alt="">
+								<p class="t--semi-bold m--reset">Burton Sir Richard Francis</p>
+							</div>
+
+							<div>
+								<ngx-charts-advanced-pie-chart
+									[view]="view"
+									[scheme]="colorSchemeCircle"
+									[results]="stat3"
+									[gradient]="false"
+									(select)="onSelect($event)"
+									>
+								</ngx-charts-advanced-pie-chart>
+							</div>
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</div>
+
+	
+	<div class="row flex flex--stretch flex-xs--wrap">
+		<div class="col-lg-3 col-sm-12 col-xs-12 flex">
+			<div class="panel">
+				<div class="panel__header">
+					<p class="panel__header-title t--green">
+						<span class="badge badge--circle badge--green badge--mini m--r-mini"></span>
+						Top seller
+					</p>
+				</div>
+				<div class="panel__body">
+					<app-empty></app-empty>
+				</div>
+			</div>
+		</div>
+		<div class="col-lg-3 col-sm-12 col-xs-12 flex">
+			<div class="panel">
+				<div class="panel__header">
+					<p class="panel__header-title t--green">
+						<span class="badge badge--circle badge--green badge--mini m--r-mini"></span>
+						Most active
+					</p>
+				</div>
+				<div class="panel__body">
+					<ul class="list list--v list--line">
+						<li class="list__item">
+							<div class="flex flex--middle">
+								<span class="badge badge--gold m--r-sm">#1</span>
+								<img class="avatar avatar--md m--r" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSqz278M8YGJUktDKHCgvDRY9v4VBtNah51s2tWSxg59QgwhGFz" alt="">
+								<div>
+									<p class="t--h5 t--semi-bold">Coen van der Kolk</p>
+									<span class="badge badge--green">5 - Completed tasks</span>
+								</div>
+							</div>
+						</li>
+						<li class="list__item">
+							<div class="flex flex--middle">
+								<span class="badge badge--silver m--r-sm">#2</span>
+								<img class="avatar avatar--md m--r" src="https://media.licdn.com/mpr/mpr/gcrc/dms/image/C5612AQERGOc2jrBmOQ/article-cover_image-shrink_600_2000/0?e=1542240000&v=beta&t=viWYZsCOPqIKp4Gl9UFuT-47Q-QOjFdPaAU40p_kSrI" alt="">
+								<div>
+									<p class="t--h5 t--semi-bold">Bevan Aneurin</p>
+									<span class="badge badge--green">3 - Completed tasks</span>
+								</div>
+							</div>
+						</li>
+						<li class="list__item">
+							<div class="flex flex--middle">
+								<span class="badge badge--bronze m--r-sm">#3</span>
+								<img class="avatar avatar--md m--r" src="http://cdn.redalertpolitics.com/files/2012/08/Justin-Amash.jpg" alt="">
+								<div>
+									<p class="t--h5 t--semi-bold">Burton Sir Richard Francis</p>
+									<span class="badge badge--green">2 - Completed tasks</span>
+								</div>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="col-lg-3 col-sm-12 col-xs-12 flex">
+			<div class="panel">
+				<div class="panel__header">
+					<p class="panel__header-title t--red">
+						<span class="badge badge--circle badge--red badge--mini m--r-mini"></span>
+						Requires attention
+					</p>
+				</div>
+				<div class="panel__body">
+					<app-empty></app-empty>					
+				</div>
+			</div>
+		</div>
+		<div class="col-lg-3 col-sm-12 col-xs-12 flex">
+			<div class="panel">
+				<div class="panel__header">
+					<p class="panel__header-title t--red">
+						<span class="badge badge--circle badge--red badge--mini m--r-mini"></span>
+						Most expired tasks
+					</p>
+				</div>
+				<div class="panel__body">
+					<ul class="list list--v list--line">
+						<li class="list__item">
+							<div class="flex flex--middle">
+								<img class="avatar avatar--md m--r" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSqz278M8YGJUktDKHCgvDRY9v4VBtNah51s2tWSxg59QgwhGFz" alt="">
+								<div>
+									<p class="t--h5 t--semi-bold">Coen van der Kolk</p>
+									<span class="badge badge--red">2 - Expired tasks</span>
+								</div>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="row flex flex--stretch flex-xs--wrap">
+		<div class="col-lg-4 col-sm-12 col-xs-12 flex">
+			<div class="panel">
+				<div class="panel__header">
+					<p class="panel__header-title t--green">
+						<span class="badge badge--circle badge--green badge--mini m--r-mini"></span>
+						Most outstanding offers
+					</p>
+				</div>
+				<div class="panel__body">
+					<app-empty></app-empty>					
+				</div>
+			</div>
+		</div>
+		<div class="col-lg-4 col-sm-12 col-xs-12 flex">
+			<div class="panel panel--yellow">
+				<div class="panel__header">
+					<p class="panel__header-title">
+						General statistics
+					</p>
+				</div>
+				<div class="panel__body">
+					<!-- <app-empty></app-empty>-->
+					
+					<div class="p--h-xlg p-xs--h m--t-lg">
+						<p class="t--regular t--gray m--reset">Omzet</p>
+						<p class="t--green t--h2 t--semi-bold m--b">€ 23 983,30</p>
+					</div>
+
+					<div class="m--b">
+						<hr>
+						
+						<p class="t--md t--regular m--reset">Outstanding offers</p>
+						<p class="t--semi-bold m--reset">€ 0.00</p>
+					</div>
+
+					<div class="row">
+						<div class="col-xs-4">
+							<div class="box box--gray t--c">
+								<p class="t--semi-bold m--reset t--blue">16</p>
+								<p class="t--md t--gray t--regular m--reset">Suspects</p>
+							</div>
+						</div>
+						<div class="col-xs-4">
+							<div class="box box--gray t--c">
+								<p class="t--semi-bold m--reset t--blue">6</p>
+								<p class="t--md t--gray t--regular m--reset">Prospects</p>
+							</div>
+						</div>
+						<div class="col-xs-4">
+							<div class="box box--gray t--c">
+								<p class="t--semi-bold m--reset t--blue">1</p>
+								<p class="t--md t--gray t--regular m--reset">Customer</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-lg-4 col-sm-12 col-xs-12 flex">
+			<div class="panel">
+				<div class="panel__header">
+					<p class="panel__header-title t--green">
+						<span class="badge badge--circle badge--green badge--mini m--r-mini"></span>
+						Best viewed files
+					</p>
+				</div>
+				<div class="panel__body">
+					<ul class="file-list m--b">
+						<li class="file-list__item">
+							<div class="flex flex--middle">
+								<img class="file-list__img" src="https://media-cdn.tripadvisor.com/media/photo-s/05/de/d1/83/vvf-villages-rochefort.jpg" alt="">
+								<div class="file-list__text">
+									<p class="file-list__text-name">But also the leap into electronic typesetting.png</p>
+									<p class="file-list__text-size">Size: 1200px - 600px ( 2 mb. )</p>
+								</div>
+							</div>
+							<button class="btn btn--square btn--sm btn--green">
+								43
+							</button>
+						</li>
+						<li class="file-list__item">
+							<div class="flex flex--middle">
+								<img class="file-list__img" src="https://media-cdn.tripadvisor.com/media/photo-s/05/de/d1/83/vvf-villages-rochefort.jpg" alt="">
+								<div class="file-list__text">
+									<p class="file-list__text-name">But also the leap into electronic typesetting.png</p>
+									<p class="file-list__text-size">Size: 1200px - 600px ( 2 mb. )</p>
+								</div>
+							</div>
+							<button class="btn btn--square btn--sm btn--green">
+								12
+							</button>
+						</li>
+					</ul>
+				</div>
+			</div>
 		</div>
 	</div>
 </div>

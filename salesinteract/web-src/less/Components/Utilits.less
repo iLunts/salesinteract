@@ -629,6 +629,46 @@ svg [STROKE*='#']{
         }
     }
 
+    // ------------------------------------------------
+    // Block '.p-xs' ~ padding
+    // ------------------------------------------------
+    .p-xs{
+
+        &--h{
+            padding: 0 @margin-padding !important;
+        
+            // Vertical large
+            &-xlg{
+                padding: 0 (@margin-padding * 4) !important;
+            }
+            &-lg{
+                padding: 0 (@margin-padding * 2) !important;
+            }
+            &-md{
+                padding: 0 (@margin-padding * 1.5) !important;
+            }
+            &-sm{
+                padding: 0 (@margin-padding / 2) !important;
+            }
+            &-mini{
+                padding: 0 (@margin-padding / 4) !important;
+            }
+        }
+
+        // Modificator 'p-xs--t'
+        &--t{
+
+            &-reset{
+                padding-top: 0 !important; 
+            }
+        }
+
+        // Modificator 'p-xs--reset'
+        &--reset{
+            padding: 0 !important;
+        }
+    }
+
 
 }
 

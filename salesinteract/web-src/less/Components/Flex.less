@@ -41,6 +41,10 @@
         align-items: flex-end;
     }
 
+    &&--stretch { 
+        align-items: stretch; 
+    }
+
     &&--left { 
         justify-content: flex-start; 
     }
@@ -102,7 +106,6 @@
 
 .flex > *,
 .flex--inline > * { -ms-flex-negative: 1; }
-
 
 /* Wrap
  ========================================================================== */
@@ -188,30 +191,29 @@
 /* Phone landscape and bigger */
 @media (min-width: @breakpoint-sm-min) {
 
-    .flex--order-first-small {
+    .flex-sm--order-first {
         -ms-flex-order: -1;
         -webkit-order: -1;
         order: -1;
     }
 
-    .flex--order-last-small {
+    .flex-sm--order-last {
         -ms-flex-order: 99;
         -webkit-order: 99;
         order: 99;
     }
-
 }
 
 /* Tablet and bigger */
 @media (min-width: @breakpoint-md-min) {
 
-    .flex--order-first-medium {
+    .flex-md--order-first {
         -ms-flex-order: -1;
         -webkit-order: -1;
         order: -1;
     }
 
-    .flex--order-last-medium {
+    .flex-md--order-last {
         -ms-flex-order: 99;
         -webkit-order: 99;
         order: 99;
@@ -222,13 +224,13 @@
 /* Desktop and bigger */
 @media (min-width: @breakpoint-lg-min) {
 
-    .flex--order-first-large {
+    .flex-lg--order-first {
         -ms-flex-order: -1;
         -webkit-order: -1;
         order: -1;
     }
 
-    .flex--order-last-large {
+    .flex-lg--order-last {
         -ms-flex-order: 99;
         -webkit-order: 99;
         order: 99;
@@ -239,13 +241,13 @@
 /* Large screen and bigger */
 @media (min-width: @breakpoint-xlg-min) {
 
-    .flex--order-first-xlarge {
+    .flex-xlg--order-first {
         -ms-flex-order: -1;
         -webkit-order: -1;
         order: -1;
     }
 
-    .flex--order-last-xlarge {
+    .flex-xlg--order-last {
         -ms-flex-order: 99;
         -webkit-order: 99;
         order: 99;
@@ -258,11 +260,14 @@
 // ---------------------------------------------------------------------------
 @media only screen and (max-width: @breakpoint-xs-max) and (min-width: @breakpoint-xs-min) {
 
-    .flex{
+    .flex-xs{
 
+        &--wrap{
+            flex-wrap: wrap;
+        }
 
         //Modificator '.flex.flex--wrap-xs'
-        &&--wrap-xs{
+        &&--wrap{
             flex-wrap: wrap;
         }
     }

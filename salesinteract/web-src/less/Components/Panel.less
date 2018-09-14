@@ -50,6 +50,45 @@
             padding: (@panel-padding / 2);
         }
     }
+
+    // Modificator '.panel.panel--yellow'
+    &&--yellow{
+        position: relative;
+        overflow: hidden;
+
+        &:before{
+            content: '';
+            position: absolute;
+            top: -20px;
+            right: -20px;
+            display: block;
+            width: 100px;
+            height: 100px;
+            border-radius: 100%;
+            
+            /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffa662+0,fe7c25+100 */
+            background: #ffa662; /* Old browsers */
+            background: -moz-linear-gradient(top, #ffa662 0%, #fe7c25 100%); /* FF3.6-15 */
+            background: -webkit-linear-gradient(top, #ffa662 0%,#fe7c25 100%); /* Chrome10-25,Safari5.1-6 */
+            background: linear-gradient(to bottom, #ffa662 0%,#fe7c25 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffa662', endColorstr='#fe7c25',GradientType=0 ); /* IE6-9 */
+        }
+
+        &:after{
+            content: '\e92c';
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            font-size: 2.5rem;
+            font-family: @font-family-icon;
+            color: #fff;
+        }
+
+        // Modificator '.panel.panel--sm .panel__body'
+        .panel__body{
+            padding: (@panel-padding / 2);
+        }
+    }
     
     // -----------------------------------
     // All elements
@@ -199,6 +238,7 @@
     // Element '.panel .panel__body'
     & &__body{
         padding: @panel-padding;
+        overflow: hidden;
 
         .panel__group,
         .panel__body{
@@ -299,5 +339,8 @@
 
     .panel{
 
+        & &__header{
+            flex-wrap: wrap;
+        }
     }
 }

@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./aside.component.less']
 })
 export class AsideComponent implements OnInit {
+  isCollapsed: boolean = false;
 
   constructor() { }
 

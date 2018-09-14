@@ -6,7 +6,7 @@
 // Block 'badge'
 // ------------------------------------------------------------------------
 .badge {
-    display: inline-block;
+    display: inline-block !important;
     padding: 2px @badge-padding-horizontal;
     background: @badge-background;
     font-size: @badge-font-size;
@@ -55,6 +55,24 @@
     }
 
 
+
+    // Modificator '.badge.badge--gold'
+    &&--gold {
+        background-color: #ffc107;
+        color: #966505;
+    }
+
+    // Modificator '.badge.badge--silver'
+    &&--silver {
+        background-color: #b7b7b7;
+        color: #565656;
+    }
+    
+    // Modificator '.badge.badge--bronze'
+    &&--bronze {
+        background-color: #a17419;
+        color: #e4d0a6;
+    }
 
     // Modificator '.badge.badge--green'
     &&--green {

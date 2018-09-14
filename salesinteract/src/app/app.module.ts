@@ -36,6 +36,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgxChartsModule } from '@swimlane/ngx-charts';
 import { EventSesrvice } from './services/event.service';
 import { StatisticsPageComponent } from './pages/statistics-page/statistics-page.component';
+import { EmptyComponent } from './ui/empty/empty.component';
 
 @NgModule({
   declarations: [
@@ -65,7 +66,8 @@ import { StatisticsPageComponent } from './pages/statistics-page/statistics-page
     UploadNewFileComponent,
     QuotationComponent,
     DashboardPageComponent,
-    StatisticsPageComponent
+    StatisticsPageComponent,
+    EmptyComponent,
   ],
   imports: [
     BrowserModule,
