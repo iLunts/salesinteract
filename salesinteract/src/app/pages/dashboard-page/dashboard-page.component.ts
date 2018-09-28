@@ -18,6 +18,7 @@ export class DashboardPageComponent implements OnInit {
   multi: any[];
 
   view: any[] = [200, 150];
+  viewCompleteTask: any[] = [500, 250];
   viewCircle: any[] = [150, 150];
 
   // Charts options

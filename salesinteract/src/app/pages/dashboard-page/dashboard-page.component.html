@@ -25,6 +25,14 @@
 					</div>
 				</div>
 
+				<button class="btn btn--blue btn--new" (click)="openSidebar()">
+					<i class="btn__icon icon-new-plus"></i>
+					<span class="btn__text">
+						<span class="btn__text-text">Create new company</span>
+						<span class="btn__text-text btn__text-text--second">Click to create new company</span>
+					</span>
+				</button>
+
 			</section>
 		</div>
 	</div>
@@ -49,39 +57,53 @@
 						<span class="badge badge--yellow">Expired tasks: 12</span>
 					</div>
 
-					<span class="btn btn--circle btn--ssm btn--gray m--l"
-							popover="Vivamus sagittis lacus vel augue laoreet rutrum faucibus."
-							triggers="mouseenter:mouseleave"
-							container="body"
-							placement="auto">
-						<i class="btn__icon icon-question"></i>
-					</span>
+					<div>
+						<button class="btn btn--squared btn--gray btn--ssm" 
+								(click)="isCollapsedTopBar = !isCollapsedTopBar"
+								[attr.aria-expanded]="!isCollapsedTopBar" 
+								aria-controls="collapseBasic">
+							<i class="btn__icon" [ngClass]="{'icon-arrow-down-fill': isCollapsedTopBar, 'icon-arrow-up-fill': !isCollapsedTopBar}"></i>
+						</button>
+						<span class="btn btn--circle btn--ssm btn--gray m--l"
+								popover="Vivamus sagittis lacus vel augue laoreet rutrum faucibus."
+								triggers="mouseenter:mouseleave"
+								container="body"
+								placement="auto">
+							<i class="btn__icon icon-question"></i>
+						</span>
+					</div>
 				</div>
-				<div class="panel__body">
+				<div class="panel__body" [collapse]="isCollapsedTopBar">
 
 					<div class="row">
 						<div class="col-lg-3">
-							<p class="t--semi-bold">Taak geschiedenis</p>
+							<p class="t--semi-bold">Task history</p>
 
 							<ul class="account-list list list--v list--line">
 								<li class="account-list__item list__item" *ngFor="let item of taskHistoryList">
 									<div class="account-list__content flex flex--middle">
-										<img class="account-list__avatar" [src]="item.image" alt="">
-										<a href="" class="account-list__name">Coen van der Kolk</a>
+										<img class="account-list__avatar avatar" [src]="item.image" alt="">
+										<div>
+											<a href="" class="account-list__name">Coen van der Kolk</a>
+											<p class="account-list__company">Company</p>
+										</div>
 									</div>
-									<p class="t--md t--regular m--reset t--red">{{item.date}}</p>
+									<div class="t--r">
+										<span class="badge badge--gray">Close</span>
+										<p class="t--md t--regular m--t-mini t--red">{{item.date}}</p>
+									</div>
 								</li>
 							</ul>
 
 							<p class="m--reset t--c">
-								<a href="" class="btn btn--gray btn--ssm">Show more</a>
+								<a href="" class="btn btn--gray btn--ssm col-lg-12">Show more</a>
 							</p>
-
 						</div>
+
 						<div class="col-lg-2">
 							<p class="t--semi-bold">Contacten</p>
 
-							<div>
+							<!-- <div>
 								<ngx-charts-bar-vertical
 									[view]="view"
 									[scheme]="colorSchemeCircle"
@@ -96,28 +118,59 @@
 									[yAxisLabel]="false"
 									(select)="onSelect($event)">
 								</ngx-charts-bar-vertical>
-							</div>
+							</div> -->
 						</div>
-						<div class="col-lg-3">
-							<p class="t--semi-bold">Afgeronde taken</p>
+
+						<div class="col-lg-4">
+							<p class="t--semi-bold">Complete tasks</p>
 
 							<div>
-								<ngx-charts-pie-chart
+								<!-- <ngx-charts-bar-vertical-stacked
 									[view]="viewCircle"
 									[scheme]="colorSchemeCircle"
 									[results]="afgeronde"
-									[gradient]="false"
 									[legend]="false"
-									[labels]="false"
-									[doughnut]="true"
-									[arcWidth]="0.5"
-									[trimLabels]="true"
 									>
-								</ngx-charts-pie-chart>
+								</ngx-charts-bar-vertical-stacked> -->
+
+								<ngx-charts-bar-vertical-stacked
+									[view]="viewCompleteTask"
+									[scheme]="colorScheme"
+									[results]="multi"
+									[gradient]="false"
+									[xAxis]="true"
+									[yAxis]="showYAxis"
+									[legend]="true"
+									[showXAxisLabel]="true"
+									[showYAxisLabel]="true"
+									[xAxisLabel]="true"
+									[yAxisLabel]="true">
+								</ngx-charts-bar-vertical-stacked>
 							</div>
 						</div>
-						<div class="col-lg-4">
-							<p class="t--semi-bold">Openstaande offertes</p>
+
+						<div class="col-lg-3">
+							<p class="t--semi-bold">Open offers</p>
+
+							<ul class="account-list list list--v list--line">
+								<li class="account-list__item list__item" *ngFor="let item of taskHistoryList">
+									<div class="account-list__content flex flex--middle">
+										<span class="badge badge--green m--r-sm">1</span>
+										<div>
+											<a href="" class="account-list__name">Bill Gates</a>
+											<p class="account-list__company">Presentation offer</p>
+										</div>
+									</div>
+									<div class="t--r">
+										<span class="badge badge--red">Expired</span>
+										<p class="t--md t--regular m--t-mini t--red">{{item.date}}</p>
+									</div>
+								</li>
+							</ul>
+
+							<!-- <p class="m--reset t--c">
+								<a href="" class="btn btn--gray btn--ssm col-lg-12">Show more</a>
+							</p> -->
 						</div>
 					</div>
 
@@ -136,18 +189,13 @@
 						Tasks
 					</p>
 					<div>
-						<button class="btn btn--blue btn--sm">
-							<i class="btn__icon icon-plus"></i>
-							<span>Add new company</span>
-						</button>
-
 						<span class="btn btn--circle btn--ssm btn--gray m--l"
 								popover="Vivamus sagittis lacus vel augue laoreet rutrum faucibus."
 								triggers="mouseenter:mouseleave"
 								container="body"
 								placement="auto">
-								<i class="btn__icon icon-question"></i>
-							</span>
+							<i class="btn__icon icon-question"></i>
+						</span>
 					</div>
 				</div>
 				<div class="panel__body">
@@ -158,11 +206,11 @@
 					<ul class="account-list list list--v list--line">
 						<li class="account-list__item list__item" *ngFor="let item of taskHistoryLateList">
 							<div class="account-list__content flex flex--middle col-lg-3">
-								<img class="account-list__avatar" [src]="item.image" alt="">
+								<img class="avatar m--r-sm" [src]="item.image" alt="">
 								<a href="" class="account-list__name">{{item.name}}</a>
 							</div>
 							<div class="account-list__content flex flex--middle col-lg-3">
-								<img class="account-list__avatar" [src]="item.image" alt="">
+								<img class="avatar m--r-sm" [src]="item.image" alt="">
 								<a href="" class="account-list__name">{{item.contactName}}</a>
 							</div>
 							<span class="col-lg-2">
@@ -182,11 +230,11 @@
 					<ul class="account-list list list--v list--line">
 						<li class="account-list__item list__item" *ngFor="let item of taskHistoryLateList">
 							<div class="account-list__content flex flex--middle col-lg-3">
-								<img class="account-list__avatar" [src]="item.image" alt="">
+								<img class="avatar m--r-sm" [src]="item.image" alt="">
 								<a href="" class="account-list__name">{{item.name}}</a>
 							</div>
 							<div class="account-list__content flex flex--middle col-lg-3">
-								<img class="account-list__avatar" [src]="item.image" alt="">
+								<img class="avatar m--r-sm" [src]="item.image" alt="">
 								<a href="" class="account-list__name">{{item.contactName}}</a>
 							</div>
 							<span class="col-lg-2">

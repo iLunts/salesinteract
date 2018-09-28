@@ -139,6 +139,12 @@ button{
             width: 25px;
             height: 25px;
         }
+        
+        // Modificator '.btn.btn--ssm.btn--squared'
+        &.btn--squared{
+            width: 25px;
+            height: 25px;
+        }
     }
     
     // Modificator '.btn.btn--sm'
@@ -150,6 +156,12 @@ button{
         
         // Modificator '.btn.btn--sm.btn--circle'
         &.btn--circle{
+            width: @btn-height-sm;
+            height: @btn-height-sm;
+        }
+        
+        // Modificator '.btn.btn--sm.btn--squared'
+        &.btn--squared{
             width: @btn-height-sm;
             height: @btn-height-sm;
         }
@@ -283,6 +295,15 @@ button{
     // Modificator '.btn.btn--rounded'
     &&--rounded{
         border-radius: 100px;
+    }
+
+    // Modificator '.btn.btn--squared'
+    &&--squared{
+        width: 40px;
+        height: 40px;
+        border-radius: 4px;
+        padding: 0;
+
     }
 
     // Modificator '.btn.btn--circle'

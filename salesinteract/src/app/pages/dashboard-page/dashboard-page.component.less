@@ -13,15 +13,17 @@
     
     & &__avatar{
         margin-right: 10px;
-        width: 30px;
-        height: 30px;
-        border-radius: 30px;
+        // width: 30px;
+        // height: 30px;
+        border-radius: 4px;
         object-fit: cover;
     }
 
     a.account-list__name{
-        border-bottom: 1px solid;
-        color: @color-blue;
+        // border-bottom: 1px solid;
+        // color: @color-blue;
+        color: #252841;
+        text-decoration: none;
 
         &:hover{
             text-decoration: none;
@@ -31,12 +33,25 @@
     }
 
     & &__name{
-        font-weight: 600;
+        font-weight: 400;
         font-size: 1rem;
         line-height: 1;
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
         margin: 0;
+        color: #252841;
+        text-decoration: none;
+    }
+
+    & &__company{
+        font-weight: 400;
+        font-size: .9rem;
+        line-height: 1;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        margin: 4px 0 0 0;
+        color: #B2C8DB;
     }
 }

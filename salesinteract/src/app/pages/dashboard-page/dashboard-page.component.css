@@ -5,14 +5,12 @@
 }
 .account-list .account-list__avatar {
   margin-right: 10px;
-  width: 30px;
-  height: 30px;
-  border-radius: 30px;
+  border-radius: 4px;
   object-fit: cover;
 }
 .account-list a.account-list__name {
-  border-bottom: 1px solid;
-  color: #2EAEFE;
+  color: #252841;
+  text-decoration: none;
 }
 .account-list a.account-list__name:hover {
   text-decoration: none;
@@ -20,11 +18,23 @@
   outline: none;
 }
 .account-list .account-list__name {
-  font-weight: 600;
+  font-weight: 400;
   font-size: 1rem;
   line-height: 1;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
   margin: 0;
+  color: #252841;
+  text-decoration: none;
+}
+.account-list .account-list__company {
+  font-weight: 400;
+  font-size: .9rem;
+  line-height: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin: 4px 0 0 0;
+  color: #B2C8DB;
 }
