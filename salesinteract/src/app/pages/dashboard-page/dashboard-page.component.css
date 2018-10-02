@@ -38,3 +38,41 @@
   margin: 4px 0 0 0;
   color: #B2C8DB;
 }
+.task-list .task-list__body {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.task-list .task-list__name {
+  display: inline-block;
+  font-size: 14px;
+  line-height: 1;
+  color: #252841;
+  font-weight: 400;
+  margin-top: 5px;
+}
+.task-list .task-list__company {
+  display: inline-block;
+  font-size: 14px;
+  line-height: 1;
+  color: #252841;
+  font-weight: 400;
+  margin-top: 5px;
+}
+.task-list .task-list__type {
+  font-size: 12px;
+  line-height: 1;
+  font-weight: 300;
+  color: #B2C8DB;
+}
+.task-list .task-list__desc {
+  font-size: 14px;
+  line-height: 1;
+  color: #252841;
+  display: inline-block;
+  vertical-align: middle;
+}
+.task-list .task-list__more {
+  display: block;
+  width: 100%;
+}

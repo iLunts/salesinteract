@@ -13,7 +13,7 @@
         justify-content: space-between;
 
         h2{
-            color: #333;
+            color: #6E8696;
             font-weight: 300;
         }
 
@@ -58,6 +58,14 @@
         }
     }
 
+    .fc-day-header{
+        background: #F7F9FC;
+        color: #A1ACB9;
+        border-bottom: none;
+        padding: 8px 0;
+        font-weight: 400;
+    }
+
     .fc-day-header,
     .fc-row,
     .fc-head-container,
@@ -66,9 +74,13 @@
         border-color: transparent;
     }
 
-    .fc-head-container{
-        border-bottom: 1px solid #ddd;
+    .fc-widget-content{
+        border-color: #EFF3F8;
     }
+
+    // .fc-head-container{
+    //     border-bottom: 1px solid #ddd;
+    // }
 
     .fc-day{
         border-radius: 4px;
@@ -81,8 +93,9 @@
     .fc-basic-view .fc-day-number, 
     .fc-basic-view .fc-week-number{
         padding: 0;
-        border-radius: 100%;
-        background-color: #f5f5f5;
+        // border-radius: 100%;
+        // background-color: #f5f5f5;
+        border-radius: 3px;
         width: 25px;
         height: 25px;
         line-height: 25px;
@@ -92,16 +105,21 @@
 
     .fc-row .fc-content-skeleton{
 
-
+        td{
+            // border-color: red;
+            overflow: hidden;
+        }
 
         .fc-day-top{
-            text-align: center;
-
+            // text-align: center;
+            text-align: right;
+            padding: 0 5px;
+            
             &.fc-today{
                 .fc-day-number{
                     background: @color-blue;
                     color: #fff;
-                    box-shadow: 0 2px 10px rgba(46, 174, 254, .5);
+                    // box-shadow: 0 2px 10px rgba(46, 174, 254, .5);
                 }
             }
 
@@ -121,18 +139,75 @@
         text-align: center;
 
         .fc-day-grid-event{
-            display: inline-block;
-            width: 6px;
-            height: 6px;
+            // width: 6px;
+            // height: 6px;
+            // font-size: 0;
+            // border-radius: 100%;
+            position: relative;
+            display: block;
             margin: 0;
             padding: 0;
-            font-size: 0;
-            border-radius: 100%;
-            background-color: @color-red;
+            // background-color: @color-gray;
+            background-color: transparent;
             border: none;
             outline: none;
             box-shadow: none;
             box-shadow: none;
+            font-size: .7rem;
+            font-weight: 400;
+            padding: 2px 4px 2px 6px;
+            text-align: left;
+            color: @color-gray;
+            margin-bottom: 3px;
+            margin-left: 3px;
+
+            &::before{
+                content: '';
+                position: absolute;
+                left: 0;
+                top: 0;
+                bottom: 0;
+                width: 3px;
+                border-radius: 3px;
+                background: @color-gray;
+            }
+
+            &.event--call{
+                color: @color-yellow;
+                &::before{
+                    background-color: @color-yellow;
+                }
+            }
+
+            &.event--visit{
+                color: @color-blue;
+                &::before{
+                    background-color: @color-blue;
+                }
+            }
+
+            &.event--too-late{
+                color: @color-red;
+                &::before{
+                    background-color: @color-red;
+                }
+            }
+
+            &.event--task{
+                color: @color-green;
+                &::before{
+                    background-color: @color-green;
+                }
+            }
+        }
+    }
+}
+
+.panel{
+    .calendar{
+
+        .fc-toolbar.fc-header-toolbar{
+            padding: 15px 15px 0;
         }
     }
 }

@@ -133,7 +133,7 @@
 									>
 								</ngx-charts-bar-vertical-stacked> -->
 
-								<ngx-charts-bar-vertical-stacked
+								<!-- <ngx-charts-bar-vertical-stacked
 									[view]="viewCompleteTask"
 									[scheme]="colorScheme"
 									[results]="multi"
@@ -145,7 +145,7 @@
 									[showYAxisLabel]="true"
 									[xAxisLabel]="true"
 									[yAxisLabel]="true">
-								</ngx-charts-bar-vertical-stacked>
+								</ngx-charts-bar-vertical-stacked> -->
 							</div>
 						</div>
 
@@ -181,94 +181,175 @@
 
 	<div class="row">	
 
-		<!-- Tasks -->
+		<!-- Tasks today -->
 		<div class="col-lg-8">
-			<div class="panel">
-				<div class="panel__header">
-					<p class="panel__header-title">
-						Tasks
-					</p>
-					<div>
-						<span class="btn btn--circle btn--ssm btn--gray m--l"
-								popover="Vivamus sagittis lacus vel augue laoreet rutrum faucibus."
-								triggers="mouseenter:mouseleave"
-								container="body"
-								placement="auto">
-							<i class="btn__icon icon-question"></i>
-						</span>
-					</div>
+			<div class="panel panel--filter">
+				<div class="panel__title t--green">
+					<i class="icon icon-today m--r-mini"></i>
+					<span class="t--semi-bold">Today</span>				
 				</div>
-				<div class="panel__body">
-
-					<div class="group group--red">
-						<p class="group__text">Too late</p>
-					</div>
-					<ul class="account-list list list--v list--line">
-						<li class="account-list__item list__item" *ngFor="let item of taskHistoryLateList">
-							<div class="account-list__content flex flex--middle col-lg-3">
-								<img class="avatar m--r-sm" [src]="item.image" alt="">
-								<a href="" class="account-list__name">{{item.name}}</a>
-							</div>
-							<div class="account-list__content flex flex--middle col-lg-3">
-								<img class="avatar m--r-sm" [src]="item.image" alt="">
-								<a href="" class="account-list__name">{{item.contactName}}</a>
-							</div>
-							<span class="col-lg-2">
-								{{item.result}}
-							</span>
-							<div class="col-lg-3 t--c">
-								<span class="badge badge--gray">{{item.task}}</span>
-							</div>
-							<p class="t--md t--regular m--reset t--red t--c">{{item.date}}</p>
+				<div class="">
+					<ul class="tab tab--h">
+						<li class="tab__item active">
+							<a href="" class="tab__link">All</a>
+						</li>
+						<li class="tab__item">
+							<a href="" class="tab__link">Follow</a>
+						</li>
+						<li class="tab__item">
+							<a href="" class="tab__link">Visit</a>
 						</li>
 					</ul>
-
-
-					<div class="group group--green m--t">
-						<p class="group__text">Vandaag</p>
-					</div>
-					<ul class="account-list list list--v list--line">
-						<li class="account-list__item list__item" *ngFor="let item of taskHistoryLateList">
-							<div class="account-list__content flex flex--middle col-lg-3">
-								<img class="avatar m--r-sm" [src]="item.image" alt="">
-								<a href="" class="account-list__name">{{item.name}}</a>
-							</div>
-							<div class="account-list__content flex flex--middle col-lg-3">
-								<img class="avatar m--r-sm" [src]="item.image" alt="">
-								<a href="" class="account-list__name">{{item.contactName}}</a>
-							</div>
-							<span class="col-lg-2">
-								{{item.result}}
-							</span>
-							<div class="col-lg-3 t--c">
-								<span class="badge badge--gray">{{item.task}}</span>
-							</div>
-							<p class="t--md t--regular m--reset t--green t--c">{{item.date}}</p>
-						</li>
-					</ul>
-
+				</div>
+				<div>
+					<button class="btn btn--squared btn--gray btn--ssm">
+						<i class="btn__icon icon-more"></i>
+					</button>
 				</div>
 			</div>
+
+
+			<div class="task-list">
+				<div class="panel panel--sm" *ngFor="let item of taskHistoryLateList">
+					<div class="panel__body task-list__body">
+						<div class="flex flex--middle col-lg-3">
+							<img class="avatar avatar--square m--r-sm" [src]="item.image" alt="">
+							<div>
+								<a href="" class="task-list__company">{{item.name}}</a>
+								<p class="task-list__type">Company</p>
+							</div>
+						</div>
+						<div class="col-lg-4">
+							<div class="flex flex--middle">
+								<img class="avatar avatar--sm m--r-sm" [src]="item.image" alt="">
+								<a href="" class="task-list__name">{{item.contactName}}</a>
+							</div>
+							<div>
+								<i class="icon icon-too-late t--gray m--r-mini"></i>
+								<span class="task-list__desc">{{item.result}}</span>
+							</div>
+						</div>
+						<div class="col-lg-3 t--c">
+							<span class="badge badge--gray">{{item.task}}</span>
+							<p class="t--md t--regular m--t-mini t--green t--c">{{item.date}}</p>
+						</div>
+						<div class="col-lg-1 t--r">
+							<button class="btn btn--circle btn--gray btn--ssm">
+								<i class="btn__icon icon-more"></i>
+							</button>
+						</div>
+					</div>
+				</div>
+
+				<a href="" class="task-list__more btn btn--gray btn--ssm">Show more</a>
+			</div>
+
+			<hr class="line line--dashed line--sm m--v">
+
+			<!-- Too late -->
+			<div class="panel panel--filter">
+				<div class="panel__title t--red">
+					<i class="icon icon-too-late m--r-mini"></i>
+					<span class="t--semi-bold">Too late</span>				
+				</div>
+				<div class="">
+					<ul class="tab tab--h">
+						<li class="tab__item active">
+							<a href="" class="tab__link">All</a>
+						</li>
+						<li class="tab__item">
+							<a href="" class="tab__link">Follow</a>
+						</li>
+						<li class="tab__item">
+							<a href="" class="tab__link">Visit</a>
+						</li>
+					</ul>
+				</div>
+				<div>
+					<!-- <button class="btn btn--squared btn--gray btn--ssm">
+						<i class="btn__icon icon-more"></i>
+					</button> -->
+					
+					<div class="btn-group" dropdown>
+						<button id="button-basic" 
+							dropdownToggle 
+							type="button" 
+							class="btn btn--squared btn--gray btn--ssm"
+							aria-controls="dropdown-basic">
+							<i class="btn__icon icon-more"></i>
+						</button>
+						<ul id="dropdown-basic" *dropdownMenu class="dropdown-menu" role="menu" aria-labelledby="button-basic">
+							<li>
+								<div class="checkbox checkbox--sm">
+									<input type="checkbox" class="checkbox__input" id="send-email">
+									<label for="send-email" class="checkbox__label">Not present</label>
+								</div>
+							</li>
+							<li>
+								<div class="checkbox checkbox--sm">
+									<input type="checkbox" class="checkbox__input" id="send-email">
+									<label for="send-email" class="checkbox__label">Not interested</label>
+								</div>
+							</li>
+							<li>
+								<div class="checkbox checkbox--sm">
+									<input type="checkbox" class="checkbox__input" id="send-email">
+									<label for="send-email" class="checkbox__label">No time</label>
+								</div>
+							</li>
+							<li>
+								<div class="checkbox checkbox--sm">
+									<input type="checkbox" class="checkbox__input" id="send-email">
+									<label for="send-email" class="checkbox__label">Visit</label>
+								</div>
+							</li>
+
+						</ul>
+					</div>
+				</div>
+			</div>
+
+			<div class="task-list">
+				<div class="panel panel--sm" *ngFor="let item of taskHistoryLateList">
+					<div class="panel__body task-list__body">
+						<div class="flex flex--middle col-lg-3">
+							<img class="avatar avatar--square m--r-sm" [src]="item.image" alt="">
+							<div>
+								<a href="" class="task-list__company">{{item.name}}</a>
+								<p class="task-list__type">Company</p>
+							</div>
+						</div>
+						<div class="col-lg-4">
+							<div class="flex flex--middle">
+								<img class="avatar avatar--sm m--r-sm" [src]="item.image" alt="">
+								<a href="" class="task-list__name">{{item.contactName}}</a>
+							</div>
+							<div>
+								<i class="icon icon-too-late t--gray m--r-mini"></i>
+								<span class="task-list__desc">{{item.result}}</span>
+							</div>
+						</div>
+						<div class="col-lg-3 t--c">
+							<span class="badge badge--gray">{{item.task}}</span>
+							<p class="t--md t--regular m--t-mini t--red t--c">{{item.date}}</p>
+						</div>
+						<div class="col-lg-1 t--r">
+							<button class="btn btn--circle btn--gray btn--ssm">
+								<i class="btn__icon icon-more"></i>
+							</button>
+						</div>
+					</div>
+				</div>
+
+				<a href="" class="task-list__more btn btn--gray btn--ssm">Show more</a>
+			</div>
+
 		</div>
 
 		<!-- Task calendar -->
 		<div class="col-lg-4">
 			<div class="panel">
-				<div class="panel__header">
-					<p class="panel__header-title">
-						Task calendar
-					</p>
-					<div>
-						<span class="btn btn--circle btn--ssm btn--gray"
-								popover="Vivamus sagittis lacus vel augue laoreet rutrum faucibus."
-								triggers="mouseenter:mouseleave"
-								container="body"
-								placement="auto">
-							<i class="btn__icon icon-question"></i>
-						</span>
-					</div>
-				</div>
-				<div class="panel__body">
+				<!-- <div class="panel__body"> -->
 					<div *ngIf="calendarOptions">
 						<ng-fullcalendar 
 							class="calendar" 
@@ -281,7 +362,7 @@
 							>
 						</ng-fullcalendar>
 					</div>
-				</div>
+				<!-- </div> -->
 			</div>
 		</div>
 	</div>

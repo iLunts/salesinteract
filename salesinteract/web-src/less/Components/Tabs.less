@@ -2,6 +2,44 @@
 @import '../variables.less';
 
 // ----------------------------------------------------
+// Block '.tab'
+// ----------------------------------------------------
+.tab{
+    position: relative;
+
+    &&--h{
+
+        .tab__item{
+            display: inline-block;
+            vertical-align: middle;
+
+            &.active{
+
+                .tab__link{
+                    color: #252841;
+                    border-bottom-color: @color-blue;
+                }
+            }
+        }
+        
+        .tab__link{
+            display: inline-block;
+            padding: 0 15px;
+            font-weight: 400;
+            text-decoration: none;
+            outline: none;
+            color: #C5CFD5;
+            transition: all .3s;
+            border-bottom: 3px solid transparent;
+
+            &:hover{
+                color: #777A8A;
+            }
+        }
+    }
+}
+
+// ----------------------------------------------------
 // Block '.nav'
 // ----------------------------------------------------
 .nav{

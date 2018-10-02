@@ -1,7 +1,7 @@
 @import '../../../../web-src/less/variables.less';
 
 // ------------------------------------------------
-// Block '.manager'
+// Block '.account-list'
 // ------------------------------------------------
 .account-list{
 
@@ -53,5 +53,56 @@
         text-overflow: ellipsis;
         margin: 4px 0 0 0;
         color: #B2C8DB;
+    }
+}
+
+
+// ------------------------------------------------
+// Block '.task-list'
+// ------------------------------------------------
+.task-list{
+
+    & &__body{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    & &__name{
+        display: inline-block;
+        font-size: 14px;
+        line-height: 1;
+        color: #252841;
+        font-weight: 400;
+        margin-top: 5px;
+    }
+
+    & &__company{
+        display: inline-block;
+        font-size: 14px;
+        line-height: 1;
+        color: #252841;
+        font-weight: 400;
+        margin-top: 5px;
+    }
+
+    & &__type{
+        font-size: 12px;
+        line-height: 1;
+        font-weight: 300;
+        color: #B2C8DB;
+    }
+
+    & &__desc{
+        font-size: 14px;
+        line-height: 1;
+        color: #252841;
+        display: inline-block;
+        vertical-align: middle;
+    }
+
+    & &__more{
+        display: block;
+        width: 100%;
     }
 }

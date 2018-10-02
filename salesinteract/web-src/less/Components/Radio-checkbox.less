@@ -17,6 +17,31 @@
     // ----------------------------------------------------------
     // All modificators
     // ----------------------------------------------------------
+    // Modificator '.checkbox.checkbox--sm'
+    &&--sm{
+
+        .checkbox__label{
+            font-size: 13px;
+            line-height: @checkbox-line-height + 5;
+
+            &:before {
+                font-size: @checkbox-font-size / 1.3;
+                line-height: @checkbox-line-height / 1.3;
+                width: @checkbox-height / 1.3;
+                height: @checkbox-height / 1.3;
+            }
+        }        
+        
+        .checkbox__input{
+            &:checked{
+                
+                & + .checkbox__label:after{
+                    width: @checkbox-height / 3.4;
+                    height: @checkbox-height / 3.4;            
+                }
+            }
+        }
+    }
 
     // Modificator '.checkbox.checkbox--circle'
     // Modificator '.checkbox.checkbox--radio'

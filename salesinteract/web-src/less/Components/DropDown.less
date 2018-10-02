@@ -29,6 +29,9 @@
         visibility: hidden;
         opacity: 0;
 
+        border: none;
+        border-radius: 0;
+
         &&--fixed{
 
             &-200{
@@ -49,6 +52,12 @@
         .open &{
             visibility: visible;
             opacity: 1;
+        }
+
+        li{
+            .checkbox{
+                padding: 0 10px;
+            }
         }
         
         // Element '.header__search .dropdown-menu'

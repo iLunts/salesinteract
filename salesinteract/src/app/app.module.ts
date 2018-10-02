@@ -9,7 +9,7 @@ import { RoutingModule } from './routing.module';
 import { ContactListPageComponent } from './pages/contact-list-page/contact-list-page.component';
 
 // Bootstrap
-import { TabsModule, PaginationModule, ButtonsModule, ModalModule, PopoverModule, CollapseModule } from 'ngx-bootstrap';
+import { TabsModule, PaginationModule, ButtonsModule, ModalModule, PopoverModule, CollapseModule, BsDropdownModule } from 'ngx-bootstrap';
 import { TaskItemComponent } from './ui/task-item/task-item.component';
 import { ContactInformationComponent } from './ui/contact-information/contact-information.component';
 import { ManagerInformationComponent } from './ui/manager-information/manager-information.component';
@@ -78,6 +78,7 @@ import { EmptyComponent } from './ui/empty/empty.component';
     ModalModule.forRoot(),
     PopoverModule.forRoot(),
     CollapseModule.forRoot(),
+    BsDropdownModule.forRoot(),
     FullCalendarModule,
     NgxChartsModule,
     BrowserAnimationsModule

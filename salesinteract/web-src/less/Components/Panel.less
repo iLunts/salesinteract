@@ -42,12 +42,36 @@
         margin-top: -10px;
     }
 
+    // Modificator '.panel.panel--tab'
+    &&--filter{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 10px;
+
+        .panel__title{
+            font-weight: 600;
+            color: #6e8696;
+        }
+
+        .tab{
+            .tab__link{
+                padding: 10px 15px;
+            }
+        }
+    }
+
     // Modificator '.panel.panel--sm'
     &&--sm{
+        margin-bottom: 10px;
 
         // Modificator '.panel.panel--sm .panel__body'
         .panel__body{
             padding: (@panel-padding / 2);
+        }
+
+        & + .panel--sm{
+            margin-top: 10px;
         }
     }
 
