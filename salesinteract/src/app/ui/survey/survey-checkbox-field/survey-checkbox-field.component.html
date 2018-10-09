@@ -2,18 +2,26 @@
     <div class="dragula__min">
         <span class="dragula__item-name">
             <svg-icon class="dragula__item-icon" src="assets/svg/checkbox.svg" [svgStyle]="{ 'width.px':16 }"></svg-icon>
-            Checkbox
+            Multi selection list
         </span>
         <span class="dragula__handle">
             <svg-icon src="assets/svg/draggable.svg" [svgStyle]="{ 'width.px':12 }"></svg-icon>
         </span>
     </div>
     <div class="dragula__max">
+
+        <input type="text" class="input input--label" placeholder="Write text for label checkbox group here...">
+
         <div class="checkbox">
 			<input type="checkbox" class="checkbox__input">
 			<label for="" class="checkbox__label">
-                <input type="text" class="input input--label" placeholder="Chckbox name">
+                <input type="text" class="input input--checkbox" placeholder="Chckbox name">
             </label>
-		</div>
+        </div>
+        
+        <button class="btn btn--gray btn--ssm">
+            <i class="btn__icon icon-plus"></i>
+            Add new checkbox item
+        </button>
     </div>
 </div>

@@ -1,0 +1,9 @@
+.add {
+  position: relative;
+}
+.add .add__icon {
+  margin-right: 6px;
+}
+.add .add__link {
+  text-decoration: none;
+}

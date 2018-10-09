@@ -1,14 +1,27 @@
 <div>
     <div class="dragula__min">
         <span class="dragula__item-name">
-            <svg-icon class="dragula__item-icon" src="assets/svg/radio.svg" [svgStyle]="{ 'width.px':16 }"></svg-icon>
-            Radio
+            <svg-icon class="dragula__item-icon" src="assets/svg/radiobox.svg" [svgStyle]="{ 'width.px':16 }"></svg-icon>
+            Single selection list
         </span>
         <span class="dragula__handle">
             <svg-icon src="assets/svg/draggable.svg" [svgStyle]="{ 'width.px':12 }"></svg-icon>
         </span>
     </div>
     <div class="dragula__max">
+
+        <input type="text" class="input input--label" placeholder="Write text for label radiobox group here...">
+
+        <div class="checkbox">
+			<input type="radio" class="checkbox__input">
+			<label for="" class="checkbox__label">
+                <input type="text" class="input input--checkbox" placeholder="Chckbox name">
+            </label>
+        </div>
         
+        <button class="btn btn--gray btn--ssm">
+            <i class="btn__icon icon-plus"></i>
+            Add new radiobox item
+        </button>
     </div>
 </div>
