@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="44px" height="25px" viewBox="0 0 44 25" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+    <title>multi-line</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="multi-line" fill="#2eaefd">
+            <rect id="Rectangle-3" x="0" y="0" width="44" height="5" rx="2.5"></rect>
+            <rect id="Rectangle-3" x="0" y="10" width="44" height="5" rx="2.5"></rect>
+            <rect id="Rectangle-3" x="0" y="20" width="22" height="5" rx="2.5"></rect>
+        </g>
+    </g>
+</svg>
