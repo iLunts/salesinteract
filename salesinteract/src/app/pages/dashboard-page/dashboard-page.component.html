@@ -25,7 +25,7 @@
 					</div>
 				</div>
 
-				<button class="btn btn--blue btn--new" (click)="openSidebar()">
+				<button class="btn btn--blue btn--new" (click)="openSidebarNewCompany()">
 					<i class="btn__icon icon-new-plus"></i>
 					<span class="btn__text">
 						<span class="btn__text-text">Create new company</span>
@@ -59,7 +59,7 @@
 
 					<div>
 						<button class="btn btn--squared btn--gray btn--ssm" 
-								(click)="isCollapsedTopBar = !isCollapsedTopBar"
+								(click)="collapsedTopBar()"
 								[attr.aria-expanded]="!isCollapsedTopBar" 
 								aria-controls="collapseBasic">
 							<i class="btn__icon" [ngClass]="{'icon-arrow-down-fill': isCollapsedTopBar, 'icon-arrow-up-fill': !isCollapsedTopBar}"></i>
@@ -225,7 +225,7 @@
 								<a href="" class="task-list__name">{{item.contactName}}</a>
 							</div>
 							<div>
-								<i class="icon icon-too-late t--gray m--r-mini"></i>
+								<i class="icon icon-desc t--gray m--r-mini"></i>
 								<span class="task-list__desc">{{item.result}}</span>
 							</div>
 						</div>
@@ -325,7 +325,7 @@
 								<a href="" class="task-list__name">{{item.contactName}}</a>
 							</div>
 							<div>
-								<i class="icon icon-too-late t--gray m--r-mini"></i>
+								<i class="icon icon-desc t--gray m--r-mini"></i>
 								<span class="task-list__desc">{{item.result}}</span>
 							</div>
 						</div>
@@ -367,3 +367,6 @@
 		</div>
 	</div>
 </div>
+
+<!-- Sidebar panel create new company -->
+<app-sidebar-new-company [ngClass]="{'open': isOpenSidebarNewCompany}"></app-sidebar-new-company>

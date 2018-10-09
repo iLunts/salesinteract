@@ -1,0 +1,25 @@
+<section class="sidebar">
+  <div class="sidebar__overlay"></div>
+
+  <div class="sidebar__panel">
+    <header class="sidebar__header">
+      <p class="sidebar__header-title">Create new company</p>
+      <a [routerLink]="['/home']" class="sidebar__close">
+        <i class="icon-close"></i>
+      </a>
+    </header>
+    <div class="sidebar__panel-body">
+
+      <tabset>
+        <tab heading="Company">
+          <app-new-company-tab></app-new-company-tab>
+        </tab>
+
+        <tab heading="Contact">
+          <app-new-contact-tab></app-new-contact-tab>
+        </tab>
+      </tabset>
+
+    </div>
+  </div>
+</section>

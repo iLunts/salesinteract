@@ -1,0 +1,24 @@
+<svg viewBox="0 0 130 210" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="draggable" fill="#8190a3" fill-rule="nonzero">
+            <g id="dotted-barline">
+                <rect id="XMLID_509_" x="0" y="0" width="30" height="30"></rect>
+                <rect id="XMLID_510_" x="0" y="60" width="30" height="30"></rect>
+                <rect id="XMLID_511_" x="0" y="120" width="30" height="30"></rect>
+                <rect id="XMLID_512_" x="0" y="180" width="30" height="30"></rect>
+            </g>
+            <g id="dotted-barline" transform="translate(50.000000, 0.000000)">
+                <rect id="XMLID_509_" x="0" y="0" width="30" height="30"></rect>
+                <rect id="XMLID_510_" x="0" y="60" width="30" height="30"></rect>
+                <rect id="XMLID_511_" x="0" y="120" width="30" height="30"></rect>
+                <rect id="XMLID_512_" x="0" y="180" width="30" height="30"></rect>
+            </g>
+            <g id="dotted-barline" transform="translate(100.000000, 0.000000)">
+                <rect id="XMLID_509_" x="0" y="0" width="30" height="30"></rect>
+                <rect id="XMLID_510_" x="0" y="60" width="30" height="30"></rect>
+                <rect id="XMLID_511_" x="0" y="120" width="30" height="30"></rect>
+                <rect id="XMLID_512_" x="0" y="180" width="30" height="30"></rect>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,89 @@
+<div class="panel panel--tab">
+    <div class="panel__group">
+        <span class="panel__group-text">
+            Contact
+        </span>
+    </div>
+    <div class="panel__body">
+
+        <div class="placeholder">
+            <div class="placeholder__img"></div>
+            <p class="placeholder__title">
+                Click to to upload a profile picture
+            </p>
+            <p class="placeholder__desc">
+                (Max file size: 25 MB; Allowed formats: Documents, presentations and images)
+            </p>
+            <input class="placeholder__input" type="file">
+        </div>
+
+        <div class="panel__group">
+            <span class="panel__group-text">
+                General information
+            </span>
+        </div>
+
+		<div class="row">
+			<div class="col-xs-6">
+				<label class="label">First name</label>
+				<input type="text" class="input">
+			</div>
+			<div class="col-xs-6">
+				<label class="label">Surname</label>
+				<input type="text" class="input">
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-xs-6">
+				<label class="label">Phone number</label>
+				<input type="text" class="input">
+			</div>
+			<div class="col-xs-6">
+				<label class="label">E-mail adress</label>
+				<input type="text" class="input">
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-xs-6">
+				<label class="label">Job title</label>
+				<input type="text" class="input">
+			</div>
+			<div class="col-xs-6">
+				<label class="label">Gender</label>
+				<input type="text" class="input">
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-xs-6">
+				<label class="label">Default language</label>
+				<input type="text" class="input">
+			</div>
+			<div class="col-xs-6">
+				<label class="label">Time zone</label>
+				<input type="text" class="input">
+			</div>
+		</div>
+
+        <tabset>
+            <tab heading="Account manager">
+                <app-new-contact-account-manager></app-new-contact-account-manager>
+            </tab>
+            
+            <tab heading="Social">
+                <app-new-contact-social-online></app-new-contact-social-online>
+            </tab>
+            
+            <tab heading="Description">
+                <app-new-contact-description></app-new-contact-description>
+            </tab>
+        </tabset>
+
+        <div class="m--t-md t--c">
+            <button class="btn btn--link">Clear</button>
+            <button class="btn btn--blue">Save</button>
+        </div>
+    </div>
+</div>

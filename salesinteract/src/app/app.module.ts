@@ -37,6 +37,25 @@ import { NgxChartsModule } from '@swimlane/ngx-charts';
 import { EventSesrvice } from './services/event.service';
 import { StatisticsPageComponent } from './pages/statistics-page/statistics-page.component';
 import { EmptyComponent } from './ui/empty/empty.component';
+import { NewCompanyComponent } from './ui/sidebar/new-company/new-company.component';
+import { NewCompanyTabComponent } from './components/new-company-tab/new-company-tab.component';
+import { NewContactTabComponent } from './components/new-contact-tab/new-contact-tab.component';
+import { NewCompanyAdditionalAddressesComponent } from './components/new-company-tab/additional-addresses/additional-addresses.component';
+import { NewCompanySocialOnlineComponent } from './components/new-company-tab/social-online/social-online.component';
+import { NewCompanyDescriptionComponent } from './components/new-company-tab/description/description.component';
+import { NewContactAccountManagerComponent } from './components/new-contact-tab/account-manager/account-manager.component';
+import { NewContactDescriptionComponent } from './components/new-contact-tab/description/description.component';
+import { NewContactSocialOnlineComponent } from './components/new-contact-tab/social-online/social-online.component';
+import { SettingsPageComponent } from './pages/settings-page/settings-page.component';
+import { SurveyPageComponent } from './pages/settings-page/survey-page/survey-page.component';
+import { SurveyEditPageComponent } from './pages/settings-page/survey-page/survey-edit-page/survey-edit-page.component';
+import { DragulaModule } from 'ng2-dragula';
+import { SurveyTextFieldComponent } from './ui/survey/survey-text-field/survey-text-field.component';
+import { SurveyTextareaFieldComponent } from './ui/survey/survey-textarea-field/survey-textarea-field.component';
+import { SurveyCheckboxFieldComponent } from './ui/survey/survey-checkbox-field/survey-checkbox-field.component';
+import { SurveyRadioFieldComponent } from './ui/survey/survey-radio-field/survey-radio-field.component';
+import { AngularSvgIconModule } from 'angular-svg-icon';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -68,8 +87,25 @@ import { EmptyComponent } from './ui/empty/empty.component';
     DashboardPageComponent,
     StatisticsPageComponent,
     EmptyComponent,
+    NewCompanyComponent,
+    NewCompanyTabComponent,
+    NewCompanyAdditionalAddressesComponent,
+    NewCompanySocialOnlineComponent,
+    NewCompanyDescriptionComponent,
+    NewContactTabComponent,
+    NewContactAccountManagerComponent,
+    NewContactDescriptionComponent,
+    NewContactSocialOnlineComponent,
+    SettingsPageComponent,
+    SurveyPageComponent,
+    SurveyEditPageComponent,
+    SurveyTextFieldComponent,
+    SurveyTextareaFieldComponent,
+    SurveyCheckboxFieldComponent,
+    SurveyRadioFieldComponent,
   ],
   imports: [
+    HttpClientModule,
     BrowserModule,
     RoutingModule,
     TabsModule.forRoot(),
@@ -81,7 +117,9 @@ import { EmptyComponent } from './ui/empty/empty.component';
     BsDropdownModule.forRoot(),
     FullCalendarModule,
     NgxChartsModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    DragulaModule.forRoot(),
+    AngularSvgIconModule
   ],
   providers: [EventSesrvice],
   bootstrap: [AppComponent]

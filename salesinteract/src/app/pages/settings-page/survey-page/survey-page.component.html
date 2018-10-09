@@ -1,0 +1,46 @@
+<div class="container-fluid">
+
+	<div class="row">
+		<div class="col-lg-12">
+			<section class="header">
+
+				<div class="header__left">
+					<div class="header__icon">
+						<i class="header__icon-icon icon-setting"></i>
+					</div>
+					<div>
+						<p class="header__title">Survey form list</p>
+						<ul class="header__breadcrumbs">
+							<li class="header__breadcrumbs-item">
+								<span href="" class="header__breadcrumbs-span">
+									Home page
+								</span>
+							</li>
+						</ul>
+					</div>
+				</div>
+
+			</section>
+		</div>
+	</div>
+
+	<div class="row survey">
+		<div class="col-lg-12">
+			<div class="panel panel--sm survey__item" *ngFor="let item of surveyList">
+				<div class="checkbox">
+					<input type="checkbox" class="checkbox__input">
+					<label for="" class="checkbox__label">
+						{{item.name}}
+					</label>
+				</div>
+
+				<span class="badge badge--green m--reset" *ngIf="item.published">Published</span>
+				<span class="badge badge--red m--reset" *ngIf="!item.published">Unpublished</span>
+				
+				<button class="btn btn--circle btn--gray btn--ssm" [routerLink]="['/settings', 'survey', item.id, 'edit']">
+					<i class="btn__icon icon-edit"></i>
+				</button>
+			</div>
+		</div>
+	</div>
+</div>

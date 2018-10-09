@@ -12,6 +12,8 @@ import { EventSesrvice } from '../../services/event.service';
   styleUrls: ['./dashboard-page.component.less']
 })
 export class DashboardPageComponent implements OnInit {
+  isCollapsedTopBar: boolean = false;
+  isOpenSidebarNewCompany: boolean = false;
   single: any[];
   contacten: any[];
   afgeronde: any[];
@@ -34,7 +36,7 @@ export class DashboardPageComponent implements OnInit {
   taskHistoryList: any = [
     { name: 'Coen van der Kolk', 
       date: '31 aug. 2018 08:50', 
-      image: 'http://dreamicus.com/data/face/face-06.jpg'
+      image: 'https://images.asos-media.com/products/bejsbolka-chernyj-belyj-the-north-face-the-norm/10265685-1-black?$XL$?$XXL$&wid=300&fmt=jpeg&qlt=80,0&op_sharpen=0&resMode=sharp2&op_usm=1,0.4,6,1&iccEmbed=0&printRes=72'
     },
     { name: 'Grant Solomonesck', 
       date: '20 aug. 2018 08:50', 
@@ -49,8 +51,8 @@ export class DashboardPageComponent implements OnInit {
   taskHistoryLateList: any = [
     { name: 'Coen van der Kolk', 
       date: '31 aug. 2018 08:50', 
-      image: 'http://dreamicus.com/data/face/face-06.jpg',
       contactName: 'Abagnale Frank',
+      image: 'https://images.asos-media.com/products/bejsbolka-chernyj-belyj-the-north-face-the-norm/10265685-1-black?$XL$?$XXL$&wid=300&fmt=jpeg&qlt=80,0&op_sharpen=0&resMode=sharp2&op_usm=1,0.4,6,1&iccEmbed=0&printRes=72',
       contactImage: '',
       result: 'Visit appointment',
       task: 'Follow'
@@ -105,6 +107,14 @@ export class DashboardPageComponent implements OnInit {
         events: data
       };
     });
+  }
+
+  collapsedTopBar(){
+    this.isCollapsedTopBar = !this.isCollapsedTopBar;
+  }
+
+  openSidebarNewCompany() {
+    this.isOpenSidebarNewCompany = !this.isOpenSidebarNewCompany;
   }
 
   onSelect(event) {

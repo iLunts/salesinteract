@@ -1,0 +1,126 @@
+// out: ../../css/components/dragula.css, compress: true
+@import '../variables.less';
+
+.dragula{
+    position: relative;
+    display: block;
+    width: 100%;
+    outline: none;
+    padding: 0;
+    margin: 0;
+    border: none;
+
+    & &__list{
+        &.dragula__list--min{
+            .dragula__max{
+                display: none;
+                visibility: hidden;
+            }
+        }
+        &.dragula__list--max{
+            .dragula__min{
+                display: none;
+                visibility: hidden;
+            }
+
+            .dragula__item{
+                border-top: 1px solid #f2f3f5;
+
+                // &-name{
+                //     font-size: .9rem;
+                //     margin: 0;
+                //     font-weight: 400;
+                // }
+                // &-desc{
+                //     font-size: .9rem;
+                //     margin: 0;
+                //     font-weight: 400;
+                //     color: #768d9c;
+                // }
+
+                // &-header{
+                //     background: #f2f6fb;
+                //     margin-left: -15px;
+                //     margin-right: -15px;
+                //     margin-top: -10px;
+                // }
+            }
+        }
+    }
+
+    & &__item{
+        position: relative;
+        padding: 10px 15px;
+        border-left: 3px solid transparent;
+        cursor: move;
+
+        &-name{
+            font-weight: 400;
+            color: #768d9c;
+        }
+
+        &-icon{
+            color: @color-blue;
+            margin-right: 5px;
+        }
+    }
+
+    & &__handle{
+        color: @color-gray;
+    }
+
+    & &__min{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    & &__max{
+    
+    }
+
+}
+
+
+
+
+/* in-flight clone */
+.gu-mirror {
+    position: fixed !important;
+    margin: 0 !important;
+    z-index: 9999 !important;
+    pointer-events: none;
+    // opacity: 0.9;
+    // -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=90)";
+    // filter: alpha(opacity=90);
+    padding: 10px 15px;
+
+    background-color: #fff;
+    box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.1);
+    border-left: 3px solid @color-blue;
+
+    .dragula__max{
+        display: none;
+        visibility: hidden;
+    }
+}
+/* high-performance display:none; helper */
+.gu-hide {
+    left: -9999px !important;
+}
+/* added to mirrorContainer (default = body) while dragging */
+.gu-unselectable {
+    -webkit-user-select: none !important;
+    -moz-user-select: none !important;
+    -ms-user-select: none !important;
+    user-select: none !important;
+}
+/* added to the source element while its mirror is dragged */
+.gu-transit {
+    background-color: #f2f6f8;
+    border-left: 3px solid @color-blue;
+    // background-color: #f3f3f4;
+    // opacity: 0.2;
+    // -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=20)";
+    // filter: alpha(opacity=20);
+}

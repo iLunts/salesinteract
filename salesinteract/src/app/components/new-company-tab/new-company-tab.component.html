@@ -1,0 +1,109 @@
+<div class="panel panel--tab">
+    <div class="panel__group">
+        <span class="panel__group-text">
+            Company
+        </span>
+    </div>
+    <div class="panel__body">
+
+        <div class="placeholder">
+            <div class="placeholder__img"></div>
+            <p class="placeholder__title">
+                Click to select file
+            </p>
+            <p class="placeholder__desc">
+                (Max file size: 25 MB; Allowed formats: Documents, presentations and images)
+            </p>
+            <input class="placeholder__input" type="file">
+        </div>
+
+        <div class="panel__group">
+            <span class="panel__group-text">
+                General information
+            </span>
+        </div>
+        <div>
+            <label class="label">Company name</label>
+            <div class="input-group input-group--required">
+                <input type="text" class="input-group__input">
+            </div>
+        </div>
+
+        <div>
+            <label class="label">Phone number</label>
+            <input type="text" class="input" placeholder="+4 (900) ">
+        </div>
+        
+        <div class="panel__group">
+            <span class="panel__group-text">
+                Adress information
+            </span>
+        </div>
+        <div class="row">
+            <div class="col-sm-8">
+                <label class="label">Address</label>
+                <input type="text" class="input">
+            </div>
+            <div class="col-sm-4">
+                <label class="label">Zipcode</label>
+                <input type="text" class="input" placeholder="66-999">
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-6">
+                <label class="label">Town</label>
+                <input type="text" class="input">
+            </div>
+            <div class="col-sm-6">
+                <label class="label">Country</label>
+                <input type="text" class="input">
+            </div>
+        </div>
+
+
+        <div class="panel__group">
+            <span class="panel__group-text">
+                Other information
+            </span>
+        </div>
+        <div class="row">
+            <div class="col-sm-4">
+                <label class="label">VAT number</label>
+                <input type="text" class="input">
+            </div>
+            <div class="col-sm-4">
+                <label class="label">CoC no.</label>
+                <input type="text" class="input">
+            </div>
+            <div class="col-sm-4">
+                <label class="label">RSIN</label>
+                <input type="text" class="input">
+            </div>
+        </div>
+        
+        <div>
+            <label class="label">Status</label>
+            <input type="text" class="input">
+        </div>
+
+        <tabset>
+            <tab heading="Additional addresses">
+                <app-new-company-additional-addresses></app-new-company-additional-addresses>
+            </tab>
+            
+            <tab heading="Social">
+                <app-new-company-social-online></app-new-company-social-online>
+            </tab>
+            
+            <tab heading="Description">
+                <app-new-company-description></app-new-company-description>
+            </tab>
+        </tabset>
+
+        <div class="m--t-md t--c">
+            <button class="btn btn--link">Clear</button>
+            <button class="btn btn--blue">Save</button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,98 @@
+<div class="container-fluid">
+
+	<div class="row">
+		<div class="col-lg-12">
+			<section class="header">
+
+				<div class="header__left">
+					<div class="header__icon">
+						<i class="header__icon-icon icon-setting"></i>
+					</div>
+					<div>
+						<p class="header__title">Survey edit</p>
+						<ul class="header__breadcrumbs">
+							<li class="header__breadcrumbs-item">
+								<span class="header__breadcrumbs-span">
+									Home page
+								</span>
+							</li>
+						</ul>
+					</div>
+				</div>
+
+			</section>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-lg-3">
+			<div class="panel panel--dragula dragula">
+					
+				<div class="panel__group">
+					<span class="panel__group-text">
+						Elements
+					</span>
+				</div>
+
+				<div class="dragula__list dragula__list--min" dragula="COPYABLE" id="left">
+
+					<!-- Text field -->
+					<div class="dragula__item">
+						<app-survey-text-field></app-survey-text-field>
+					</div>
+
+					<!-- Textarea field -->
+					<div class="dragula__item">
+						<app-survey-textarea-field></app-survey-textarea-field>
+					</div>
+
+					<!-- Checkbox field -->
+					<div class="dragula__item">
+						<app-survey-checkbox-field></app-survey-checkbox-field>
+					</div>
+
+					<!-- Radio field -->
+					<div class="dragula__item">
+						<app-survey-radio-field></app-survey-radio-field>
+					</div>
+
+				</div>
+
+			</div>
+		</div>
+		<div class="col-lg-6">
+			<div class="panel panel--dragula dragula">
+					
+				<div class="panel__group">
+					<span class="panel__group-text">
+						Form
+					</span>
+				</div>
+
+				<div class="dragula__list dragula__list--max" dragula="COPYABLE" id="right">
+				
+					<!-- Text field -->
+					<div class="dragula__item">
+						<app-survey-text-field></app-survey-text-field>
+					</div>
+				
+				</div>
+
+			</div>
+		</div>
+		<div class="col-lg-3">
+			<div class="panel">
+				<div class="panel__body">
+					
+					<div class="panel__group m--b p--reset">
+						<span class="panel__group-text">
+							Settings
+						</span>
+					</div>
+						
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
