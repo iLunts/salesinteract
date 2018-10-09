@@ -56,6 +56,7 @@ import { SurveyCheckboxFieldComponent } from './ui/survey/survey-checkbox-field/
 import { SurveyRadioFieldComponent } from './ui/survey/survey-radio-field/survey-radio-field.component';
 import { AngularSvgIconModule } from 'angular-svg-icon';
 import { HttpClientModule } from '@angular/common/http';
+import { SurveyMultiplyFieldComponent } from './ui/survey/survey-multiply-field/survey-multiply-field.component';
 
 @NgModule({
   declarations: [
@@ -103,6 +104,7 @@ import { HttpClientModule } from '@angular/common/http';
     SurveyTextareaFieldComponent,
     SurveyCheckboxFieldComponent,
     SurveyRadioFieldComponent,
+    SurveyMultiplyFieldComponent,
   ],
   imports: [
     HttpClientModule,
