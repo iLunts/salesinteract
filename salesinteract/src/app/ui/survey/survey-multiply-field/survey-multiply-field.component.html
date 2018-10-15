@@ -9,11 +9,47 @@
         </span>
     </div>
     <div class="dragula__max">
-        <input class="input input--label" placeholder="Write text for label multiply here..." type="text">
-		<select class="input" multiple size="5">
-			<option>Option 1</option>
-			<option>Option 2</option>
-			<option>Option 3</option>
-		</select>
+        <p class="dragula__item-title">
+            <input class="input input--label" placeholder="Write text for label multiply here..." type="text">
+            <button class="dragula__item-delete">
+                <svg-icon src="assets/svg/trash-2.svg" [svgStyle]="{ 'width.px':12 }"></svg-icon>
+            </button>
+        </p>
+
+        <div class="row">
+            <div class="col-lg-6">
+                <select class="input" multiple size="5">
+                    <option>Option 1</option>
+                    <option>Option 2</option>
+                    <option>Option 3</option>
+                </select>
+            </div>
+            <div class="col-lg-6">
+                <p class="t--gray m--b-mini t--md t--semi-bold">Option list</p>
+                <div class="flex flex--middle flex--space-between m--b-sm">
+                    <input type="text" class="input input--sm m--reset" value="Option 1">
+                    <button class="dragula__item-delete m--l">
+                        <svg-icon src="assets/svg/trash-2.svg" [svgStyle]="{ 'width.px':12 }"></svg-icon>
+                    </button>
+                </div>
+                <div class="flex flex--middle flex--space-between m--b-sm">
+                    <input type="text" class="input input--sm m--reset" value="Option 2">
+                    <button class="dragula__item-delete m--l">
+                        <svg-icon src="assets/svg/trash-2.svg" [svgStyle]="{ 'width.px':12 }"></svg-icon>
+                    </button>
+                </div>
+                <div class="flex flex--middle flex--space-between m--b-sm">
+                    <input type="text" class="input input--sm m--reset" value="Option 3">
+                    <button class="dragula__item-delete m--l">
+                        <svg-icon src="assets/svg/trash-2.svg" [svgStyle]="{ 'width.px':12 }"></svg-icon>
+                    </button>
+                </div>
+
+                <button class="btn btn--gray btn--ssm">
+                    <i class="btn__icon icon-plus"></i>
+                    Add new option item
+                </button>
+            </div>
+        </div>
     </div>
 </div>

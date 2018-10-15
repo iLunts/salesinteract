@@ -9,7 +9,12 @@
         </span>
     </div>
     <div class="dragula__max">
-        <input class="input input--label" placeholder="Write text for label textarea here..." type="text">
+        <p class="dragula__item-title">
+            <input class="input input--label" placeholder="Write text for label textarea here..." type="text">
+            <button class="dragula__item-delete">
+                <svg-icon src="assets/svg/trash-2.svg" [svgStyle]="{ 'width.px':12 }"></svg-icon>
+            </button>
+        </p>
         <textarea class="input" rows="5" placeholder="Please write here placeholder"></textarea>
     </div>
 </div>

@@ -10,8 +10,12 @@
     </div>
     <div class="dragula__max">
 
-        <input type="text" class="input input--label" placeholder="Write text for label checkbox group here...">
-
+        <p class="dragula__item-title">
+            <input type="text" class="input input--label" placeholder="Write text for label checkbox group here...">
+            <button class="dragula__item-delete">
+                <svg-icon src="assets/svg/trash-2.svg" [svgStyle]="{ 'width.px':12 }"></svg-icon>
+            </button>
+        </p>
         <div class="checkbox">
 			<input type="checkbox" class="checkbox__input">
 			<label for="" class="checkbox__label">
