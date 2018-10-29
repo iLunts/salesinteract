@@ -264,10 +264,6 @@ button{
         background: @color-red;
         color: #fff;
 
-        // &:focus{
-        //     box-shadow: 0 0 0 3px lighten(@color-red, 30%);
-        // }
-
         &.btn--border{
             border-color: @color-red;
             color: @color-red-dark;
@@ -289,6 +285,45 @@ button{
                 border-color: #bbb;
                 color: #bbb;
             }
+        }
+    }
+
+    // Modificator '.btn.btn--text-icon'
+    &&--text-icon{
+        flex-wrap: wrap;
+        
+        width: 100%;
+        margin-bottom: 20px;
+        border: 3px solid transparent;
+        color: #5e7788;
+        padding: 40px 20px;
+        transition: all .3s;
+        
+        // Element '.btn.btn--text-icon:hover'
+        &:hover{
+            border-color: @color-blue;
+            box-shadow: 0 2px 20px 0 rgba(0, 0, 0, 0.05);
+            
+            // Element '.btn.btn--text-icon:hover .btn__text'
+            // Element '.btn.btn--text-icon:hover .btn__icon'
+            // .btn__text,
+            // .btn__icon{
+            //     color: @color-blue;
+            // }
+        }
+        
+        // Element '.btn.btn--text-icon .btn__text'
+        .btn__text{
+            display: block;
+            width: 100%;
+            transition: all .2s;
+        }
+        
+        // Element '.btn.btn--text-icon .btn__icon'
+        .btn__icon{
+            margin-top: 15px;
+            width: 50px;
+            transition: all .2s;
         }
     }
 

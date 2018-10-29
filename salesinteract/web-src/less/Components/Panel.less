@@ -63,8 +63,16 @@
         padding: 0 10px;
 
         .panel__title{
+            display: flex;
+            align-items: center;
+
             font-weight: 600;
             color: #6e8696;
+            min-height: 42px;
+
+            .row{
+                width: 100%;
+            }
         }
 
         .tab{
@@ -280,7 +288,7 @@
     // Element '.panel .panel__body'
     & &__body{
         padding: @panel-padding;
-        overflow: hidden;
+        // overflow: hidden;
 
         .panel__group,
         .panel__body{

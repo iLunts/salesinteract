@@ -10,6 +10,7 @@ import { Component, OnInit } from '@angular/core';
 export class CrmPageComponent implements OnInit {
   
   isOpenSidebarNewCompany: boolean = false;
+  view: any[] = [65, 65];
 
   taskHistoryLateList: any = [
     {
@@ -28,11 +29,11 @@ export class CrmPageComponent implements OnInit {
       openOffer: false,
       products: [
         {
-          name: 'Product complete',
+          name: 'Product [NAME] complete %',
           value: '65'
         },
         {
-          name: 'Product uncompleate',
+          name: 'Product uncompleate %',
           value: '35'
         }
       ],
@@ -56,7 +57,7 @@ export class CrmPageComponent implements OnInit {
       openOffer: true,
       products: [
         {
-          name: 'Product complete',
+          name: 'Product [NAME] complete %',
           value: '74'
         },
         {
@@ -94,7 +95,7 @@ export class CrmPageComponent implements OnInit {
       openOffer: true,
       products: [
         {
-          name: 'Product complete',
+          name: 'Product [NAME] complete %',
           value: '95'
         },
         {
@@ -108,40 +109,7 @@ export class CrmPageComponent implements OnInit {
     },
   ];
 
-  chartPipe: any = [
-    {
-      "name": "Germany",
-      "value": 40632
-    },
-    {
-      "name": "United States",
-      "value": 49737
-    },
-    {
-      "name": "France",
-      "value": 36745
-    },
-    {
-      "name": "United Kingdom",
-      "value": 36240
-    },
-    {
-      "name": "Spain",
-      "value": 33000
-    },
-    {
-      "name": "Italy",
-      "value": 35800
-    }
-  ];
-
-  view: any[] = [65, 65];
-  colorSchemeCircle = {
-    domain: ['#f44336', '#673ab7', '#2196f3', '#8bc34a', '#ff5722', '#607d8b']
-  };
-
   constructor() {
-    // Object.assign(this, { stat1 })
   }
 
   ngOnInit() {

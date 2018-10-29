@@ -9,6 +9,8 @@ import { SettingsPageComponent } from './pages/settings-page/settings-page.compo
 import { SurveyPageComponent } from './pages/settings-page/survey-page/survey-page.component';
 import { SurveyEditPageComponent } from './pages/settings-page/survey-page/survey-edit-page/survey-edit-page.component';
 import { CrmPageComponent } from './pages/crm-page/crm-page.component';
+import { ProductPageComponent } from './pages/product-page/product-page.component';
+import { CalendarPageComponent } from './pages/calendar-page/calendar-page.component';
 
 const routes: Routes = [
     { path: '', component: DashboardPageComponent },
@@ -16,6 +18,8 @@ const routes: Routes = [
     { path: 'crm/:id', component: ContactListPageComponent },
     { path: 'dashboard', component: DashboardPageComponent },
     { path: 'statistics', component: StatisticsPageComponent },
+    { path: 'products', component: ProductPageComponent },
+    { path: 'calendar', component: CalendarPageComponent },
     { path: 'settings', component: SettingsPageComponent},
     { path: 'settings/survey', component: SurveyPageComponent, pathMatch: 'full'},
     { path: 'settings/survey/:id/edit', component: SurveyEditPageComponent, pathMatch: 'full'},

@@ -1,4 +1,4 @@
-<div class="container-fluid">
+<div class="container">
 
 	<div class="row">
 		<div class="col-lg-12">
@@ -25,8 +25,56 @@
 	</div>
 
 	<div class="row">
-		<div class="col-lg-12">
-			<a [routerLink]="[ '/settings/survey' ]">Survey</a>
+		<div class="col-sm-3">
+			<a class="btn btn--text-icon">
+				<svg-icon class="btn__icon" src="assets/svg/profile.svg"></svg-icon>
+				<span class="btn__text">My account</span>
+			</a>
+		</div>
+
+		<div class="col-sm-3">
+			<a class="btn btn--text-icon">
+				<svg-icon class="btn__icon" src="assets/svg/settings.svg"></svg-icon>
+				<span class="btn__text">Company settings</span>
+			</a>
+		</div>
+	
+		<div class="col-sm-3">
+			<a class="btn btn--text-icon">
+				<svg-icon class="btn__icon" src="assets/svg/fast.svg"></svg-icon>
+				<span class="btn__text">Task maximum delay settings</span>
+			</a>
+		</div>
+	
+		<div class="col-sm-3">
+			<a class="btn btn--text-icon">
+				<svg-icon class="btn__icon" src="assets/svg/file.svg"></svg-icon>
+				<span class="btn__text">Quotation settings</span>
+			</a>
+		</div>
+	
+	</div>
+	
+	<div class="row">
+		<div class="col-sm-3 col-sm-push-1">
+			<a class="btn btn--text-icon">
+				<svg-icon class="btn__icon" src="assets/svg/parking.svg"></svg-icon>
+				<span class="btn__text">Product group settings</span>
+			</a>
+		</div>
+	
+		<div class="col-sm-3 col-sm-push-1">
+			<a class="btn btn--text-icon">
+				<svg-icon class="btn__icon" src="assets/svg/plug.svg"></svg-icon>
+				<span class="btn__text">Plugins</span>
+			</a>
+		</div>
+
+		<div class="col-sm-3 col-sm-push-1">
+			<a class="btn btn--text-icon" [routerLink]="[ '/settings/survey' ]">
+				<svg-icon class="btn__icon" src="assets/svg/web-design.svg"></svg-icon>
+				<span class="btn__text">Form fields</span>
+			</a>
 		</div>
 	</div>
 </div>

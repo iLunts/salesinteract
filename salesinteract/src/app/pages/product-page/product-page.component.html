@@ -1,0 +1,104 @@
+<div class="container">
+
+	<div class="row">
+		<div class="col-lg-12">
+			<section class="header">
+
+				<div class="header__left">
+					<div class="header__icon">
+						<i class="header__icon-icon icon-box"></i>
+					</div>
+					<div>
+						<p class="header__title">Product list</p>
+						<ul class="header__breadcrumbs">
+							<li class="header__breadcrumbs-item">
+								<span href="" class="header__breadcrumbs-span">
+									Home page
+								</span>
+							</li>
+						</ul>
+					</div>
+				</div>
+
+			</section>
+		</div>
+    </div>
+
+    <div class="row product">
+        <div class="col-sm-7">
+            <!-- <div class="panel panel--filter">
+                <div class="panel__title">
+                    <div class="row">
+                        <div class="col-lg-8">
+                            <div class="input-group">
+                                <i class="input-group__icon icon-search"></i>
+                                <input type="text" class="input-group__input" placeholder="Search...">
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <select class="input input--sm m--reset" tooltip="Showing 1 to 4 of 4 entries (filtered from 12 total entries)" placement="left" container="body">
+                                <option value="10">10 items</option>
+                                <option value="25">25 items</option>
+                                <option value="50">50 items</option>
+                                <option value="100">100 items</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div> -->
+
+
+            <div class="panel panel--sm" *ngFor="let item of productList">
+                <div class="panel__body">
+                    <div class="product__item">
+                        <div class="flex flex--middle">
+                            <span class="product__badge badge badge--squared" [style.background]="item.color"></span>
+                            <div>
+                                <p class="product__title">{{item.title}}</p>
+                                <p class="product__desc">{{item.desc}}</p>
+                            </div>
+                        </div>
+                        <span class="badge badge--gray">
+                            active
+                        </span>
+                        <button class="btn btn--squared btn--gray btn--ssm">
+                            <i class="btn__icon icon-more"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-5">
+            <div class="panel">
+                <div class="panel__body">
+                    <div class="panel__group">
+                        <span class="panel__group-text">
+                            Add new product group
+                        </span>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-sm-8">
+                            <label class="label">Name</label>
+                            <input type="text" class="input">
+                        </div>
+                        <div class="col-sm-4">
+                            <label class="label">Color</label>
+                            <input type="text" class="input">
+                        </div>
+                    </div>
+                    <div>
+                        <label class="label">Description</label>
+                        <textarea class="input" name="" id="" cols="30" rows="5"></textarea>
+                    </div>
+
+                    <div class="t--c">
+                        <button class="btn btn--link">Clear</button>
+                        <button class="btn btn--blue">Create</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</div>

@@ -60,6 +60,8 @@ import { SurveyMultiplyFieldComponent } from './ui/survey/survey-multiply-field/
 import { SearchCocTabComponent } from './components/search-coc-tab/search-coc-tab.component';
 import { CrmPageComponent } from './pages/crm-page/crm-page.component';
 import { TooltipModule } from 'ngx-bootstrap';
+import { ProductPageComponent } from './pages/product-page/product-page.component';
+import { CalendarPageComponent } from './pages/calendar-page/calendar-page.component';
 
 @NgModule({
   declarations: [
@@ -110,6 +112,8 @@ import { TooltipModule } from 'ngx-bootstrap';
     SurveyMultiplyFieldComponent,
     SearchCocTabComponent,
     CrmPageComponent,
+    ProductPageComponent,
+    CalendarPageComponent,
   ],
   imports: [
     HttpClientModule,
@@ -127,7 +131,7 @@ import { TooltipModule } from 'ngx-bootstrap';
     NgxChartsModule,
     BrowserAnimationsModule,
     DragulaModule.forRoot(),
-    AngularSvgIconModule
+    AngularSvgIconModule,
   ],
   providers: [EventSesrvice],
   bootstrap: [AppComponent]
