@@ -7,10 +7,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AsideComponent implements OnInit {
   isCollapsed: boolean = false;
-
+  isShowRoute: boolean = false;
   constructor() { }
 
   ngOnInit() {
   }
 
+  switchRoute(){
+    this.isShowRoute = !this.isShowRoute;
+  }
 }

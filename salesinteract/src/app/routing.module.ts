@@ -8,10 +8,12 @@ import { StatisticsPageComponent } from './pages/statistics-page/statistics-page
 import { SettingsPageComponent } from './pages/settings-page/settings-page.component';
 import { SurveyPageComponent } from './pages/settings-page/survey-page/survey-page.component';
 import { SurveyEditPageComponent } from './pages/settings-page/survey-page/survey-edit-page/survey-edit-page.component';
+import { CrmPageComponent } from './pages/crm-page/crm-page.component';
 
 const routes: Routes = [
-    { path: '', component: HomePageComponent },
-    { path: 'crm', component: ContactListPageComponent },
+    { path: '', component: DashboardPageComponent },
+    { path: 'crm', component: CrmPageComponent },
+    { path: 'crm/:id', component: ContactListPageComponent },
     { path: 'dashboard', component: DashboardPageComponent },
     { path: 'statistics', component: StatisticsPageComponent },
     { path: 'settings', component: SettingsPageComponent},
@@ -30,7 +32,7 @@ const routes: Routes = [
 
     // { path: 'contact-list', component: ContactListPageComponent, pathMatch: 'full' },
 
-    { path: '**', component: HomePageComponent }
+    { path: '**', component: DashboardPageComponent }
 ];
 
 @NgModule({

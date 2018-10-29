@@ -3,7 +3,7 @@
 
   <div class="sidebar__panel">
     <header class="sidebar__header">
-      <p class="sidebar__header-title">Create new company</p>
+      <p class="sidebar__header-title">Create new {{tabHeading}}</p>
       <a [routerLink]="['/home']" class="sidebar__close">
         <i class="icon-close"></i>
       </a>
@@ -11,12 +11,16 @@
     <div class="sidebar__panel-body">
 
       <tabset>
-        <tab heading="Company">
+        <tab heading="Company" (select)="onSelect($event)">
           <app-new-company-tab></app-new-company-tab>
         </tab>
 
-        <tab heading="Contact">
+        <tab heading="Contact" (select)="onSelect($event)">
           <app-new-contact-tab></app-new-contact-tab>
+        </tab>
+
+        <tab heading="Search CoC" customClass="nav-search" (select)="onSelect($event)">
+          <app-search-coc-tab></app-search-coc-tab>
         </tab>
       </tabset>
 

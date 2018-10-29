@@ -1,98 +1,110 @@
 <aside class="aside">
     <div>
-        <div class="aside__header">
+        <div class="aside__header" (click)="switchRoute()">
             <span class="aside__header-avatar avatar">
                 <i class="avatar__icon icon-profile"></i>
             </span>
             <div>
                 <p class="aside__header-name">Coen van der Kolk</p>
-                <p class="aside__header-role">Фотостудия</p>
+                <p class="aside__header-role">Administrator</p>
             </div>
         </div>
-        <ul class="aside__menu">
-            <li class="aside__item">
-                <button type="button" class="aside__link aside__link--collapse" (click)="isCollapsed = !isCollapsed"
-                        [attr.aria-expanded]="!isCollapsed" aria-controls="collapseBasic">
-                        <span>
-                            <i class="aside__link-icon icon-dashboard"></i>
-                            Dashboard
-                        </span>
-                        <i class="aside__link-icon aside__link-icon--arrow icon-arrow-down-fill"></i>
-                </button>
 
-                <ul class="aside__menu" [collapse]="!isCollapsed">
-                    <li class="aside__item">
-                        <a [routerLink]="['dashboard']" routerLinkActive="active" class="aside__link">
-                            My dashboard
-                        </a>
-                    </li>
-                    <li class="aside__item">
-                        <a [routerLink]="['statistics']" routerLinkActive="active" class="aside__link">
-                            Statistics
-                        </a>
-                    </li>
-                    <li class="aside__item">
-                        <a [routerLink]="['overviews']" routerLinkActive="active" class="aside__link">
-                            Quick views
-                        </a>
-                    </li>
-                </ul>
-            </li>
-            <!-- <li class="aside__item">
-                <a [routerLink]="['dashboard']" routerLinkActive="active" class="aside__link">
-                    <i class="aside__link-icon icon-dashboard"></i>
-                    Dashboard
-                </a>
-            </li> -->
-            <li class="aside__item">
-                <a [routerLink]="['crm']" class="aside__link" routerLinkActive="active">
-                    <i class="aside__link-icon icon-crm"></i>
-                    CRM
-                </a>
-            </li>
-            <li class="aside__item">
-                <a href="" class="aside__link">
-                    <i class="aside__link-icon icon-calendar"></i>
-                    Calendar
-                </a>
-            </li>
-            <li class="aside__item">
-                <a href="" class="aside__link">
-                    <i class="aside__link-icon icon-box"></i>
-                    Products
-                </a>
-            </li>
-            <li class="aside__item">
-                <a href="" class="aside__link">
-                    <i class="aside__link-icon icon-messages"></i>
-                    Communications center
-                </a>
-            </li>
-            <li class="aside__item">
-                <a href="" class="aside__link">
-                    <i class="aside__link-icon icon-team"></i>
-                    My team
-                </a>
-            </li>
-            <li class="aside__item">
-                <a href="" class="aside__link">
-                    <i class="aside__link-icon icon-mail"></i>
-                    Shared files
-                </a>
-            </li>
-            <li class="aside__item">
-                <a [routerLink]="['settings']" class="aside__link" routerLinkActive="active">
-                    <i class="aside__link-icon icon-setting"></i>
-                    Settings
-                </a>
-            </li>
-            <li class="aside__item">
-                <a href="" class="aside__link">
-                    <i class="aside__link-icon icon-help"></i>
-                    Help
-                </a>
-            </li>
-        </ul>
+        <!-- Show menu -->
+        <div *ngIf="!isShowRoute">
+            <ul class="aside__menu">
+                <li class="aside__item">
+                    <button type="button" class="aside__link aside__link--collapse" (click)="isCollapsed = !isCollapsed"
+                            [attr.aria-expanded]="!isCollapsed" aria-controls="collapseBasic">
+                            <span>
+                                <i class="aside__link-icon icon-dashboard"></i>
+                                Dashboard
+                            </span>
+                            <i class="aside__link-icon aside__link-icon--arrow icon-arrow-down-fill"></i>
+                    </button>
+    
+                    <ul class="aside__menu" [collapse]="!isCollapsed">
+                        <li class="aside__item">
+                            <a [routerLink]="['dashboard']" routerLinkActive="active" class="aside__link">
+                                My dashboard
+                            </a>
+                        </li>
+                        <li class="aside__item">
+                            <a [routerLink]="['statistics']" routerLinkActive="active" class="aside__link">
+                                Statistics
+                            </a>
+                        </li>
+                        <li class="aside__item">
+                            <a [routerLink]="['overviews']" routerLinkActive="active" class="aside__link">
+                                Quick views
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <!-- <li class="aside__item">
+                    <a [routerLink]="['dashboard']" routerLinkActive="active" class="aside__link">
+                        <i class="aside__link-icon icon-dashboard"></i>
+                        Dashboard
+                    </a>
+                </li> -->
+                <li class="aside__item">
+                    <a [routerLink]="['crm']" class="aside__link" routerLinkActive="active">
+                        <i class="aside__link-icon icon-crm"></i>
+                        CRM
+                    </a>
+                </li>
+                <li class="aside__item">
+                    <a href="" class="aside__link">
+                        <i class="aside__link-icon icon-calendar"></i>
+                        Calendar
+                    </a>
+                </li>
+                <li class="aside__item">
+                    <a href="" class="aside__link">
+                        <i class="aside__link-icon icon-box"></i>
+                        Products
+                    </a>
+                </li>
+                <li class="aside__item">
+                    <a href="" class="aside__link">
+                        <i class="aside__link-icon icon-messages"></i>
+                        Communications center
+                    </a>
+                </li>
+                <li class="aside__item">
+                    <a href="" class="aside__link">
+                        <i class="aside__link-icon icon-team"></i>
+                        My team
+                    </a>
+                </li>
+                <li class="aside__item">
+                    <a href="" class="aside__link">
+                        <i class="aside__link-icon icon-mail"></i>
+                        Shared files
+                    </a>
+                </li>
+                <li class="aside__item">
+                    <a [routerLink]="['settings']" class="aside__link" routerLinkActive="active">
+                        <i class="aside__link-icon icon-setting"></i>
+                        Settings
+                    </a>
+                </li>
+                <li class="aside__item">
+                    <a href="" class="aside__link">
+                        <i class="aside__link-icon icon-help"></i>
+                        Help
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Show select Route -->
+        <div *ngIf="isShowRoute">
+            <div class="input-group">
+                <i class="input-group__icon icon-search"></i>
+                <input type="text" class="input-group__input" placeholder="Please write company name...">
+            </div>
+        </div>
     </div>
     <div class="aside__footer">
         <ul class="aside__menu">

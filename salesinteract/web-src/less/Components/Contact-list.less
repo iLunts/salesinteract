@@ -1,0 +1,48 @@
+// out: ../../css/components/contact-list.css, compress: true
+@import '../variables.less';
+
+.contact-list{
+    position: relative;
+    
+    // Modificator '.contact-list .contact-list--'
+    &&--{
+    }
+    
+    // Element '.contact-list .contact-list__body'
+    & &__body{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    // Element '.contact-list .contact-list__title'
+    & &__title{
+        display: inline-block;
+        font-size: 14px;
+        line-height: 1;
+        color: #252841;
+        font-weight: 400;
+        margin-top: 2px;
+    }
+
+    // Element '.contact-list .contact-list__type'
+    & &__type{
+        font-size: .9rem;
+        line-height: 1;
+        font-weight: 300;
+        color: @color-gray-dark;
+        margin: 0;
+    }
+
+    // Element '.contact-list .contact-list__name'
+    & &__name{
+        display: inline-block;
+        font-size: 14px;
+        line-height: 1;
+        color: #252841;
+        font-weight: 400;
+        margin-top: 2px;
+    }
+
+}
+

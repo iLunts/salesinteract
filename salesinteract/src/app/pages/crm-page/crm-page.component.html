@@ -1,0 +1,144 @@
+<div class="container-fluid">
+
+  <div class="row">
+    <div class="col-lg-12">
+      <section class="header">
+
+        <div class="header__left">
+          <div class="header__icon">
+            <i class="header__icon-icon icon-crm"></i>
+          </div>
+          <div>
+            <p class="header__title">Companies</p>
+            <ul class="header__breadcrumbs">
+              <li class="header__breadcrumbs-item">
+                <a href="" class="header__breadcrumbs-link">
+                  Home page
+                </a>
+              </li>
+              <li class="header__breadcrumbs-item">
+                <span href="" class="header__breadcrumbs-span">
+                  CRM page
+                </span>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div>
+          <button class="btn btn--blue btn--new" (click)="openSidebarNewCompany()">
+            <i class="btn__icon icon-new-plus"></i>
+            <span class="btn__text">
+              <span class="btn__text-text">Create new company</span>
+              <span class="btn__text-text btn__text-text--second">Click what you need adding</span>
+            </span>
+          </button>
+        </div>
+      </section>
+
+      <div class="panel panel--filter">
+				<div class="panel__title">
+          <div class="checkbox checkbox--sm">
+            <input type="checkbox" class="checkbox__input" id="select-all">
+            <label class="checkbox__label" for="select-all">Select all</label>
+          </div>
+				</div>
+				<div class="">
+					<ul class="tab tab--h">
+						<li class="tab__item active">
+							<a href="" class="tab__link">All</a>
+						</li>
+						<li class="tab__item">
+							<a href="" class="tab__link">Suspect</a>
+						</li>
+						<li class="tab__item">
+							<a href="" class="tab__link">Prospect</a>
+						</li>
+						<li class="tab__item">
+							<a href="" class="tab__link">Customer</a>
+						</li>
+					</ul>
+				</div>
+				<div class="flex flex--middle">
+          <div class="input-group">
+            <i class="input-group__icon icon-search"></i>
+            <input type="text" class="input-group__input" placeholder="Search...">
+          </div>
+          <div class="col-lg-5 p--reset m--l-sm">
+            <select class="input input--sm m--reset" tooltip="Showing 1 to 4 of 4 entries (filtered from 12 total entries)" placement="left" container="body">
+              <option value="10">10 items</option>
+              <option value="25">25 items</option>
+              <option value="50">50 items</option>
+              <option value="100">100 items</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Company list -->
+      <div class="contact-list">
+        <div class="panel panel--sm" *ngFor="let item of taskHistoryLateList">
+          <div class="panel__body contact-list__body">
+            <div class="flex flex--middle col-lg-3">
+              <div class="checkbox m--r">
+                <input type="checkbox" class="checkbox__input">
+                <label for="" class="checkbox__label"></label>
+              </div>
+              <div class="flex flex--middle" [ngClass]="{'flex--wrap': item.contacts.length > 1}">
+                <div class="flex flex--middle col-xs-12" *ngFor="let contact of item.contacts" [ngClass]="{'m--b-mini': item.contacts.length > 1}">
+                  <img class="avatar m--r-sm" [src]="contact.image" alt="" [ngClass]="{'avatar--sm': item.contacts.length > 1}">
+                  <div>
+                    <a [routerLink]="['/crm', contact.id]" class="contact-list__title">{{contact.contactName}}</a>
+                    <p class="contact-list__type" *ngIf="item.contacts.length < 1">Contacts</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="flex flex--middle col-lg-3">
+              <img class="avatar avatar--square m--r-sm" [src]="item.companyImage" alt="">
+              <div>
+                <span class="contact-list__title">{{item.companyName}}</span>
+                <p class="contact-list__type">Company name</p>
+              </div>
+            </div>
+            <div class="col-lg-1 t--c">
+              <span class="badge badge--lg badge--gray">{{item.type}}</span>
+            </div>
+            <div class="col-lg-1 t--c">
+
+              <ngx-charts-pie-chart
+                  *ngIf="item.products?.length"
+									[view]="view"
+									[scheme]="item.productsColor"
+									[results]="item.products"
+                  [gradient]="false"
+                  [animations]="true"
+                  [labels]="false" 
+                  [legend]="false"
+                  [doughnut]="true"
+                  [arcWidth]="0.45"
+									>
+								</ngx-charts-pie-chart>
+            </div>
+            <div class="col-lg-1 t--r">
+              <span popover="Shared files" container="body" triggers="mouseenter:mouseleave" *ngIf="item.sharedFiles">
+                <svg-icon class="m--l-sm" src="assets/svg/file-shared.svg" [svgStyle]="{ 'width.px':18 }"></svg-icon>
+              </span>
+              <span popover="Open offer" container="body" triggers="mouseenter:mouseleave" *ngIf="item.openOffer">
+                <svg-icon class="m--l-sm" src="assets/svg/open-offer.svg" [svgStyle]="{ 'width.px':18 }"></svg-icon>
+              </span>
+              <!-- <svg-icon class="m--l-sm" src="assets/svg/trash-2.svg" [svgStyle]="{ 'width.px':12 }"></svg-icon> -->
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <pagination [totalItems]="100"></pagination>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- Sidebar new company panel -->
+<app-sidebar-new-company [ngClass]="{'open': isOpenSidebarNewCompany}"></app-sidebar-new-company>

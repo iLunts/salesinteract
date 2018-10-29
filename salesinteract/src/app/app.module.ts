@@ -57,6 +57,9 @@ import { SurveyRadioFieldComponent } from './ui/survey/survey-radio-field/survey
 import { AngularSvgIconModule } from 'angular-svg-icon';
 import { HttpClientModule } from '@angular/common/http';
 import { SurveyMultiplyFieldComponent } from './ui/survey/survey-multiply-field/survey-multiply-field.component';
+import { SearchCocTabComponent } from './components/search-coc-tab/search-coc-tab.component';
+import { CrmPageComponent } from './pages/crm-page/crm-page.component';
+import { TooltipModule } from 'ngx-bootstrap';
 
 @NgModule({
   declarations: [
@@ -105,6 +108,8 @@ import { SurveyMultiplyFieldComponent } from './ui/survey/survey-multiply-field/
     SurveyCheckboxFieldComponent,
     SurveyRadioFieldComponent,
     SurveyMultiplyFieldComponent,
+    SearchCocTabComponent,
+    CrmPageComponent,
   ],
   imports: [
     HttpClientModule,
@@ -117,6 +122,7 @@ import { SurveyMultiplyFieldComponent } from './ui/survey/survey-multiply-field/
     PopoverModule.forRoot(),
     CollapseModule.forRoot(),
     BsDropdownModule.forRoot(),
+    TooltipModule.forRoot(),
     FullCalendarModule,
     NgxChartsModule,
     BrowserAnimationsModule,
