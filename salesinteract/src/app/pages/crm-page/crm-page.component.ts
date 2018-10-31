@@ -38,7 +38,7 @@ export class CrmPageComponent implements OnInit {
         }
       ],
       productsColor: {
-        domain: ['#f44336', '#ffffff']
+        domain: ['#f44336', 'rgba(244, 67, 54, .2)']
       },
     },
     {
@@ -66,7 +66,7 @@ export class CrmPageComponent implements OnInit {
         }
       ],
       productsColor: {
-        domain: ['#673ab7', '#ffffff']
+        domain: ['#673ab7', 'rgba(103, 58, 183, .2)']
       },
     },
     {
@@ -104,7 +104,7 @@ export class CrmPageComponent implements OnInit {
         }
       ],
       productsColor: {
-        domain: ['#2196f3', '#ffffff']
+        domain: ['#2196f3', 'rgba(33, 150, 243, .2)']
       },
     },
   ];

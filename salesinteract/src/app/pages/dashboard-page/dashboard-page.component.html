@@ -64,18 +64,18 @@
 								aria-controls="collapseBasic">
 							<i class="btn__icon" [ngClass]="{'icon-arrow-down-fill': isCollapsedTopBar, 'icon-arrow-up-fill': !isCollapsedTopBar}"></i>
 						</button>
-						<span class="btn btn--circle btn--ssm btn--gray m--l"
-								popover="Vivamus sagittis lacus vel augue laoreet rutrum faucibus."
-								triggers="mouseenter:mouseleave"
+						<button class="btn btn--circle btn--ssm btn--gray m--l"
+								[popover]="dashPersonalStatistics"
+								triggers="focus"
 								container="body"
-								placement="auto">
+								placement="left">
 							<i class="btn__icon icon-question"></i>
-						</span>
+					</button>
 					</div>
 				</div>
 				<div class="panel__body" [collapse]="isCollapsedTopBar">
 
-					<div class="row">
+					<div class="row row--divider">
 						<div class="col-lg-3">
 							<p class="t--semi-bold">Task history</p>
 
@@ -103,50 +103,43 @@
 						<div class="col-lg-2">
 							<p class="t--semi-bold">Contacten</p>
 
-							<!-- <div>
-								<ngx-charts-bar-vertical
-									[view]="view"
-									[scheme]="colorSchemeCircle"
-									[results]="contacten"
-									[gradient]="true"
-									[xAxis]="false"
-									[yAxis]="true"
-									[legend]="false"
-									[showXAxisLabel]="false"
-									[showYAxisLabel]="false"
-									[xAxisLabel]="false"
-									[yAxisLabel]="false"
-									(select)="onSelect($event)">
-								</ngx-charts-bar-vertical>
-							</div> -->
+							<div class="dash-stat dash-stat--line">
+								<div class="dash-stat__progress">
+									<div class="dash-stat__progress-item" 
+										*ngFor="let item of contactGraphList" 
+										[ngStyle]="{'background-color': item.color, 'width.%': item.percent}"></div>
+								</div>
+								<ul class="dash-stat__list list list--line list--v">
+									<li class="list__item dash-stat__list-item" 
+										*ngFor="let item of contactGraphList">
+										<div>
+											<span [ngStyle]="{'background-color': item.color}" 
+												class="badge badge--sm badge--squared dash-stat__list-color"></span>
+											<span class="t--semi-bold t--gray-dark m--l-sm">{{item.title}}</span>
+										</div>
+										<span class="t--semi-bold t--gray">{{item.percent}}%</span>
+									</li>
+								</ul>
+							</div>
 						</div>
 
 						<div class="col-lg-4">
 							<p class="t--semi-bold">Complete tasks</p>
 
-							<div>
-								<!-- <ngx-charts-bar-vertical-stacked
-									[view]="viewCircle"
-									[scheme]="colorSchemeCircle"
-									[results]="afgeronde"
-									[legend]="false"
-									>
-								</ngx-charts-bar-vertical-stacked> -->
-
-								<!-- <ngx-charts-bar-vertical-stacked
-									[view]="viewCompleteTask"
-									[scheme]="colorScheme"
-									[results]="multi"
-									[gradient]="false"
-									[xAxis]="true"
-									[yAxis]="showYAxis"
-									[legend]="true"
-									[showXAxisLabel]="true"
-									[showYAxisLabel]="true"
-									[xAxisLabel]="true"
-									[yAxisLabel]="true">
-								</ngx-charts-bar-vertical-stacked> -->
-							</div>
+							<ngx-charts-bar-vertical-stacked
+								[view]="viewCompleteTask"
+								[scheme]="colorSchemeCompleteTask"
+								[results]="completeTaskList"
+								[legend]="false"
+								[showXAxisLabel]="true"
+								[showYAxisLabel]="true"
+								[xAxis]="true"
+								[yAxis]="true"
+								[showGridLines]="true"
+								[roundDomains]="true"
+								[barPadding]="20"
+								>
+							</ngx-charts-bar-vertical-stacked>
 						</div>
 
 						<div class="col-lg-3">
@@ -186,7 +179,7 @@
 			<div class="panel panel--filter">
 				<div class="panel__title t--green">
 					<i class="icon icon-today m--r-mini"></i>
-					<span class="t--semi-bold">Today</span>				
+					<span class="t--semi-bold">Task today</span>				
 				</div>
 				<div class="">
 					<ul class="tab tab--h">
@@ -205,6 +198,13 @@
 					<button class="btn btn--squared btn--gray btn--ssm">
 						<i class="btn__icon icon-more"></i>
 					</button>
+					<button class="btn btn--circle btn--ssm btn--gray m--l"
+							[popover]="dashTaskToday"
+							triggers="focus"
+							container="body"
+							placement="auto">
+						<i class="btn__icon icon-question"></i>
+				</button>
 				</div>
 			</div>
 
@@ -250,7 +250,7 @@
 			<div class="panel panel--filter">
 				<div class="panel__title t--red">
 					<i class="icon icon-too-late m--r-mini"></i>
-					<span class="t--semi-bold">Too late</span>				
+					<span class="t--semi-bold">Task too late</span>				
 				</div>
 				<div class="">
 					<ul class="tab tab--h">
@@ -306,6 +306,13 @@
 
 						</ul>
 					</div>
+					<button class="btn btn--circle btn--ssm btn--gray m--l"
+							[popover]="dashTaskToday"
+							triggers="focus"
+							container="body"
+							placement="auto">
+						<i class="btn__icon icon-question"></i>
+					</button>
 				</div>
 			</div>
 
@@ -349,6 +356,18 @@
 		<!-- Task calendar -->
 		<div class="col-lg-4">
 			<div class="panel">
+				<div class="panel__header">
+					<p class="panel__header-title">
+						Task calendar
+					</p>
+					<button class="btn btn--circle btn--ssm btn--gray m--l"
+							popover="Here you see your future/past tasks on date."
+							triggers="focus"
+							container="body"
+							placement="auto">
+						<i class="btn__icon icon-question"></i>
+					</button>
+				</div>
 				<!-- <div class="panel__body"> -->
 					<div *ngIf="calendarOptions">
 						<ng-fullcalendar 
@@ -370,3 +389,59 @@
 
 <!-- Sidebar panel create new company -->
 <app-sidebar-new-company [ngClass]="{'open': isOpenSidebarNewCompany}"></app-sidebar-new-company>
+
+<!-- Templates for popovers -->
+<ng-template #dashPersonalStatistics>
+  	<p class="t--md">
+		Here you can see the following statistics for a period.
+	</p>
+	<p class="t--md">
+		<b>Task history</b> - With whom you had the latest contact.
+	</p>
+	<p class="t--md">
+		<b>Contacts</b> - Suspects, Prospects and Customers where you were in touch in this period
+	</p>
+	<p class="t--md">
+		<b>Completed tasks</b> - Overview of your tasks used during this period.
+	</p>
+	<p class="t--md">
+		<b>Open offers</b> - Offers you have sent and its validity.
+	</p>
+</ng-template>
+
+<ng-template #dashTaskToday>
+  	<p class="t--md">
+		Here you see the suspects, prospects and customers where a task is still open to deal with.
+	</p>
+  	<p class="t--md">
+		Overdue tasks are handled to late. Your manager receives a notification of this so it is its up to you to keep you
+		manager and you customers happy.
+	</p>
+  	<p class="t--md">
+		Today are the tasks you have to deal with today.
+	</p>
+  	<p class="t--md">
+		Once you've entered companies, you'll see the following options:
+	</p>
+	<p class="t--md">
+		If you <b>click on a company name</b> you will be directed to the detailed company page.
+	</p>
+  	<p class="t--md">
+		If you <b>click on contact</b> you will be directed to the detailed contact page.
+	</p>
+  	<p class="t--md">
+		Previous results such as "Contact had no time", "Callback appointment", etc, indicate what the previous status of
+		your task handling was.
+	</p>
+  	<p class="t--md">
+		<span class="badge badge--gray">'Task'</span> indicates what action to take. By clicking here you can create a new task.<br>
+	</p>
+  	<p class="t--md">
+		With each task you create here, the prospect / customer will receive an email immediately.<br>
+		This way you build a relationship with your relationship even faster.
+	</p>
+  	<p class="t--md">
+		The date field on the right gives you an overview of forward scheduled tasks to come.
+	</p>
+</ng-template>
+

@@ -1,6 +1,48 @@
 @import '../../../../web-src/less/variables.less';
 
 // ------------------------------------------------
+// Block '.dash-stat'
+// ------------------------------------------------
+.dash-stat{
+
+    // Modificator '.dash-stat.dash-stat--line'
+    &&--line{
+
+    }
+
+    // Element '.dash-stat .dash-stat__list'
+    & &__list{
+        margin-top: 30px;
+        
+        &-item{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+    }
+    
+    & &__progress{
+        position: relative;
+        display: block;
+        width: 100%;
+        height: 16px;
+        background-color: #eee;
+        border-radius: 3px;
+
+        &-item{
+            display: block;
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 0;
+            height: 16px;
+            background-color: #eee;
+            border-radius: 3px;
+        }
+    }
+}
+
+// ------------------------------------------------
 // Block '.account-list'
 // ------------------------------------------------
 .account-list{

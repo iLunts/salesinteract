@@ -57,8 +57,26 @@
 							<a href="" class="tab__link">Customer</a>
 						</li>
 					</ul>
-				</div>
+        </div>
+        
+        <!-- Export -->
+        <button class="btn btn--gray btn--sm m--l-sm">
+          <svg-icon class="btn__icon m--r-mini" src="assets/svg/export-file.svg"></svg-icon>
+          <span>Export to Excel</span>
+        </button>
+        
 				<div class="flex flex--middle">
+          <div class="input-group">
+            <i class="input-group__icon icon-profile"></i>
+            <!-- <input type="text" class="input-group__input" placeholder="Account managers..."> -->
+            <select class="input-group__input" 
+                    tooltip="Show companies of:"
+                    container="body">
+              <option value="">All managers</option>
+              <option value="">Marc Burgh</option>
+              <option value="">Peter Koper</option>
+            </select>
+          </div>
           <div class="input-group">
             <i class="input-group__icon icon-search"></i>
             <input type="text" class="input-group__input" placeholder="Search...">
@@ -71,6 +89,14 @@
               <option value="100">100 items</option>
             </select>
           </div>
+
+          <button class="btn btn--circle btn--ssm btn--gray m--l-sm"
+              [popover]="crmCompanies"
+              triggers="focus"
+							container="body"
+							placement="auto">
+						<i class="btn__icon icon-question"></i>
+				</button>
         </div>
       </div>
       
@@ -142,3 +168,9 @@
 
 <!-- Sidebar new company panel -->
 <app-sidebar-new-company [ngClass]="{'open': isOpenSidebarNewCompany}"></app-sidebar-new-company>
+
+<!-- Templates for popovers -->
+<ng-template #crmCompanies>
+    <p class="t--md">Here you see companies with their contacts and the status of the companies and contacts you manage.</p>
+    <p class="t--md">By clicking on the filter you can also see company and contacts or other account managers.</p>
+</ng-template>

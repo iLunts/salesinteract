@@ -20,7 +20,7 @@ export class DashboardPageComponent implements OnInit {
   multi: any[];
 
   view: any[] = [200, 150];
-  viewCompleteTask: any[] = [500, 250];
+  viewCompleteTask: any[] = [400, 200];
   viewCircle: any[] = [150, 150];
 
   // Charts options
@@ -32,6 +32,159 @@ export class DashboardPageComponent implements OnInit {
   colorSchemeCircle = {
     domain: ['#f44336', '#673ab7', '#2196f3', '#8bc34a', '#ff5722', '#607d8b']
   };
+  colorSchemeCompleteTask = {
+    domain: ['#FFDA83', '#FF8373', '#56D9FE', '#A3A0FB']
+  };
+
+  completeTaskList: any = [
+    {
+      "name": "Mon",
+      "series": [
+        {
+          "name": "Belafspraak",
+          "value": 5
+        },
+        {
+          "name": "Offerte ver",
+          "value": 12
+        },
+        {
+          "name": "Bezoekafspraak",
+          "value": 10
+        },
+        {
+          "name": "Some text",
+          "value": 15
+        },
+      ]
+    },
+    {
+      "name": "Tue",
+      "series": [
+        {
+          "name": "Belafspraak",
+          "value": 10
+        },
+        {
+          "name": "Offerte ver",
+          "value": 16
+        },
+        {
+          "name": "Bezoekafspraak",
+          "value": 6
+        },
+        {
+          "name": "Some text",
+          "value": 28
+        },
+      ]
+    },
+    {
+      "name": "Wed",
+      "series": [
+        {
+          "name": "Belafspraak",
+          "value": 6
+        },
+        {
+          "name": "Offerte ver",
+          "value": 12
+        },
+        {
+          "name": "Bezoekafspraak",
+          "value": 9
+        },
+        {
+          "name": "Some text",
+          "value": 24
+        },
+      ]
+    },
+    {
+      "name": "Thu",
+      "series": [
+        {
+          "name": "Belafspraak",
+          "value": 7
+        },
+        {
+          "name": "Offerte ver",
+          "value": 13
+        },
+        {
+          "name": "Bezoekafspraak",
+          "value": 16
+        },
+        {
+          "name": "Some text",
+          "value": 10
+        },
+      ]
+    },
+    {
+      "name": "Fri",
+      "series": [
+        {
+          "name": "Belafspraak",
+          "value": 12
+        },
+        {
+          "name": "Offerte ver",
+          "value": 9
+        },
+        {
+          "name": "Bezoekafspraak",
+          "value": 14
+        },
+        {
+          "name": "Some text",
+          "value": 10
+        },
+      ]
+    },
+    {
+      "name": "Sat",
+      "series": [
+        {
+          "name": "Belafspraak",
+          "value": 5
+        },
+        {
+          "name": "Offerte ver",
+          "value": 15
+        },
+        {
+          "name": "Bezoekafspraak",
+          "value": 9
+        },
+        {
+          "name": "Some text",
+          "value": 20
+        },
+      ]
+    },
+    {
+      "name": "Sun",
+      "series": [
+        {
+          "name": "Belafspraak",
+          "value": 14
+        },
+        {
+          "name": "Offerte ver",
+          "value": 15
+        },
+        {
+          "name": "Bezoekafspraak",
+          "value": 8
+        },
+        {
+          "name": "Some text",
+          "value": 30
+        },
+      ]
+    },
+  ];
 
   taskHistoryList: any = [
     { name: 'Coen van der Kolk', 
@@ -75,6 +228,23 @@ export class DashboardPageComponent implements OnInit {
     },
   ];
 
+  contactGraphList: any = [
+    {
+      title: 'Belafspraak', color: '#A3A0FB', percent: '100'
+    },
+    {
+      title: 'Offerte verstuurd', color: '#56D9FE', percent: '65'
+    },
+    {
+      title: 'Bezoekafspraak', color: '#FF8373', percent: '45'
+    },
+    {
+      title: 'Some text', color: '#37C976', percent: '20'
+    },
+  ];
+
+
+
   calendarOptions: Options;
   @ViewChild(CalendarComponent) ucCalendar: CalendarComponent;
 
@@ -84,16 +254,6 @@ export class DashboardPageComponent implements OnInit {
 
   ngOnInit() {
 
-    // this.calendarOptions = {
-    //   editable: true,
-    //   eventLimit: false,
-    //   header: {
-    //     left: 'title',
-    //     center: 'today prev,next',
-    //     right: ''
-    //   },
-    //   events: data
-    // };
     
     this._eventService.getEvents().subscribe(data => {
       this.calendarOptions = {

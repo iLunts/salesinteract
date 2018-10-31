@@ -66,6 +66,16 @@ li ol {
     // --------------------------------------------
     // Modificator '.list.list--v'
     &&--v{
+
+                
+        // Element '.list.list--v.list__line'
+        &.list--line{
+            .list__item{
+                & + .list__item{
+                    border-top: 1px solid #eee;
+                }
+            }
+        }
         
         // Element '.list.list--v .list__title'
         .list__title{

@@ -1,3 +1,29 @@
+.dash-stat .dash-stat__list {
+  margin-top: 30px;
+}
+.dash-stat .dash-stat__list-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.dash-stat .dash-stat__progress {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 16px;
+  background-color: #eee;
+  border-radius: 3px;
+}
+.dash-stat .dash-stat__progress-item {
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 0;
+  height: 16px;
+  background-color: #eee;
+  border-radius: 3px;
+}
 .account-list .account-list__item {
   display: flex;
   align-items: center;
