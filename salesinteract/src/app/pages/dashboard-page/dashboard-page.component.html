@@ -50,11 +50,10 @@
 						</p>
 					</div>
 					
-					<div>
-						<span class="badge badge--red">Expired tasks: 12</span>
-						<span class="badge badge--gray">Expired tasks: 12</span>
-						<span class="badge badge--green">Open tasks: 12</span>
-						<span class="badge badge--yellow">Expired tasks: 12</span>
+					<div [hidden]="!isCollapsedTopBar">
+						<span class="badge" 
+								*ngFor="let item of contactGraphList"
+								[ngStyle]="{'background-color': item.color}">{{item.title}}: {{item.count}}</span>
 					</div>
 
 					<div>
@@ -117,7 +116,7 @@
 												class="badge badge--sm badge--squared dash-stat__list-color"></span>
 											<span class="t--semi-bold t--gray-dark m--l-sm">{{item.title}}</span>
 										</div>
-										<span class="t--semi-bold t--gray">{{item.percent}}%</span>
+										<span class="t--semi-bold t--gray">{{item.count}}</span>
 									</li>
 								</ul>
 							</div>
