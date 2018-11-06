@@ -11,12 +11,14 @@ import { SurveyEditPageComponent } from './pages/settings-page/survey-page/surve
 import { CrmPageComponent } from './pages/crm-page/crm-page.component';
 import { ProductPageComponent } from './pages/product-page/product-page.component';
 import { CalendarPageComponent } from './pages/calendar-page/calendar-page.component';
+import { QuickViewsPageComponent } from './pages/quick-views-page/quick-views-page.component';
 
 const routes: Routes = [
     { path: '', component: DashboardPageComponent },
     { path: 'crm', component: CrmPageComponent },
     { path: 'crm/:id', component: ContactListPageComponent },
     { path: 'dashboard', component: DashboardPageComponent },
+    { path: 'quick-views', component: QuickViewsPageComponent },
     { path: 'statistics', component: StatisticsPageComponent },
     { path: 'products', component: ProductPageComponent },
     { path: 'calendar', component: CalendarPageComponent },

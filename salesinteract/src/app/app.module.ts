@@ -62,6 +62,7 @@ import { CrmPageComponent } from './pages/crm-page/crm-page.component';
 import { TooltipModule } from 'ngx-bootstrap';
 import { ProductPageComponent } from './pages/product-page/product-page.component';
 import { CalendarPageComponent } from './pages/calendar-page/calendar-page.component';
+import { QuickViewsPageComponent } from './pages/quick-views-page/quick-views-page.component';
 
 @NgModule({
   declarations: [
@@ -114,6 +115,7 @@ import { CalendarPageComponent } from './pages/calendar-page/calendar-page.compo
     CrmPageComponent,
     ProductPageComponent,
     CalendarPageComponent,
+    QuickViewsPageComponent,
   ],
   imports: [
     HttpClientModule,

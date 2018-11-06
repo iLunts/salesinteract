@@ -1,0 +1,174 @@
+<div class="container-fluid">
+
+	<div class="row">
+		<div class="col-lg-12">
+			<section class="header">
+
+				<div class="header__left">
+					<div class="header__icon">
+						<i class="header__icon-icon icon-dashboard"></i>
+					</div>
+					<div>
+						<p class="header__title">Quick views</p>
+						<ul class="header__breadcrumbs">
+							<li class="header__breadcrumbs-item">
+								<a href="" class="header__breadcrumbs-link">
+									Home page
+								</a>
+							</li>
+							<li class="header__breadcrumbs-item">
+								<span href="" class="header__breadcrumbs-span">
+									Dashboard page
+								</span>
+							</li>
+						</ul>
+					</div>
+				</div>
+
+			</section>
+		</div>
+	</div>
+
+	<div class="row">	
+		<div class="col-lg-12">
+			<div class="panel" *ngFor="let item of userList; index as i">
+				<div class="panel__header">
+					<div class="flex flex--middle">
+						<img class="m--r-sm" [src]="item.photoUrl" *ngIf="item.photoUrl" alt="">
+						<span class="avatar avatar--empty m--r-sm" *ngIf="!item.photoUrl"></span>
+
+						<div>
+							<p class="panel__header-title">
+								#{{i+1}} {{item.firstName}} {{item.lastName}}
+							</p>
+							<p class="panel__header-text">
+								Personal statistics
+							</p>
+						</div>
+
+						<button class="btn btn--circle btn--gray btn--ssm m--l">
+							<svg-icon class="btn__icon m--reset" src="assets/svg/profile.svg"></svg-icon>
+						</button>
+					</div>
+					
+					<div [hidden]="!item.isCollapsedTopBar">
+						<span class="badge" 
+								*ngFor="let item of item.contactGraphList"
+								[ngStyle]="{'background-color': item.color}">{{item.title}}: {{item.count}}</span>
+					</div>
+
+					<div>
+						<button class="btn btn--squared btn--gray btn--ssm" 
+								(click)="item.isCollapsedTopBar = !item.isCollapsedTopBar"
+								[attr.aria-expanded]="!item.isCollapsedTopBar" 
+								aria-controls="collapseBasic">
+							<i class="btn__icon" [ngClass]="{'icon-arrow-down-fill': item.isCollapsedTopBar, 'icon-arrow-up-fill': !item.isCollapsedTopBar}"></i>
+						</button>
+						<button class="btn btn--circle btn--ssm btn--gray m--l"
+								[popover]="dashPersonalStatistics"
+								triggers="focus"
+								container="body"
+								placement="left">
+							<i class="btn__icon icon-question"></i>
+						</button>
+					</div>
+				</div>
+				<div class="panel__body" [collapse]="item.isCollapsedTopBar">
+
+					<div class="row row--divider">
+						<div class="col-lg-3">
+							<p class="t--semi-bold">Task history</p>
+
+							<ul class="account-list list list--v list--line">
+								<li class="account-list__item list__item" *ngFor="let task of item.taskHistoryList">
+									<div class="account-list__content flex flex--middle">
+										<img class="account-list__avatar avatar" [src]="task.image" alt="">
+										<div>
+											<a href="" class="account-list__name">Coen van der Kolk</a>
+											<p class="account-list__company">Company</p>
+										</div>
+									</div>
+									<div class="t--r">
+										<span class="badge badge--gray">Close</span>
+										<p class="t--md t--regular m--t-mini t--red">{{task.date}}</p>
+									</div>
+								</li>
+							</ul>
+
+							<p class="m--reset t--c">
+								<a href="" class="btn btn--gray btn--ssm col-lg-12">Show more</a>
+							</p>
+						</div>
+
+						<div class="col-lg-2">
+							<p class="t--semi-bold">Contacten</p>
+
+							<div class="dash-stat dash-stat--line">
+								<div class="dash-stat__progress">
+									<div class="dash-stat__progress-item" 
+										*ngFor="let contact of item.contactGraphList" 
+										[ngStyle]="{'background-color': contact.color, 'width.%': contact.percent}"></div>
+								</div>
+								<ul class="dash-stat__list list list--line list--v">
+									<li class="list__item dash-stat__list-item" 
+										*ngFor="let contact of item.contactGraphList">
+										<div>
+											<span [ngStyle]="{'background-color': contact.color}" 
+												class="badge badge--sm badge--squared dash-stat__list-color"></span>
+											<span class="t--semi-bold t--gray-dark m--l-sm">{{contact.title}}</span>
+										</div>
+										<span class="t--semi-bold t--gray">{{contact.count}}</span>
+									</li>
+								</ul>
+							</div>
+						</div>
+
+						<!-- <div class="col-lg-4">
+							<p class="t--semi-bold">Complete tasks</p>
+
+							<ngx-charts-bar-vertical-stacked
+								[view]="viewCompleteTask"
+								[scheme]="colorSchemeCompleteTask"
+								[results]="completeTaskList"
+								[legend]="false"
+								[showXAxisLabel]="true"
+								[showYAxisLabel]="true"
+								[xAxis]="true"
+								[yAxis]="true"
+								[showGridLines]="true"
+								[roundDomains]="true"
+								[barPadding]="20"
+								>
+							</ngx-charts-bar-vertical-stacked>
+						</div> -->
+
+						<!-- <div class="col-lg-3">
+							<p class="t--semi-bold">Open offers</p>
+
+							<ul class="account-list list list--v list--line">
+								<li class="account-list__item list__item" *ngFor="let item of taskHistoryList">
+									<div class="account-list__content flex flex--middle">
+										<span class="badge badge--green m--r-sm">1</span>
+										<div>
+											<a href="" class="account-list__name">Bill Gates</a>
+											<p class="account-list__company">Presentation offer</p>
+										</div>
+									</div>
+									<div class="t--r">
+										<span class="badge badge--red">Expired</span>
+										<p class="t--md t--regular m--t-mini t--red">{{item.date}}</p>
+									</div>
+								</li>
+							</ul>
+
+							<p class="m--reset t--c">
+								<a href="" class="btn btn--gray btn--ssm col-lg-12">Show more</a>
+							</p>
+						</div> -->
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
