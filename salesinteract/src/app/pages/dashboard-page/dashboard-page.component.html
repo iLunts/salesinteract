@@ -77,92 +77,22 @@
 					<div class="row row--divider">
 						<div class="col-lg-3">
 							<p class="t--semi-bold">Task history</p>
-
-							<ul class="account-list list list--v list--line">
-								<li class="account-list__item list__item" *ngFor="let item of taskHistoryList">
-									<div class="account-list__content flex flex--middle">
-										<img class="account-list__avatar avatar" [src]="item.image" alt="">
-										<div>
-											<a href="" class="account-list__name">Coen van der Kolk</a>
-											<p class="account-list__company">Company</p>
-										</div>
-									</div>
-									<div class="t--r">
-										<span class="badge badge--gray">Close</span>
-										<p class="t--md t--regular m--t-mini t--red">{{item.date}}</p>
-									</div>
-								</li>
-							</ul>
-
-							<p class="m--reset t--c">
-								<a href="" class="btn btn--gray btn--ssm col-lg-12">Show more</a>
-							</p>
+							<app-task-history-list [taskData]="taskHistoryList"></app-task-history-list>
 						</div>
 
 						<div class="col-lg-2">
 							<p class="t--semi-bold">Contacten</p>
-
-							<div class="dash-stat dash-stat--line">
-								<div class="dash-stat__progress">
-									<div class="dash-stat__progress-item" 
-										*ngFor="let item of contactGraphList" 
-										[ngStyle]="{'background-color': item.color, 'width.%': item.percent}"></div>
-								</div>
-								<ul class="dash-stat__list list list--line list--v">
-									<li class="list__item dash-stat__list-item" 
-										*ngFor="let item of contactGraphList">
-										<div>
-											<span [ngStyle]="{'background-color': item.color}" 
-												class="badge badge--sm badge--squared dash-stat__list-color"></span>
-											<span class="t--semi-bold t--gray-dark m--l-sm">{{item.title}}</span>
-										</div>
-										<span class="t--semi-bold t--gray">{{item.count}}</span>
-									</li>
-								</ul>
-							</div>
+							<app-contact-list [contactData]="contactGraphList"></app-contact-list>
 						</div>
 
 						<div class="col-lg-4">
 							<p class="t--semi-bold">Complete tasks</p>
-
-							<ngx-charts-bar-vertical-stacked
-								[view]="viewCompleteTask"
-								[scheme]="colorSchemeCompleteTask"
-								[results]="completeTaskList"
-								[legend]="false"
-								[showXAxisLabel]="true"
-								[showYAxisLabel]="true"
-								[xAxis]="true"
-								[yAxis]="true"
-								[showGridLines]="true"
-								[roundDomains]="true"
-								[barPadding]="20"
-								>
-							</ngx-charts-bar-vertical-stacked>
+							<app-complete-task [completeData]="completeTaskList"></app-complete-task>
 						</div>
 
 						<div class="col-lg-3">
 							<p class="t--semi-bold">Open offers</p>
-
-							<ul class="account-list list list--v list--line">
-								<li class="account-list__item list__item" *ngFor="let item of taskHistoryList">
-									<div class="account-list__content flex flex--middle">
-										<span class="badge badge--green m--r-sm">1</span>
-										<div>
-											<a href="" class="account-list__name">Bill Gates</a>
-											<p class="account-list__company">Presentation offer</p>
-										</div>
-									</div>
-									<div class="t--r">
-										<span class="badge badge--red">Expired</span>
-										<p class="t--md t--regular m--t-mini t--red">{{item.date}}</p>
-									</div>
-								</li>
-							</ul>
-
-							<p class="m--reset t--c">
-								<button class="btn btn--gray btn--ssm col-lg-12">Show more</button>
-							</p>
+							<app-open-offers-list [openOffersData]="taskHistoryList"></app-open-offers-list>
 						</div>
 					</div>
 

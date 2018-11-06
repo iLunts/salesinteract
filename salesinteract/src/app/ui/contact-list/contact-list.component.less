@@ -1,0 +1,39 @@
+// ------------------------------------------------
+// Block '.contact-list'
+// ------------------------------------------------
+.contact-list{
+
+    // Element '.contact-list .contact-list__list'
+    & &__list{
+        margin-top: 20px;
+        
+        // Element '.contact-list .contact-list__list-item'
+        &-item{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+    }
+    
+    // Element '.contact-list .contact-list__progress'
+    & &__progress{
+        position: relative;
+        display: block;
+        width: 100%;
+        height: 16px;
+        background-color: #eee;
+        border-radius: 3px;
+        
+        // Element '.contact-list .contact-list__progress-item'
+        &-item{
+            display: block;
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 0;
+            height: 16px;
+            background-color: #eee;
+            border-radius: 3px;
+        }
+    }
+}

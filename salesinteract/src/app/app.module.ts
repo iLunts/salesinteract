@@ -63,6 +63,10 @@ import { TooltipModule } from 'ngx-bootstrap';
 import { ProductPageComponent } from './pages/product-page/product-page.component';
 import { CalendarPageComponent } from './pages/calendar-page/calendar-page.component';
 import { QuickViewsPageComponent } from './pages/quick-views-page/quick-views-page.component';
+import { TaskHistoryListComponent } from './ui/task-history-list/task-history-list.component';
+import { ContactListComponent } from './ui/contact-list/contact-list.component';
+import { CompleteTaskComponent } from './ui/complete-task/complete-task.component';
+import { OpenOffersListComponent } from './ui/open-offers-list/open-offers-list.component';
 
 @NgModule({
   declarations: [
@@ -116,6 +120,10 @@ import { QuickViewsPageComponent } from './pages/quick-views-page/quick-views-pa
     ProductPageComponent,
     CalendarPageComponent,
     QuickViewsPageComponent,
+    TaskHistoryListComponent,
+    ContactListComponent,
+    CompleteTaskComponent,
+    OpenOffersListComponent,
   ],
   imports: [
     HttpClientModule,

@@ -1,0 +1,40 @@
+.open-offer .open-offer__item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.open-offer .open-offer__avatar {
+  margin-right: 10px;
+  border-radius: 4px;
+  object-fit: cover;
+}
+.open-offer a.open-offer__name {
+  color: #252841;
+  text-decoration: none;
+}
+.open-offer a.open-offer__name:hover {
+  text-decoration: none;
+  box-shadow: none;
+  outline: none;
+}
+.open-offer .open-offer__name {
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin: 0;
+  color: #252841;
+  text-decoration: none;
+}
+.open-offer .open-offer__company {
+  font-weight: 400;
+  font-size: .9rem;
+  line-height: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin: 4px 0 0 0;
+  color: #B2C8DB;
+}

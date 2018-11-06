@@ -1,0 +1,19 @@
+<ul class="task-history list list--v list--line">
+    <li class="task-history__item list__item" *ngFor="let task of taskData">
+        <div class="task-history__content flex flex--middle">
+            <img class="task-history__avatar avatar" [src]="task.image" alt="">
+            <div>
+                <a href="" class="task-history__name">Coen van der Kolk</a>
+                <p class="task-history__company">Company</p>
+            </div>
+        </div>
+        <div class="t--r">
+            <span class="badge badge--gray">Close</span>
+            <p class="t--md t--regular m--t-mini t--red">{{task.date}}</p>
+        </div>
+    </li>
+</ul>
+
+<p class="m--reset t--c">
+    <a href="" class="btn btn--gray btn--ssm col-lg-12">Show more</a>
+</p>

@@ -1,0 +1,18 @@
+<div class="contact-list">
+    <div class="contact-list__progress">
+        <div class="contact-list__progress-item" 
+            *ngFor="let contact of contactData" 
+            [ngStyle]="{'background-color': contact.color, 'width.%': contact.percent}"></div>
+    </div>
+    <ul class="contact-list__list list list--line list--v">
+        <li class="list__item contact-list__list-item" 
+            *ngFor="let contact of contactData">
+            <div>
+                <span [ngStyle]="{'background-color': contact.color}" 
+                    class="badge badge--sm badge--squared contact-list__list-color"></span>
+                <span class="t--semi-bold t--gray-dark m--l-sm">{{contact.title}}</span>
+            </div>
+            <span class="t--semi-bold t--gray">{{contact.count}}</span>
+        </li>
+    </ul>
+</div>
