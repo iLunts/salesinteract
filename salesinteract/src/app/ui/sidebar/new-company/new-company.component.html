@@ -10,19 +10,70 @@
     </header>
     <div class="sidebar__panel-body">
 
-      <tabset>
-        <tab heading="Company" (select)="onSelect($event)">
-          <app-new-company-tab></app-new-company-tab>
-        </tab>
 
-        <tab heading="Contact" (select)="onSelect($event)">
-          <app-new-contact-tab></app-new-contact-tab>
-        </tab>
+      <div class="panel">
+        <div class="panel__group">
+          <span class="panel__group-text">
+              Company information
+          </span>
+        </div>
 
-        <tab heading="Search CoC" customClass="nav-search" (select)="onSelect($event)">
-          <app-search-coc-tab></app-search-coc-tab>
-        </tab>
-      </tabset>
+        <div class="panel__body">
+          <div class="row">
+            <div class="col-sm-5">
+              <div class="placeholder placeholder--sm">
+                <div class="placeholder__img"></div>
+                <p class="placeholder__title">
+                    Click to select file
+                </p>
+                <input class="placeholder__input" type="file">
+              </div>
+            </div>
+            <div class="col-sm-7">
+                <div>
+                    <label class="label">Company name</label>
+                    <div class="input-group input-group--required">
+                        <input type="text" class="input-group__input">
+                    </div>
+                </div>
+                <div>
+                    <label class="label">Phone number</label>
+                    <input type="text" class="input" placeholder="+4 (900) ">
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="m--t">
+        <tabset>
+          <tab heading="Company" (select)="onSelect($event)">
+            <app-new-company-tab></app-new-company-tab>
+          </tab>
+
+          <tab heading="Contact" (select)="onSelect($event)">
+            <app-new-contact-tab></app-new-contact-tab>
+          </tab>
+
+          <!-- <tab heading="Task followup" 
+              (select)="onSelect($event)" 
+              disabled="true"
+              tooltip="Vivamus sagittis lacus vel augue laoreet rutrum faucibus."
+              placement="top"
+              container="body">
+            <app-new-contact-tab></app-new-contact-tab>
+          </tab> -->
+
+          <tab heading="Search CoC" customClass="nav-search" (select)="onSelect($event)">
+            <app-search-coc-tab></app-search-coc-tab>
+          </tab>
+        </tabset>
+
+        <div class="m--t-md t--c">
+            <button class="btn btn--link">Clear</button>
+            <button class="btn btn--blue">Save</button>
+        </div>
+      </div>
 
     </div>
   </div>

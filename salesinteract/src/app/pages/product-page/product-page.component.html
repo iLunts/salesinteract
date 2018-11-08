@@ -90,9 +90,7 @@
                                     <div class="color-picker__current" [ngStyle]="{'background-color': colorDefault}"></div>
                                     <input type="text" class="input m--t" [value]="colorDefault" placeholder="#HEX">
                                     <ul class="color-picker__list">
-                                        <li class="color-picker__list-item" [ngStyle]="{'background-color': color}" *ngFor="let color of colorList">
-                                            <!-- <span class="color-picker__color">{{color}}</span> -->
-                                        </li>
+                                        <li class="color-picker__list-item" [ngStyle]="{'background-color': color}" *ngFor="let color of colorList"></li>
                                     </ul>
                                     <div class="m--t t--c">
                                         <button class="btn btn--link btn--sm">Cancel</button>

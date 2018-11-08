@@ -52,18 +52,27 @@
 			</div>
 			<div class="col-xs-6">
 				<label class="label">Gender</label>
-				<input type="text" class="input">
+				<select class="input">
+					<option value="male">Male</option>
+					<option value="famale">Famale</option>
+				</select>
 			</div>
 		</div>
 
 		<div class="row">
 			<div class="col-xs-6">
 				<label class="label">Default language</label>
-				<input type="text" class="input">
+				<select class="input">
+					<option value="english">English</option>
+					<option value="nederlands">Nederlands</option>
+				</select>
 			</div>
 			<div class="col-xs-6">
 				<label class="label">Time zone</label>
-				<input type="text" class="input">
+				<select class="input">
+					<option value="europe/amsterdam">Europe/Amsterdam</option>
+					<option value="other">Other</option>
+				</select>
 			</div>
 		</div>
 
@@ -80,10 +89,5 @@
                 <app-new-contact-description></app-new-contact-description>
             </tab>
         </tabset>
-
-        <div class="m--t-md t--c">
-            <button class="btn btn--link">Clear</button>
-            <button class="btn btn--blue">Save</button>
-        </div>
     </div>
 </div>

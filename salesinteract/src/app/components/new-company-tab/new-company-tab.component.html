@@ -1,12 +1,7 @@
 <div class="panel panel--tab">
-    <div class="panel__group">
-        <span class="panel__group-text">
-            Company
-        </span>
-    </div>
+    
     <div class="panel__body">
-
-        <div class="placeholder">
+        <!-- <div class="placeholder">
             <div class="placeholder__img"></div>
             <p class="placeholder__title">
                 Click to select file
@@ -15,9 +10,9 @@
                 (Max file size: 25 MB; Allowed formats: Documents, presentations and images)
             </p>
             <input class="placeholder__input" type="file">
-        </div>
+        </div> -->
 
-        <div class="panel__group">
+        <!-- <div class="panel__group">
             <span class="panel__group-text">
                 General information
             </span>
@@ -35,7 +30,7 @@
                 <label class="label">Phone number</label>
                 <input type="text" class="input" placeholder="+4 (900) ">
             </div>
-        </div>
+        </div> -->
         
         <div class="panel__group">
             <span class="panel__group-text">
@@ -85,9 +80,26 @@
             </div>
         </div>
         
+        <div class="row">
+            <div class="col-sm-8 col-sm-push-2">
+                <label class="label">Status</label>
+                <select class="input">
+                    <option value="suspect">Suspect</option>
+                    <option value="prospect">Prospect</option>
+                    <option value="company">Company</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="panel__group">
+            <span class="panel__group-text">
+                Internal information
+            </span>
+        </div>
         <div>
-            <label class="label">Status</label>
-            <input type="text" class="input">
+            <button class="btn btn--blue" (click)="changeInternalNote()" *ngIf="!isShowInternalNote">Show internal note</button>
+            <textarea class="input" rows="6" *ngIf="isShowInternalNote"></textarea>
+            <button class="btn btn--gray m--t-sm" (click)="changeInternalNote()" *ngIf="isShowInternalNote">Hide internal note</button>
         </div>
 
         <tabset>
@@ -103,10 +115,5 @@
                 <app-new-company-description></app-new-company-description>
             </tab>
         </tabset>
-
-        <div class="m--t-md t--c">
-            <button class="btn btn--link">Clear</button>
-            <button class="btn btn--blue">Save</button>
-        </div>
     </div>
 </div>
