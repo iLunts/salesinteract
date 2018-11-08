@@ -78,38 +78,32 @@
                     </div>
 
                     <div class="row">
-                        <div class="col-sm-8">
-                            <label class="label">Name</label>
-                            <input type="text" class="input">
-                        </div>
-                        <div class="col-sm-4">
+                        <div class="col-sm-2">
                             <label class="label">Color</label>
 
                             <div class="color-picker" dropdown>
-                                <button class="color-picker__picker" [ngStyle]="{'background-color': colorDefault}" dropdownToggle></button>
+                                <button class="color-picker__picker" dropdownToggle>
+                                    <span class="color-picker__pick" [ngStyle]="{'background-color': colorDefault}"></span>
+                                </button>
                                 <div *dropdownMenu class="color-picker dropdown-menu" role="menu" aria-labelledby="button-custom-html">
-                                    <p>Color picker</p>
-                                    <div class="color-picker__current"></div>
+                                    <p class="color-picker__title">Color picker</p>
+                                    <div class="color-picker__current" [ngStyle]="{'background-color': colorDefault}"></div>
+                                    <input type="text" class="input m--t" [value]="colorDefault" placeholder="#HEX">
                                     <ul class="color-picker__list">
-                                        <li class="color-picker__list-item" *ngFor="let color of colorList">
-                                            <span class="color-picker__color">{{color}}</span>
+                                        <li class="color-picker__list-item" [ngStyle]="{'background-color': color}" *ngFor="let color of colorList">
+                                            <!-- <span class="color-picker__color">{{color}}</span> -->
                                         </li>
                                     </ul>
+                                    <div class="m--t t--c">
+                                        <button class="btn btn--link btn--sm">Cancel</button>
+                                        <button class="btn btn--blue btn--sm">Save</button>
+                                    </div>
                                 </div>
                             </div>
-
-                            <!-- <div dropdown>
-                                <input type="text" class="input m--reset" dropdownToggle>
-                                <div *dropdownMenu class="color-picker dropdown-menu" role="menu" aria-labelledby="button-custom-html">
-                                    <p>Color picker</p>
-                                    <div class="color-picker__current"></div>
-                                    <ul class="color-picker__list">
-                                        <li class="color-picker__list-item" *ngFor="let color of colorList">
-                                            <span class="color-picker__color">{{color}}</span>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div> -->
+                        </div>
+                        <div class="col-sm-10">
+                            <label class="label">Name</label>
+                            <input type="text" class="input">
                         </div>
                     </div>
                     <div>

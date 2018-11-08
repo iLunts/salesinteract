@@ -9,7 +9,11 @@ export class ProductPageComponent implements OnInit {
   public productList: any;
 
   colorList: any = [
-    '#694efc', '#765efe', '#9484ff', '#245cd5', '#4079f3', '#5782e0', '#00cb73', '#00d266', '#00d48b', '#ff1a55', '#ff3967', '#ff5b7d', '#ff8e00', '#ff9242', '#ffa86b' 
+    '#6356f3', '#7165f5', '#9088f7', '#a69df9', '#b8b3f9',
+    '#305fce', '#4b7beb', '#5f83d9', '#7d9be0', '#8da6e4',
+    '#38c77b', '#1fcd71', '#59d091', '#7adaa7', '#a1e5c2',
+    '#eb3b59', '#ed4d6a', '#f0677f', '#f28497', '#f5b9c4',
+    '#fd9327', '#fb9754', '#fcac76', '#fbc4a0', '#ffdac1' 
   ];
 
   colorDefault: string;
