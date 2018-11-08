@@ -1,1 +1,1 @@
-.color-picker{position:relative}.color-picker.dropdown-menu{padding:0}
+.color-picker{position:relative}.color-picker.dropdown-menu{padding:0}.color-picker .color-picker__picker{display:inline-block;width:36px;height:36px;border-radius:3px;border:2px solid #c6d9e6;background-color:#fafbfc}
