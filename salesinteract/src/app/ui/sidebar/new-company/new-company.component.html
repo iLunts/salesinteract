@@ -33,7 +33,7 @@
                 <div>
                     <label class="label">Company name</label>
                     <div class="input-group input-group--required">
-                        <input type="text" class="input-group__input">
+                        <input type="text" [(ngModel)]="companyName" class="input-group__input">
                     </div>
                 </div>
                 <div>
@@ -55,6 +55,10 @@
             <app-new-contact-tab></app-new-contact-tab>
           </tab>
 
+          <tab heading="Task followup" (select)="onSelect($event)">
+            <app-new-task-followup-tab [companyName]="companyName"></app-new-task-followup-tab>
+          </tab>
+
           <!-- <tab heading="Task followup" 
               (select)="onSelect($event)" 
               disabled="true"
@@ -67,12 +71,7 @@
           <tab heading="Search CoC" customClass="nav-search" (select)="onSelect($event)">
             <app-search-coc-tab></app-search-coc-tab>
           </tab>
-        </tabset>
-
-        <div class="m--t-md t--c">
-            <button class="btn btn--link">Clear</button>
-            <button class="btn btn--blue">Save</button>
-        </div>
+        </tabset> 
       </div>
 
     </div>

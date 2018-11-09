@@ -14,19 +14,15 @@
 			<div class="col-xs-8 col-xs-push-2">
         <div class="input-group">
           <i class="input-group__icon icon-search"></i>
-          <input type="text" class="input-group__input" placeholder="Please write CoC company number...">
+          <input type="text" class="input-group__input" [(ngModel)]="searchCompany" placeholder="Please write CoC company number...">
         </div>
 			</div>
     </div>
 
-    <div class="m--t-md t--c">
-      <button class="btn btn--link">Cancel</button>
-      <button class="btn btn--blue">Search</button>
-    </div>
   </div>
 </div>
 
-<div class="panel">
+<div class="panel" *ngIf="searchCompany.length">
     <div class="panel__group">
       <span class="panel__group-text">
         Results

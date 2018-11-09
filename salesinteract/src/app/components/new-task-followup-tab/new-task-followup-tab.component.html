@@ -1,0 +1,99 @@
+<div class="panel panel--tab">
+	<div *ngIf="companyName.length == 0">
+		<div class="panel__group">
+			<span class="panel__group-text">
+				Warning
+			</span>
+		</div>
+		<div class="panel__body">
+			<div class="empty">
+				<svg-icon class="empty__icon" src="assets/svg/warning.svg"></svg-icon>
+				<p class="empty__text">PLEASE FILL COMPANY NAME</p>
+			</div>
+		</div>
+	</div>
+
+	<div *ngIf="companyName.length > 0">
+		<div class="panel__group">
+			<span class="panel__group-text">
+				Note (internal)
+			</span>
+		</div>
+		<div class="panel__body">
+			<div>
+				<textarea rows="8" class="input"></textarea>
+			</div>
+
+			<div class="panel__group">
+				<span class="panel__group-text">
+					Task type
+				</span>
+			</div>
+			<div class="row">
+				<div class="col-sm-6">
+					<div class="checkbox">
+						<input type="radio" class="checkbox__input" name="task-type" id="task-not-present">
+						<label for="task-not-present" class="checkbox__label">Not present</label>
+					</div>
+				</div>
+				<div class="col-sm-6">
+					<div class="checkbox">
+						<input type="radio" class="checkbox__input" name="task-type" id="task-not-interested">
+						<label for="task-not-interested" class="checkbox__label">Not interested</label>
+					</div>
+				</div>
+				<div class="col-sm-6">
+					<div class="checkbox">
+						<input type="radio" class="checkbox__input" name="task-type" id="task-not-time">
+						<label for="task-not-time" class="checkbox__label">No time</label>
+					</div>
+				</div>
+				<div class="col-sm-6">
+					<div class="checkbox">
+						<input type="radio" class="checkbox__input" name="task-type" id="task-visit">
+						<label for="task-visit" class="checkbox__label">Visit</label>
+					</div>
+				</div>
+				<div class="col-sm-6">
+					<div class="checkbox">
+						<input type="radio" class="checkbox__input" name="task-type" id="task-sales-no-time">
+						<label for="task-sales-no-time" class="checkbox__label">Sales no time</label>
+					</div>
+				</div>
+				<div class="col-sm-6">
+					<div class="checkbox">
+						<input type="radio" class="checkbox__input" name="task-type" id="task-call-later" checked>
+						<label for="task-call-later" class="checkbox__label">Call later</label>
+					</div>
+				</div>
+			</div>
+
+
+			<div class="panel__group">
+				<span class="panel__group-text">
+					How did the call go?
+				</span>
+			</div>
+			<div class="row">
+				<div class="col-sm-4">
+					<div class="checkbox">
+						<input type="radio" class="checkbox__input" name="task-call-later-result" id="task-call-later-result-good">
+						<label for="task-call-later-result-good" class="checkbox__label">Good</label>
+					</div>
+				</div>
+				<div class="col-sm-4">
+					<div class="checkbox">
+						<input type="radio" class="checkbox__input" name="task-call-later-result" id="task-call-later-result-fair">
+						<label for="task-call-later-result-fair" class="checkbox__label">Fair</label>
+					</div>
+				</div>
+				<div class="col-sm-4">
+					<div class="checkbox">
+						<input type="radio" class="checkbox__input" name="task-call-later-result" id="task-call-later-result-bad">
+						<label for="task-call-later-result-bad" class="checkbox__label">Bad</label>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

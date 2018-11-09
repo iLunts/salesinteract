@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./search-coc-tab.component.less']
 })
 export class SearchCocTabComponent implements OnInit {
+  searchCompany: string = '';
 
   constructor() { }
 

@@ -67,6 +67,8 @@ import { TaskHistoryListComponent } from './ui/task-history-list/task-history-li
 import { ContactListComponent } from './ui/contact-list/contact-list.component';
 import { CompleteTaskComponent } from './ui/complete-task/complete-task.component';
 import { OpenOffersListComponent } from './ui/open-offers-list/open-offers-list.component';
+import { FormsModule } from '@angular/forms';
+import { NewTaskFollowupTabComponent } from './components/new-task-followup-tab/new-task-followup-tab.component';
 
 @NgModule({
   declarations: [
@@ -124,9 +126,11 @@ import { OpenOffersListComponent } from './ui/open-offers-list/open-offers-list.
     ContactListComponent,
     CompleteTaskComponent,
     OpenOffersListComponent,
+    NewTaskFollowupTabComponent,
   ],
   imports: [
     HttpClientModule,
+    FormsModule,
     BrowserModule,
     RoutingModule,
     TabsModule.forRoot(),

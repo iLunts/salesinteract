@@ -8,6 +8,7 @@ import { TabDirective } from 'ngx-bootstrap/tabs';
 })
 export class NewCompanyComponent implements OnInit {
   tabHeading: string = 'Company';
+  companyName: string = '';
   
   constructor() { }
   
