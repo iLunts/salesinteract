@@ -28,7 +28,8 @@
               "src/fonts"
             ],
             "styles": [
-              "src/assets/css/site.min.css"
+              "src/assets/css/site.min.css",
+              "node_modules/ng2-tree/styles.css"
             ],
             "scripts": []
           },

@@ -70,6 +70,7 @@ import { OpenOffersListComponent } from './ui/open-offers-list/open-offers-list.
 import { FormsModule } from '@angular/forms';
 import { NewTaskFollowupTabComponent } from './components/new-task-followup-tab/new-task-followup-tab.component';
 import { SharedFilesPageComponent } from './pages/shared-files-page/shared-files-page.component';
+import { TreeModule } from 'ng2-tree';
 
 @NgModule({
   declarations: [
@@ -148,6 +149,7 @@ import { SharedFilesPageComponent } from './pages/shared-files-page/shared-files
     BrowserAnimationsModule,
     DragulaModule.forRoot(),
     AngularSvgIconModule,
+    TreeModule,
   ],
   providers: [EventSesrvice],
   bootstrap: [AppComponent]

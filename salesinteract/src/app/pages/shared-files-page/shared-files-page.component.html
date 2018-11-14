@@ -25,6 +25,60 @@
     </div>
     
 
+	<div class="row">
+		<div class="col-sm-3">
+			<div class="panel">
+				<div class="panel__header">
+					<p class="panel__header-title">
+						Files
+					</p>
+					<button class="btn btn--circle btn--ssm btn--gray m--l"
+								[popover]="dashPersonalStatistics"
+								triggers="focus"
+								container="body"
+								placement="right">
+							<i class="btn__icon icon-question"></i>
+					</button>
+				</div>
 
+				<div class="panel__body">
+					<div class="t--c">
+						<input class="btn btn--blue" value="Upload files" type="file">
+					</div>
+
+					<div class="m--v">
+						<tree [tree]="tree"></tree>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-sm-9">
+			<div class="row">
+				<div class="col-lg-4" *ngFor="let file of fileList">
+					<app-file-item [file]="file"></app-file-item>
+				</div>
+			</div>
+
+		</div>
+	</div>
 
 </div>
+
+
+
+<!-- Templates for popovers -->
+<ng-template #dashPersonalStatistics>
+	<p class="t--md">
+		Here you can as a admin or manager add files such as business presentations and share this with your sales users who
+		then can share this with their suspects, prospects and customers.
+	</p>
+	<p class="t--md">
+		The prospect / customer will be notified when a file has been shared with them.<br>
+	</p>
+	<p class="t--md">
+		Opening this file will trigger a push notification to the sales user.<br>
+	</p>
+	<p class="t--md">
+		In addition, the system also keeps track of when and how often a file is opened.<br>
+	</p>
+</ng-template>
