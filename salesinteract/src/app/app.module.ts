@@ -69,6 +69,7 @@ import { CompleteTaskComponent } from './ui/complete-task/complete-task.componen
 import { OpenOffersListComponent } from './ui/open-offers-list/open-offers-list.component';
 import { FormsModule } from '@angular/forms';
 import { NewTaskFollowupTabComponent } from './components/new-task-followup-tab/new-task-followup-tab.component';
+import { SharedFilesPageComponent } from './pages/shared-files-page/shared-files-page.component';
 
 @NgModule({
   declarations: [
@@ -127,6 +128,7 @@ import { NewTaskFollowupTabComponent } from './components/new-task-followup-tab/
     CompleteTaskComponent,
     OpenOffersListComponent,
     NewTaskFollowupTabComponent,
+    SharedFilesPageComponent,
   ],
   imports: [
     HttpClientModule,

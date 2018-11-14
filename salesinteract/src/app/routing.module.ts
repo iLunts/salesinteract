@@ -12,6 +12,7 @@ import { CrmPageComponent } from './pages/crm-page/crm-page.component';
 import { ProductPageComponent } from './pages/product-page/product-page.component';
 import { CalendarPageComponent } from './pages/calendar-page/calendar-page.component';
 import { QuickViewsPageComponent } from './pages/quick-views-page/quick-views-page.component';
+import { SharedFilesPageComponent } from './pages/shared-files-page/shared-files-page.component';
 
 const routes: Routes = [
     { path: '', component: DashboardPageComponent },
@@ -22,6 +23,7 @@ const routes: Routes = [
     { path: 'statistics', component: StatisticsPageComponent },
     { path: 'products', component: ProductPageComponent },
     { path: 'calendar', component: CalendarPageComponent },
+    { path: 'shared-files', component: SharedFilesPageComponent },
     { path: 'settings', component: SettingsPageComponent},
     { path: 'settings/survey', component: SurveyPageComponent, pathMatch: 'full'},
     { path: 'settings/survey/:id/edit', component: SurveyEditPageComponent, pathMatch: 'full'},
