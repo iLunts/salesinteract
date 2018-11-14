@@ -28,6 +28,14 @@
   color: #252841;
   text-decoration: none;
 }
+.task-history .task-history__status {
+  text-align: right;
+}
+.task-history .task-history__status-date {
+  font-weight: 400;
+  font-size: .9rem;
+  margin-top: 5px;
+}
 .task-history .task-history__company {
   font-weight: 400;
   font-size: .9rem;
@@ -37,4 +45,41 @@
   text-overflow: ellipsis;
   margin: 4px 0 0 0;
   color: #B2C8DB;
+}
+@media only screen and (max-width: 1219px) and (min-width: 1024px) {
+  .task-history .task-history__item {
+    flex-wrap: wrap;
+  }
+  .task-history .task-history__content {
+    width: 100%;
+  }
+  .task-history .task-history__status {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 5px;
+    text-align: center;
+  }
+}
+@media only screen and (max-width: 1023px) and (min-width: 768px) {
+  .task-history .task-history__item {
+    flex-wrap: wrap;
+  }
+  .task-history .task-history__content {
+    width: 100%;
+  }
+  .task-history .task-history__status {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 5px;
+    text-align: center;
+  }
+}
+@media only screen and (max-width: 767px) and (min-width: 320px) {
+  .task-history .task-history__item {
+    flex-wrap: wrap;
+  }
 }

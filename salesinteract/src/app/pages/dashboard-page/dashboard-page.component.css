@@ -36,3 +36,8 @@
   display: block;
   width: 100%;
 }
+.dash-page .dash-page__chart.dash-page__chart--complete {
+  display: grid;
+  min-height: 240px;
+  margin-left: -40px;
+}

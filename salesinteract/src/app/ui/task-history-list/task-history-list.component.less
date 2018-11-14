@@ -1,3 +1,4 @@
+@import '../../../../web-src/less/variables.less';
 // ------------------------------------------------
 // Block '.task-history'
 // ------------------------------------------------
@@ -42,6 +43,16 @@
         text-decoration: none;
     }
 
+    & &__status{
+        text-align: right;
+
+        &-date{
+            font-weight: 400;
+            font-size: .9rem;
+            margin-top: 5px;
+        }
+    }
+
     & &__company{
         font-weight: 400;
         font-size: .9rem;
@@ -52,4 +63,87 @@
         margin: 4px 0 0 0;
         color: #B2C8DB;
     }
+}
+
+// ---------------------------------------------------------------------------
+// size: Medium
+// ----------------------------------------------------------------------------
+@media only screen and (max-width: @breakpoint-md-max) and (min-width: @breakpoint-md-min) {
+
+    // ----------------------------------------------------
+    // Block '.task-history'
+    // ----------------------------------------------------
+    .task-history{
+
+        & &__item{
+            flex-wrap: wrap;
+        }
+
+        & &__content{
+            width: 100%;
+        }
+
+        & &__status{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            width: 100%;
+            margin-top: 5px;
+            text-align: center;
+        }
+
+
+    }
+
+}
+
+// ---------------------------------------------------------------------------
+// size: Small
+// ----------------------------------------------------------------------------
+@media only screen and (max-width: @breakpoint-sm-max) and (min-width: @breakpoint-sm-min) {
+
+    // ----------------------------------------------------
+    // Block '.task-history'
+    // ----------------------------------------------------
+    .task-history{
+
+        & &__item{
+            flex-wrap: wrap;
+        }
+
+        & &__content{
+            width: 100%;
+        }
+
+        & &__status{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            width: 100%;
+            margin-top: 5px;
+            text-align: center;
+        }
+
+
+    }
+
+}
+
+// ---------------------------------------------------------------------------
+// size: xSmall
+// ----------------------------------------------------------------------------
+@media only screen and (max-width: @breakpoint-xs-max) and (min-width: @breakpoint-xs-min) {
+
+    // ----------------------------------------------------
+    // Block '.task-history'
+    // ----------------------------------------------------
+    .task-history{
+        
+        & &__item{
+            flex-wrap: wrap;
+        }
+    }
+
 }

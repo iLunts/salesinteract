@@ -16,6 +16,7 @@
     width: @aside-width;
     background-color: #fff;
     box-shadow: 2px 0 20px 0 rgba(0, 0, 0, 0.05);
+    z-index: 100;
 
     // Element '.aside .aside__header'
     & &__header{
@@ -94,7 +95,6 @@
                 }
             }
         }
-
     }
     
     // Element '.aside .aside__link'
@@ -110,6 +110,7 @@
         color: #252841;
         outline: none;
         box-shadow: none;
+        background-color: transparent;
         font-weight: 600;
         padding: 15px 20px;
         border: none;
@@ -203,6 +204,20 @@
     }
 }
 
+
+// ---------------------------------------------------------------------------
+// size: Small
+// ----------------------------------------------------------------------------
+@media only screen and (max-width: @breakpoint-sm-max) and (min-width: @breakpoint-sm-min) {
+
+    // ----------------------------------------------------
+    // Block '.aside'
+    // ----------------------------------------------------
+    .aside{
+        left: -100%;
+    }
+
+}
 
 // ---------------------------------------------------------------------------
 // size: xSmall

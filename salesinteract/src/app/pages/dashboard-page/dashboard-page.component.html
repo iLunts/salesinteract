@@ -1,7 +1,7 @@
-<div class="container-fluid">
+<div class="container-fluid dash-page">
 
 	<div class="row">
-		<div class="col-lg-12">
+		<div class="col-sm-12">
 			<section class="header">
 
 				<div class="header__left">
@@ -38,7 +38,7 @@
 	</div>
 
 	<div class="row">	
-		<div class="col-lg-12">
+		<div class="col-sm-12">
 			<div class="panel">
 				<div class="panel__header">
 					<div>
@@ -75,22 +75,28 @@
 				<div class="panel__body" [collapse]="isCollapsedTopBar">
 
 					<div class="row row--divider">
-						<div class="col-lg-3">
+						<div class="col-md-3 col-xs-12">
 							<p class="t--semi-bold">Task history</p>
 							<app-task-history-list [taskData]="taskHistoryList"></app-task-history-list>
 						</div>
 
-						<div class="col-lg-2">
-							<p class="t--semi-bold">Contacten</p>
-							<app-contact-list [contactData]="contactGraphList"></app-contact-list>
+						<div class="col-md-6 col-xs-12">
+							<div class="row row--divider">
+								<div class="col-md-4 col-sm-5 col-xs-12">
+									<p class="t--semi-bold">Contacten</p>
+									<app-contact-list [contactData]="contactGraphList"></app-contact-list>
+								</div>
+		
+								<div class="col-md-8 col-sm-7 col-xs-12">
+									<p class="t--semi-bold">Complete tasks</p>
+									<div class="dash-page__chart dash-page__chart--complete">
+										<app-complete-task [completeData]="completeTaskList"></app-complete-task>
+									</div>
+								</div>
+							</div>
 						</div>
 
-						<div class="col-lg-4">
-							<p class="t--semi-bold">Complete tasks</p>
-							<app-complete-task [completeData]="completeTaskList"></app-complete-task>
-						</div>
-
-						<div class="col-lg-3">
+						<div class="col-md-3 col-xs-12">
 							<p class="t--semi-bold">Open offers</p>
 							<app-open-offers-list [openOffersData]="taskHistoryList"></app-open-offers-list>
 						</div>

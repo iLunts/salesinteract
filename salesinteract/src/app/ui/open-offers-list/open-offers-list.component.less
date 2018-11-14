@@ -1,3 +1,4 @@
+@import '../../../../web-src/less/variables.less';
 // ------------------------------------------------
 // Block '.open-offer'
 // ------------------------------------------------
@@ -42,6 +43,19 @@
         color: #252841;
         text-decoration: none;
     }
+
+
+    // Element '.open-offer .open-offer__status'
+    & &__status{
+        text-align: right;
+        
+        // Element '.open-offer .open-offer__status-date'
+        &-date{
+            font-weight: 400;
+            font-size: .9rem;
+            margin-top: 5px;
+        }
+    }
     
     // Element '.open-offer .open-offer__company'
     & &__company{
@@ -54,4 +68,88 @@
         margin: 4px 0 0 0;
         color: #B2C8DB;
     }
+}
+
+
+// ---------------------------------------------------------------------------
+// size: Medium
+// ----------------------------------------------------------------------------
+@media only screen and (max-width: @breakpoint-md-max) and (min-width: @breakpoint-md-min) {
+
+    // ----------------------------------------------------
+    // Block '.open-offer'
+    // ----------------------------------------------------
+    .open-offer{
+
+        & &__item{
+            flex-wrap: wrap;
+        }
+
+        & &__content{
+            width: 100%;
+        }
+
+        & &__status{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            width: 100%;
+            margin-top: 5px;
+            text-align: center;
+        }
+
+
+    }
+
+}
+
+// ---------------------------------------------------------------------------
+// size: Small
+// ----------------------------------------------------------------------------
+@media only screen and (max-width: @breakpoint-sm-max) and (min-width: @breakpoint-sm-min) {
+
+    // ----------------------------------------------------
+    // Block '.open-offer'
+    // ----------------------------------------------------
+    .open-offer{
+
+        & &__item{
+            flex-wrap: wrap;
+        }
+
+        & &__content{
+            width: 100%;
+        }
+
+        & &__status{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            width: 100%;
+            margin-top: 5px;
+            text-align: center;
+        }
+
+
+    }
+
+}
+
+// ---------------------------------------------------------------------------
+// size: xSmall
+// ----------------------------------------------------------------------------
+@media only screen and (max-width: @breakpoint-xs-max) and (min-width: @breakpoint-xs-min) {
+
+    // ----------------------------------------------------
+    // Block '.open-offer'
+    // ----------------------------------------------------
+    .open-offer{
+        
+        & &__item{
+            flex-wrap: wrap;
+        }
+    }
+
 }
