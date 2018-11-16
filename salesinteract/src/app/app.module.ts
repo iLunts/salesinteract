@@ -5,8 +5,8 @@ import { AppComponent } from './app.component';
 import { AsideComponent } from './ui/aside/aside.component';
 import { TopMenuComponent } from './ui/top-menu/top-menu.component';
 import { HomePageComponent } from './pages/home-page/home-page.component';
-import { RoutingModule } from './routing.module';
 import { ContactListPageComponent } from './pages/contact-list-page/contact-list-page.component';
+import { RouterModule} from '@angular/router';
 
 // Bootstrap
 import { TabsModule, PaginationModule, ButtonsModule, ModalModule, PopoverModule, CollapseModule, BsDropdownModule } from 'ngx-bootstrap';
@@ -75,6 +75,7 @@ import { LoginPageComponent } from './pages/login-page/login-page.component';
 import { AdminLayoutComponent } from './layout/admin-layout/admin-layout.component';
 import { EmptyLayoutComponent } from './layout/empty-layout/empty-layout.component';
 import { RegistrationPageComponent } from './pages/registration-page/registration-page.component';
+import { routing } from './app.routing';
 
 @NgModule({
   declarations: [
@@ -143,7 +144,8 @@ import { RegistrationPageComponent } from './pages/registration-page/registratio
     HttpClientModule,
     FormsModule,
     BrowserModule,
-    RoutingModule,
+    RouterModule,
+    routing,
     TabsModule.forRoot(),
     PaginationModule.forRoot(),
     ButtonsModule.forRoot(),
