@@ -71,6 +71,10 @@ import { FormsModule } from '@angular/forms';
 import { NewTaskFollowupTabComponent } from './components/new-task-followup-tab/new-task-followup-tab.component';
 import { SharedFilesPageComponent } from './pages/shared-files-page/shared-files-page.component';
 import { TreeModule } from 'ng2-tree';
+import { LoginPageComponent } from './pages/login-page/login-page.component';
+import { AdminLayoutComponent } from './layout/admin-layout/admin-layout.component';
+import { EmptyLayoutComponent } from './layout/empty-layout/empty-layout.component';
+import { RegistrationPageComponent } from './pages/registration-page/registration-page.component';
 
 @NgModule({
   declarations: [
@@ -130,6 +134,10 @@ import { TreeModule } from 'ng2-tree';
     OpenOffersListComponent,
     NewTaskFollowupTabComponent,
     SharedFilesPageComponent,
+    LoginPageComponent,
+    AdminLayoutComponent,
+    EmptyLayoutComponent,
+    RegistrationPageComponent,
   ],
   imports: [
     HttpClientModule,

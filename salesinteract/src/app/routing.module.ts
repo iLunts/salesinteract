@@ -13,39 +13,31 @@ import { ProductPageComponent } from './pages/product-page/product-page.componen
 import { CalendarPageComponent } from './pages/calendar-page/calendar-page.component';
 import { QuickViewsPageComponent } from './pages/quick-views-page/quick-views-page.component';
 import { SharedFilesPageComponent } from './pages/shared-files-page/shared-files-page.component';
+import { LoginPageComponent } from './pages/login-page/login-page.component';
+import { routing } from './app.routing';
 
 const routes: Routes = [
-    { path: '', component: DashboardPageComponent },
-    { path: 'crm', component: CrmPageComponent },
-    { path: 'crm/:id', component: ContactListPageComponent },
-    { path: 'dashboard', component: DashboardPageComponent },
-    { path: 'quick-views', component: QuickViewsPageComponent },
-    { path: 'statistics', component: StatisticsPageComponent },
-    { path: 'products', component: ProductPageComponent },
-    { path: 'calendar', component: CalendarPageComponent },
-    { path: 'shared-files', component: SharedFilesPageComponent },
-    { path: 'settings', component: SettingsPageComponent},
-    { path: 'settings/survey', component: SurveyPageComponent, pathMatch: 'full'},
-    { path: 'settings/survey/:id/edit', component: SurveyEditPageComponent, pathMatch: 'full'},
-    // { path: 'settings/survey', component: SurveyPageComponent, 
-    //     children: [
-    //         {
-    //             path: 'list', component: SurveyPageComponent
-    //         },
-    //         {
-    //             path: ':id/list', component: SurveyEditPageComponent
-    //         },
-    //     ]
-    // },
-
+    // { path: '', component: DashboardPageComponent },
+    // { path: 'login', component: LoginPageComponent },
+    // { path: 'crm', component: CrmPageComponent },
+    // { path: 'crm/:id', component: ContactListPageComponent },
+    // { path: 'dashboard', component: DashboardPageComponent },
+    // { path: 'quick-views', component: QuickViewsPageComponent },
+    // { path: 'statistics', component: StatisticsPageComponent },
+    // { path: 'products', component: ProductPageComponent },
+    // { path: 'calendar', component: CalendarPageComponent },
+    // { path: 'shared-files', component: SharedFilesPageComponent },
+    // { path: 'settings', component: SettingsPageComponent},
+    // { path: 'settings/survey', component: SurveyPageComponent, pathMatch: 'full'},
+    // { path: 'settings/survey/:id/edit', component: SurveyEditPageComponent, pathMatch: 'full'},
     // { path: 'contact-list', component: ContactListPageComponent, pathMatch: 'full' },
-
-    { path: '**', component: DashboardPageComponent }
+    // { path: '**', component: DashboardPageComponent }
 ];
 
 @NgModule({
     imports: [
-        RouterModule.forRoot(routes)
+        // RouterModule.forRoot(routes)
+        routing
     ],
     exports: [
         RouterModule
