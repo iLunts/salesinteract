@@ -2,7 +2,14 @@
 	<div class="login__panel">
 
 		<div class="login__panel-left">
-			<h1>Login</h1>
+			<div>
+				<input type="text" class="input" placeholder="Login">
+			</div>
+			<div>
+				<input type="password" class="input" placeholder="password">
+			</div>
+			<button class="btn">Sign in</button>
+			<button class="btn" [routerLink]="['/registration']">Registration</button>
 		</div>
 		<div class="login__panel-right">
 			
