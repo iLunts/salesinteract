@@ -14,7 +14,7 @@ export class QuickViewsPageComponent implements OnInit {
       isCollapsedTopBar: false,
       contactGraphList: [
         {
-          title: 'Suspects', color: '#A3A0FB', count: '16', percent: '100'
+          title: 'Leads', color: '#A3A0FB', count: '16', percent: '100'
         },
         {
           title: 'Prospects', color: '#56D9FE', count: '13', percent: '90'
@@ -203,7 +203,7 @@ export class QuickViewsPageComponent implements OnInit {
       isCollapsedTopBar: false,
       contactGraphList: [
         {
-          title: 'Suspects', color: '#A3A0FB', count: '16', percent: '100'
+          title: 'Leads', color: '#A3A0FB', count: '16', percent: '100'
         },
         {
           title: 'Prospects', color: '#56D9FE', count: '13', percent: '90'
@@ -392,7 +392,7 @@ export class QuickViewsPageComponent implements OnInit {
       isCollapsedTopBar: false,
       contactGraphList: [
         {
-          title: 'Suspects', color: '#A3A0FB', count: '16', percent: '100'
+          title: 'Leads', color: '#A3A0FB', count: '16', percent: '100'
         },
         {
           title: 'Prospects', color: '#56D9FE', count: '13', percent: '90'

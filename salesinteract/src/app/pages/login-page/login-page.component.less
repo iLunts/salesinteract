@@ -13,20 +13,85 @@
     & &__panel{
         border-radius: 8px;
         background-color: #fff;
-        box-shadow: 0 4px 30px 0 rgba(0, 0, 0, 0.05);
+        box-shadow: 0 10px 50px 0 rgba(0, 0, 0, 0.05);
 
         display: flex;
         align-items: center;
         justify-content: stretch;
 
+        overflow: hidden;
+
+        &-logo{
+            display: block;
+            width: 250px;
+            margin: 0 0 50px 0;
+        }
+
+        &-title{
+            font-size: 2rem;
+            line-height: 2.4rem;
+            margin: 0 0 25px 0;
+            text-align: center;
+        }
+
+        &-text{
+            display: block;
+            max-width: 300px;
+            margin: 0 auto 15px;
+            font-size: 1.1rem;
+            line-height: 1.3rem;
+            font-weight: 400;
+            text-align: center;
+            opacity: .85;
+        }
+
+        &-copyright{
+            font-size: .9rem;
+            line-height: 1rem;
+            font-weight: 400;
+            text-align: center;
+            margin: 30px 0 0 0;
+            opacity: .5;
+        }
+
         &-left{
-            padding: 40px;
-            // background-color: red;
+            padding: 100px 60px;
         }
 
         &-right{
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            flex-direction: column;
+            flex-wrap: wrap;
+
+            min-width: 500px;
+            min-height: 500px;
             padding: 40px;
-            // background-color: blue;
+            background-color: #ddd;
+
+            background-image: url('/assets/img/login/login.jpg');
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+
+            &:before{
+                content: '';
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                background-color: rgba(0, 0, 0, 0.5);
+                z-index: 1;
+            }
+
+            *{
+                position: relative;
+                color: #fff;
+                z-index: 2;
+            }
         }
     }
 }

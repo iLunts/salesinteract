@@ -26,7 +26,7 @@ export class ProductItem{
 
 export var contacten = [
     {
-        "name": "Suspects",
+        "name": "Leads",
         "value": 14
     },
     {
@@ -41,7 +41,7 @@ export var contacten = [
 
 export var stat1 = [
     {
-        "name": "Suspects",
+        "name": "Leads",
         "value": 27
     },
     {
@@ -55,7 +55,7 @@ export var stat1 = [
 ];
 export var stat2 = [
     {
-        "name": "Suspects",
+        "name": "Leads",
         "value": 22
     },
     {
@@ -69,7 +69,7 @@ export var stat2 = [
 ];
 export var stat3 = [
     {
-        "name": "Suspects",
+        "name": "Leads",
         "value": 14
     },
     {

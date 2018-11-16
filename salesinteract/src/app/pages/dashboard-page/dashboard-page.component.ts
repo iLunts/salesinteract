@@ -230,19 +230,19 @@ export class DashboardPageComponent implements OnInit {
 
   contactGraphList: any = [
     {
-      title: 'Suspects', color: '#A3A0FB', count: '16', percent: '100'
+      title: 'Leads', color: '#77dafd', count: '16', percent: '100'
     },
     {
-      title: 'Prospects', color: '#56D9FE', count: '13', percent: '90'
+      title: 'Prospects', color: '#fff400', count: '13', percent: '90'
     },
     {
-      title: 'Customers', color: '#FF8373', count: '9', percent: '65'
+      title: 'Customers', color: '#9ad100', count: '9', percent: '65'
     },
     {
-      title: 'Open task', color: '#37C976', count: '3', percent: '30'
+      title: 'Open task', color: '#0096e0', count: '3', percent: '30'
     },
     {
-      title: 'Overdue task', color: '#FFDA83', count: '1', percent: '10'
+      title: 'Overdue task', color: '#ff000a', count: '1', percent: '10'
     },
   ];
 

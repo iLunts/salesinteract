@@ -2,16 +2,40 @@
 	<div class="login__panel">
 
 		<div class="login__panel-left">
+			<img class="login__panel-logo" src="/assets/img/logo.png" alt="">
+			<!-- <h2 class="login__panel-title">Salesinteract Login</h2> -->
 			<div>
-				<input type="text" class="input" placeholder="Login">
+				<label for="" class="label">Email address</label>
+				<input type="email" class="input" placeholder="example@salesinteract.com">
 			</div>
 			<div>
-				<input type="password" class="input" placeholder="password">
+				<label for="" class="label">Password</label>
+				<input type="password" class="input" placeholder="********">
 			</div>
-			<button class="btn">Sign in</button>
-			<button class="btn" [routerLink]="['/registration']">Registration</button>
+			<div class="flex flex--middle flex--space-between">
+				<button class="btn btn--blue">Login</button>
+				<button class="btn btn--link">Forgot password?</button>
+			</div>
+			<!-- <div class="m--t-lg t--c">
+				<button class="btn btn--sm btn--gray btn--squared">1</button>
+				<button class="btn btn--sm btn--gray btn--squared">2</button>
+			</div> -->
 		</div>
+
 		<div class="login__panel-right">
+			<div>
+				<h2 class="login__panel-title">Interactive Easy to use Sales CRM</h2>
+				<p class="login__panel-text">Next generation CRM for companies that take their sales serious</p>
+				<p class="login__panel-text">If you wanna be part of the big shift in marketing, connect with your customers</p>
+			</div>
+			<div class="m--t-xlg t--c">
+				<p class="t--regular">Do not have an account?</p>
+				<button class="btn btn--green" [routerLink]="['/registration']">Register right now</button>
+			</div>
+
+			<p class="login__panel-copyright">
+				2018 Copyright <b>Salesinteract</b>
+			</p>
 			
 		</div>
 	</div>

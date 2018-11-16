@@ -52,7 +52,7 @@ export class CrmPageComponent implements OnInit {
       date: '20 aug. 2018 08:50',
       companyName: 'Fiat',
       companyImage: 'https://upload.wikimedia.org/wikipedia/ru/thumb/6/66/Fiat_Logo_Rus.svg/1024px-Fiat_Logo_Rus.svg.png',
-      type: 'Suspect',
+      type: 'Lead',
       sharedFiles: false,
       openOffer: true,
       products: [

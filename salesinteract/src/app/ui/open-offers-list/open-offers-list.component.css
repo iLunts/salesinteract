@@ -34,7 +34,7 @@
 .open-offer .open-offer__status-date {
   font-weight: 400;
   font-size: .9rem;
-  margin-top: 5px;
+  margin: 2px 0 0 0;
 }
 .open-offer .open-offer__company {
   font-weight: 400;
