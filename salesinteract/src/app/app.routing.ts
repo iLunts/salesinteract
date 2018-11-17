@@ -75,10 +75,15 @@ const appRoutes: Routes = [
                 component: SurveyEditPageComponent,
             },
             {
-              path: '',
-              component: DashboardPageComponent,
+              path: 'shared-files',
+              component: SharedFilesPageComponent,
               pathMatch: 'full'
-          }
+            },
+            {
+                path: '',
+                component: DashboardPageComponent,
+                pathMatch: 'full'
+            },
         ]
     },
 
