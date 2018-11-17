@@ -1,5 +1,5 @@
 <ul class="open-offer list list--v list--line">
-    <li class="open-offer__item list__item" *ngFor="let item of openOffersData">
+    <li class="open-offer__item list__item" *ngFor="let item of openOffersData | slice:0:4;">
         <div class="open-offer__content flex flex--middle">
             <span class="badge badge--green m--r-sm">1</span>
             <div>
@@ -15,6 +15,6 @@
 </ul>
 
 <p class="m--reset t--c">
-    <button class="btn btn--gray btn--ssm col-xs-12" (click)="showMore()" *ngIf="!isShowMore">Show more</button>
-    <button class="btn btn--gray btn--ssm col-xs-12" (click)="showLess()" *ngIf="isShowMore">Show less</button>
+    <button class="btn btn--gray btn--ssm col-xs-12" (click)="showMore()" *ngIf="openOffersData.length > 4">Show more</button>
+    <!-- <button class="btn btn--gray btn--ssm col-xs-12" (click)="showLess()" *ngIf="openOffersData.length">Show less</button> -->
 </p>
