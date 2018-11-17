@@ -171,7 +171,7 @@ export function tokenGetter() {
     JwtModule.forRoot({
       config: {
         tokenGetter: tokenGetter,
-        whitelistedDomains: ['*.встройке.бел']
+        whitelistedDomains: ['*']
       }
     }),
   ],

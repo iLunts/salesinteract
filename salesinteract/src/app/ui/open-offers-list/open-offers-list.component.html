@@ -1,15 +1,15 @@
 <ul class="open-offer list list--v list--line">
-    <li class="open-offer__item list__item" *ngFor="let item of openOffersData | slice:0:limitList;">
+    <li class="open-offer__item list__item" *ngFor="let item of openOffersData">
         <div class="open-offer__content flex flex--middle">
             <span class="badge badge--green m--r-sm">1</span>
             <div>
-                <a href="" class="open-offer__name">Bill Gates</a>
-                <p class="open-offer__company">Presentation offer</p>
+                <a href="" class="open-offer__name">{{item.contact.name}}</a>
+                <p class="open-offer__company">{{item.organisation.name}}</p>
             </div>
         </div>
         <div class="open-offer__status">
-            <span class="badge badge--red">Expired</span>
-            <p class="open-offer__status-date t--red">{{item.date}}</p>
+            <span class="badge badge--red">{{item.status || 'new'}}</span>
+            <p class="open-offer__status-date t--red">{{item.expire | date}}</p>
         </div>
     </li>
 </ul>

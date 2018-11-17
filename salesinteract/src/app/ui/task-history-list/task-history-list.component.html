@@ -3,13 +3,13 @@
         <div class="task-history__content flex flex--middle">
             <img class="task-history__avatar avatar" [src]="task.image" alt="">
             <div>
-                <a href="" class="task-history__name">Coen van der Kolk</a>
-                <p class="task-history__company">Company</p>
+                <a href="" class="task-history__name">{{task.contact.name}}</a>
+                <p class="task-history__company">{{task.company}}</p>
             </div>
         </div>
         <div class="task-history__status">
-            <span class="badge badge--gray">Close</span>
-            <p class="task-history__status-date t--red">{{task.date}}</p>
+            <span class="badge badge--gray">{{task.status }}</span>
+            <p class="task-history__status-date t--red">{{task.due | date }}</p>
         </div>
     </li>
 </ul>
