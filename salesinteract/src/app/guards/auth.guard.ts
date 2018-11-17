@@ -1,6 +1,7 @@
 import { CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot, Router } from '@angular/router';
-import { IAuthenticationService } from '@app/services/auth.service';
+
 import { Injectable } from '@angular/core';
+import { IAuthenticationService } from '../services/auth.service';
 
 @Injectable()
 export class DashGuard implements CanActivate {
@@ -12,7 +13,7 @@ export class DashGuard implements CanActivate {
         const auth = this._auth.isAuthentificated();
 
         if (!auth) {
-            this.router.navigate(['/sign-in']);
+            this.router.navigate(['/login']);
         }
 
         return auth;
