@@ -15,6 +15,9 @@
 </ul>
 
 <p class="m--reset t--c">
-    <button class="btn btn--gray btn--ssm col-xs-12" (click)="showMore()" *ngIf="openOffersData.length > 4">Show more</button>
-    <!-- <button class="btn btn--gray btn--ssm col-xs-12" (click)="showLess()" *ngIf="openOffersData.length">Show less</button> -->
+    <button class="btn btn--gray btn--ssm col-xs-12" *ngIf="openOffersData.length > 4" (click)="openSidebar()">Show more</button>
 </p>
+
+<button class="btn btn--gray btn--ssm col-xs-12" (click)="openSidebar()">Show more</button>
+<!-- Sidebar panel -->
+<app-sidebar-open-offers [ngClass]="{'open': isOpenSidebar}" [openOffersData]="openOffersData"></app-sidebar-open-offers>

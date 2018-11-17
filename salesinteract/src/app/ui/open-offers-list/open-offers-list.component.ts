@@ -6,9 +6,7 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./open-offers-list.component.less']
 })
 export class OpenOffersListComponent implements OnInit {
-  limitListMax: number = 2;
-  limitListMin: number = 2;
-  isShowMore: boolean = true;
+  isOpenSidebar: boolean = false;
   
   @Input() openOffersData: any;
   @Input() openOffersLimit: any;
@@ -17,12 +15,7 @@ export class OpenOffersListComponent implements OnInit {
   ngOnInit() {
   }
 
-  showMore(){
-    this.isShowMore = false;
+  openSidebar(){
+    this.isOpenSidebar = !this.isOpenSidebar;
   }
-  
-  showLess(){
-    this.isShowMore = true;
-  }
-
 }

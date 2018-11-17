@@ -20,6 +20,7 @@ export class ContactListComponent implements OnInit {
     this.taskDataList = Object.keys(this.taskData).map(key => ({ type: key, value: this.taskData[key] }));
     
     this.contactTaskDataList = this.contactDataList.concat(this.taskDataList);
+    this.contactTaskDataList.pop();
   }
   
   getColor(color){
@@ -47,7 +48,7 @@ export class ContactListComponent implements OnInit {
         break;
       }
       default: {
-        setColor: '#fff'
+        setColor = '#fff'
         break;
       }
     }

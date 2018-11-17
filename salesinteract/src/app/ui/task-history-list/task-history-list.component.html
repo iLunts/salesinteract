@@ -10,9 +10,9 @@
         </div>
         <div class="task-history__status">
             <span class="badge badge--green" *ngIf="task.status == 'completed'">{{task.status}}</span>
-            <p class="task-history__status-date t--green" *ngIf="task.status == 'completed'">{{task.due | date }}</p>
-            <!-- <span class="badge badge--gray">{{task.status}}</span> -->
-            <!-- <p class="task-history__status-date t--red">{{task.due | date }}</p> -->
+            
+            <p class="task-history__status-date">{{task.due | date }}</p>
+            <p class="task-history__status-date t--red" *ngIf="task.status == 'overdue'">{{task.due | date }}</p>
         </div>
     </li>
 </ul>
@@ -20,5 +20,8 @@
 <app-empty *ngIf="!taskData?.length"></app-empty>
 
 <p class="m--reset t--c" *ngIf="taskData?.length > 4">
-    <button class="btn btn--gray btn--ssm col-xs-12">Show more</button>
+    <button class="btn btn--gray btn--ssm col-xs-12" (click)="openSidebar()">Show more</button>
 </p>
+
+<!-- Sidebar task history -->
+<app-sidebar-task-history [ngClass]="{'open': isOpenSidebar}" [taskHistoryData]="taskData"></app-sidebar-task-history>

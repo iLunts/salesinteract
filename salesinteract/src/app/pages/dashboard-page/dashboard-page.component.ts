@@ -230,24 +230,25 @@ export class DashboardPageComponent implements OnInit {
     },
   ];
 
-  contactGraphList: any = [
-    {
-      title: 'Leads', color: '#77dafd', count: '16', percent: '100'
-    },
-    {
-      title: 'Prospects', color: '#fff400', count: '13', percent: '90'
-    },
-    {
-      title: 'Customers', color: '#9ad100', count: '9', percent: '65'
-    },
-    {
-      title: 'Open task', color: '#0096e0', count: '3', percent: '30'
-    },
-    {
-      title: 'Overdue task', color: '#ff000a', count: '1', percent: '10'
-    },
-  ];
+  // contactGraphList: any = [
+  //   {
+  //     title: 'Leads', color: '#77dafd', count: '16', percent: '100'
+  //   },
+  //   {
+  //     title: 'Prospects', color: '#fff400', count: '13', percent: '90'
+  //   },
+  //   {
+  //     title: 'Customers', color: '#9ad100', count: '9', percent: '65'
+  //   },
+  //   {
+  //     title: 'Open task', color: '#0096e0', count: '3', percent: '30'
+  //   },
+  //   {
+  //     title: 'Overdue task', color: '#ff000a', count: '1', percent: '10'
+  //   },
+  // ];
 
+  isOpenSidebar: boolean = false;
 
 
   calendarOptions: Options;
@@ -264,8 +265,6 @@ export class DashboardPageComponent implements OnInit {
       this.dashboardData = x;
     });
 
-
-
     this._eventService.getEvents().subscribe(data => {
       this.calendarOptions = {
         editable: true,
@@ -278,6 +277,10 @@ export class DashboardPageComponent implements OnInit {
         events: data
       };
     });
+  }
+
+  openSidebar(){
+    this.isOpenSidebar = !this.isOpenSidebar;
   }
 
   collapsedTopBar() {

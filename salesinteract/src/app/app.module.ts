@@ -79,6 +79,8 @@ import { routing } from './app.routing';
 import { DashGuard } from './guards/auth.guard';
 import { IAuthenticationService, AuthenticationService } from './services/auth.service';
 import { JwtModule } from '@auth0/angular-jwt';
+import { SidebarOpenOffersComponent } from './ui/sidebar-open-offers/sidebar-open-offers.component';
+import { SidebarTaskHistoryComponent } from './ui/sidebar-task-history/sidebar-task-history.component';
 
 export function tokenGetter() {
   return localStorage.getItem('access_token');
@@ -147,6 +149,8 @@ export function tokenGetter() {
     AdminLayoutComponent,
     EmptyLayoutComponent,
     RegistrationPageComponent,
+    SidebarOpenOffersComponent,
+    SidebarTaskHistoryComponent,
   ],
   imports: [
     HttpClientModule,
