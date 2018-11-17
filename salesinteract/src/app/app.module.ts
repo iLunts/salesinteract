@@ -76,6 +76,14 @@ import { AdminLayoutComponent } from './layout/admin-layout/admin-layout.compone
 import { EmptyLayoutComponent } from './layout/empty-layout/empty-layout.component';
 import { RegistrationPageComponent } from './pages/registration-page/registration-page.component';
 import { routing } from './app.routing';
+import { DashGuard } from './guards/auth.guard';
+import { IAuthenticationService, AuthenticationService } from './services/auth.service';
+import { JwtModule } from '@auth0/angular-jwt';
+
+export function tokenGetter() {
+  return localStorage.getItem('access_token');
+}
+
 
 @NgModule({
   declarations: [
@@ -160,8 +168,17 @@ import { routing } from './app.routing';
     DragulaModule.forRoot(),
     AngularSvgIconModule,
     TreeModule,
+    JwtModule.forRoot({
+      config: {
+        tokenGetter: tokenGetter,
+        whitelistedDomains: ['*.встройке.бел']
+      }
+    }),
   ],
-  providers: [EventSesrvice],
+  providers: [
+    DashGuard,
+    { provide: IAuthenticationService, useClass: AuthenticationService},
+    EventSesrvice],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

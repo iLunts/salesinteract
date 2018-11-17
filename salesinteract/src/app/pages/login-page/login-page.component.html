@@ -6,14 +6,14 @@
 			<!-- <h2 class="login__panel-title">Salesinteract Login</h2> -->
 			<div>
 				<label for="" class="label">Email address</label>
-				<input type="email" class="input" placeholder="example@salesinteract.com">
+				<input type="email" class="input" placeholder="example@salesinteract.com" [(ngModel)]='email'>
 			</div>
 			<div>
 				<label for="" class="label">Password</label>
-				<input type="password" class="input" placeholder="********">
+				<input type="password" class="input" placeholder="********" [(ngModel)]='password'>
 			</div>
 			<div class="flex flex--middle flex--space-between">
-				<button class="btn btn--blue">Login</button>
+				<button class="btn btn--blue" (click)="login()">Login</button>
 				<button class="btn btn--link">Forgot password?</button>
 			</div>
 			<!-- <div class="m--t-lg t--c">
@@ -36,7 +36,7 @@
 			<p class="login__panel-copyright">
 				2018 Copyright <b>Salesinteract</b>
 			</p>
-			
+
 		</div>
 	</div>
 </div>

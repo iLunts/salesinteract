@@ -1,3 +1,6 @@
+import { Router } from '@angular/router';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { IAuthenticationService } from './../../services/auth.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +10,26 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginPageComponent implements OnInit {
 
-  constructor() { }
+  email: string;
+  password: string;
+
+  constructor(protected service: IAuthenticationService, protected $http: HttpClient, protected $router: Router) { }
+
+
 
   ngOnInit() {
   }
 
+  login() {
+    const options = {
+      headers: new HttpHeaders().set('Content-Type', 'application/x-www-form-urlencoded')
+  };
+
+    this.$http.post('/api/v1/login', `email=${this.email}&password=${this.password}`, options
+    ).subscribe( (x: any) => {
+      this.service.setToken(x.token);
+      this.$router.navigate([ '', 'dashboard' ]);
+    });
+
+  }
 }
