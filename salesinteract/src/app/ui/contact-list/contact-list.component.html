@@ -6,13 +6,13 @@
     </div> -->
     <ul class="contact-list__list list list--line list--v">
         <li class="list__item contact-list__list-item" 
-            *ngFor="let contact of contactData">
+            *ngFor="let contact of contactTaskDataList">
             <div>
-                <span [ngStyle]="{'background-color': contact.color}" 
+                <span [ngStyle]="{'background-color': getColor(contact.type)}" 
                     class="badge badge--sm badge--squared contact-list__list-color"></span>
-                <span class="t--semi-bold t--gray-dark m--l-sm">{{contact.title}}</span>
+                <span class="t--semi-bold t--gray-dark m--l-sm">{{contact.type}}</span>
             </div>
-            <span class="t--semi-bold t--gray">{{contact.count}}</span>
+            <span class="t--semi-bold t--gray">{{contact.value}}</span>
         </li>
     </ul>
 </div>

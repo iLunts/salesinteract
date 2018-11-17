@@ -1,7 +1,7 @@
 <ul class="open-offer list list--v list--line">
-    <li class="open-offer__item list__item" *ngFor="let item of openOffersData | slice:0:4;">
+    <li class="open-offer__item list__item" *ngFor="let item of openOffersData | slice:0:4; index as i">
         <div class="open-offer__content flex flex--middle">
-            <span class="badge badge--green m--r-sm">1</span>
+            <span class="badge badge--green m--r-sm">{{i + 1}}</span>
             <div>
                 <a href="" class="open-offer__name">{{item.contact.name}}</a>
                 <p class="open-offer__company">{{item.organisation.name}}</p>
