@@ -75,6 +75,7 @@ import { LoginPageComponent } from './pages/login-page/login-page.component';
 import { AdminLayoutComponent } from './layout/admin-layout/admin-layout.component';
 import { EmptyLayoutComponent } from './layout/empty-layout/empty-layout.component';
 import { RegistrationPageComponent } from './pages/registration-page/registration-page.component';
+import { ResetPasswordPageComponent } from './pages/reset-password-page/reset-password-page.component';
 
 @NgModule({
   declarations: [
@@ -138,6 +139,7 @@ import { RegistrationPageComponent } from './pages/registration-page/registratio
     AdminLayoutComponent,
     EmptyLayoutComponent,
     RegistrationPageComponent,
+    ResetPasswordPageComponent,
   ],
   imports: [
     HttpClientModule,

@@ -10,30 +10,34 @@
     align-items: center;
     justify-content: center;
 
+    // Element '.login .login__panel'
     & &__panel{
         border-radius: 8px;
         background-color: #fff;
         box-shadow: 0 10px 50px 0 rgba(0, 0, 0, 0.05);
-
+        
         display: flex;
         align-items: center;
         justify-content: stretch;
-
+        
         overflow: hidden;
-
+        
+        // Element '.login .login__panel-logo'
         &-logo{
             display: block;
             width: 250px;
             margin: 0 0 50px 0;
         }
-
+        
+        // Element '.login .login__panel-title'
         &-title{
             font-size: 2rem;
             line-height: 2.4rem;
             margin: 0 0 25px 0;
             text-align: center;
         }
-
+        
+        // Element '.login .login__panel-text'
         &-text{
             display: block;
             max-width: 300px;
@@ -44,7 +48,8 @@
             text-align: center;
             opacity: .85;
         }
-
+        
+        // Element '.login .login__panel-copyright'
         &-copyright{
             font-size: .9rem;
             line-height: 1rem;
@@ -53,11 +58,13 @@
             margin: 30px 0 0 0;
             opacity: .5;
         }
-
+        
+        // Element '.login .login__panel-left'
         &-left{
-            padding: 100px 60px;
+            padding: 60px;
         }
-
+        
+        // Element '.login .login__panel-right'
         &-right{
             position: relative;
             display: flex;
@@ -65,17 +72,18 @@
             justify-content: flex-end;
             flex-direction: column;
             flex-wrap: wrap;
-
+            
             min-width: 500px;
             min-height: 500px;
             padding: 40px;
             background-color: #ddd;
-
+            
             background-image: url('/assets/img/login/login.jpg');
             background-position: center;
             background-repeat: no-repeat;
             background-size: cover;
-
+            
+            // Element '.login .login__panel-right:before'
             &:before{
                 content: '';
                 position: absolute;
@@ -86,7 +94,8 @@
                 background-color: rgba(0, 0, 0, 0.5);
                 z-index: 1;
             }
-
+            
+            // Element '.login .login__panel-right *'
             *{
                 position: relative;
                 color: #fff;
