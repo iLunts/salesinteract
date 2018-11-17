@@ -9,15 +9,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./login-page.component.less']
 })
 export class LoginPageComponent implements OnInit {
+  isResetPassword: boolean = false;
 
   email: string;
   password: string;
 
   constructor(protected service: IAuthenticationService, protected $http: HttpClient, protected $router: Router) { }
 
-
-
   ngOnInit() {
+  }
+
+  resetPassword() {
+    this.isResetPassword = !this.isResetPassword;
   }
 
   login() {
