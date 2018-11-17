@@ -3,23 +3,58 @@
 
 		<div class="login__panel-left">
 			<img class="login__panel-logo" src="/assets/img/logo.png" alt="">
-			<!-- <h2 class="login__panel-title">Salesinteract Login</h2> -->
-			<div>
-				<label for="" class="label">Email address</label>
-				<input type="email" class="input" placeholder="example@salesinteract.com">
+
+			<!-- Login -->
+			<div *ngIf="!isResetPassword">
+				<p class="t--h3 m--b-sm">Login</p>
+				<!-- <p class="t--muted t--md m--b">To reset your password we need your email address</p> -->
+				<div>
+					<label for="" class="label">E-mail address</label>
+					<input type="email" class="input" placeholder="example@salesinteract.com">
+				</div>
+				<div>
+					<label for="" class="label">Password</label>
+					<input type="password" class="input" placeholder="********">
+				</div>
+				<div class="flex flex--middle flex--space-between">
+					<button class="btn btn--blue" [routerLink]="['/']">Login</button>
+					<button class="btn btn--link" (click)="resetPassword()">Forgot password?</button>
+				</div>
+				<!-- <div class="m--t-lg t--c">
+					<button class="btn btn--sm btn--gray btn--squared">1</button>
+					<button class="btn btn--sm btn--gray btn--squared">2</button>
+				</div> -->
 			</div>
-			<div>
-				<label for="" class="label">Password</label>
-				<input type="password" class="input" placeholder="********">
+
+			<!-- Reset password -->
+			<div *ngIf="isResetPassword">
+				<p class="t--h3 m--b-sm">Reset password</p>
+				<p class="t--muted t--md m--b">To reset your password we need your email address</p>
+				<div>
+					<label for="" class="label">E-mail address</label>
+					<input type="email" class="input" placeholder="example@salesinteract.com">
+				</div>
+				<div class="flex flex--middle flex--space-between">
+					<button class="btn btn--blue">Send</button>
+					<button class="btn btn--link" (click)="resetPassword()">Cancel</button>
+				</div>
 			</div>
-			<div class="flex flex--middle flex--space-between">
-				<button class="btn btn--blue">Login</button>
-				<button class="btn btn--link">Forgot password?</button>
+
+			<!-- Reset password with error -->
+			<div *ngIf="isResetPasswordError">
+				<p>Dit e-mailadres is niet bekend bij ons</p>
+				<div class="flex flex--middle flex--space-between">
+					<button class="btn btn--blue">Probeer nogmaals</button>
+				</div>
 			</div>
-			<!-- <div class="m--t-lg t--c">
-				<button class="btn btn--sm btn--gray btn--squared">1</button>
-				<button class="btn btn--sm btn--gray btn--squared">2</button>
-			</div> -->
+
+			<!-- Reset password without error -->
+			<div *ngIf="isResetPasswordError">
+				<p>Dit e-mailadres is niet bekend bij ons</p>
+				<div class="flex flex--middle flex--space-between">
+					<button class="btn btn--blue">Probeer nogmaals</button>
+				</div>
+			</div>
 		</div>
 
 		<div class="login__panel-right">

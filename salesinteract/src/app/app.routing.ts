@@ -39,64 +39,54 @@ import { RegistrationPageComponent } from './pages/registration-page/registratio
 
 const appRoutes: Routes = [
 
-    // Admin side routes 
+    // Admin side routes
     {
         path: '',
         component: AdminLayoutComponent,
         children: [
-            { 
-                path: '', 
-                component: DashboardPageComponent, 
-                pathMatch: 'full' 
-            },
-            { 
-                path: 'quick-views', 
-                component: QuickViewsPageComponent, 
-                pathMatch: 'full' 
-            },
-            { 
-                path: 'statistics', 
-                component: StatisticsPageComponent, 
-                pathMatch: 'full' 
+            {
+                path: 'quick-views',
+                component: QuickViewsPageComponent,
             },
             {
-                path: 'crm', 
+                path: 'statistics',
+                component: StatisticsPageComponent,
+            },
+            {
+                path: 'crm',
                 component: CrmPageComponent,
-                pathMatch: 'full' 
             },
             {
-                path: 'crm/:id', 
+                path: 'crm/:id',
                 component: ContactListPageComponent,
-                pathMatch: 'full' 
             },
             {
-                path: 'settings', 
+                path: 'settings',
                 component: SettingsPageComponent,
-                pathMatch: 'full' 
             },
             {
-                path: 'settings/survey', 
+                path: 'settings/survey',
                 component: SurveyPageComponent,
-                pathMatch: 'full' 
             },
             {
-                path: 'settings/survey/:id/edit', 
+                path: 'settings/survey/:id/edit',
                 component: SurveyEditPageComponent,
-                pathMatch: 'full' 
             },
+            {
+              path: '',
+              component: DashboardPageComponent,
+              pathMatch: 'full'
+          }
         ]
     },
 
     // Empty layout routes
     { path: 'login', component: LoginPageComponent },
     { path: 'register', component: RegistrationPageComponent },
-    
+
     // Otherwise redirect to dashboard page
     { path: '**', redirectTo: '' }
 ];
 
 
 export const routing = RouterModule.forRoot(appRoutes);
-// export class RoutingModule { 
-
-//  }

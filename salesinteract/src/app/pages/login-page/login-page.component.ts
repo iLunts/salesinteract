@@ -6,10 +6,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./login-page.component.less']
 })
 export class LoginPageComponent implements OnInit {
+  isResetPassword: boolean = false;
 
   constructor() { }
 
   ngOnInit() {
+  }
+
+  resetPassword(){
+    this.isResetPassword = !this.isResetPassword;
   }
 
 }
