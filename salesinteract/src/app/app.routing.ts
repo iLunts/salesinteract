@@ -17,6 +17,7 @@ import { LoginPageComponent } from './pages/login-page/login-page.component';
 import { AdminLayoutComponent } from './layout/admin-layout/admin-layout.component';
 import { EmptyLayoutComponent } from './layout/empty-layout/empty-layout.component';
 import { RegistrationPageComponent } from './pages/registration-page/registration-page.component';
+import { DashGuard } from './guards/auth.guard';
 
 // const routes: Routes = [
 //     { path: '', component: DashboardPageComponent },
@@ -42,6 +43,7 @@ const appRoutes: Routes = [
     // Admin side routes
     {
         path: '',
+        canActivate: [DashGuard],
         component: AdminLayoutComponent,
         children: [
             {

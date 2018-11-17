@@ -12,7 +12,7 @@ export class DashGuard implements CanActivate {
         const auth = this._auth.isAuthentificated();
 
         if (!auth) {
-            this.router.navigate(['/sign-in']);
+            this.router.navigate(['/login']);
         }
 
         return auth;

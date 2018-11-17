@@ -10,11 +10,11 @@
 				<!-- <p class="t--muted t--md m--b">To reset your password we need your email address</p> -->
 				<div>
 					<label for="" class="label">E-mail address</label>
-					<input type="email" class="input" placeholder="example@salesinteract.com">
+					<input type="email" class="input" placeholder="example@salesinteract.com" [(ngModel)]='email'>
 				</div>
 				<div>
 					<label for="" class="label">Password</label>
-					<input type="password" class="input" placeholder="********">
+					<input type="password" class="input" placeholder="********" [(ngModel)]='password'>
 				</div>
 				<div class="flex flex--middle flex--space-between">
 					<button class="btn btn--blue" [routerLink]="['/']">Login</button>
@@ -71,7 +71,7 @@
 			<p class="login__panel-copyright">
 				2018 Copyright <b>Salesinteract</b>
 			</p>
-			
+
 		</div>
 	</div>
 </div>
