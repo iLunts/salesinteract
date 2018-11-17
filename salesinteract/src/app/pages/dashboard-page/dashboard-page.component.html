@@ -37,7 +37,7 @@
 		</div>
 	</div>
 
-	<div class="row">	
+	<div class="row">
 		<div class="col-sm-12">
 			<div class="panel">
 				<div class="panel__header">
@@ -49,17 +49,17 @@
 							September - Here you can see your achievements / touches for this period
 						</p>
 					</div>
-					
+
 					<div [hidden]="!isCollapsedTopBar">
-						<span class="badge" 
+						<span class="badge"
 								*ngFor="let item of contactGraphList"
 								[ngStyle]="{'background-color': item.color}">{{item.title}}: {{item.count}}</span>
 					</div>
 
 					<div>
-						<button class="btn btn--squared btn--gray btn--ssm" 
+						<button class="btn btn--squared btn--gray btn--ssm"
 								(click)="collapsedTopBar()"
-								[attr.aria-expanded]="!isCollapsedTopBar" 
+								[attr.aria-expanded]="!isCollapsedTopBar"
 								aria-controls="collapseBasic">
 							<i class="btn__icon" [ngClass]="{'icon-arrow-down-fill': isCollapsedTopBar, 'icon-arrow-up-fill': !isCollapsedTopBar}"></i>
 						</button>
@@ -77,7 +77,7 @@
 					<div class="row row--divider">
 						<div class="col-md-3 col-xs-12">
 							<p class="t--semi-bold">Task history</p>
-							<app-task-history-list [taskData]="taskHistoryList"></app-task-history-list>
+							<app-task-history-list [taskData]="dashboardData.history"></app-task-history-list>
 						</div>
 
 						<div class="col-md-6 col-xs-12">
@@ -86,7 +86,7 @@
 									<p class="t--semi-bold">Contacten</p>
 									<app-contact-list [contactData]="contactGraphList"></app-contact-list>
 								</div>
-		
+
 								<div class="col-md-8 col-sm-7 col-xs-12">
 									<p class="t--semi-bold">Complete tasks</p>
 									<div class="dash-page__chart dash-page__chart--complete">
@@ -98,7 +98,7 @@
 
 						<div class="col-md-3 col-xs-12">
 							<p class="t--semi-bold">Open offers</p>
-							<app-open-offers-list [openOffersData]="taskHistoryList"></app-open-offers-list>
+							<app-open-offers-list [openOffersData]="dashboardData.quotations"></app-open-offers-list>
 						</div>
 					</div>
 
@@ -107,14 +107,14 @@
 		</div>
 	</div>
 
-	<div class="row">	
+	<div class="row">
 
 		<!-- Tasks today -->
 		<div class="col-lg-8">
 			<div class="panel panel--filter">
 				<div class="panel__title t--green">
 					<i class="icon icon-today m--r-mini"></i>
-					<span class="t--semi-bold">Task today</span>				
+					<span class="t--semi-bold">Task today</span>
 				</div>
 				<div class="">
 					<ul class="tab tab--h">
@@ -145,28 +145,28 @@
 
 
 			<div class="task-list">
-				<div class="panel panel--sm" *ngFor="let item of taskHistoryLateList">
+				<div class="panel panel--sm" *ngFor="let item of dashboardData.tasks">
 					<div class="panel__body task-list__body">
 						<div class="flex flex--middle col-lg-3">
 							<img class="avatar avatar--square m--r-sm" [src]="item.image" alt="">
 							<div>
-								<a href="" class="task-list__company">{{item.name}}</a>
-								<p class="task-list__type">Company</p>
+								<a href="" class="task-list__company">{{item.contact.name}}</a>
+								<p class="task-list__type">{{item.organisation_name}}</p>
 							</div>
 						</div>
 						<div class="col-lg-4">
 							<div class="flex flex--middle">
-								<img class="avatar avatar--sm m--r-sm" [src]="item.image" alt="">
-								<a href="" class="task-list__name">{{item.contactName}}</a>
+								<img class="avatar avatar--sm m--r-sm" [src]="" alt="">
+								<a href="" class="task-list__name">{{item.sales.name}}</a>
 							</div>
 							<div>
 								<i class="icon icon-desc t--gray m--r-mini"></i>
-								<span class="task-list__desc">{{item.result}}</span>
+								<span class="task-list__desc">{{item.outcome}}</span>
 							</div>
 						</div>
 						<div class="col-lg-3 t--c">
-							<span class="badge badge--gray">{{item.task}}</span>
-							<p class="t--md t--regular m--t-mini t--green t--c">{{item.date}}</p>
+							<span class="badge badge--gray">{{item.status}}</span>
+							<p class="t--md t--regular m--t-mini t--green t--c">{{item.created | date}}</p>
 						</div>
 						<div class="col-lg-1 t--r">
 							<button class="btn btn--circle btn--gray btn--ssm">
@@ -185,7 +185,7 @@
 			<div class="panel panel--filter">
 				<div class="panel__title t--red">
 					<i class="icon icon-too-late m--r-mini"></i>
-					<span class="t--semi-bold">Task too late</span>				
+					<span class="t--semi-bold">Task too late</span>
 				</div>
 				<div class="">
 					<ul class="tab tab--h">
@@ -204,11 +204,11 @@
 					<!-- <button class="btn btn--squared btn--gray btn--ssm">
 						<i class="btn__icon icon-more"></i>
 					</button> -->
-					
+
 					<div class="btn-group" dropdown>
-						<button id="button-basic" 
-							dropdownToggle 
-							type="button" 
+						<button id="button-basic"
+							dropdownToggle
+							type="button"
 							class="btn btn--squared btn--gray btn--ssm"
 							aria-controls="dropdown-basic">
 							<i class="btn__icon icon-more"></i>
@@ -305,13 +305,13 @@
 				</div>
 				<!-- <div class="panel__body"> -->
 					<div *ngIf="calendarOptions">
-						<ng-fullcalendar 
-							class="calendar" 
-							#ucCalendar 
-							[options]="calendarOptions" 
-							(eventClick)="eventClick($event.detail)" 
+						<ng-fullcalendar
+							class="calendar"
+							#ucCalendar
+							[options]="calendarOptions"
+							(eventClick)="eventClick($event.detail)"
 							(eventDrop)="updateEvent($event.detail)"
-							(eventResize)="updateEvent($event.detail)" 
+							(eventResize)="updateEvent($event.detail)"
 							(clickButton)="clickButton($event.detail)"
 							>
 						</ng-fullcalendar>

@@ -1,3 +1,5 @@
+import { Dashboard } from './../../model/dashboard';
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { CalendarComponent } from 'ng-fullcalendar';
 import { Options } from 'fullcalendar';
@@ -187,39 +189,39 @@ export class DashboardPageComponent implements OnInit {
   ];
 
   taskHistoryList: any = [
-    { name: 'Coen van der Kolk', 
-      date: '31 aug. 2018 08:50', 
+    { name: 'Coen van der Kolk',
+      date: '31 aug. 2018 08:50',
       image: 'https://images.asos-media.com/products/bejsbolka-chernyj-belyj-the-north-face-the-norm/10265685-1-black?$XL$?$XXL$&wid=300&fmt=jpeg&qlt=80,0&op_sharpen=0&resMode=sharp2&op_usm=1,0.4,6,1&iccEmbed=0&printRes=72'
     },
-    { name: 'Grant Solomonesck', 
-      date: '20 aug. 2018 08:50', 
+    { name: 'Grant Solomonesck',
+      date: '20 aug. 2018 08:50',
       image: 'https://images.asos-media.com/products/bejsbolka-chernyj-belyj-the-north-face-the-norm/10265685-1-black?$XL$?$XXL$&wid=300&fmt=jpeg&qlt=80,0&op_sharpen=0&resMode=sharp2&op_usm=1,0.4,6,1&iccEmbed=0&printRes=72'
     },
-    { name: 'Grantowner Moriskovich', 
-      date: '31 aug. 2018 08:50', 
+    { name: 'Grantowner Moriskovich',
+      date: '31 aug. 2018 08:50',
       image: 'https://resources.stuff.co.nz/content/dam/images/1/n/t/2/j/z/image.related.StuffLandscapeSixteenByNine.620x349.1nqgze.png/1515968097908.jpg'
     },
   ];
 
   taskHistoryLateList: any = [
-    { name: 'Coen van der Kolk', 
-      date: '31 aug. 2018 08:50', 
+    { name: 'Coen van der Kolk',
+      date: '31 aug. 2018 08:50',
       contactName: 'Abagnale Frank',
       image: 'https://images.asos-media.com/products/bejsbolka-chernyj-belyj-the-north-face-the-norm/10265685-1-black?$XL$?$XXL$&wid=300&fmt=jpeg&qlt=80,0&op_sharpen=0&resMode=sharp2&op_usm=1,0.4,6,1&iccEmbed=0&printRes=72',
       contactImage: '',
       result: 'Visit appointment',
       task: 'Follow'
     },
-    { name: 'Grant Solomonesck', 
-      date: '20 aug. 2018 08:50', 
+    { name: 'Grant Solomonesck',
+      date: '20 aug. 2018 08:50',
       image: 'https://images.asos-media.com/products/bejsbolka-chernyj-belyj-the-north-face-the-norm/10265685-1-black?$XL$?$XXL$&wid=300&fmt=jpeg&qlt=80,0&op_sharpen=0&resMode=sharp2&op_usm=1,0.4,6,1&iccEmbed=0&printRes=72',
       contactName: 'Boileau-Despreaux Nicholas',
       contactImage: 'https://resources.stuff.co.nz/content/dam/images/1/n/t/2/j/z/image.related.StuffLandscapeSixteenByNine.620x349.1nqgze.png/1515968097908.jpg',
       result: 'Call phone',
       task: 'Complete'
     },
-    { name: 'Grantowner Moriskovich', 
-      date: '31 aug. 2018 08:50', 
+    { name: 'Grantowner Moriskovich',
+      date: '31 aug. 2018 08:50',
       image: 'https://resources.stuff.co.nz/content/dam/images/1/n/t/2/j/z/image.related.StuffLandscapeSixteenByNine.620x349.1nqgze.png/1515968097908.jpg',
       contactName: 'Bayly Thomas Haynes',
       contactImage: 'http://dreamicus.com/data/face/face-06.jpg',
@@ -250,14 +252,20 @@ export class DashboardPageComponent implements OnInit {
 
   calendarOptions: Options;
   @ViewChild(CalendarComponent) ucCalendar: CalendarComponent;
+  dashboardData: Dashboard = {};
 
-  constructor(protected _eventService: EventSesrvice) { 
+  constructor(protected _eventService: EventSesrvice, protected $http: HttpClient) {
     Object.assign(this, { contacten, afgeronde });
   }
 
   ngOnInit() {
 
-    
+    this.$http.get<Dashboard>('/api/v1/dashboard/sales').subscribe(x => {
+      this.dashboardData = x;
+    });
+
+
+
     this._eventService.getEvents().subscribe(data => {
       this.calendarOptions = {
         editable: true,
@@ -272,7 +280,7 @@ export class DashboardPageComponent implements OnInit {
     });
   }
 
-  collapsedTopBar(){
+  collapsedTopBar() {
     this.isCollapsedTopBar = !this.isCollapsedTopBar;
   }
 
