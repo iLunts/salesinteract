@@ -17,13 +17,9 @@
 					<input type="password" class="input" placeholder="********" [(ngModel)]='password'>
 				</div>
 				<div class="flex flex--middle flex--space-between">
-					<button class="btn btn--blue" [routerLink]="['/']">Login</button>
+					<button class="btn btn--blue" (click)="login()">Login</button>
 					<button class="btn btn--link" (click)="resetPassword()">Forgot password?</button>
 				</div>
-				<!-- <div class="m--t-lg t--c">
-					<button class="btn btn--sm btn--gray btn--squared">1</button>
-					<button class="btn btn--sm btn--gray btn--squared">2</button>
-				</div> -->
 			</div>
 
 			<!-- Reset password -->
@@ -65,7 +61,7 @@
 			</div>
 			<div class="m--t-xlg t--c">
 				<p class="t--regular">Do not have an account?</p>
-				<button class="btn btn--green" [routerLink]="['/registration']">Register now</button>
+				<button class="btn btn--green" [routerLink]="['/register']">Register now</button>
 			</div>
 
 			<p class="login__panel-copyright">

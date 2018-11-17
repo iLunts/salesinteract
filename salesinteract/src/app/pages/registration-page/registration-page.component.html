@@ -1,74 +1,77 @@
-<div class="login">
-	<div class="login__panel">
+<div class="registration">
+	<div class="registration__panel">
 
-		<div class="login__panel-left">
-			<img class="login__panel-logo" src="/assets/img/logo.png" alt="">
+		<div class="registration__panel-left">
+			<img class="registration__panel-logo" src="/assets/img/logo.png" alt="">
 
-			<!-- Login -->
-			<div *ngIf="!isResetPassword">
-				<p class="t--h3 m--b-sm">Login</p>
-				<!-- <p class="t--muted t--md m--b">To reset your password we need your email address</p> -->
+			<!-- Registration social networks-->
+			<div>
+				<p class="t--h4 m--b-sm">Registration</p>
+				<p class="t--muted t--md m--b">Use one of the following providers to start a quick registration process.</p>
+				<div class="row">
+					<div class="col-sm-6">
+						<button class="registration__btn registration__btn--facebook btn btn--gray">
+							<i class="btn__icon"></i>
+							<span class="btn__text">123</span>
+						</button>
+					</div>
+					<div class="col-sm-6">
+						<button class="registration__btn registration__btn--facebook btn btn--gray">
+							<i class="btn__icon"></i>
+							<span class="btn__text">123</span>
+						</button>
+					</div>
+					<div class="col-sm-6">
+						<button class="registration__btn registration__btn--facebook btn btn--gray">
+							<i class="btn__icon"></i>
+							<span class="btn__text">123</span>
+						</button>
+					</div>
+					<div class="col-sm-6">
+						<button class="registration__btn registration__btn--facebook btn btn--gray">
+							<i class="btn__icon"></i>
+							<span class="btn__text">123</span>
+						</button>
+					</div>
+				</div>
+			</div>
+
+			<!-- Registration email-->
+			<div>
+				<!-- <p class="t--h3 m--b-sm">Registration</p> -->
+				<p class="t--muted t--md m--b">Register through your email adres.</p>
 				<div>
 					<label for="" class="label">E-mail address</label>
 					<input type="email" class="input" placeholder="example@salesinteract.com">
 				</div>
-				<div>
-					<label for="" class="label">Password</label>
-					<input type="password" class="input" placeholder="********">
+				<div class="checkbox checkbox--sm m--b">
+					<input class="checkbox__input" type="checkbox" id="agree">
+					<label class="checkbox__label" for="agree">
+						Yes, I agree to the 
+						<a class="link link--line t--blue" href="https://www.salesinteract.com/terms-of-service/?_ga=2.157596345.2018200033.1542471224-1613555883.1542361943" target="_blank">terms of service</a>
+					</label>
 				</div>
+				<p class="t--md m--b t--regular t--gray">
+					By registering, you confirm that you have read and agree to the 
+					<a class="link link--line t--blue" href="https://www.salesinteract.com/privacy-policy/?_ga=2.228024094.2018200033.1542471224-1613555883.1542361943">privacy policy</a> 
+					and the 
+					<a class="link link--line t--blue" href="https://www.salesinteract.com/dpa/?_ga=2.152419130.2018200033.1542471224-1613555883.1542361943">data processing agreement</a>.
+				</p>
 				<div class="flex flex--middle flex--space-between">
-					<button class="btn btn--blue" (click)="login()">Login</button>
-					<button class="btn btn--link" (click)="resetPassword()">Forgot password?</button>
-				</div>
-				<!-- <div class="m--t-lg t--c">
-					<button class="btn btn--sm btn--gray btn--squared">1</button>
-					<button class="btn btn--sm btn--gray btn--squared">2</button>
-				</div> -->
-			</div>
-
-			<!-- Reset password -->
-			<div *ngIf="isResetPassword">
-				<p class="t--h3 m--b-sm">Reset password</p>
-				<p class="t--muted t--md m--b">To reset your password we need your email address</p>
-				<div>
-					<label for="" class="label">E-mail address</label>
-					<input type="email" class="input" placeholder="example@salesinteract.com">
-				</div>
-				<div class="flex flex--middle flex--space-between">
-					<button class="btn btn--blue">Send</button>
-					<button class="btn btn--link" (click)="resetPassword()">Cancel</button>
-				</div>
-			</div>
-
-			<!-- Reset password with error -->
-			<div *ngIf="isResetPasswordError">
-				<p>Dit e-mailadres is niet bekend bij ons</p>
-				<div class="flex flex--middle flex--space-between">
-					<button class="btn btn--blue">Probeer nogmaals</button>
-				</div>
-			</div>
-
-			<!-- Reset password without error -->
-			<div *ngIf="isResetPasswordError">
-				<p>Dit e-mailadres is niet bekend bij ons</p>
-				<div class="flex flex--middle flex--space-between">
-					<button class="btn btn--blue">Probeer nogmaals</button>
+					<button class="btn btn--blue" (click)="registration()">Register</button>
+					<button class="btn btn--link">Cancel</button>
 				</div>
 			</div>
 		</div>
 
-		<div class="login__panel-right">
+		<div class="registration__panel-right">
 			<div>
-				<h2 class="login__panel-title">Interactive Easy to use Sales CRM</h2>
-				<p class="login__panel-text">Next generation CRM for companies that take their sales serious</p>
-				<p class="login__panel-text">If you wanna be part of the big shift in marketing, connect with your customers</p>
-			</div>
-			<div class="m--t-xlg t--c">
-				<p class="t--regular">Do not have an account?</p>
-				<button class="btn btn--green" [routerLink]="['/registration']">Register now</button>
+				<h2 class="registration__panel-title">Start your 30-day free trail</h2>
+				<p class="registration__panel-text">Salesinteract is an interactive CRM system that enables organizations to realize faster, better and larger sales. </p>
+				<p class="registration__panel-text">Salesinteract brings structure to the sales process, makes your sales insightful, lets employees work more efficiently and challenges you to achieve the best results for the organization. Understand your customers and change your way of selling.</p>
 			</div>
 
-			<p class="login__panel-copyright">
+			<p class="registration__panel-copyright m--t-xlg">
 				2018 Copyright <b>Salesinteract</b>
 			</p>
 			

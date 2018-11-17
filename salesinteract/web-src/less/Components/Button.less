@@ -600,6 +600,13 @@ a{
         box-shadow: none;
     }
 
+    &:hover,
+    &:active,
+    &:focus{
+        outline: none;
+        box-shadow: none;
+    }
+
     // Modificator `.link.link--reset`
     &&--reset{
         text-decoration: none;
@@ -619,6 +626,7 @@ a{
 
     // Modificator '.link.link--line'
     &&--line{
+        border-bottom: 1px solid;
 
         &:before{
             content: '';
