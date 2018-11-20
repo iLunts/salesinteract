@@ -1,5 +1,5 @@
-<ul class="open-offer list list--v list--line">
-    <li class="open-offer__item list__item" *ngFor="let item of openOffersData | slice:0:4; index as i">
+<ul class="open-quotation list list--v list--line">
+    <li class="open-offer__item list__item" *ngFor="let item of openQuotationsData | slice:0:4; index as i">
         <div class="open-offer__content flex flex--middle">
             <span class="badge badge--green m--r-sm">{{i + 1}}</span>
             <div>
@@ -20,4 +20,4 @@
 
 <button class="btn btn--gray btn--ssm col-xs-12" (click)="openSidebar()">Show more</button>
 <!-- Sidebar panel -->
-<app-sidebar-open-offers [ngClass]="{'open': isOpenSidebar}" [openOffersData]="openOffersData"></app-sidebar-open-offers>
+<app-sidebar-open-quotations [ngClass]="{'open': isOpenSidebar}" [openQuotationsData]="openOffersData"></app-sidebar-open-quotations>

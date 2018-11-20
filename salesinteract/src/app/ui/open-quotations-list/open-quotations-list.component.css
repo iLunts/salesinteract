@@ -1,23 +1,23 @@
-.open-offer .open-offer__item {
+.open-quotation .open-quotation__item {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
-.open-offer .open-offer__avatar {
+.open-quotation .open-quotation__avatar {
   margin-right: 10px;
   border-radius: 4px;
   object-fit: cover;
 }
-.open-offer a.open-offer__name {
+.open-quotation a.open-offer__name {
   color: #252841;
   text-decoration: none;
 }
-.open-offer a.open-offer__name:hover {
+.open-quotation a.open-offer__name:hover {
   text-decoration: none;
   box-shadow: none;
   outline: none;
 }
-.open-offer .open-offer__name {
+.open-quotation .open-quotation__name {
   font-weight: 400;
   font-size: 1rem;
   line-height: 1;
@@ -28,15 +28,15 @@
   color: #252841;
   text-decoration: none;
 }
-.open-offer .open-offer__status {
+.open-quotation .open-quotation__status {
   text-align: right;
 }
-.open-offer .open-offer__status-date {
+.open-quotation .open-quotation__status-date {
   font-weight: 400;
   font-size: .9rem;
   margin: 2px 0 0 0;
 }
-.open-offer .open-offer__company {
+.open-quotation .open-quotation__company {
   font-weight: 400;
   font-size: .9rem;
   line-height: 1;
@@ -47,13 +47,13 @@
   color: #B2C8DB;
 }
 @media only screen and (max-width: 1219px) and (min-width: 1024px) {
-  .open-offer .open-offer__item {
+  .open-quotation .open-quotation__item {
     flex-wrap: wrap;
   }
-  .open-offer .open-offer__content {
+  .open-quotation .open-quotation__content {
     width: 100%;
   }
-  .open-offer .open-offer__status {
+  .open-quotation .open-quotation__status {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -63,13 +63,13 @@
   }
 }
 @media only screen and (max-width: 1023px) and (min-width: 768px) {
-  .open-offer .open-offer__item {
+  .open-quotation .open-quotation__item {
     flex-wrap: wrap;
   }
-  .open-offer .open-offer__content {
+  .open-quotation .open-quotation__content {
     width: 100%;
   }
-  .open-offer .open-offer__status {
+  .open-quotation .open-quotation__status {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -79,7 +79,7 @@
   }
 }
 @media only screen and (max-width: 767px) and (min-width: 320px) {
-  .open-offer .open-offer__item {
+  .open-quotation .open-quotation__item {
     flex-wrap: wrap;
   }
 }
