@@ -1,3 +1,4 @@
+@import '../../../../web-src/less/variables.less';
 // --------------------------------------------------------
 // Block '.registration'
 // --------------------------------------------------------
@@ -79,7 +80,7 @@
             padding: 40px;
             background-color: #ddd;
             
-            background-image: url('/assets/img/login/login.jpg');
+            background-image: url('/assets/img/registration/registration.jpg');
             background-position: center;
             background-repeat: no-repeat;
             background-size: cover;
@@ -101,6 +102,65 @@
                 position: relative;
                 color: #fff;
                 z-index: 2;
+            }
+        }
+    }
+}
+
+
+// ---------------------------------------------------------------------------
+// size: Small
+// ----------------------------------------------------------------------------
+@media only screen and (max-width: @breakpoint-sm-max) and (min-width: @breakpoint-sm-min) {
+
+    // ----------------------------------------------------
+    // Block '.registration'
+    // ----------------------------------------------------
+    .registration{
+    }
+
+}
+
+// ---------------------------------------------------------------------------
+// size: xSmall
+// ----------------------------------------------------------------------------
+@media only screen and (max-width: @breakpoint-xs-max) and (min-width: @breakpoint-xs-min) {
+
+    // ----------------------------------------------------
+    // Block '.registration'
+    // ----------------------------------------------------
+    .registration{
+        display: block;
+        padding: 30px 0;
+        margin: 0;
+        height: auto;
+        
+        // Element '.loregistrationin .registration__panel'
+        & &__panel{
+            flex-wrap: wrap;
+            width: 90%;
+            margin: 0 auto;
+            background-color: transparent;
+            box-shadow: none;
+            
+            // Element '.registration .registration__panel-left'
+            &-left{
+                width: 100%;
+                max-width: 100%;
+                border-radius: 6px;
+                background-color: #fff;
+                box-shadow: 0 10px 50px 0 rgba(0, 0, 0, 0.05);
+            }
+            
+            // Element '.registration .registration__panel-right'
+            &-right{
+                background-color: #fff;
+                min-width: auto;
+                width: 100%;
+                border-radius: 6px;
+                margin-top: 25px;
+                overflow: hidden;
+                box-shadow: 0 10px 50px 0 rgba(0, 0, 0, 0.05);
             }
         }
     }
