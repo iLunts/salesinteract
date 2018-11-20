@@ -1,23 +1,24 @@
 <ul class="open-quotation list list--v list--line">
-    <li class="open-offer__item list__item" *ngFor="let item of openQuotationsData | slice:0:4; index as i">
-        <div class="open-offer__content flex flex--middle">
+    <li class="open-quotation__item list__item" *ngFor="let item of openQuotationsData | slice:0:4; index as i">
+        <div class="open-quotation__content flex flex--middle">
             <span class="badge badge--green m--r-sm">{{i + 1}}</span>
             <div>
-                <a href="" class="open-offer__name">{{item.contact.name}}</a>
-                <p class="open-offer__company">{{item.organisation.name}}</p>
+                <a href="" class="open-quotation__name">{{item.contact.name}}</a>
+                <p class="open-quotation__company">{{item.organisation.name}}</p>
             </div>
         </div>
-        <div class="open-offer__status">
+        <div class="open-quotation__status">
             <span class="badge badge--red">{{item.status || 'new'}}</span>
-            <p class="open-offer__status-date t--red">{{item.expire | date}}</p>
+            <p class="open-quotation__status-date t--red">{{item.expire | date}}</p>
         </div>
     </li>
 </ul>
 
 <p class="m--reset t--c">
-    <button class="btn btn--gray btn--ssm col-xs-12" *ngIf="openOffersData.length > 4" (click)="openSidebar()">Show more</button>
+    <button class="btn btn--gray btn--ssm col-xs-12" *ngIf="openQuotationsData.length > 4" (click)="openSidebar()">Show more</button>
 </p>
 
 <button class="btn btn--gray btn--ssm col-xs-12" (click)="openSidebar()">Show more</button>
+
 <!-- Sidebar panel -->
 <app-sidebar-open-quotations [ngClass]="{'open': isOpenSidebar}" [openQuotationsData]="openOffersData"></app-sidebar-open-quotations>

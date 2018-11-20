@@ -8,11 +8,11 @@
   border-radius: 4px;
   object-fit: cover;
 }
-.open-quotation a.open-offer__name {
+.open-quotation a.open-quotation__name {
   color: #252841;
   text-decoration: none;
 }
-.open-quotation a.open-offer__name:hover {
+.open-quotation a.open-quotation__name:hover {
   text-decoration: none;
   box-shadow: none;
   outline: none;

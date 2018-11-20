@@ -14,6 +14,9 @@ import { EventSesrvice } from '../../services/event.service';
   styleUrls: ['./dashboard-page.component.less']
 })
 export class DashboardPageComponent implements OnInit {
+  taskTodayFilter = 'all';
+  taskOverdueFilter = 'all';
+  
   isCollapsedTopBar: boolean = false;
   isOpenSidebarNewCompany: boolean = false;
   single: any[];

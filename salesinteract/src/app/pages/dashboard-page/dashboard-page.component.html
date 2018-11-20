@@ -111,8 +111,124 @@
 
 	<div class="row">
 
-		<!-- Tasks today -->
 		<div class="col-lg-8">
+
+			<!-- Task overdue -->
+			<div class="panel panel--filter">
+				<div class="panel__title t--red">
+					<i class="icon icon-too-late m--r-mini"></i>
+					<span class="t--semi-bold">Task overdue</span>
+				</div>
+				<div class="">
+					<ul class="tab tab--h">
+						<li class="tab__item">
+							<button class="tab__link" 
+									[(ngModel)]="taskOverdueFilter"
+									btnRadio="all" 
+									tabindex="0" 
+									role="button">
+									All
+								</button>
+						</li>
+						<li class="tab__item">
+							<button class="tab__link" 
+									[(ngModel)]="taskOverdueFilter"
+									btnRadio="follow" 
+									tabindex="0" 
+									role="button">
+									Follow
+								</button>
+						</li>
+						<li class="tab__item">
+							<button class="tab__link" 
+									[(ngModel)]="taskOverdueFilter"
+									btnRadio="visit" 
+									tabindex="0" 
+									role="button">
+									Visit
+								</button>
+						</li>
+					</ul>
+				</div>
+				<div>
+					<div class="btn-group" dropdown>
+						<button id="button-basic" dropdownToggle type="button" class="btn btn--squared btn--gray btn--ssm" aria-controls="dropdown-basic">
+							<i class="btn__icon icon-more"></i>
+						</button>
+						<ul id="dropdown-basic" *dropdownMenu class="dropdown-menu" role="menu" aria-labelledby="button-basic">
+							<li>
+								<div class="checkbox checkbox--sm">
+									<input type="checkbox" class="checkbox__input" id="send-email">
+									<label for="send-email" class="checkbox__label">Not present</label>
+								</div>
+							</li>
+							<li>
+								<div class="checkbox checkbox--sm">
+									<input type="checkbox" class="checkbox__input" id="send-email">
+									<label for="send-email" class="checkbox__label">Not interested</label>
+								</div>
+							</li>
+							<li>
+								<div class="checkbox checkbox--sm">
+									<input type="checkbox" class="checkbox__input" id="send-email">
+									<label for="send-email" class="checkbox__label">No time</label>
+								</div>
+							</li>
+							<li>
+								<div class="checkbox checkbox--sm">
+									<input type="checkbox" class="checkbox__input" id="send-email">
+									<label for="send-email" class="checkbox__label">Visit</label>
+								</div>
+							</li>
+			
+						</ul>
+					</div>
+					<button class="btn btn--circle btn--ssm btn--gray m--l" [popover]="dashTaskToday" triggers="focus" container="body"
+					 placement="auto">
+						<i class="btn__icon icon-question"></i>
+					</button>
+				</div>
+			</div>
+			
+			<!-- Task overdue list -->
+			<div class="task-list">
+				<div class="panel panel--sm" *ngFor="let item of taskHistoryLateList">
+					<div class="panel__body task-list__body">
+						<div class="flex flex--middle col-lg-3">
+							<img class="avatar avatar--square m--r-sm" [src]="item.image" alt="">
+							<div>
+								<a href="" class="task-list__company">{{item.name}}</a>
+								<p class="task-list__type">Company</p>
+							</div>
+						</div>
+						<div class="col-lg-4">
+							<div class="flex flex--middle">
+								<img class="avatar avatar--sm m--r-sm" [src]="item.image" alt="">
+								<a href="" class="task-list__name">{{item.contactName}}</a>
+							</div>
+							<div>
+								<i class="icon icon-desc t--gray m--r-mini"></i>
+								<span class="task-list__desc">{{item.result}}</span>
+							</div>
+						</div>
+						<div class="col-lg-3 t--c">
+							<span class="badge badge--gray">{{item.task}}</span>
+							<p class="t--md t--regular m--t-mini t--red t--c">{{item.date}}</p>
+						</div>
+						<div class="col-lg-1 t--r">
+							<button class="btn btn--circle btn--gray btn--ssm">
+								<i class="btn__icon icon-more"></i>
+							</button>
+						</div>
+					</div>
+				</div>
+			
+				<button class="task-list__more btn btn--gray btn--ssm">Show more</button>
+			</div>
+			
+			<hr class="line line--dashed line--sm m--v">
+
+			<!-- Tasks today -->
 			<div class="panel panel--filter">
 				<div class="panel__title t--green">
 					<i class="icon icon-today m--r-mini"></i>
@@ -120,14 +236,32 @@
 				</div>
 				<div class="">
 					<ul class="tab tab--h">
-						<li class="tab__item active">
-							<a href="" class="tab__link">All</a>
+						<li class="tab__item">
+							<button class="tab__link" 
+									[(ngModel)]="taskTodayFilter"
+									btnRadio="all" 
+									tabindex="0" 
+									role="button">
+									All
+								</button>
 						</li>
 						<li class="tab__item">
-							<a href="" class="tab__link">Follow</a>
+							<button class="tab__link" 
+									[(ngModel)]="taskTodayFilter"
+									btnRadio="follow" 
+									tabindex="0" 
+									role="button">
+									Follow
+								</button>
 						</li>
 						<li class="tab__item">
-							<a href="" class="tab__link">Visit</a>
+							<button class="tab__link" 
+									[(ngModel)]="taskTodayFilter"
+									btnRadio="visit" 
+									tabindex="0" 
+									role="button">
+									Visit
+								</button>
 						</li>
 					</ul>
 				</div>
@@ -145,7 +279,7 @@
 				</div>
 			</div>
 
-
+			<!-- Tasks today list -->
 			<div class="task-list">
 				<div class="panel panel--sm" *ngFor="let item of dashboardData.tasks">
 					<div class="panel__body task-list__body">
@@ -179,113 +313,6 @@
 				</div>
 
 				<a href="" class="task-list__more btn btn--gray btn--ssm">Show more</a>
-			</div>
-
-			<hr class="line line--dashed line--sm m--v">
-
-			<!-- Too late -->
-			<div class="panel panel--filter">
-				<div class="panel__title t--red">
-					<i class="icon icon-too-late m--r-mini"></i>
-					<span class="t--semi-bold">Task too late</span>
-				</div>
-				<div class="">
-					<ul class="tab tab--h">
-						<li class="tab__item active">
-							<a href="" class="tab__link">All</a>
-						</li>
-						<li class="tab__item">
-							<a href="" class="tab__link">Follow</a>
-						</li>
-						<li class="tab__item">
-							<a href="" class="tab__link">Visit</a>
-						</li>
-					</ul>
-				</div>
-				<div>
-					<!-- <button class="btn btn--squared btn--gray btn--ssm">
-						<i class="btn__icon icon-more"></i>
-					</button> -->
-
-					<div class="btn-group" dropdown>
-						<button id="button-basic"
-							dropdownToggle
-							type="button"
-							class="btn btn--squared btn--gray btn--ssm"
-							aria-controls="dropdown-basic">
-							<i class="btn__icon icon-more"></i>
-						</button>
-						<ul id="dropdown-basic" *dropdownMenu class="dropdown-menu" role="menu" aria-labelledby="button-basic">
-							<li>
-								<div class="checkbox checkbox--sm">
-									<input type="checkbox" class="checkbox__input" id="send-email">
-									<label for="send-email" class="checkbox__label">Not present</label>
-								</div>
-							</li>
-							<li>
-								<div class="checkbox checkbox--sm">
-									<input type="checkbox" class="checkbox__input" id="send-email">
-									<label for="send-email" class="checkbox__label">Not interested</label>
-								</div>
-							</li>
-							<li>
-								<div class="checkbox checkbox--sm">
-									<input type="checkbox" class="checkbox__input" id="send-email">
-									<label for="send-email" class="checkbox__label">No time</label>
-								</div>
-							</li>
-							<li>
-								<div class="checkbox checkbox--sm">
-									<input type="checkbox" class="checkbox__input" id="send-email">
-									<label for="send-email" class="checkbox__label">Visit</label>
-								</div>
-							</li>
-
-						</ul>
-					</div>
-					<button class="btn btn--circle btn--ssm btn--gray m--l"
-							[popover]="dashTaskToday"
-							triggers="focus"
-							container="body"
-							placement="auto">
-						<i class="btn__icon icon-question"></i>
-					</button>
-				</div>
-			</div>
-
-			<div class="task-list">
-				<div class="panel panel--sm" *ngFor="let item of taskHistoryLateList">
-					<div class="panel__body task-list__body">
-						<div class="flex flex--middle col-lg-3">
-							<img class="avatar avatar--square m--r-sm" [src]="item.image" alt="">
-							<div>
-								<a href="" class="task-list__company">{{item.name}}</a>
-								<p class="task-list__type">Company</p>
-							</div>
-						</div>
-						<div class="col-lg-4">
-							<div class="flex flex--middle">
-								<img class="avatar avatar--sm m--r-sm" [src]="item.image" alt="">
-								<a href="" class="task-list__name">{{item.contactName}}</a>
-							</div>
-							<div>
-								<i class="icon icon-desc t--gray m--r-mini"></i>
-								<span class="task-list__desc">{{item.result}}</span>
-							</div>
-						</div>
-						<div class="col-lg-3 t--c">
-							<span class="badge badge--gray">{{item.task}}</span>
-							<p class="t--md t--regular m--t-mini t--red t--c">{{item.date}}</p>
-						</div>
-						<div class="col-lg-1 t--r">
-							<button class="btn btn--circle btn--gray btn--ssm">
-								<i class="btn__icon icon-more"></i>
-							</button>
-						</div>
-					</div>
-				</div>
-
-				<button class="task-list__more btn btn--gray btn--ssm">Show more</button>
 			</div>
 
 		</div>
