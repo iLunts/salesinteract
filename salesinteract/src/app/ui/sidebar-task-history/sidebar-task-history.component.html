@@ -4,11 +4,11 @@
 	<div class="sidebar__panel">
 		<header class="sidebar__header">
 			<p class="sidebar__header-title">Task history</p>
-			<a [routerLink]="['/home']" class="sidebar__close">
+			<a (click)='close()' class="sidebar__close">
 				<i class="icon-close"></i>
 			</a>
 		</header>
-			
+
 		<div class="sidebar__panel-body">
 
 			<div class="panel" *ngFor="let item of openQuotationsData; index as i">
