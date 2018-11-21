@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { OpenOffersListComponent } from './open-offers-list.component';
+import { SidebarTaskHistoryComponent } from './sidebar-task-history.component';
 
-describe('OpenOffersListComponent', () => {
-  let component: OpenOffersListComponent;
-  let fixture: ComponentFixture<OpenOffersListComponent>;
+describe('SidebarTaskHistoryComponent', () => {
+  let component: SidebarTaskHistoryComponent;
+  let fixture: ComponentFixture<SidebarTaskHistoryComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ OpenOffersListComponent ]
+      declarations: [ SidebarTaskHistoryComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(OpenOffersListComponent);
+    fixture = TestBed.createComponent(SidebarTaskHistoryComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

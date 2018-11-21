@@ -79,3 +79,36 @@
   color: #fff;
   z-index: 2;
 }
+@media only screen and (max-width: 1023px) and (min-width: 768px) {
+}
+@media only screen and (max-width: 767px) and (min-width: 320px) {
+  .login {
+    display: block;
+    padding: 30px 0;
+    margin: 0;
+    height: auto;
+  }
+  .login .login__panel {
+    flex-wrap: wrap;
+    width: 90%;
+    margin: 0 auto;
+    background-color: transparent;
+    box-shadow: none;
+  }
+  .login .login__panel-left {
+    width: 100%;
+    max-width: 100%;
+    border-radius: 6px;
+    background-color: #fff;
+    box-shadow: 0 10px 50px 0 rgba(0, 0, 0, 0.05);
+  }
+  .login .login__panel-right {
+    background-color: #fff;
+    min-width: auto;
+    width: 100%;
+    border-radius: 6px;
+    margin-top: 25px;
+    overflow: hidden;
+    box-shadow: 0 10px 50px 0 rgba(0, 0, 0, 0.05);
+  }
+}

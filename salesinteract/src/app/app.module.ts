@@ -66,7 +66,7 @@ import { QuickViewsPageComponent } from './pages/quick-views-page/quick-views-pa
 import { TaskHistoryListComponent } from './ui/task-history-list/task-history-list.component';
 import { ContactListComponent } from './ui/contact-list/contact-list.component';
 import { CompleteTaskComponent } from './ui/complete-task/complete-task.component';
-import { OpenOffersListComponent } from './ui/open-offers-list/open-offers-list.component';
+import { OpenQuotationsListComponent } from './ui/open-quotations-list/open-quotations-list.component';
 import { FormsModule } from '@angular/forms';
 import { NewTaskFollowupTabComponent } from './components/new-task-followup-tab/new-task-followup-tab.component';
 import { SharedFilesPageComponent } from './pages/shared-files-page/shared-files-page.component';
@@ -79,6 +79,8 @@ import { routing } from './app.routing';
 import { DashGuard } from './guards/auth.guard';
 import { IAuthenticationService, AuthenticationService } from './services/auth.service';
 import { JwtModule } from '@auth0/angular-jwt';
+import { SidebarOpenQuotationsComponent } from './ui/sidebar-open-quotations/sidebar-open-quotations.component';
+import { SidebarTaskHistoryComponent } from './ui/sidebar-task-history/sidebar-task-history.component';
 
 export function tokenGetter() {
   return localStorage.getItem('access_token');
@@ -140,13 +142,15 @@ export function tokenGetter() {
     TaskHistoryListComponent,
     ContactListComponent,
     CompleteTaskComponent,
-    OpenOffersListComponent,
+    OpenQuotationsListComponent,
     NewTaskFollowupTabComponent,
     SharedFilesPageComponent,
     LoginPageComponent,
     AdminLayoutComponent,
     EmptyLayoutComponent,
     RegistrationPageComponent,
+    SidebarOpenQuotationsComponent,
+    SidebarTaskHistoryComponent,
   ],
   imports: [
     HttpClientModule,

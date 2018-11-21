@@ -75,10 +75,25 @@ const appRoutes: Routes = [
                 component: SurveyEditPageComponent,
             },
             {
-              path: '',
-              component: DashboardPageComponent,
+              path: 'calendar',
+              component: CalendarPageComponent,
               pathMatch: 'full'
-          }
+            },
+            {
+              path: 'products',
+              component: ProductPageComponent,
+              pathMatch: 'full'
+            },
+            {
+              path: 'shared-files',
+              component: SharedFilesPageComponent,
+              pathMatch: 'full'
+            },
+            {
+                path: '',
+                component: DashboardPageComponent,
+                pathMatch: 'full'
+            },
         ]
     },
 

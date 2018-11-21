@@ -1,3 +1,6 @@
+.task-history {
+  margin-bottom: 15px;
+}
 .task-history .task-history__item {
   display: flex;
   align-items: center;

@@ -1,0 +1,76 @@
+// out: ../../css/components/contact.css, compress: true
+@import '../variables.less';
+
+// --------------------------------------------------------------------------
+// Block '.contact'
+// --------------------------------------------------------------------------
+.contact{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    // ------------------------------------------------------------------------
+    // All modificators
+    // ------------------------------------------------------------------------
+
+    // Modificator '.contact.contact--sm'
+    // &&--sm{
+        
+    // }
+
+    // ------------------------------------------------------------------------
+    // All elements
+    // ------------------------------------------------------------------------
+
+    // Element '.contact .contact__user'
+    & &__user{
+        display: flex;
+        align-items: center;
+    }
+
+    // Element '.contact .contact__avatar'
+    & &__avatar{
+        margin-right: 10px;
+        border-radius: 4px;
+        object-fit: cover;
+    }
+
+        // Element '.contact .contact__name'
+    & &__name{
+        font-weight: 400;
+        font-size: 1rem;
+        line-height: 1;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        margin: 0;
+        color: #252841;
+        text-decoration: none;
+    }
+
+
+    // Element '.contact .contact__status'
+    & &__status{
+        text-align: right;
+        
+        // Element '.contact .contact__status-date'
+        &-date{
+            font-weight: 400;
+            font-size: .9rem;
+            margin: 2px 0 0 0;
+        }
+    }
+    
+    // Element '.contact .contact__company'
+    & &__company{
+        font-weight: 400;
+        font-size: .9rem;
+        line-height: 1;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        margin: 4px 0 0 0;
+        color: #B2C8DB;
+    }
+}

@@ -13,13 +13,13 @@
             display: inline-block;
             vertical-align: middle;
 
-            &.active{
+            // &.active{
 
-                .tab__link{
-                    color: #252841;
-                    border-bottom-color: @color-blue;
-                }
-            }
+            //     .tab__link{
+            //         color: #252841;
+            //         border-bottom-color: @color-blue;
+            //     }
+            // }
         }
         
         .tab__link{
@@ -30,10 +30,16 @@
             outline: none;
             color: #C5CFD5;
             transition: all .3s;
+            border: none;
             border-bottom: 3px solid transparent;
 
             &:hover{
                 color: #777A8A;
+            }
+
+            &.active{
+                color: #252841;
+                border-bottom-color: @color-blue;
             }
         }
     }
