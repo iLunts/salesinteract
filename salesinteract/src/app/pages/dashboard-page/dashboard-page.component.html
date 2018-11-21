@@ -1,420 +1,496 @@
 <div class="container-fluid dash-page">
+  <div class="row">
+    <div class="col-sm-12">
+      <section class="header">
+        <div class="header__left">
+          <div class="header__icon">
+            <i class="header__icon-icon icon-dashboard"></i>
+          </div>
+          <div>
+            <p class="header__title">Dashboard</p>
+            <ul class="header__breadcrumbs">
+              <li class="header__breadcrumbs-item">
+                <a href="" class="header__breadcrumbs-link"> Home page </a>
+              </li>
+              <li class="header__breadcrumbs-item">
+                <span href="" class="header__breadcrumbs-span">
+                  Dashboard page
+                </span>
+              </li>
+            </ul>
+          </div>
+        </div>
 
-	<div class="row">
-		<div class="col-sm-12">
-			<section class="header">
+        <button
+          class="btn btn--blue btn--new"
+          (click)="openSidebarNewCompany()"
+        >
+          <i class="btn__icon icon-new-plus"></i>
+          <span class="btn__text hidden--xs">
+            <span class="btn__text-text">Create new company</span>
+            <span class="btn__text-text btn__text-text--second">Click to create new company</span>
+          </span>
+        </button>
+      </section>
+    </div>
+  </div>
 
-				<div class="header__left">
-					<div class="header__icon">
-						<i class="header__icon-icon icon-dashboard"></i>
-					</div>
-					<div>
-						<p class="header__title">Dashboard</p>
-						<ul class="header__breadcrumbs">
-							<li class="header__breadcrumbs-item">
-								<a href="" class="header__breadcrumbs-link">
-									Home page
-								</a>
-							</li>
-							<li class="header__breadcrumbs-item">
-								<span href="" class="header__breadcrumbs-span">
-									Dashboard page
-								</span>
-							</li>
-						</ul>
-					</div>
-				</div>
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="panel">
+        <div class="panel__header">
+          <div>
+            <p class="panel__header-title">Personal statistics</p>
+            <p class="panel__header-text">
+              September - Here you can see your achievements / touches for this
+              period
+            </p>
+          </div>
 
-				<button class="btn btn--blue btn--new" (click)="openSidebarNewCompany()">
-					<i class="btn__icon icon-new-plus"></i>
-					<span class="btn__text hidden--xs">
-						<span class="btn__text-text">Create new company</span>
-						<span class="btn__text-text btn__text-text--second">Click to create new company</span>
-					</span>
-				</button>
+          <div [hidden]="!isCollapsedTopBar">
+            <span
+              class="badge"
+              *ngFor="let item of contactGraphList"
+              [ngStyle]="{ 'background-color': item.color }"
+              >{{ item.title }}: {{ item.count }}</span
+            >
+          </div>
 
-			</section>
-		</div>
-	</div>
+          <div>
+            <button
+              class="btn btn--squared btn--gray btn--ssm"
+              (click)="collapsedTopBar()"
+              [attr.aria-expanded]="!isCollapsedTopBar"
+              aria-controls="collapseBasic"
+            >
+              <i
+                class="btn__icon"
+                [ngClass]="{
+                  'icon-arrow-down-fill': isCollapsedTopBar,
+                  'icon-arrow-up-fill': !isCollapsedTopBar
+                }"
+              ></i>
+            </button>
+            <button
+              class="btn btn--circle btn--ssm btn--gray m--l"
+              [popover]="dashPersonalStatistics"
+              triggers="focus"
+              container="body"
+              placement="left"
+            >
+              <i class="btn__icon icon-question"></i>
+            </button>
+          </div>
+        </div>
+        <div class="panel__body" [collapse]="isCollapsedTopBar">
+          <div class="row row--divider">
+            <div class="col-md-3 col-xs-12">
+              <p class="t--semi-bold">Task history</p>
+              <app-task-history-list
+                [taskData]="dashboardData.history"
+              ></app-task-history-list>
+            </div>
 
-	<div class="row">
-		<div class="col-sm-12">
-			<div class="panel">
-				<div class="panel__header">
-					<div>
-						<p class="panel__header-title">
-							Personal statistics
-						</p>
-						<p class="panel__header-text">
-							September - Here you can see your achievements / touches for this period
-						</p>
-					</div>
+            <div class="col-md-6 col-xs-12">
+              <div class="row row--divider">
+                <div class="col-md-4 col-sm-5 col-xs-12">
+                  <p class="t--semi-bold">Contacten</p>
+                  <app-contact-list
+                    [contactData]="dashboardData?.statistics.contacts"
+                    [taskData]="dashboardData?.statistics.tasks"
+                  ></app-contact-list>
+                </div>
 
-					<div [hidden]="!isCollapsedTopBar">
-						<span class="badge"
-								*ngFor="let item of contactGraphList"
-								[ngStyle]="{'background-color': item.color}">{{item.title}}: {{item.count}}</span>
-					</div>
+                <div class="col-md-8 col-sm-7 col-xs-12">
+                  <p class="t--semi-bold">Complete tasks</p>
+                  <div class="dash-page__chart dash-page__chart--complete">
+                    <app-complete-task
+                      [completeData]="completeTaskList"
+                    ></app-complete-task>
+                  </div>
+                </div>
+              </div>
+            </div>
 
-					<div>
-						<button class="btn btn--squared btn--gray btn--ssm"
-								(click)="collapsedTopBar()"
-								[attr.aria-expanded]="!isCollapsedTopBar"
-								aria-controls="collapseBasic">
-							<i class="btn__icon" [ngClass]="{'icon-arrow-down-fill': isCollapsedTopBar, 'icon-arrow-up-fill': !isCollapsedTopBar}"></i>
-						</button>
-						<button class="btn btn--circle btn--ssm btn--gray m--l"
-								[popover]="dashPersonalStatistics"
-								triggers="focus"
-								container="body"
-								placement="left">
-							<i class="btn__icon icon-question"></i>
-					</button>
-					</div>
-				</div>
-				<div class="panel__body" [collapse]="isCollapsedTopBar">
+            <div class="col-md-3 col-xs-12">
+              <p class="t--semi-bold">Open quotations</p>
+              <app-open-quotations-list
+                [openQuotationsData]="dashboardData.quotations"
+              ></app-open-quotations-list>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
-					<div class="row row--divider">
-						<div class="col-md-3 col-xs-12">
-							<p class="t--semi-bold">Task history</p>
-							<app-task-history-list [taskData]="dashboardData.history"></app-task-history-list>
-						</div>
+  <div class="row">
+    <div class="col-lg-8">
+      <!-- Task overdue -->
+      <div class="panel panel--filter">
+        <div class="panel__title t--red">
+          <i class="icon icon-too-late m--r-mini"></i>
+          <span class="t--semi-bold">Task overdue</span>
+        </div>
+        <div class="">
+          <ul class="tab tab--h">
+            <li class="tab__item">
+              <button
+                class="tab__link"
+                [(ngModel)]="taskOverdueFilter"
+                btnRadio="all"
+                tabindex="0"
+                role="button"
+              >
+                All
+              </button>
+            </li>
+            <li class="tab__item">
+              <button
+                class="tab__link"
+                [(ngModel)]="taskOverdueFilter"
+                btnRadio="follow"
+                tabindex="0"
+                role="button"
+              >
+                Follow
+              </button>
+            </li>
+            <li class="tab__item">
+              <button
+                class="tab__link"
+                [(ngModel)]="taskOverdueFilter"
+                btnRadio="visit"
+                tabindex="0"
+                role="button"
+              >
+                Visit
+              </button>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <div class="btn-group" dropdown>
+            <button
+              id="button-basic"
+              dropdownToggle
+              type="button"
+              class="btn btn--squared btn--gray btn--ssm"
+              aria-controls="dropdown-basic"
+            >
+              <i class="btn__icon icon-more"></i>
+            </button>
+            <ul
+              id="dropdown-basic"
+              *dropdownMenu
+              class="dropdown-menu"
+              role="menu"
+              aria-labelledby="button-basic"
+            >
+              <li>
+                <div class="checkbox checkbox--sm">
+                  <input
+                    type="checkbox"
+                    class="checkbox__input"
+                    id="send-email"
+                  />
+                  <label for="send-email" class="checkbox__label"
+                    >Not present</label
+                  >
+                </div>
+              </li>
+              <li>
+                <div class="checkbox checkbox--sm">
+                  <input
+                    type="checkbox"
+                    class="checkbox__input"
+                    id="send-email"
+                  />
+                  <label for="send-email" class="checkbox__label"
+                    >Not interested</label
+                  >
+                </div>
+              </li>
+              <li>
+                <div class="checkbox checkbox--sm">
+                  <input
+                    type="checkbox"
+                    class="checkbox__input"
+                    id="send-email"
+                  />
+                  <label for="send-email" class="checkbox__label"
+                    >No time</label
+                  >
+                </div>
+              </li>
+              <li>
+                <div class="checkbox checkbox--sm">
+                  <input
+                    type="checkbox"
+                    class="checkbox__input"
+                    id="send-email"
+                  />
+                  <label for="send-email" class="checkbox__label">Visit</label>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <button
+            class="btn btn--circle btn--ssm btn--gray m--l"
+            [popover]="dashTaskToday"
+            triggers="focus"
+            container="body"
+            placement="auto"
+          >
+            <i class="btn__icon icon-question"></i>
+          </button>
+        </div>
+      </div>
 
-						<div class="col-md-6 col-xs-12">
-							<div class="row row--divider">
-								<div class="col-md-4 col-sm-5 col-xs-12">
-									<p class="t--semi-bold">Contacten</p>
-									<app-contact-list [contactData]="dashboardData?.statistics.contacts"
-													  [taskData]="dashboardData?.statistics.tasks"
-													  ></app-contact-list>
-								</div>
+      <!-- Task overdue list -->
+      <div class="task-list">
+        <div class="panel panel--sm" *ngFor="let item of taskHistoryLateList">
+          <div class="panel__body task-list__body">
+            <div class="flex flex--middle col-lg-3">
+              <img
+                class="avatar avatar--square m--r-sm"
+                [src]="item.image"
+                alt=""
+              />
+              <div>
+                <a href="" class="task-list__company">{{ item.name }}</a>
+                <p class="task-list__type">Company</p>
+              </div>
+            </div>
+            <div class="col-lg-4">
+              <div class="flex flex--middle">
+                <img
+                  class="avatar avatar--sm m--r-sm"
+                  [src]="item.image"
+                  alt=""
+                />
+                <a href="" class="task-list__name">{{ item.contactName }}</a>
+              </div>
+              <div>
+                <i class="icon icon-desc t--gray m--r-mini"></i>
+                <span class="task-list__desc">{{ item.result }}</span>
+              </div>
+            </div>
+            <div class="col-lg-3 t--c">
+              <span class="badge badge--gray">{{ item.task }}</span>
+              <p class="t--md t--regular m--t-mini t--red t--c">
+                {{ item.date }}
+              </p>
+            </div>
+            <div class="col-lg-1 t--r">
+              <button class="btn btn--circle btn--gray btn--ssm">
+                <i class="btn__icon icon-more"></i>
+              </button>
+            </div>
+          </div>
+        </div>
 
-								<div class="col-md-8 col-sm-7 col-xs-12">
-									<p class="t--semi-bold">Complete tasks</p>
-									<div class="dash-page__chart dash-page__chart--complete">
-										<app-complete-task [completeData]="completeTaskList"></app-complete-task>
-									</div>
-								</div>
-							</div>
-						</div>
+        <button class="task-list__more btn btn--gray btn--ssm">
+          Show more
+        </button>
+      </div>
 
-						<div class="col-md-3 col-xs-12">
-							<p class="t--semi-bold">Open quotations</p>
-							<app-open-quotations-list [openQuotationsData]="dashboardData.quotations"></app-open-quotations-list>
-						</div>
-					</div>
+      <hr class="line line--dashed line--sm m--v" />
 
-				</div>
-			</div>
-		</div>
-	</div>
+      <!-- Tasks today -->
+      <div class="panel panel--filter">
+        <div class="panel__title t--green">
+          <i class="icon icon-today m--r-mini"></i>
+          <span class="t--semi-bold">Task today</span>
+        </div>
+        <div class="">
+          <ul class="tab tab--h">
+            <li class="tab__item">
+              <button
+                class="tab__link"
+                [(ngModel)]="taskTodayFilter"
+                btnRadio="all"
+                tabindex="0"
+                role="button"
+              >
+                All
+              </button>
+            </li>
+            <li class="tab__item">
+              <button
+                class="tab__link"
+                [(ngModel)]="taskTodayFilter"
+                btnRadio="follow"
+                tabindex="0"
+                role="button"
+              >
+                Follow
+              </button>
+            </li>
+            <li class="tab__item">
+              <button
+                class="tab__link"
+                [(ngModel)]="taskTodayFilter"
+                btnRadio="visit"
+                tabindex="0"
+                role="button"
+              >
+                Visit
+              </button>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <button class="btn btn--squared btn--gray btn--ssm">
+            <i class="btn__icon icon-more"></i>
+          </button>
+          <button
+            class="btn btn--circle btn--ssm btn--gray m--l"
+            [popover]="dashTaskToday"
+            triggers="focus"
+            container="body"
+            placement="left"
+          >
+            <i class="btn__icon icon-question"></i>
+          </button>
+        </div>
+      </div>
 
-	<div class="row">
+      <!-- Tasks today list -->
+      <div class="task-list">
+        <div class="panel panel--sm" *ngFor="let item of dashboardData.tasks">
+          <div class="panel__body task-list__body">
+            <div class="flex flex--middle col-lg-3">
+              <img
+                class="avatar avatar--square m--r-sm"
+                [src]="item.image"
+                alt=""
+              />
+              <div>
+                <a href="" class="task-list__company">{{
+                  item.contact.name
+                }}</a>
+                <p class="task-list__type">{{ item.organisation_name }}</p>
+              </div>
+            </div>
+            <div class="col-lg-4">
+              <div class="flex flex--middle">
+                <img class="avatar avatar--sm m--r-sm" [src]="" alt="" />
+                <a href="" class="task-list__name">{{ item.sales.name }}</a>
+              </div>
+              <div>
+                <i class="icon icon-desc t--gray m--r-mini"></i>
+                <span class="task-list__desc">{{ item.outcome }}</span>
+              </div>
+            </div>
+            <div class="col-lg-3 t--c">
+              <span class="badge badge--gray">{{ item.status }}</span>
+              <p class="t--md t--regular m--t-mini t--green t--c">
+                {{ item.created | date }}
+              </p>
+            </div>
+            <div class="col-lg-1 t--r">
+              <button class="btn btn--circle btn--gray btn--ssm">
+                <i class="btn__icon icon-more"></i>
+              </button>
+            </div>
+          </div>
+        </div>
 
-		<div class="col-lg-8">
+        <a href="" class="task-list__more btn btn--gray btn--ssm">Show more</a>
+      </div>
+    </div>
 
-			<!-- Task overdue -->
-			<div class="panel panel--filter">
-				<div class="panel__title t--red">
-					<i class="icon icon-too-late m--r-mini"></i>
-					<span class="t--semi-bold">Task overdue</span>
-				</div>
-				<div class="">
-					<ul class="tab tab--h">
-						<li class="tab__item">
-							<button class="tab__link"
-									[(ngModel)]="taskOverdueFilter"
-									btnRadio="all"
-									tabindex="0"
-									role="button">
-									All
-								</button>
-						</li>
-						<li class="tab__item">
-							<button class="tab__link"
-									[(ngModel)]="taskOverdueFilter"
-									btnRadio="follow"
-									tabindex="0"
-									role="button">
-									Follow
-								</button>
-						</li>
-						<li class="tab__item">
-							<button class="tab__link"
-									[(ngModel)]="taskOverdueFilter"
-									btnRadio="visit"
-									tabindex="0"
-									role="button">
-									Visit
-								</button>
-						</li>
-					</ul>
-				</div>
-				<div>
-					<div class="btn-group" dropdown>
-						<button id="button-basic" dropdownToggle type="button" class="btn btn--squared btn--gray btn--ssm" aria-controls="dropdown-basic">
-							<i class="btn__icon icon-more"></i>
-						</button>
-						<ul id="dropdown-basic" *dropdownMenu class="dropdown-menu" role="menu" aria-labelledby="button-basic">
-							<li>
-								<div class="checkbox checkbox--sm">
-									<input type="checkbox" class="checkbox__input" id="send-email">
-									<label for="send-email" class="checkbox__label">Not present</label>
-								</div>
-							</li>
-							<li>
-								<div class="checkbox checkbox--sm">
-									<input type="checkbox" class="checkbox__input" id="send-email">
-									<label for="send-email" class="checkbox__label">Not interested</label>
-								</div>
-							</li>
-							<li>
-								<div class="checkbox checkbox--sm">
-									<input type="checkbox" class="checkbox__input" id="send-email">
-									<label for="send-email" class="checkbox__label">No time</label>
-								</div>
-							</li>
-							<li>
-								<div class="checkbox checkbox--sm">
-									<input type="checkbox" class="checkbox__input" id="send-email">
-									<label for="send-email" class="checkbox__label">Visit</label>
-								</div>
-							</li>
-
-						</ul>
-					</div>
-					<button class="btn btn--circle btn--ssm btn--gray m--l" [popover]="dashTaskToday" triggers="focus" container="body"
-					 placement="auto">
-						<i class="btn__icon icon-question"></i>
-					</button>
-				</div>
-			</div>
-
-			<!-- Task overdue list -->
-			<div class="task-list">
-				<div class="panel panel--sm" *ngFor="let item of taskHistoryLateList">
-					<div class="panel__body task-list__body">
-						<div class="flex flex--middle col-lg-3">
-							<img class="avatar avatar--square m--r-sm" [src]="item.image" alt="">
-							<div>
-								<a href="" class="task-list__company">{{item.name}}</a>
-								<p class="task-list__type">Company</p>
-							</div>
-						</div>
-						<div class="col-lg-4">
-							<div class="flex flex--middle">
-								<img class="avatar avatar--sm m--r-sm" [src]="item.image" alt="">
-								<a href="" class="task-list__name">{{item.contactName}}</a>
-							</div>
-							<div>
-								<i class="icon icon-desc t--gray m--r-mini"></i>
-<<<<<<< HEAD
-								<span class="task-list__desc">{{item.previous_outcome}}</span>
-							</div>
-						</div>
-						<div class="col-lg-3 t--c">
-							<span class="badge badge--gray">{{item.status}}</span>
-							<p class="t--md t--regular m--t-mini t--green t--c">{{item.due | date}}</p>
-=======
-								<span class="task-list__desc">{{item.result}}</span>
-							</div>
-						</div>
-						<div class="col-lg-3 t--c">
-							<span class="badge badge--gray">{{item.task}}</span>
-							<p class="t--md t--regular m--t-mini t--red t--c">{{item.date}}</p>
->>>>>>> 84abf5674a60a621be1073b6d69cb7cd0ffbf262
-						</div>
-						<div class="col-lg-1 t--r">
-							<button class="btn btn--circle btn--gray btn--ssm">
-								<i class="btn__icon icon-more"></i>
-							</button>
-						</div>
-					</div>
-				</div>
-
-				<button class="task-list__more btn btn--gray btn--ssm">Show more</button>
-			</div>
-
-			<hr class="line line--dashed line--sm m--v">
-
-			<!-- Tasks today -->
-			<div class="panel panel--filter">
-				<div class="panel__title t--green">
-					<i class="icon icon-today m--r-mini"></i>
-					<span class="t--semi-bold">Task today</span>
-				</div>
-				<div class="">
-					<ul class="tab tab--h">
-						<li class="tab__item">
-							<button class="tab__link"
-									[(ngModel)]="taskTodayFilter"
-									btnRadio="all"
-									tabindex="0"
-									role="button">
-									All
-								</button>
-						</li>
-						<li class="tab__item">
-							<button class="tab__link"
-									[(ngModel)]="taskTodayFilter"
-									btnRadio="follow"
-									tabindex="0"
-									role="button">
-									Follow
-								</button>
-						</li>
-						<li class="tab__item">
-							<button class="tab__link"
-									[(ngModel)]="taskTodayFilter"
-									btnRadio="visit"
-									tabindex="0"
-									role="button">
-									Visit
-								</button>
-						</li>
-					</ul>
-				</div>
-				<div>
-					<button class="btn btn--squared btn--gray btn--ssm">
-						<i class="btn__icon icon-more"></i>
-					</button>
-					<button class="btn btn--circle btn--ssm btn--gray m--l"
-							[popover]="dashTaskToday"
-							triggers="focus"
-							container="body"
-							placement="left">
-						<i class="btn__icon icon-question"></i>
-				</button>
-				</div>
-			</div>
-
-			<!-- Tasks today list -->
-			<div class="task-list">
-				<div class="panel panel--sm" *ngFor="let item of dashboardData.tasks">
-					<div class="panel__body task-list__body">
-						<div class="flex flex--middle col-lg-3">
-							<img class="avatar avatar--square m--r-sm" [src]="item.image" alt="">
-							<div>
-								<a href="" class="task-list__company">{{item.contact.name}}</a>
-								<p class="task-list__type">{{item.organisation_name}}</p>
-							</div>
-						</div>
-						<div class="col-lg-4">
-							<div class="flex flex--middle">
-								<img class="avatar avatar--sm m--r-sm" [src]="" alt="">
-								<a href="" class="task-list__name">{{item.sales.name}}</a>
-							</div>
-							<div>
-								<i class="icon icon-desc t--gray m--r-mini"></i>
-								<span class="task-list__desc">{{item.outcome}}</span>
-							</div>
-						</div>
-						<div class="col-lg-3 t--c">
-							<span class="badge badge--gray">{{item.status}}</span>
-							<p class="t--md t--regular m--t-mini t--green t--c">{{item.created | date}}</p>
-						</div>
-						<div class="col-lg-1 t--r">
-							<button class="btn btn--circle btn--gray btn--ssm">
-								<i class="btn__icon icon-more"></i>
-							</button>
-						</div>
-					</div>
-				</div>
-
-				<a href="" class="task-list__more btn btn--gray btn--ssm">Show more</a>
-			</div>
-
-		</div>
-
-		<!-- Task calendar -->
-		<div class="col-lg-4">
-			<div class="panel">
-				<div class="panel__header">
-					<p class="panel__header-title">
-						Task calendar
-					</p>
-					<button class="btn btn--circle btn--ssm btn--gray m--l"
-							popover="Here you see your future/past tasks on date."
-							triggers="focus"
-							container="body"
-							placement="auto">
-						<i class="btn__icon icon-question"></i>
-					</button>
-				</div>
-				<!-- <div class="panel__body"> -->
-					<div *ngIf="calendarOptions">
-						<ng-fullcalendar
-							class="calendar"
-							#ucCalendar
-							[options]="calendarOptions"
-							(eventClick)="eventClick($event.detail)"
-							(eventDrop)="updateEvent($event.detail)"
-							(eventResize)="updateEvent($event.detail)"
-							(clickButton)="clickButton($event.detail)"
-							>
-						</ng-fullcalendar>
-					</div>
-				<!-- </div> -->
-			</div>
-		</div>
-	</div>
+    <!-- Task calendar -->
+    <div class="col-lg-4">
+      <div class="panel">
+        <div class="panel__header">
+          <p class="panel__header-title">Task calendar</p>
+          <button
+            class="btn btn--circle btn--ssm btn--gray m--l"
+            popover="Here you see your future/past tasks on date."
+            triggers="focus"
+            container="body"
+            placement="auto"
+          >
+            <i class="btn__icon icon-question"></i>
+          </button>
+        </div>
+        <!-- <div class="panel__body"> -->
+        <div *ngIf="calendarOptions">
+          <ng-fullcalendar
+            class="calendar"
+            #ucCalendar
+            [options]="calendarOptions"
+            (dayClick)='loadTasks()'
+          >
+          </ng-fullcalendar>
+        </div>
+        <!-- </div> -->
+      </div>
+    </div>
+  </div>
 </div>
 
 <!-- Sidebar panel create new company -->
-<app-sidebar-new-company [ngClass]="{'open': isOpenSidebarNewCompany}"></app-sidebar-new-company>
+<app-sidebar-new-company [(Hidden)]='isOpenSidebarNewCompany'
+  [ngClass]="{ open: isOpenSidebarNewCompany }"
+></app-sidebar-new-company>
 
 <!-- Templates for popovers -->
 <ng-template #dashPersonalStatistics>
-  	<p class="t--md">
-		Here you can see the following statistics for a period.
-	</p>
-	<p class="t--md">
-		<b>Task history</b> - With whom you had the latest contact.
-	</p>
-	<p class="t--md">
-		<b>Contacts</b> - Leads, Prospects and Customers where you were in touch in this period
-	</p>
-	<p class="t--md">
-		<b>Completed tasks</b> - Overview of your tasks used during this period.
-	</p>
-	<p class="t--md">
-		<b>Open quotations</b> - Quotations you have sent and its validity.
-	</p>
+  <p class="t--md">Here you can see the following statistics for a period.</p>
+  <p class="t--md">
+    <b>Task history</b> - With whom you had the latest contact.
+  </p>
+  <p class="t--md">
+    <b>Contacts</b> - Leads, Prospects and Customers where you were in touch in
+    this period
+  </p>
+  <p class="t--md">
+    <b>Completed tasks</b> - Overview of your tasks used during this period.
+  </p>
+  <p class="t--md">
+    <b>Open quotations</b> - Quotations you have sent and its validity.
+  </p>
 </ng-template>
 
 <ng-template #dashTaskToday>
-  	<p class="t--md">
-		Here you see the leads, prospects and customers where a task is still open to deal with.
-	</p>
-  	<p class="t--md">
-		Overdue tasks are handled to late. Your manager receives a notification of this so it is its up to you to keep you
-		manager and you customers happy.
-	</p>
-  	<p class="t--md">
-		Today are the tasks you have to deal with today.
-	</p>
-  	<p class="t--md">
-		Once you've entered companies, you'll see the following options:
-	</p>
-	<p class="t--md">
-		If you <b>click on a company name</b> you will be directed to the detailed company page.
-	</p>
-  	<p class="t--md">
-		If you <b>click on contact</b> you will be directed to the detailed contact page.
-	</p>
-  	<p class="t--md">
-		Previous results such as "Contact had no time", "Callback appointment", etc, indicate what the previous status of
-		your task handling was.
-	</p>
-  	<p class="t--md">
-		<span class="badge badge--gray">'Task'</span> indicates what action to take. By clicking here you can create a new task.<br>
-	</p>
-  	<p class="t--md">
-		With each task you create here, the prospect / customer will receive an email immediately.<br>
-		This way you build a relationship with your relationship even faster.
-	</p>
-  	<p class="t--md">
-		The date field on the right gives you an overview of forward scheduled tasks to come.
-	</p>
+  <p class="t--md">
+    Here you see the leads, prospects and customers where a task is still open
+    to deal with.
+  </p>
+  <p class="t--md">
+    Overdue tasks are handled to late. Your manager receives a notification of
+    this so it is its up to you to keep you manager and you customers happy.
+  </p>
+  <p class="t--md">Today are the tasks you have to deal with today.</p>
+  <p class="t--md">
+    Once you've entered companies, you'll see the following options:
+  </p>
+  <p class="t--md">
+    If you <b>click on a company name</b> you will be directed to the detailed
+    company page.
+  </p>
+  <p class="t--md">
+    If you <b>click on contact</b> you will be directed to the detailed contact
+    page.
+  </p>
+  <p class="t--md">
+    Previous results such as "Contact had no time", "Callback appointment", etc,
+    indicate what the previous status of your task handling was.
+  </p>
+  <p class="t--md">
+    <span class="badge badge--gray">'Task'</span> indicates what action to take.
+    By clicking here you can create a new task.<br />
+  </p>
+  <p class="t--md">
+    With each task you create here, the prospect / customer will receive an
+    email immediately.<br />
+    This way you build a relationship with your relationship even faster.
+  </p>
+  <p class="t--md">
+    The date field on the right gives you an overview of forward scheduled tasks
+    to come.
+  </p>
 </ng-template>
-

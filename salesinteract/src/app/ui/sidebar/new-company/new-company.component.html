@@ -4,7 +4,7 @@
   <div class="sidebar__panel">
     <header class="sidebar__header">
       <p class="sidebar__header-title">Create new {{tabHeading}}</p>
-      <a [routerLink]="['/home']" class="sidebar__close">
+      <a (click)='close()' class="sidebar__close">
         <i class="icon-close"></i>
       </a>
     </header>
@@ -59,8 +59,8 @@
             <app-new-task-followup-tab [companyName]="companyName"></app-new-task-followup-tab>
           </tab>
 
-          <!-- <tab heading="Task followup" 
-              (select)="onSelect($event)" 
+          <!-- <tab heading="Task followup"
+              (select)="onSelect($event)"
               disabled="true"
               tooltip="Vivamus sagittis lacus vel augue laoreet rutrum faucibus."
               placement="top"
@@ -71,7 +71,7 @@
           <tab heading="Search CoC" customClass="nav-search" (select)="onSelect($event)">
             <app-search-coc-tab></app-search-coc-tab>
           </tab>
-        </tabset> 
+        </tabset>
       </div>
 
     </div>

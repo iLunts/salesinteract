@@ -24,4 +24,4 @@
 </p>
 
 <!-- Sidebar task history -->
-<app-sidebar-task-history [ngClass]="{'open': isOpenSidebar}" [taskHistoryData]="taskData"></app-sidebar-task-history>
+<app-sidebar-task-history [(hidden)]='isOpenSidebar' [ngClass]="{'open': isOpenSidebar}" [taskHistoryData]="taskData"></app-sidebar-task-history>

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { TabDirective } from 'ngx-bootstrap/tabs';
 
 @Component({
@@ -7,17 +7,25 @@ import { TabDirective } from 'ngx-bootstrap/tabs';
   styleUrls: ['./new-company.component.less']
 })
 export class NewCompanyComponent implements OnInit {
-  tabHeading: string = 'Company';
-  companyName: string = '';
-  
-  constructor() { }
-  
-  ngOnInit() {
-  
-  }
+  tabHeading = 'Company';
+  companyName = '';
+
+  @Input() Hidden = false;
+  @Output() HiddenChange = new EventEmitter<boolean>();
+
+  constructor() {}
+
+  ngOnInit() {}
 
   onSelect(data: TabDirective): void {
     this.tabHeading = data.heading;
   }
-  
+
+
+  close() {
+    console.log('close');
+    this.Hidden = false;
+    this.HiddenChange.emit(false);
+  }
+
 }

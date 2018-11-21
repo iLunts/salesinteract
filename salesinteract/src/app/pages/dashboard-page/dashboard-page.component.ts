@@ -16,7 +16,7 @@ import { EventSesrvice } from '../../services/event.service';
 export class DashboardPageComponent implements OnInit {
   taskTodayFilter = 'all';
   taskOverdueFilter = 'all';
-  
+
   isCollapsedTopBar: boolean = false;
   isOpenSidebarNewCompany: boolean = false;
   single: any[];
@@ -298,4 +298,7 @@ export class DashboardPageComponent implements OnInit {
     console.log(event);
   }
 
+  loadTasks() {
+    alert('no data present');
+  }
 }
