@@ -119,7 +119,7 @@
 					<i class="icon icon-too-late m--r-mini"></i>
 					<span class="t--semi-bold">Task overdue</span>
 				</div>
-				<div class="">
+				<div class="hidden--xs">
 					<ul class="tab tab--h">
 						<li class="tab__item">
 							<button class="tab__link" 
@@ -156,6 +156,24 @@
 							<i class="btn__icon icon-more"></i>
 						</button>
 						<ul id="dropdown-basic" *dropdownMenu class="dropdown-menu" role="menu" aria-labelledby="button-basic">
+							<li class="hidden--xs">
+								<div class="checkbox checkbox--sm">
+									<input type="checkbox" class="checkbox__input" id="send-email">
+									<label for="send-email" class="checkbox__label">All</label>
+								</div>
+							</li>
+							<li class="hidden--xs">
+								<div class="checkbox checkbox--sm">
+									<input type="checkbox" class="checkbox__input" id="send-email">
+									<label for="send-email" class="checkbox__label">Follow</label>
+								</div>
+							</li>
+							<li class="hidden--xs">
+								<div class="checkbox checkbox--sm">
+									<input type="checkbox" class="checkbox__input" id="send-email">
+									<label for="send-email" class="checkbox__label">Visit</label>
+								</div>
+							</li>
 							<li>
 								<div class="checkbox checkbox--sm">
 									<input type="checkbox" class="checkbox__input" id="send-email">
@@ -194,14 +212,14 @@
 			<div class="task-list">
 				<div class="panel panel--sm" *ngFor="let item of taskHistoryLateList">
 					<div class="panel__body task-list__body">
-						<div class="flex flex--middle col-lg-3">
-							<img class="avatar avatar--square m--r-sm" [src]="item.image" alt="">
+						<div class="flex flex--middle col-sm-3 col-xs-6">
+							<img class="avatar avatar--square m--r-sm hidden--xs" [src]="item.image" alt="">
 							<div>
 								<a href="" class="task-list__company">{{item.name}}</a>
 								<p class="task-list__type">Company</p>
 							</div>
 						</div>
-						<div class="col-lg-4">
+						<div class="col-sm-4 hidden--xs">
 							<div class="flex flex--middle">
 								<img class="avatar avatar--sm m--r-sm" [src]="item.image" alt="">
 								<a href="" class="task-list__name">{{item.contactName}}</a>
@@ -211,7 +229,7 @@
 								<span class="task-list__desc">{{item.result}}</span>
 							</div>
 						</div>
-						<div class="col-lg-3 t--c">
+						<div class="col-sm-3 col-xs-4 t--c">
 							<span class="badge badge--gray">{{item.task}}</span>
 							<p class="t--md t--regular m--t-mini t--red t--c">{{item.date}}</p>
 						</div>
@@ -234,7 +252,7 @@
 					<i class="icon icon-today m--r-mini"></i>
 					<span class="t--semi-bold">Task today</span>
 				</div>
-				<div class="">
+				<div class="hidden--xs">
 					<ul class="tab tab--h">
 						<li class="tab__item">
 							<button class="tab__link" 
@@ -266,9 +284,56 @@
 					</ul>
 				</div>
 				<div>
-					<button class="btn btn--squared btn--gray btn--ssm">
-						<i class="btn__icon icon-more"></i>
-					</button>
+					<div class="btn-group" dropdown>
+						<button id="button-basic" dropdownToggle type="button" class="btn btn--squared btn--gray btn--ssm" aria-controls="dropdown-basic">
+							<i class="btn__icon icon-more"></i>
+						</button>
+						<ul id="dropdown-basic" *dropdownMenu class="dropdown-menu" role="menu" aria-labelledby="button-basic">
+							<li class="hidden--xs">
+								<div class="checkbox checkbox--sm">
+									<input type="checkbox" class="checkbox__input" id="send-email">
+									<label for="send-email" class="checkbox__label">All</label>
+								</div>
+							</li>
+							<li class="hidden--xs">
+								<div class="checkbox checkbox--sm">
+									<input type="checkbox" class="checkbox__input" id="send-email">
+									<label for="send-email" class="checkbox__label">Follow</label>
+								</div>
+							</li>
+							<li class="hidden--xs">
+								<div class="checkbox checkbox--sm">
+									<input type="checkbox" class="checkbox__input" id="send-email">
+									<label for="send-email" class="checkbox__label">Visit</label>
+								</div>
+							</li>
+							<li>
+								<div class="checkbox checkbox--sm">
+									<input type="checkbox" class="checkbox__input" id="send-email">
+									<label for="send-email" class="checkbox__label">Not present</label>
+								</div>
+							</li>
+							<li>
+								<div class="checkbox checkbox--sm">
+									<input type="checkbox" class="checkbox__input" id="send-email">
+									<label for="send-email" class="checkbox__label">Not interested</label>
+								</div>
+							</li>
+							<li>
+								<div class="checkbox checkbox--sm">
+									<input type="checkbox" class="checkbox__input" id="send-email">
+									<label for="send-email" class="checkbox__label">No time</label>
+								</div>
+							</li>
+							<li>
+								<div class="checkbox checkbox--sm">
+									<input type="checkbox" class="checkbox__input" id="send-email">
+									<label for="send-email" class="checkbox__label">Visit</label>
+								</div>
+							</li>
+			
+						</ul>
+					</div>
 					<button class="btn btn--circle btn--ssm btn--gray m--l"
 							[popover]="dashTaskToday"
 							triggers="focus"
@@ -283,14 +348,14 @@
 			<div class="task-list">
 				<div class="panel panel--sm" *ngFor="let item of dashboardData.tasks">
 					<div class="panel__body task-list__body">
-						<div class="flex flex--middle col-lg-3">
-							<img class="avatar avatar--square m--r-sm" [src]="item.image" alt="">
+						<div class="flex flex--middle col-sm-3 col-xs-6">
+							<img class="avatar avatar--square m--r-sm hidden--xs" [src]="item.image" alt="">
 							<div>
 								<a href="" class="task-list__company">{{item.contact.name}}</a>
 								<p class="task-list__type">{{item.organisation_name}}</p>
 							</div>
 						</div>
-						<div class="col-lg-4">
+						<div class="col-sm-4 hidden--xs">
 							<div class="flex flex--middle">
 								<img class="avatar avatar--sm m--r-sm" [src]="" alt="">
 								<a href="" class="task-list__name">{{item.sales.name}}</a>
@@ -300,7 +365,7 @@
 								<span class="task-list__desc">{{item.outcome}}</span>
 							</div>
 						</div>
-						<div class="col-lg-3 t--c">
+						<div class="col-sm-3 col-xs-4 t--c">
 							<span class="badge badge--gray">{{item.status}}</span>
 							<p class="t--md t--regular m--t-mini t--green t--c">{{item.created | date}}</p>
 						</div>

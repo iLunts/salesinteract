@@ -15,10 +15,8 @@
 </ul>
 
 <p class="m--reset t--c">
-    <button class="btn btn--gray btn--ssm col-xs-12" *ngIf="openQuotationsData.length > 4" (click)="openSidebar()">Show more</button>
+    <button class="btn btn--gray btn--ssm col-xs-12 m-xs--b" *ngIf="openQuotationsData.length > 4" (click)="openSidebar()">Show more</button>
 </p>
 
-<button class="btn btn--gray btn--ssm col-xs-12" (click)="openSidebar()">Show more</button>
-
 <!-- Sidebar panel -->
-<app-sidebar-open-quotations [ngClass]="{'open': isOpenSidebar}" [openQuotationsData]="openOffersData"></app-sidebar-open-quotations>
+<app-sidebar-open-quotations [ngClass]="{'open': isOpenSidebar}" [openQuotationsData]="openQuotationsData"></app-sidebar-open-quotations>
