@@ -84,7 +84,7 @@
 							<div class="row row--divider">
 								<div class="col-md-4 col-sm-5 col-xs-12">
 									<p class="t--semi-bold">Contacten</p>
-									<app-contact-list [contactData]="contactGraphList"></app-contact-list>
+									<app-contact-list [contactData]="dashboardData.statistics"></app-contact-list>
 								</div>
 
 								<div class="col-md-8 col-sm-7 col-xs-12">
@@ -161,12 +161,12 @@
 							</div>
 							<div>
 								<i class="icon icon-desc t--gray m--r-mini"></i>
-								<span class="task-list__desc">{{item.outcome}}</span>
+								<span class="task-list__desc">{{item.previous_outcome}}</span>
 							</div>
 						</div>
 						<div class="col-lg-3 t--c">
 							<span class="badge badge--gray">{{item.status}}</span>
-							<p class="t--md t--regular m--t-mini t--green t--c">{{item.created | date}}</p>
+							<p class="t--md t--regular m--t-mini t--green t--c">{{item.due | date}}</p>
 						</div>
 						<div class="col-lg-1 t--r">
 							<button class="btn btn--circle btn--gray btn--ssm">
