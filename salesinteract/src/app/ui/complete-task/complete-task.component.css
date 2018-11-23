@@ -1,0 +1,19 @@
+.complete-task .complete-task__chart {
+  display: grid;
+  min-height: 150px;
+  max-height: 160px;
+}
+.complete-list {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 15px;
+}
+.complete-list .complete-list__item {
+  margin-bottom: 10px;
+}
+.complete-list .complete-list__body {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}

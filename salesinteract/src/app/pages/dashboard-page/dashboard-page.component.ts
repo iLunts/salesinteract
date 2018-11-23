@@ -41,155 +41,205 @@ export class DashboardPageComponent implements OnInit {
     domain: ['#FFDA83', '#FF8373', '#56D9FE', '#A3A0FB']
   };
 
-  completeTaskList: any = [
+  contactenList: any = [
     {
-      "name": "Mon",
-      "series": [
-        {
-          "name": "Belafspraak",
-          "value": 5
-        },
-        {
-          "name": "Offerte ver",
-          "value": 12
-        },
-        {
-          "name": "Bezoekafspraak",
-          "value": 10
-        },
-        {
-          "name": "Some text",
-          "value": 15
-        },
-      ]
+      "name": "Lead",
+      "value": 16
     },
     {
-      "name": "Tue",
-      "series": [
-        {
-          "name": "Belafspraak",
-          "value": 10
-        },
-        {
-          "name": "Offerte ver",
-          "value": 16
-        },
-        {
-          "name": "Bezoekafspraak",
-          "value": 6
-        },
-        {
-          "name": "Some text",
-          "value": 28
-        },
-      ]
+      "name": "Prospect",
+      "value": 6
     },
     {
-      "name": "Wed",
-      "series": [
-        {
-          "name": "Belafspraak",
-          "value": 6
-        },
-        {
-          "name": "Offerte ver",
-          "value": 12
-        },
-        {
-          "name": "Bezoekafspraak",
-          "value": 9
-        },
-        {
-          "name": "Some text",
-          "value": 24
-        },
-      ]
+      "name": "Customer",
+      "value": 0
     },
     {
-      "name": "Thu",
-      "series": [
-        {
-          "name": "Belafspraak",
-          "value": 7
-        },
-        {
-          "name": "Offerte ver",
-          "value": 13
-        },
-        {
-          "name": "Bezoekafspraak",
-          "value": 16
-        },
-        {
-          "name": "Some text",
-          "value": 10
-        },
-      ]
+      "name": "Open task",
+      "value": 4
     },
     {
-      "name": "Fri",
-      "series": [
-        {
-          "name": "Belafspraak",
-          "value": 12
-        },
-        {
-          "name": "Offerte ver",
-          "value": 9
-        },
-        {
-          "name": "Bezoekafspraak",
-          "value": 14
-        },
-        {
-          "name": "Some text",
-          "value": 10
-        },
-      ]
-    },
-    {
-      "name": "Sat",
-      "series": [
-        {
-          "name": "Belafspraak",
-          "value": 5
-        },
-        {
-          "name": "Offerte ver",
-          "value": 15
-        },
-        {
-          "name": "Bezoekafspraak",
-          "value": 9
-        },
-        {
-          "name": "Some text",
-          "value": 20
-        },
-      ]
-    },
-    {
-      "name": "Sun",
-      "series": [
-        {
-          "name": "Belafspraak",
-          "value": 14
-        },
-        {
-          "name": "Offerte ver",
-          "value": 15
-        },
-        {
-          "name": "Bezoekafspraak",
-          "value": 8
-        },
-        {
-          "name": "Some text",
-          "value": 30
-        },
-      ]
+      "name": "Overdue",
+      "value": 19
     },
   ];
+
+  completeTaskList: any = [
+    {
+      "name": "Send information",
+      "value": 16
+    },
+    {
+      "name": "Send quotation",
+      "value": 10
+    },
+    {
+      "name": "Visit appointment",
+      "value": 24
+    },
+    {
+      "name": "Contact was not reachable",
+      "value": 4
+    },
+    {
+      "name": "Contact had no time",
+      "value": 15
+    },
+    {
+      "name": "I had no time",
+      "value": 3
+    }
+  ]
+
+  // completeTaskList: any = [
+  //   {
+  //     "name": "Mon",
+  //     "series": [
+  //       {
+  //         "name": "Belafspraak",
+  //         "value": 5
+  //       },
+  //       {
+  //         "name": "Offerte ver",
+  //         "value": 12
+  //       },
+  //       {
+  //         "name": "Bezoekafspraak",
+  //         "value": 10
+  //       },
+  //       {
+  //         "name": "Some text",
+  //         "value": 15
+  //       },
+  //     ]
+  //   },
+  //   {
+  //     "name": "Tue",
+  //     "series": [
+  //       {
+  //         "name": "Belafspraak",
+  //         "value": 10
+  //       },
+  //       {
+  //         "name": "Offerte ver",
+  //         "value": 16
+  //       },
+  //       {
+  //         "name": "Bezoekafspraak",
+  //         "value": 6
+  //       },
+  //       {
+  //         "name": "Some text",
+  //         "value": 28
+  //       },
+  //     ]
+  //   },
+  //   {
+  //     "name": "Wed",
+  //     "series": [
+  //       {
+  //         "name": "Belafspraak",
+  //         "value": 6
+  //       },
+  //       {
+  //         "name": "Offerte ver",
+  //         "value": 12
+  //       },
+  //       {
+  //         "name": "Bezoekafspraak",
+  //         "value": 9
+  //       },
+  //       {
+  //         "name": "Some text",
+  //         "value": 24
+  //       },
+  //     ]
+  //   },
+  //   {
+  //     "name": "Thu",
+  //     "series": [
+  //       {
+  //         "name": "Belafspraak",
+  //         "value": 7
+  //       },
+  //       {
+  //         "name": "Offerte ver",
+  //         "value": 13
+  //       },
+  //       {
+  //         "name": "Bezoekafspraak",
+  //         "value": 16
+  //       },
+  //       {
+  //         "name": "Some text",
+  //         "value": 10
+  //       },
+  //     ]
+  //   },
+  //   {
+  //     "name": "Fri",
+  //     "series": [
+  //       {
+  //         "name": "Belafspraak",
+  //         "value": 12
+  //       },
+  //       {
+  //         "name": "Offerte ver",
+  //         "value": 9
+  //       },
+  //       {
+  //         "name": "Bezoekafspraak",
+  //         "value": 14
+  //       },
+  //       {
+  //         "name": "Some text",
+  //         "value": 10
+  //       },
+  //     ]
+  //   },
+  //   {
+  //     "name": "Sat",
+  //     "series": [
+  //       {
+  //         "name": "Belafspraak",
+  //         "value": 5
+  //       },
+  //       {
+  //         "name": "Offerte ver",
+  //         "value": 15
+  //       },
+  //       {
+  //         "name": "Bezoekafspraak",
+  //         "value": 9
+  //       },
+  //       {
+  //         "name": "Some text",
+  //         "value": 20
+  //       },
+  //     ]
+  //   },
+  //   {
+  //     "name": "Sun",
+  //     "series": [
+  //       {
+  //         "name": "Belafspraak",
+  //         "value": 14
+  //       },
+  //       {
+  //         "name": "Offerte ver",
+  //         "value": 15
+  //       },
+  //       {
+  //         "name": "Bezoekafspraak",
+  //         "value": 8
+  //       },
+  //       {
+  //         "name": "Some text",
+  //         "value": 30
+  //       },
+  //     ]
+  //   },
+  // ];
 
   taskHistoryList: any = [
     { name: 'Coen van der Kolk',

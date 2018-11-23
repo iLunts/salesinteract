@@ -4,6 +4,21 @@
             *ngFor="let contact of contactData"
             [ngStyle]="{'background-color': contact.color, 'width.%': contact.percent}"></div>
     </div> -->
+
+    <div class="contact-list__chart">
+        <ngx-charts-pie-chart
+            [scheme]="colorSchemeCompleteTask" 
+            [results]="contactenList"
+            [legend]="false"
+            [labels]="false"
+            [animations]="true"
+            [explodeSlices]="false"
+            [doughnut]="true"
+            [arcWidth]="0.5"
+        >
+        </ngx-charts-pie-chart>
+    </div>
+
     <ul class="contact-list__list list list--line list--v">
         <li class="list__item contact-list__list-item"
             *ngFor="let contact of contactTaskDataList">

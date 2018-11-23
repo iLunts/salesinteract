@@ -1,0 +1,46 @@
+
+@import '../../../../web-src/less/variables.less';
+// ------------------------------------------------
+// Block '.complete-task'
+// ------------------------------------------------
+.complete-task{
+
+    // ---------------------------------------------
+    // All elements
+    // ---------------------------------------------
+    
+    // ---------------------------------------------
+    // All elements
+    // ---------------------------------------------
+    // Element '.complete-task .complete-task__chart'
+    & &__chart{
+        display: grid;
+        min-height: 150px;
+        max-height: 160px;
+        // margin-left: -40px;
+    }
+}
+
+// ------------------------------------------------
+// Block '.complete-list'
+// ------------------------------------------------
+.complete-list{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    
+    margin-top: 15px;
+    // column-count: 2;
+
+    // Element '.complete-list .complete-list__item'
+    & &__item{
+        margin-bottom: 10px;
+    }
+
+    // Element '.complete-list .complete-list__body'
+    & &__body{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+}

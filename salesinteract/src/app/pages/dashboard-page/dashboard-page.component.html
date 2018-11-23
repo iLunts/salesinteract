@@ -96,6 +96,7 @@
                 <div class="col-md-4 col-sm-5 col-xs-12">
                   <p class="t--semi-bold">Contacten</p>
                   <app-contact-list
+                    [contactenList]="contactenList"
                     [contactData]="dashboardData?.statistics.contacts"
                     [taskData]="dashboardData?.statistics.tasks"
                   ></app-contact-list>
@@ -103,11 +104,10 @@
 
                 <div class="col-md-8 col-sm-7 col-xs-12">
                   <p class="t--semi-bold">Complete tasks</p>
-                  <div class="dash-page__chart dash-page__chart--complete">
-                    <app-complete-task
-                      [completeData]="completeTaskList"
-                    ></app-complete-task>
-                  </div>
+                  <app-complete-task
+                    [completeData]="completeTaskList"
+                    >
+                  </app-complete-task>
                 </div>
               </div>
             </div>
