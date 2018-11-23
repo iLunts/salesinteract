@@ -8,18 +8,20 @@
 			<div *ngIf="!isResetPassword">
 				<p class="t--h3 m--b-sm">Login</p>
 				<!-- <p class="t--muted t--md m--b">To reset your password we need your email address</p> -->
-				<div>
+				<div [ngClass]="{'error-field': error}">
 					<label for="" class="label">E-mail address</label>
 					<input type="email" class="input" placeholder="example@salesinteract.com" [(ngModel)]='email'>
 				</div>
-				<div>
+				<div [ngClass]="{'error-field': error}">
 					<label for="" class="label">Password</label>
 					<input type="password" class="input" placeholder="********" [(ngModel)]='password'>
 				</div>
+				<div class="error-block" *ngIf='error'>
+					Incorrect login or password
+				</div>
 				<div class="flex flex--middle flex--space-between">
-					<button class="btn btn--blue" (click)="login()">Login</button>
-          <button class="btn btn--link" (click)="resetPassword()">Forgot password?</button>
-          <span *ngIf='error'>Incorrect login or password</span>
+					<button class="btn btn--blue" (click)="login()" [disabled]="!email?.length && !password?.length">Login</button>
+          			<button class="btn btn--link" (click)="resetPassword()">Forgot password?</button>
 				</div>
 			</div>
 

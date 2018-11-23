@@ -11,26 +11,26 @@
 				<div class="row">
 					<div class="col-sm-6">
 						<button class="registration__btn registration__btn--facebook btn btn--gray">
-							<i class="btn__icon"></i>
-							<span class="btn__text">123</span>
+							<svg-icon class="btn__icon" src="assets/svg/social/facebook.svg"></svg-icon>
+							<span class="btn__text">Facebook</span>
 						</button>
 					</div>
 					<div class="col-sm-6">
-						<button class="registration__btn registration__btn--facebook btn btn--gray">
-							<i class="btn__icon"></i>
-							<span class="btn__text">123</span>
+						<button class="registration__btn registration__btn--google btn btn--gray">
+							<svg-icon class="btn__icon" src="assets/svg/social/google.svg"></svg-icon>
+							<span class="btn__text">Google</span>
 						</button>
 					</div>
 					<div class="col-sm-6">
-						<button class="registration__btn registration__btn--facebook btn btn--gray">
-							<i class="btn__icon"></i>
-							<span class="btn__text">123</span>
+						<button class="registration__btn registration__btn--salesforce btn btn--gray">
+							<svg-icon class="btn__icon" src="assets/svg/social/salesforce.svg"></svg-icon>
+							<span class="btn__text">Salesforce</span>
 						</button>
 					</div>
 					<div class="col-sm-6">
-						<button class="registration__btn registration__btn--facebook btn btn--gray">
-							<i class="btn__icon"></i>
-							<span class="btn__text">123</span>
+						<button class="registration__btn registration__btn--linkedin btn btn--gray">
+							<svg-icon class="btn__icon" src="assets/svg/social/linkedin.svg"></svg-icon>
+							<span class="btn__text">LinkedId</span>
 						</button>
 					</div>
 				</div>
@@ -42,10 +42,10 @@
 				<p class="t--muted t--md m--b">Register through your email adres.</p>
 				<div>
 					<label for="" class="label">E-mail address</label>
-					<input type="email" class="input" placeholder="example@salesinteract.com">
+					<input type="email" class="input" placeholder="example@salesinteract.com" [(ngModel)]="email">
 				</div>
 				<div class="checkbox checkbox--sm m--b">
-					<input class="checkbox__input" type="checkbox" id="agree">
+					<input class="checkbox__input" type="checkbox" id="agree" [(ngModel)]="agree">
 					<label class="checkbox__label" for="agree">
 						Yes, I agree to the 
 						<a class="link link--line t--blue" href="https://www.salesinteract.com/terms-of-service/?_ga=2.157596345.2018200033.1542471224-1613555883.1542361943" target="_blank">terms of service</a>
@@ -58,7 +58,7 @@
 					<a class="link link--line t--blue" href="https://www.salesinteract.com/dpa/?_ga=2.152419130.2018200033.1542471224-1613555883.1542361943">data processing agreement</a>.
 				</p>
 				<div class="flex flex--middle flex--space-between">
-					<button class="btn btn--blue" (click)="registration()">Register</button>
+					<button class="btn btn--blue" (click)="registration()" [disabled]="!email?.length && !agree">Register</button>
 					<button class="btn btn--link" [routerLink]="['/login']">Cancel</button>
 				</div>
 			</div>

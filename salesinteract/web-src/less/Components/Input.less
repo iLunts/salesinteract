@@ -14,6 +14,49 @@
 :focus:-ms-input-placeholder      {color: transparent}
 
 // -------------------------------------------
+// Block '.error-block'
+// -------------------------------------------
+.error-block{
+    display: block;
+    width: 100%;
+    border-radius: 3px;
+    background-color: @color-red;
+    color: #fff;
+    font-weight: 400;
+    font-size: .9rem;
+    margin: 0 0 10px 0;
+    padding: 10px;
+    text-align: center;
+}
+
+// -------------------------------------------
+// Block '.error-field'
+// -------------------------------------------
+.error-field{
+    position: relative;
+
+    &:after{
+        content: '';
+        position: absolute;
+        right: 10px;
+        bottom: 20px;
+        background-image: url(data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTYuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgd2lkdGg9IjUxMnB4IiBoZWlnaHQ9IjUxMnB4IiB2aWV3Qm94PSIwIDAgNTEwIDUxMCIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgNTEwIDUxMDsiIHhtbDpzcGFjZT0icHJlc2VydmUiPgo8Zz4KCTxnIGlkPSJlcnJvciI+CgkJPHBhdGggZD0iTTI1NSwwQzExNC43NSwwLDAsMTE0Ljc1LDAsMjU1czExNC43NSwyNTUsMjU1LDI1NXMyNTUtMTE0Ljc1LDI1NS0yNTVTMzk1LjI1LDAsMjU1LDB6IE0yODAuNSwzODIuNWgtNTF2LTUxaDUxVjM4Mi41eiAgICAgTTI4MC41LDI4MC41aC01MXYtMTUzaDUxVjI4MC41eiIgZmlsbD0iI2Y0NDMzNiIvPgoJPC9nPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+Cjwvc3ZnPgo=);
+        // background-image: url(data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTkuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDQ4Ni40NjMgNDg2LjQ2MyIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgNDg2LjQ2MyA0ODYuNDYzOyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSIgd2lkdGg9IjUxMnB4IiBoZWlnaHQ9IjUxMnB4Ij4KPGc+Cgk8Zz4KCQk8cGF0aCBkPSJNMjQzLjIyNSwzMzMuMzgyYy0xMy42LDAtMjUsMTEuNC0yNSwyNXMxMS40LDI1LDI1LDI1YzEzLjEsMCwyNS0xMS40LDI0LjQtMjQuNCAgICBDMjY4LjIyNSwzNDQuNjgyLDI1Ni45MjUsMzMzLjM4MiwyNDMuMjI1LDMzMy4zODJ6IiBmaWxsPSIjZjQ0MzM2Ii8+CgkJPHBhdGggZD0iTTQ3NC42MjUsNDIxLjk4MmMxNS43LTI3LjEsMTUuOC01OS40LDAuMi04Ni40bC0xNTYuNi0yNzEuMmMtMTUuNS0yNy4zLTQzLjUtNDMuNS03NC45LTQzLjVzLTU5LjQsMTYuMy03NC45LDQzLjQgICAgbC0xNTYuOCwyNzEuNWMtMTUuNiwyNy4zLTE1LjUsNTkuOCwwLjMsODYuOWMxNS42LDI2LjgsNDMuNSw0Mi45LDc0LjcsNDIuOWgzMTIuOCAgICBDNDMwLjcyNSw0NjUuNTgyLDQ1OC44MjUsNDQ5LjI4Miw0NzQuNjI1LDQyMS45ODJ6IE00NDAuNjI1LDQwMi4zODJjLTguNywxNS0yNC4xLDIzLjktNDEuMywyMy45aC0zMTIuOCAgICBjLTE3LDAtMzIuMy04LjctNDAuOC0yMy40Yy04LjYtMTQuOS04LjctMzIuNy0wLjEtNDcuN2wxNTYuOC0yNzEuNGM4LjUtMTQuOSwyMy43LTIzLjcsNDAuOS0yMy43YzE3LjEsMCwzMi40LDguOSw0MC45LDIzLjggICAgbDE1Ni43LDI3MS40QzQ0OS4zMjUsMzY5Ljg4Miw0NDkuMjI1LDM4Ny40ODIsNDQwLjYyNSw0MDIuMzgyeiIgZmlsbD0iI2Y0NDMzNiIvPgoJCTxwYXRoIGQ9Ik0yMzcuMDI1LDE1Ny44ODJjLTExLjksMy40LTE5LjMsMTQuMi0xOS4zLDI3LjNjMC42LDcuOSwxLjEsMTUuOSwxLjcsMjMuOGMxLjcsMzAuMSwzLjQsNTkuNiw1LjEsODkuNyAgICBjMC42LDEwLjIsOC41LDE3LjYsMTguNywxNy42YzEwLjIsMCwxOC4yLTcuOSwxOC43LTE4LjJjMC02LjIsMC0xMS45LDAuNi0xOC4yYzEuMS0xOS4zLDIuMy0zOC42LDMuNC01Ny45ICAgIGMwLjYtMTIuNSwxLjctMjUsMi4zLTM3LjVjMC00LjUtMC42LTguNS0yLjMtMTIuNUMyNjAuODI1LDE2MC43ODIsMjQ4LjkyNSwxNTUuMDgyLDIzNy4wMjUsMTU3Ljg4MnoiIGZpbGw9IiNmNDQzMzYiLz4KCTwvZz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8L3N2Zz4K);
+        background-position: center;
+        background-size: 15px;
+        width: 15px;
+        height: 15px;
+    }
+
+    > .label{
+        color: @color-red;
+    }
+    > .input{
+        border-color: @color-red;
+        // background-color: lighten(@color-red, 35%);
+    }
+}
+// -------------------------------------------
 // Block '.input'
 // -------------------------------------------
 // Element '.input'

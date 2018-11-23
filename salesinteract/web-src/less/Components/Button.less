@@ -248,6 +248,13 @@ button{
             background: lighten(@color-blue, 5%);
         }
 
+        &:disabled{
+            opacity: .35;
+            background-color: #ddd;
+            color: #555;
+            box-shadow: none;
+        }
+
         &.btn--border{
             border-color: @color-blue;
             color: @color-blue;
