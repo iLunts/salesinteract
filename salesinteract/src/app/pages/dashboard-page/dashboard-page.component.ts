@@ -8,6 +8,8 @@ import { contacten } from '../../model/many-models';
 import { afgeronde } from '../../model/many-models';
 import { EventSesrvice } from '../../services/event.service';
 
+import * as moment from 'moment';
+
 @Component({
   selector: 'app-dashboard-page',
   templateUrl: './dashboard-page.component.html',
@@ -233,39 +235,32 @@ export class DashboardPageComponent implements OnInit {
     },
   ];
 
-  // contactGraphList: any = [
-  //   {
-  //     title: 'Leads', color: '#77dafd', count: '16', percent: '100'
-  //   },
-  //   {
-  //     title: 'Prospects', color: '#fff400', count: '13', percent: '90'
-  //   },
-  //   {
-  //     title: 'Customers', color: '#9ad100', count: '9', percent: '65'
-  //   },
-  //   {
-  //     title: 'Open task', color: '#0096e0', count: '3', percent: '30'
-  //   },
-  //   {
-  //     title: 'Overdue task', color: '#ff000a', count: '1', percent: '10'
-  //   },
-  // ];
-
   isOpenSidebar: boolean = false;
 
 
   calendarOptions: Options;
   @ViewChild(CalendarComponent) ucCalendar: CalendarComponent;
   dashboardData: Dashboard = {};
+  date: any;
 
   constructor(protected _eventService: EventSesrvice, protected $http: HttpClient) {
     Object.assign(this, { contacten, afgeronde });
+    this.date = moment();
   }
 
   ngOnInit() {
 
     this.$http.get<Dashboard>('/api/v1/dashboard/sales').subscribe(x => {
       this.dashboardData = x;
+
+    const events =   this.dashboardData.tasks.map(z => {
+       return {
+        title: '+2 Call',
+        start: moment(z.due).format('YYYY-MM-DD'),
+        className: 'event--' + z.previousOutcome
+       };
+      });
+      this.calendarOptions.events = events;
     });
 
     this._eventService.getEvents().subscribe(data => {
@@ -282,7 +277,7 @@ export class DashboardPageComponent implements OnInit {
     });
   }
 
-  openSidebar(){
+  openSidebar() {
     this.isOpenSidebar = !this.isOpenSidebar;
   }
 
@@ -298,7 +293,7 @@ export class DashboardPageComponent implements OnInit {
     console.log(event);
   }
 
-  loadTasks() {
-    alert('no data present');
+  loadTasks($event: any) {
+    this.date = $event.detail.date;
   }
 }

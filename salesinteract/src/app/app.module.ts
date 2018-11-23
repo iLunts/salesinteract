@@ -1,3 +1,4 @@
+import { FilterByMomentPipe } from './pipes/filterByMoment.pipe';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
@@ -81,6 +82,7 @@ import { IAuthenticationService, AuthenticationService } from './services/auth.s
 import { JwtModule } from '@auth0/angular-jwt';
 import { SidebarOpenQuotationsComponent } from './ui/sidebar-open-quotations/sidebar-open-quotations.component';
 import { SidebarTaskHistoryComponent } from './ui/sidebar-task-history/sidebar-task-history.component';
+import { OverdueTasksPipe } from './pipes/overdueTasks.pipe';
 
 export function tokenGetter() {
   return localStorage.getItem('access_token');
@@ -151,6 +153,8 @@ export function tokenGetter() {
     RegistrationPageComponent,
     SidebarOpenQuotationsComponent,
     SidebarTaskHistoryComponent,
+    FilterByMomentPipe,
+    OverdueTasksPipe
   ],
   imports: [
     HttpClientModule,

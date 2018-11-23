@@ -15,6 +15,6 @@ export class DashGuard implements CanActivate {
             this.router.navigate(['/login']);
         }
 
-        return auth;
-    }
+       return auth;
+      }
 }

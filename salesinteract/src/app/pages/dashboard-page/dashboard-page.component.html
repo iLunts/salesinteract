@@ -21,10 +21,7 @@
           </div>
         </div>
 
-        <button
-          class="btn btn--blue btn--new"
-          (click)="openSidebarNewCompany()"
-        >
+        <button class="btn btn--blue btn--new" (click)="openSidebarNewCompany()" >
           <i class="btn__icon icon-new-plus"></i>
           <span class="btn__text hidden--xs">
             <span class="btn__text-text">Create new company</span>
@@ -249,7 +246,7 @@
 
       <!-- Task overdue list -->
       <div class="task-list">
-        <div class="panel panel--sm" *ngFor="let item of taskHistoryLateList">
+        <div class="panel panel--sm" *ngFor="let item of dashboardData.tasks | overdueTasks">
           <div class="panel__body task-list__body">
             <div class="flex flex--middle col-lg-3">
               <img
@@ -258,28 +255,26 @@
                 alt=""
               />
               <div>
-                <a href="" class="task-list__company">{{ item.name }}</a>
-                <p class="task-list__type">Company</p>
+                <a href="" class="task-list__company">{{
+                  item.contact.name
+                }}</a>
+                <p class="task-list__type">{{ item.organisation_name }}</p>
               </div>
             </div>
             <div class="col-lg-4">
               <div class="flex flex--middle">
-                <img
-                  class="avatar avatar--sm m--r-sm"
-                  [src]="item.image"
-                  alt=""
-                />
-                <a href="" class="task-list__name">{{ item.contactName }}</a>
+                <img class="avatar avatar--sm m--r-sm" [src]="" alt="" />
+                <a href="" class="task-list__name">{{ item.sales.name }}</a>
               </div>
               <div>
                 <i class="icon icon-desc t--gray m--r-mini"></i>
-                <span class="task-list__desc">{{ item.result }}</span>
+                <span class="task-list__desc">{{ item.outcome }}</span>
               </div>
             </div>
             <div class="col-lg-3 t--c">
-              <span class="badge badge--gray">{{ item.task }}</span>
+              <span class="badge badge--gray">{{ item.status }}</span>
               <p class="t--md t--regular m--t-mini t--red t--c">
-                {{ item.date }}
+                {{ item.created | date }}
               </p>
             </div>
             <div class="col-lg-1 t--r">
@@ -288,6 +283,7 @@
               </button>
             </div>
           </div>
+
         </div>
 
         <button class="task-list__more btn btn--gray btn--ssm">
@@ -358,7 +354,7 @@
 
       <!-- Tasks today list -->
       <div class="task-list">
-        <div class="panel panel--sm" *ngFor="let item of dashboardData.tasks">
+        <div class="panel panel--sm" *ngFor="let item of dashboardData.tasks | filterByMoment: 'due' : date">
           <div class="panel__body task-list__body">
             <div class="flex flex--middle col-lg-3">
               <img
@@ -422,8 +418,7 @@
             class="calendar"
             #ucCalendar
             [options]="calendarOptions"
-            (dayClick)='loadTasks()'
-          >
+            (dayClick)='loadTasks($event)'>
           </ng-fullcalendar>
         </div>
         <!-- </div> -->
