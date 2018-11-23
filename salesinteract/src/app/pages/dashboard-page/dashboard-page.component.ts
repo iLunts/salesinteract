@@ -302,29 +302,42 @@ export class DashboardPageComponent implements OnInit {
 
     this.$http.get<Dashboard>('/api/v1/dashboard/sales').subscribe(x => {
       this.dashboardData = x;
+    });
 
-    const events =   this.dashboardData.tasks.map(z => {
-       return {
-        title: '+2 Call',
-        start: moment(z.due).format('YYYY-MM-DD'),
-        className: 'event--' + z.previousOutcome
-       };
+    const self = this;
+    this.calendarOptions = {
+      editable: true,
+      eventLimit: false,
+      header: {
+        left: 'title',
+        center: 'today prev,next',
+        right: ''
+      },
+      events: function(start, end, timezone, callback) {
+        self.loadData(start, end, timezone, callback);
+      }
+    };
+  }
+
+  loadData(start: moment.Moment, end: moment.Moment, timezone: any, callback) {
+      this.$http.get(`/api/v1/task?from=${start.format('YYYY-MM-DD')}&to=${end.format('YYYY-MM-DD')}`)
+      .subscribe( (y: any) => {
+        this.dashboardData.tasks = [];
+
+        y.forEach(element => {
+          this.dashboardData.tasks.push(element);
+        });
+
+        const events = y.map(z => {
+          return {
+           title: '+2 Call',
+           start: moment(z.due).format('YYYY-MM-DD'),
+           className: 'event--' + z.previousOutcome
+          };
+         });
+
+        callback(events);
       });
-      this.calendarOptions.events = events;
-    });
-
-    this._eventService.getEvents().subscribe(data => {
-      this.calendarOptions = {
-        editable: true,
-        eventLimit: false,
-        header: {
-          left: 'title',
-          center: 'today prev,next',
-          right: ''
-        },
-        events: data
-      };
-    });
   }
 
   openSidebar() {

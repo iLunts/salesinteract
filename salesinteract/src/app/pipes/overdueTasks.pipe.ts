@@ -12,7 +12,7 @@ export class OverdueTasksPipe implements PipeTransform {
 
     value.forEach(element => {
 
-      if (moment(element.due) < moment() && (!element.completed || element.status === 'new')) {
+      if (moment(element.due) < moment() && (!element.completed && element.status === 'new')) {
           arr.push(element);
       }
     });
