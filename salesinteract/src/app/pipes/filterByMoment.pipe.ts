@@ -15,7 +15,7 @@ export class FilterByMomentPipe implements PipeTransform {
 
       console.log(moment(element[args]).diff(args1, args2 || 'day'));
 
-      if (moment(element[args]).diff(args1, args2 || 'day') === 0) {
+      if (moment(element[args]).isSame(args1, args2 || 'day')) {
         arr.push(element);
       }
     });
