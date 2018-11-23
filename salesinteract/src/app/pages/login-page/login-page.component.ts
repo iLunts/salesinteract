@@ -13,6 +13,7 @@ export class LoginPageComponent implements OnInit {
 
   email: string;
   password: string;
+  error: boolean;
 
   constructor(protected service: IAuthenticationService, protected $http: HttpClient, protected $router: Router) { }
 
@@ -32,7 +33,12 @@ export class LoginPageComponent implements OnInit {
     ).subscribe( (x: any) => {
       this.service.setToken(x.token);
       this.$router.navigate([ '', 'dashboard' ]);
-    });
+    },
+    error => { // error path
+      console.log(error);
+      this.error = true;
+     }
+     );
 
   }
 }
