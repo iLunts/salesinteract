@@ -56,7 +56,7 @@ import { SurveyTextareaFieldComponent } from './ui/survey/survey-textarea-field/
 import { SurveyCheckboxFieldComponent } from './ui/survey/survey-checkbox-field/survey-checkbox-field.component';
 import { SurveyRadioFieldComponent } from './ui/survey/survey-radio-field/survey-radio-field.component';
 import { AngularSvgIconModule } from 'angular-svg-icon';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { SurveyMultiplyFieldComponent } from './ui/survey/survey-multiply-field/survey-multiply-field.component';
 import { SearchCocTabComponent } from './components/search-coc-tab/search-coc-tab.component';
 import { CrmPageComponent } from './pages/crm-page/crm-page.component';
@@ -83,6 +83,7 @@ import { JwtModule } from '@auth0/angular-jwt';
 import { SidebarOpenQuotationsComponent } from './ui/sidebar-open-quotations/sidebar-open-quotations.component';
 import { SidebarTaskHistoryComponent } from './ui/sidebar-task-history/sidebar-task-history.component';
 import { OverdueTasksPipe } from './pipes/overdueTasks.pipe';
+import { TokenInterceptor } from './guards/auth.interceptor';
 
 export function tokenGetter() {
   return localStorage.getItem('access_token');
@@ -186,6 +187,11 @@ export function tokenGetter() {
   providers: [
     DashGuard,
     { provide: IAuthenticationService, useClass: AuthenticationService},
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: TokenInterceptor,
+      multi: true
+    },
     EventSesrvice],
   bootstrap: [AppComponent]
 })

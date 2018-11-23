@@ -7,10 +7,10 @@ import { Options } from 'fullcalendar';
 import { contacten } from '../../model/many-models';
 import { afgeronde } from '../../model/many-models';
 import { EventSesrvice } from '../../services/event.service';
-import { map, groupBy, toArray, tap } from 'rxjs/operators';
+import { map, groupBy, toArray, tap, mergeMap, reduce } from 'rxjs/operators';
 
 import * as moment from 'moment';
-import { from, GroupedObservable } from 'rxjs';
+import { from, GroupedObservable, of } from 'rxjs';
 
 @Component({
   selector: 'app-dashboard-page',
@@ -21,8 +21,8 @@ export class DashboardPageComponent implements OnInit {
   taskTodayFilter = 'all';
   taskOverdueFilter = 'all';
 
-  isCollapsedTopBar: boolean = false;
-  isOpenSidebarNewCompany: boolean = false;
+  isCollapsedTopBar = false;
+  isOpenSidebarNewCompany = false;
   single: any[];
   contacten: any[];
   afgeronde: any[];
@@ -47,53 +47,53 @@ export class DashboardPageComponent implements OnInit {
 
   contactenList: any = [
     {
-      "name": "Lead",
-      "value": 16
+      'name': 'Lead',
+      'value': 16
     },
     {
-      "name": "Prospect",
-      "value": 6
+      'name': 'Prospect',
+      'value': 6
     },
     {
-      "name": "Customer",
-      "value": 0
+      'name': 'Customer',
+      'value': 0
     },
     {
-      "name": "Open task",
-      "value": 4
+      'name': 'Open task',
+      'value': 4
     },
     {
-      "name": "Overdue",
-      "value": 19
+      'name': 'Overdue',
+      'value': 19
     },
   ];
 
   completeTaskList: any = [
     {
-      "name": "Send information",
-      "value": 16
+      'name': 'Send information',
+      'value': 16
     },
     {
-      "name": "Send quotation",
-      "value": 10
+      'name': 'Send quotation',
+      'value': 10
     },
     {
-      "name": "Visit appointment",
-      "value": 24
+      'name': 'Visit appointment',
+      'value': 24
     },
     {
-      "name": "Contact was not reachable",
-      "value": 4
+      'name': 'Contact was not reachable',
+      'value': 4
     },
     {
-      "name": "Contact had no time",
-      "value": 15
+      'name': 'Contact had no time',
+      'value': 15
     },
     {
-      "name": "I had no time",
-      "value": 3
+      'name': 'I had no time',
+      'value': 3
     }
-  ]
+  ];
 
   // completeTaskList: any = [
   //   {
@@ -287,7 +287,7 @@ export class DashboardPageComponent implements OnInit {
     },
   ];
 
-  isOpenSidebar: boolean = false;
+  isOpenSidebar = false;
 
 
   calendarOptions: Options;
@@ -322,7 +322,7 @@ export class DashboardPageComponent implements OnInit {
   }
 
   loadData(start: moment.Moment, end: moment.Moment, timezone: any, callback) {
-      this.$http.get(`/api/v1/task?from=${start.format('YYYY-MM-DD')}&to=${end.format('YYYY-MM-DD')}`)
+      this.$http.get(`/api/v1/task?from=${start.format('YYYY-MM-DD')}&to=${end.format('YYYY-MM-DD')}&limit=1000`)
       .subscribe( (y: any) => {
         this.dashboardData.tasks = [];
 
@@ -330,29 +330,30 @@ export class DashboardPageComponent implements OnInit {
           this.dashboardData.tasks.push(element);
         });
 
-        const events = from(y).pipe(
+        console.log('write tasks');
+        console.log(y);
+        const events = [];
+        from(y)
+        .pipe(
           map((z: any) => {
-          return {
-           title: '+2 Call',
-           start: moment(z.due).format('YYYY-MM-DD'),
-           className: 'event--' + z.previousOutcome
-          };
-         }),
-         tap(val => console.log(val)),
+            return  {
+            title: '+2 Call',
+            start: moment(z.due).format('YYYY-MM-DD'),
+            className: 'event--' + z.previousOutcome
+           };
+          }),
          groupBy(z => z.start),
-         tap(val => console.log(val)),
-         map( (z: any, zz: any) => {
-          console.log(z);
-          console.log(zz);
-          return {
-          title: '+ ' + z.count() + ' Tasks',
-          start: z.key,
-          className: 'event--' + z.previousOutcome
-         };
-        })).subscribe(x => {
-          callback(events);
+         mergeMap((group$) =>
+         group$.pipe(
+           reduce((acc: any, cur) => [...acc, cur], [' ' + group$.key]))
+           ),
+         map((arr: any[]) => ({'start': arr[0], 'title': '+ ' + arr.slice(1).length
+         + (arr.slice(1).length > 1 ? 'task' : ' tasks')}))
+          ).subscribe(x => {
+            events.push(x);
+         });
+         callback(events);
         });
-      });
   }
 
   openSidebar() {
