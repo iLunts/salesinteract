@@ -18,7 +18,8 @@
 				</div>
 				<div class="flex flex--middle flex--space-between">
 					<button class="btn btn--blue" (click)="login()">Login</button>
-					<button class="btn btn--link" (click)="resetPassword()">Forgot password?</button>
+          <button class="btn btn--link" (click)="resetPassword()">Forgot password?</button>
+          <span *ngIf='error'>Incorrect login or password</span>
 				</div>
 			</div>
 
