@@ -1,14 +1,54 @@
-<ngx-charts-bar-vertical-stacked 
-[scheme]="colorSchemeCompleteTask" 
-[results]="completeData"
-[legend]="false" 
-[showXAxisLabel]="true" 
-[showYAxisLabel]="true" 
-[xAxis]="true" 
-[yAxis]="true" 
-[showGridLines]="true"
-[roundDomains]="true" 
-[barPadding]="20"
->
+<div class="complete-task">
+
+  <div class="complete-task__chart">
+
+    <!-- <ngx-charts-bar-vertical-stacked 
+            [scheme]="colorSchemeCompleteTask" 
+            [results]="completeData"
+            [legend]="false" 
+            [showXAxisLabel]="true" 
+            [showYAxisLabel]="true" 
+            [xAxis]="true" 
+            [yAxis]="true" 
+            [showGridLines]="true"
+            [roundDomains]="true" 
+            [barPadding]="20"
+            >
+        </ngx-charts-bar-vertical-stacked> -->
+
+        <ngx-charts-bar-vertical 
+            [scheme]="colorSchemeCompleteTask" 
+            [results]="completeData" 
+            [gradient]="false" 
+            [xAxis]="false"
+            [yAxis]="true" 
+            [legend]="false">
+        </ngx-charts-bar-vertical>
+    </div>
+
+    <ul class="complete-list row">
+        <li class="complete-list__item col-sm-6" *ngFor="let item of completeData">
+            <div class="complete-list__body">
+                <div class="flex flex--middle">
+                    <span class="badge badge--sm badge--squared contact-list__list-color" style="background-color: #eee"></span>
+                    <span class="t--semi-bold t--gray-dark m--l-sm t--capitalize">{{item.name}}</span>
+                </div>
+                <span class="t--semi-bold t--gray">{{item.value}}</span>
+            </div>
+        </li>
+    </ul>
+
+    <!-- 
+        <ngx-charts-pie-chart
+        [scheme]="colorSchemeCompleteTask" 
+        [results]="completeData"
+        [legend]="false"
+        [labels]="false"
+        [animations]="true"
+        [explodeSlices]="true"
+        >
+    </ngx-charts-pie-chart> -->
+
+</div>
 
 <!-- <app-empty></app-empty> -->

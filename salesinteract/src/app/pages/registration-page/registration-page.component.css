@@ -6,6 +6,32 @@
   align-items: center;
   justify-content: center;
 }
+.registration .registration__btn {
+  margin-bottom: 10px;
+  color: #fff;
+  background: #eee;
+  font-weight: 400;
+}
+.registration .registration__btn .btn__icon {
+  color: #fff;
+  width: 15px;
+  height: 15px;
+  display: flex;
+  min-width: 15px;
+  padding: 0;
+}
+.registration .registration__btn.registration__btn--google {
+  background-color: #e04a37;
+}
+.registration .registration__btn.registration__btn--facebook {
+  background-color: #395aa1;
+}
+.registration .registration__btn.registration__btn--linkedin {
+  background-color: #0b78b9;
+}
+.registration .registration__btn.registration__btn--salesforce {
+  background-color: #39485f;
+}
 .registration .registration__panel {
   border-radius: 8px;
   background-color: #fff;

@@ -12,8 +12,13 @@ export class ContactListComponent implements OnInit {
 
   constructor() { }
 
+  @Input() contactenList: any;
   @Input() contactData: any;
   @Input() taskData: any;
+
+  colorSchemeCompleteTask = {
+    domain: ['#77dafd', '#fff400', '#9ad100', '#0096e0', '#ff000a']
+  };
   
   ngOnInit() {
     this.contactDataList = Object.keys(this.contactData).map(key => ({ type: key, value: this.contactData[key] }));
