@@ -7,8 +7,10 @@ import { Options } from 'fullcalendar';
 import { contacten } from '../../model/many-models';
 import { afgeronde } from '../../model/many-models';
 import { EventSesrvice } from '../../services/event.service';
+import { map, groupBy, toArray, tap } from 'rxjs/operators';
 
 import * as moment from 'moment';
+import { from, GroupedObservable } from 'rxjs';
 
 @Component({
   selector: 'app-dashboard-page',
@@ -328,15 +330,28 @@ export class DashboardPageComponent implements OnInit {
           this.dashboardData.tasks.push(element);
         });
 
-        const events = y.map(z => {
+        const events = from(y).pipe(
+          map((z: any) => {
           return {
            title: '+2 Call',
            start: moment(z.due).format('YYYY-MM-DD'),
            className: 'event--' + z.previousOutcome
           };
-         });
-
-        callback(events);
+         }),
+         tap(val => console.log(val)),
+         groupBy(z => z.start),
+         tap(val => console.log(val)),
+         map( (z: any, zz: any) => {
+          console.log(z);
+          console.log(zz);
+          return {
+          title: '+ ' + z.count() + ' Tasks',
+          start: z.key,
+          className: 'event--' + z.previousOutcome
+         };
+        })).subscribe(x => {
+          callback(events);
+        });
       });
   }
 
