@@ -74,7 +74,6 @@ export class DashboardPageComponent implements OnInit {
 
   isOpenSidebar = false;
 
-
   calendarOptions: Options;
   @ViewChild(CalendarComponent) ucCalendar: CalendarComponent;
   dashboardData: Dashboard = {};
@@ -115,8 +114,8 @@ export class DashboardPageComponent implements OnInit {
           this.dashboardData.tasks.push(element);
         });
 
-        console.log('write tasks');
-        console.log(y);
+        // console.log('write tasks');
+        // console.log(y);
         const events = [];
         from(y)
         .pipe(
@@ -133,7 +132,7 @@ export class DashboardPageComponent implements OnInit {
            reduce((acc: any, cur) => [...acc, cur], [' ' + group$.key]))
            ),
          map((arr: any[]) => ({'start': arr[0], 'title': '+ ' + arr.slice(1).length
-         + (arr.slice(1).length > 1 ? 'task' : ' tasks')}))
+         + (arr.slice(1).length > 1 ? ' tasks' : ' task')}))
           ).subscribe(x => {
             events.push(x);
          });

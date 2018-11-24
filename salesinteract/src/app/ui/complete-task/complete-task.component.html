@@ -1,21 +1,6 @@
 <div class="complete-task">
 
-  <div class="complete-task__chart">
-
-    <!-- <ngx-charts-bar-vertical-stacked 
-            [scheme]="colorSchemeCompleteTask" 
-            [results]="completeData"
-            [legend]="false" 
-            [showXAxisLabel]="true" 
-            [showYAxisLabel]="true" 
-            [xAxis]="true" 
-            [yAxis]="true" 
-            [showGridLines]="true"
-            [roundDomains]="true" 
-            [barPadding]="20"
-            >
-        </ngx-charts-bar-vertical-stacked> -->
-
+  <div class="complete-task__chart" *ngIf="completeData?.length">
         <ngx-charts-bar-vertical 
             [scheme]="colorSchemeCompleteTask" 
             [results]="completeData" 
@@ -26,7 +11,7 @@
         </ngx-charts-bar-vertical>
     </div>
 
-    <ul class="complete-list row">
+    <ul class="complete-list row" *ngIf="completeData?.length">
         <li class="complete-list__item col-sm-6" *ngFor="let item of completeData">
             <div class="complete-list__body">
                 <div class="flex flex--middle">
@@ -51,4 +36,4 @@
 
 </div>
 
-<!-- <app-empty></app-empty> -->
+<app-empty [Title]="'Complete task is empty'" *ngIf="!completeData?.length"></app-empty>

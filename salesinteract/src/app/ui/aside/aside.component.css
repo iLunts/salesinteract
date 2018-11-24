@@ -26,6 +26,7 @@
   line-height: 70px;
   border: none;
   background-color: #fff;
+  border: 6px solid #fff;
   box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.15);
 }
 .aside .aside__header-avatar .avatar__icon {
@@ -40,7 +41,7 @@
 .aside .aside__header-role {
   margin: 0;
   font-size: 13px;
-  font-size: 300;
+  font-weight: 400;
   opacity: .6;
 }
 .aside .aside__menu {

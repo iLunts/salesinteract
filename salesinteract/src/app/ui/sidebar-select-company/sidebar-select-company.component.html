@@ -1,0 +1,32 @@
+<section class="sidebar">
+  <div class="sidebar__overlay"></div>
+
+  <div class="sidebar__panel">
+    <header class="sidebar__header">
+      <div>
+        <p class="sidebar__header-title">{{'Switch'|translate}}</p>
+        <p class="sidebar__header-subtitle">{{'Choose a company to switch your screen'|translate}}</p>
+      </div>
+
+      <a (click)='close()' class="sidebar__close">
+        <i class="icon-close"></i>
+      </a>
+    </header>
+
+    <div class="sidebar__panel-body">
+      <div class="panel panel--sm" *ngFor="let company of CompanyList">
+        <div class="panel__body">
+          <div class="company" [ngClass]="{'active': company.id == user.organisationId}">
+            <span class="company__select"></span>
+            <div class="company__avatar avatar avatar--empty avatar--square" *ngIf="!company?.logo"></div>
+            <img class="company__avatar avatar avatar--square" [src]="company?.logo" *ngIf="company?.logo" alt="">
+            <div class="company__content">
+              <p class="company__name">{{company.name}}</p>
+              <p class="company__role">{{company.role}}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

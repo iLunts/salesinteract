@@ -256,10 +256,12 @@
           <div class="panel__body task-list__body">
             <div class="flex flex--middle col-lg-3">
               <img
+                *ngIf="item?.image"
                 class="avatar avatar--square m--r-sm"
-                [src]="item.image"
+                [src]="item?.image"
                 alt=""
               />
+              <span class="avatar avatar--square avatar--empty m--r-sm" *ngIf="!item?.image"></span>
               <div>
                 <a href="" class="task-list__company">{{
                   item.contact.name
@@ -269,7 +271,8 @@
             </div>
             <div class="col-lg-4">
               <div class="flex flex--middle">
-                <img class="avatar avatar--sm m--r-sm" [src]="" alt="" />
+                <!-- <img class="avatar avatar--sm m--r-sm" [src]="" alt="" /> -->
+                <span class="avatar avatar--sm avatar--empty m--r-sm"></span>
                 <a href="" class="task-list__name">{{ item.sales.name }}</a>
               </div>
               <div>
@@ -290,6 +293,12 @@
             </div>
           </div>
         </div>
+        
+        <!-- Task overdue empty list -->
+        <div class="panel panel--sm" *ngIf="(dashboardData.tasks | overdueTasks | count | eq: 0)">
+          <app-empty [Title]="'Please, change date on the task calendar'"></app-empty>
+        </div>
+
         <div *ngIf="(dashboardData.tasks | overdueTasks | count | gt: 5)">
           <button
             class="task-list__more btn btn--gray btn--ssm"
@@ -384,8 +393,10 @@
               <img
                 class="avatar avatar--square m--r-sm"
                 [src]="item.image"
+                *ngIf="item?.image"
                 alt=""
               />
+              <span class="avatar avatar--empty avatar--square m--r-sm" *ngIf="!item?.image"></span>
               <div>
                 <a href="" class="task-list__company">{{
                   item.contact.name
@@ -395,7 +406,8 @@
             </div>
             <div class="col-lg-4">
               <div class="flex flex--middle">
-                <img class="avatar avatar--sm m--r-sm" [src]="" alt="" />
+                <!-- <img class="avatar avatar--sm m--r-sm" [src]="" alt="" /> -->
+                <span class="avatar avatar--sm avatar--empty m--r-sm"></span>
                 <a href="" class="task-list__name">{{ item.sales.name }}</a>
               </div>
               <div>
@@ -417,11 +429,12 @@
           </div>
         </div>
 
-        <div
-          *ngIf="
-            (dashboardData.tasks | filterByMoment: 'due':date | count | gt: 5)
-          "
-        >
+        <!-- Task today empty list -->
+        <div class="panel panel--sm" *ngIf="(dashboardData.tasks | filterByMoment: 'due':date | count | eq: 0)">
+          <app-empty [Title]="'Please, change date on the task calendar'"></app-empty>
+        </div>
+
+        <div *ngIf="(dashboardData.tasks | filterByMoment: 'due':date | count | gt: 5)">
           <button
             class="task-list__more btn btn--gray btn--ssm"
             (click)="displayedTasks = 100"

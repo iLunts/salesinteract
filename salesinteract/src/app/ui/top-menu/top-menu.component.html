@@ -93,7 +93,7 @@
 			<i class="btn__icon icon-exit"></i>
 		</a>
 
-		<div class="top-menu__companies">
+		<div class="top-menu__companies" (click)="openSidebar()">
 			<img class="top-menu__companies-avatar avatar avatar--sm" src="{{currentOrganisation.logo}}" alt="">
 			<div class="hidden--xs">
 				<p class="top-menu__companies-name">{{currentOrganisation.name}}</p>
@@ -104,3 +104,9 @@
 	</div>
 </div>
 
+<!-- Sidebar panel select company -->
+<app-sidebar-select-company
+  [(Hidden)]="isOpenSidebarSelectCompany"
+  [CompanyList]="user.connectedOrganisations"
+  [ngClass]="{'open': isOpenSidebarSelectCompany}"
+></app-sidebar-select-company>

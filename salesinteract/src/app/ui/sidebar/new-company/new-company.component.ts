@@ -21,11 +21,8 @@ export class NewCompanyComponent implements OnInit {
     this.tabHeading = data.heading;
   }
 
-
   close() {
-    console.log('close');
     this.Hidden = false;
     this.HiddenChange.emit(false);
   }
-
 }

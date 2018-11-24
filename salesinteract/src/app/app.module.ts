@@ -88,6 +88,8 @@ import { CountPipe } from './pipes/count.pipe';
 import { GtPipe } from './pipes/gt.pipe';
 import { TranslateModule, TranslateLoader, MissingTranslationHandler, MissingTranslationHandlerParams } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { SidebarSelectCompanyComponent } from './ui/sidebar-select-company/sidebar-select-company.component';
+import { EqPipe } from './pipes/eq.pipe';
 
 export function tokenGetter() {
   return localStorage.getItem('access_token');
@@ -175,7 +177,9 @@ export class MyMissingTranslationHandler implements MissingTranslationHandler {
     FilterByMomentPipe,
     OverdueTasksPipe,
     CountPipe,
-    GtPipe
+    GtPipe,
+    SidebarSelectCompanyComponent,
+    EqPipe
   ],
   imports: [
     HttpClientModule,

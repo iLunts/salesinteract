@@ -25,7 +25,7 @@
     box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.1);
     object-fit: cover;
     box-sizing: border-box;
-    background-color: #eee;
+    background-color: #fff;
     
     // Modifivator '.avatar.avatar--empty'
     &&--empty{
@@ -65,24 +65,6 @@
         border-radius: @avatar-height-xlarge;
         font-size: 3.5rem;
         border-width: @avatar-border-width-xlg;
-        
-        .avatar__img{
-            width: (@avatar-height-xlarge - @avatar-border-width-xlg * 2);
-            height: (@avatar-height-xlarge - @avatar-border-width-xlg * 2);
-        }
-
-        .avatar__btns{
-
-        }
-
-        .avatar__online{
-            right: 0;
-            bottom: 0;
-            
-            width: 25px;
-            height: 25px;
-            border-width: 5px;
-        }
     }
 
     // Modifivator '.avatar.avatar--lg'
@@ -93,11 +75,6 @@
         border-radius: @avatar-height-large;
         font-size: 2rem;
         border-width: @avatar-border-width-lg;
-        
-        .avatar__img{
-            width: (@avatar-height-large - @avatar-border-width-lg * 2);
-            height: (@avatar-height-large - @avatar-border-width-lg * 2);
-        }
     }
 
     // Modifivator '.avatar.avatar--md'
@@ -106,11 +83,6 @@
         height: @avatar-height-medium;
         line-height: @avatar-height-medium;
         border-radius: @avatar-height-medium;
-        
-        .avatar__img{
-            width: @avatar-height-medium;
-            height: @avatar-height-medium;
-        }
     }
 
     // Modifivator '.avatar.avatar--sm'
@@ -122,9 +94,10 @@
         font-size: .85rem;
         border-width: 2px;
         
-        .avatar__img{
-            width: @avatar-height-small;
-            height: @avatar-height-small;
+        // Modifivator '.avatar.avatar--sm.avatar--empty'
+        &.avatar--empty{
+            background-size: 12px;
+            background-position: center 5px;
         }
     }
     // Modifivator '.avatar.avatar--mini'
@@ -135,26 +108,11 @@
         border-radius: @avatar-height-mini;
         font-size: .7rem;
         border-width: 2px;
-        
-        .avatar__img{
-            width: @avatar-height-mini;
-            height: @avatar-height-mini;
-        }
     }
 
     // Modificator 'avatar avatar--square'
     &&--square{
-        border-radius: 4px !important;
-        
-        .avatar__img{
-            border-radius: 4px !important;
-        }
-        
-        &.avatar--edit{
-            &:before{
-                border-radius: 4px !important;
-            }
-        }
+        border-radius: 4px !important;   
     }
 
     // Modificator 'avatar avatar--squared'
@@ -162,64 +120,12 @@
         border-radius: 300px !important;
     }
 
-    // Modificator 'avatar avatar--edit'
-    &&--edit{
-        
-        &:before{
-            content: '';
-            position: absolute;
-            top: 0;
-            bottom: 0;
-            right: 0;
-            left: 0;
-            background-color: rgba(46, 174, 254, .5);
-            border-radius: 100%;
-            z-index: 2;            
-        }
-
-        .avatar__btns{
-            position: absolute;
-            width: 100%;
-            top: 50%;
-            left: 0;
-            right: 0;
-
-            margin-top: -10px;
-            display: block;
-            text-align: center;
-            line-height: 1;
-            z-index: 3;
-
-            .btn{
-                box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.2);
-            }
-        }
-    }
-
     // -----------------------------------------------------
     // All elements
     // -----------------------------------------------------
 
-    // Element '.avatar .avatar__online'
-    & &__online{
-        position: absolute;
-        bottom: -5px;
-        right: -5px;
-        width: 16px;
-        height: 16px;
-        border-radius: 100%;
-        border: 3px solid #fff;
-        background-color: @color-green;
-    }
+    // Element '.avatar .avatar__'
+    & &__{
 
-    // Element '.avatar .avatar__img'
-    & &__img{
-        position: relative;
-        display: inline-block;
-        vertical-align: top;
-        width: (@avatar-height - @avatar-border-width * 2);
-        height: (@avatar-height - @avatar-border-width * 2);
-        border-radius: 100%;
-        object-fit: cover;
     }
 }

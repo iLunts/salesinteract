@@ -1,4 +1,5 @@
 <div class="empty">
 	<i class="empty__icon icon-empty"></i>
-	<p class="empty__text">{{'NOT YET AVAILABLE'|translate}}</p>
+	<p class="empty__text" *ngIf="Title">{{Title}}</p>
+	<p class="empty__text" *ngIf="!Title">{{'NOT YET AVAILABLE'|translate}}</p>
 </div>

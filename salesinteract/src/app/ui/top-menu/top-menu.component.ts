@@ -9,10 +9,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./top-menu.component.less']
 })
 export class TopMenuComponent implements OnInit {
-
   user: Token;
+  isOpenSidebarSelectCompany: boolean = false;
+
   currentOrganisation: ConnectedOrganisation;
-  constructor(protected $http: HttpClient, protected service: IAuthenticationService) {
+  constructor(protected $http: HttpClient, 
+              protected service: IAuthenticationService) {
 
     this.user = this.service.getUserData();
 
@@ -24,6 +26,10 @@ export class TopMenuComponent implements OnInit {
   }
 
   ngOnInit() {
+  }
+
+  openSidebar(){
+    this.isOpenSidebarSelectCompany = !this.isOpenSidebarSelectCompany;
   }
 
 }
