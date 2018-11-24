@@ -1,6 +1,6 @@
 <div class="panel panel--sm task-item">
 	<div class="panel__body">
-		
+
 		<div class="row flex flex--middle task-item__flex">
 			<div class="col-lg-3 col-sm-12 flex flex--middle task-item__flex-title">
 				<span class="badge badge--gray badge--circle badge--lg m--r-sm">
@@ -8,8 +8,8 @@
 				</span>
 
 				<div>
-					<p class="t--semi-bold m--reset">Call back</p>
-					<p class="t--md m--reset">Was not interested</p>
+					<p class="t--semi-bold m--reset">{{'Call back'|translate}}</p>
+					<p class="t--md m--reset">{{'Was not interested'|translate}}</p>
 				</div>
 			</div>
 			<div class="col-lg-4 col-sm-12 task-item__flex-manager">
@@ -19,11 +19,11 @@
 				<div class="task-item__status">
 
 					<!-- Status -->
-					<span class="task-item__status-badge badge badge--green" *ngIf="task.status == 0">Open</span>
-					<span class="task-item__status-badge badge badge--gray" *ngIf="task.status == 1">Close</span>
-					<span class="task-item__status-badge badge badge--red" *ngIf="task.status == 2">Overdue</span>
-					
-					
+					<span class="task-item__status-badge badge badge--green" *ngIf="task.status == 0">{{'Open'|translate}}</span>
+					<span class="task-item__status-badge badge badge--gray" *ngIf="task.status == 1">{{'Close'|translate}}</span>
+					<span class="task-item__status-badge badge badge--red" *ngIf="task.status == 2">{{'Overdue'|translate}}</span>
+
+
 					<i class="task-item__status-arrow icon-arrow-right"></i>
 					<span class="t--semi-bold t--md">{{task.date}}</span>
 				</div>
@@ -33,6 +33,6 @@
 				<p class="t--md m--reset"><b>External note:</b> {{task.external}}</p>
 			</div>
 		</div>
-		
+
 	</div>
 </div>

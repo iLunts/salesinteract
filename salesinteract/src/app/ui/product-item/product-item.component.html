@@ -8,10 +8,10 @@
 					<p class="m--reset t--md">{{product.desc}}</p>
 				</div>
 			</div>
-			
-			<span class="product-item__status badge badge--green badge--md" *ngIf="product.status == 0">Active</span>
-			<span class="product-item__status badge badge--gray badge--md" *ngIf="product.status == 1">Inactive</span>
-			
+
+			<span class="product-item__status badge badge--green badge--md" *ngIf="product.status == 0">{{'Active'|translate}}</span>
+			<span class="product-item__status badge badge--gray badge--md" *ngIf="product.status == 1">{{'Inactive'|translate}}</span>
+
 			<div class="product-item__btns">
 				<button class="btn btn--gray btn--circle btn--sm">
 					<i class="btn__icon icon-edit"></i>

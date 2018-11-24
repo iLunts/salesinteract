@@ -9,16 +9,16 @@
 						<i class="header__icon-icon icon-dashboard"></i>
 					</div>
 					<div>
-						<p class="header__title">Quick views</p>
+						<p class="header__title">{{'Quick views'|translate}}</p>
 						<ul class="header__breadcrumbs">
 							<li class="header__breadcrumbs-item">
 								<a href="" class="header__breadcrumbs-link">
-									Home page
+									{{'Home page'|translate}}
 								</a>
 							</li>
 							<li class="header__breadcrumbs-item">
 								<span href="" class="header__breadcrumbs-span">
-									Dashboard page
+									{{'Dashboard page'|translate}}
 								</span>
 							</li>
 						</ul>
@@ -29,7 +29,7 @@
 		</div>
 	</div>
 
-	<div class="row">	
+	<div class="row">
 		<div class="col-lg-12">
 			<div class="panel" *ngFor="let item of userList; index as i">
 				<div class="panel__header">
@@ -42,7 +42,7 @@
 								#{{i+1}} {{item.firstName}} {{item.lastName}}
 							</p>
 							<p class="panel__header-text">
-								Personal statistics
+								{{'Personal statistics'|translate}}
 							</p>
 						</div>
 
@@ -50,17 +50,17 @@
 							<svg-icon class="btn__icon m--reset" src="assets/svg/profile.svg"></svg-icon>
 						</button>
 					</div>
-					
+
 					<div [hidden]="!item.isCollapsedTopBar">
-						<span class="badge" 
+						<span class="badge"
 								*ngFor="let item of item.contactGraphList"
 								[ngStyle]="{'background-color': item.color}">{{item.title}}: {{item.count}}</span>
 					</div>
 
 					<div>
-						<button class="btn btn--squared btn--gray btn--ssm" 
+						<button class="btn btn--squared btn--gray btn--ssm"
 								(click)="item.isCollapsedTopBar = !item.isCollapsedTopBar"
-								[attr.aria-expanded]="!item.isCollapsedTopBar" 
+								[attr.aria-expanded]="!item.isCollapsedTopBar"
 								aria-controls="collapseBasic">
 							<i class="btn__icon" [ngClass]="{'icon-arrow-down-fill': item.isCollapsedTopBar, 'icon-arrow-up-fill': !item.isCollapsedTopBar}"></i>
 						</button>
@@ -77,22 +77,22 @@
 
 					<div class="row row--divider">
 						<div class="col-lg-3">
-							<p class="t--semi-bold">Task history</p>
+							<p class="t--semi-bold">{{'Task history'|translate}}</p>
 							<app-task-history-list [taskData]="item.taskHistoryList"></app-task-history-list>
 						</div>
 
 						<div class="col-lg-2">
-							<p class="t--semi-bold">Contacten</p>
+							<p class="t--semi-bold">{{'Contacts'|translate}}</p>
 							<app-contact-list [contactData]="item.contactGraphList"></app-contact-list>
 						</div>
 
 						<div class="col-lg-4">
-							<p class="t--semi-bold">Complete tasks</p>
+							<p class="t--semi-bold">{{'Complete tasks'|translate}}</p>
 							<app-complete-task [completeData]="item.completeTaskList"></app-complete-task>
 						</div>
 
 						<div class="col-lg-3">
-							<p class="t--semi-bold">Open quotations</p>
+							<p class="t--semi-bold">{{'Open quotations'|translate}}</p>
 							<app-open-quotations-list [openQuotationsData]="item.taskHistoryList"></app-open-quotations-list>
 						</div>
 					</div>

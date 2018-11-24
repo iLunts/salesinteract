@@ -1,28 +1,28 @@
 <div class="panel panel--tab">
     <div class="panel__group">
         <span class="panel__group-text">
-            Adress information
+            {{'Adress information'|translate}}
         </span>
     </div>
     <div class="panel__body">
         <div class="row">
             <div class="col-sm-8">
-                <label class="label">Address</label>
+                <label class="label">{{'Address'|translate}}</label>
                 <input type="text" class="input">
             </div>
             <div class="col-sm-4">
-                <label class="label">Zipcode</label>
+                <label class="label">{{'Zipcode'|translate}}</label>
                 <input type="text" class="input" placeholder="66-999">
             </div>
         </div>
 
         <div class="row">
             <div class="col-sm-6">
-                <label class="label">Town</label>
+                <label class="label">{{'Town'|translate}}</label>
                 <input type="text" class="input">
             </div>
             <div class="col-sm-6">
-                <label class="label">Country</label>
+                <label class="label">{{'Country'|translate}}</label>
                 <input type="text" class="input">
             </div>
         </div>
@@ -30,55 +30,55 @@
 
         <div class="panel__group">
             <span class="panel__group-text">
-                Other information
+                {{'Other information'|translate}}
             </span>
         </div>
         <div class="row">
             <div class="col-sm-4">
-                <label class="label">VAT number</label>
+                <label class="label">{{'VAT number'|translate}}</label>
                 <input type="text" class="input">
             </div>
             <div class="col-sm-4">
-                <label class="label">CoC no.</label>
+                <label class="label">{{'CoC no'|translate}}</label>
                 <input type="text" class="input">
             </div>
             <div class="col-sm-4">
-                <label class="label">RSIN</label>
+                <label class="label">{{'RSIN'|translate}}</label>
                 <input type="text" class="input">
             </div>
         </div>
-        
+
         <div class="row">
             <div class="col-sm-8 col-sm-push-2">
-                <label class="label">Status</label>
+                <label class="label">{{'Status'|translate}}</label>
                 <select class="input">
-                    <option value="lead">Lead</option>
-                    <option value="prospects">Prospect</option>
-                    <option value="company">Company</option>
+                    <option value="lead">{{'Lead'|translate}}</option>
+                    <option value="prospects">{{'Prospect'|translate}}</option>
+                    <option value="company">{{'Company'|translate}}</option>
                 </select>
             </div>
         </div>
 
         <div class="panel__group">
             <span class="panel__group-text">
-                Internal information
+                {{'Internal information'|translate}}
             </span>
         </div>
         <div>
-            <button class="btn btn--blue" (click)="changeInternalNote()" *ngIf="!isShowInternalNote">Show internal note</button>
+            <button class="btn btn--blue" (click)="changeInternalNote()" *ngIf="!isShowInternalNote">{{'Show internal note'|translate}}</button>
             <textarea class="input" rows="6" *ngIf="isShowInternalNote"></textarea>
-            <button class="btn btn--gray m--t-sm" (click)="changeInternalNote()" *ngIf="isShowInternalNote">Hide internal note</button>
+            <button class="btn btn--gray m--t-sm" (click)="changeInternalNote()" *ngIf="isShowInternalNote">{{'Hide internal note'|translate}}</button>
         </div>
 
         <tabset>
             <tab heading="Additional addresses">
                 <app-new-company-additional-addresses></app-new-company-additional-addresses>
             </tab>
-            
+
             <tab heading="Social">
                 <app-new-company-social-online></app-new-company-social-online>
             </tab>
-            
+
             <tab heading="Description">
                 <app-new-company-description></app-new-company-description>
             </tab>
@@ -87,6 +87,6 @@
 </div>
 
 <div class="m--t-md t--c">
-    <button class="btn btn--link">Clear</button>
-    <button class="btn btn--blue">Save</button>
+    <button class="btn btn--link">{{'Clear'|translate}}</button>
+    <button class="btn btn--blue">{{'Save'|translate}}</button>
 </div>

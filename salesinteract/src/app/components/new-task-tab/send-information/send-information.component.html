@@ -1,7 +1,7 @@
 <div>
   <div class="panel__group">
     <span class="panel__group-text">
-      Variation
+      {{'Variation'|translate}}
     </span>
   </div>
 
@@ -9,33 +9,33 @@
     <div class="flex flex--middle flex--space-between">
       <div class="checkbox">
         <input type="radio" class="checkbox__input" name="send-info" id="send-info-choose-existing" [checked]="sendInformation == 'ce'" (change)="changeSendInformation('ce')">
-        <label for="send-info-choose-existing" class="checkbox__label">Choose existing</label>
+        <label for="send-info-choose-existing" class="checkbox__label">{{'Choose existing'|translate}}</label>
       </div>
       <div class="checkbox">
         <input type="radio" class="checkbox__input" name="send-info" id="send-info-upload-new-file" [checked]="sendInformation == 'unf'" (change)="changeSendInformation('unf')">
-        <label for="send-info-upload-new-file" class="checkbox__label">Upload new file</label>
+        <label for="send-info-upload-new-file" class="checkbox__label">{{'Upload new file'|translate}}</label>
       </div>
       <div class="checkbox">
         <input type="radio" class="checkbox__input" name="send-info" id="send-info-quotation" [checked]="sendInformation == 'q'" (change)="changeSendInformation('q')">
-        <label for="send-info-quotation" class="checkbox__label">Quotation</label>
+        <label for="send-info-quotation" class="checkbox__label">{{'Quotation'|translate}}</label>
       </div>
     </div>
 
     <div *ngIf="sendInformation == 'ce'">
       <app-choose-existing></app-choose-existing>
     </div>
-    
+
     <div *ngIf="sendInformation == 'unf'">
       <app-upload-new-file></app-upload-new-file>
     </div>
-    
+
     <div *ngIf="sendInformation == 'q'">
       <app-quotation></app-quotation>
     </div>
-    
+
     <div class="m--t-md t--c">
-      <button class="btn btn--link">Clear</button>
-      <button class="btn btn--blue">Save</button>
+      <button class="btn btn--link">{{'Clear'|translate}}</button>
+      <button class="btn btn--blue">{{'Save'|translate}}</button>
     </div>
   </div>
 </div>

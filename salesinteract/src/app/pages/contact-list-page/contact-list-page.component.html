@@ -9,21 +9,21 @@
 						<i class="header__icon-icon icon-profile"></i>
 					</div>
 					<div>
-						<p class="header__title">Bewerk contact</p>
+						<p class="header__title">{{'Bewerk contact'|translate}}</p>
 						<ul class="header__breadcrumbs">
 							<li class="header__breadcrumbs-item">
 								<a href="" class="header__breadcrumbs-link">
-									Home page
+									{{'Home page'|translate}}
 								</a>
 							</li>
 							<li class="header__breadcrumbs-item">
 								<a href="" class="header__breadcrumbs-link">
-									Catalog company
+									{{'Catalog company'|translate}}
 								</a>
 							</li>
 							<li class="header__breadcrumbs-item">
 								<span href="" class="header__breadcrumbs-span">
-									Contact list
+									{{'Contact list'|translate}}
 								</span>
 							</li>
 						</ul>
@@ -34,8 +34,8 @@
 					<button class="btn btn--blue btn--new" (click)="openSidebar()">
 						<i class="btn__icon icon-new-plus"></i>
 						<span class="btn__text">
-							<span class="btn__text-text">Create new task</span>
-							<span class="btn__text-text btn__text-text--second">Click what you need adding</span>
+							<span class="btn__text-text">{{'Create new task'|translate}}</span>
+							<span class="btn__text-text btn__text-text--second">{{'Click what you need adding'|translate}}</span>
 						</span>
 					</button>
 				</div>
@@ -57,7 +57,7 @@
 						</tab>
 						<tab>
 							<ng-template tabHeading>
-								Shared files
+								{{'Shared files'|translate}}
 								<span class="badge">3</span>
 							</ng-template>
 
@@ -72,32 +72,32 @@
 								Products
 								<span class="badge">5</span>
 							</ng-template>
-							
+
 							<div class="row">
 
 								<div class="col-lg-6" *ngFor="let product of productList">
 									<app-product-item [product]="product"></app-product-item>
 								</div>
-							
+
 							</div>
-							
+
 						</tab>
 					</tabset>
 				</div>
 			</div>
 		</div>
-		
+
 		<div class="col-lg-4">
-			
+
 			<!-- Contact information -->
 			<app-contact-information></app-contact-information>
-			
+
 			<!-- Account manager information -->
 			<app-manager-information></app-manager-information>
 
 			<!-- Company information -->
 			<app-company-information></app-company-information>
-			
+
 		</div>
 	</div>
 </div>

@@ -2,7 +2,7 @@
     <div class="dragula__min">
         <span class="dragula__item-name">
             <svg-icon class="dragula__item-icon" src="assets/svg/radiobox.svg" [svgStyle]="{ 'width.px':16 }"></svg-icon>
-            Single selection list
+            {{'Single selection list'|translate}}
         </span>
         <span class="dragula__handle">
             <svg-icon src="assets/svg/draggable.svg" [svgStyle]="{ 'width.px':12 }"></svg-icon>
@@ -10,7 +10,7 @@
     </div>
     <div class="dragula__max">
         <p class="dragula__item-title">
-            <input type="text" class="input input--label" placeholder="Write text for label radiobox group here...">
+            <input type="text" class="input input--label" placeholder="{{'Write text for label radiobox group here'|translate}}">
             <button class="dragula__item-delete">
                 <svg-icon src="assets/svg/trash-2.svg" [svgStyle]="{ 'width.px':12 }"></svg-icon>
             </button>
@@ -19,13 +19,13 @@
         <div class="checkbox">
 			<input type="radio" class="checkbox__input">
 			<label for="" class="checkbox__label">
-                <input type="text" class="input input--checkbox" placeholder="Chckbox name">
+                <input type="text" class="input input--checkbox" placeholder="{{'Chckbox name'|translate}}">
             </label>
         </div>
-        
+
         <button class="btn btn--gray btn--ssm">
             <i class="btn__icon icon-plus"></i>
-            Add new radiobox item
+            {{'Add new radiobox item'|translate}}
         </button>
     </div>
 </div>

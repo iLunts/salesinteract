@@ -9,11 +9,11 @@
 						<i class="header__icon-icon icon-box"></i>
 					</div>
 					<div>
-						<p class="header__title">Product list</p>
+						<p class="header__title">{{'Product list'|translate}}</p>
 						<ul class="header__breadcrumbs">
 							<li class="header__breadcrumbs-item">
 								<span href="" class="header__breadcrumbs-span">
-									Home page
+									{{'Home page'|translate}}
 								</span>
 							</li>
 						</ul>
@@ -73,49 +73,49 @@
                 <div class="panel__body">
                     <div class="panel__group">
                         <span class="panel__group-text">
-                            Add new product group
+                            {{'Add new product group'|translate}}
                         </span>
                     </div>
 
                     <div class="row">
                         <div class="col-sm-2">
-                            <label class="label">Color</label>
+                            <label class="label">{{'Color'|translate}}</label>
 
                             <div class="color-picker" dropdown>
                                 <button class="color-picker__picker" dropdownToggle>
                                     <span class="color-picker__pick" [ngStyle]="{'background-color': colorDefault}"></span>
                                 </button>
                                 <div *dropdownMenu class="color-picker dropdown-menu" role="menu" aria-labelledby="button-custom-html">
-                                    <p class="color-picker__title">Color picker</p>
+                                    <p class="color-picker__title">{{'Color picker'|translate}}</p>
                                     <div class="color-picker__current" [ngStyle]="{'background-color': colorDefault}"></div>
                                     <input type="text" class="input m--t" [value]="colorDefault" placeholder="#HEX">
                                     <ul class="color-picker__list">
                                         <li class="color-picker__list-item" [ngStyle]="{'background-color': color}" *ngFor="let color of colorList"></li>
                                     </ul>
                                     <div class="m--t t--c">
-                                        <button class="btn btn--link btn--sm">Cancel</button>
-                                        <button class="btn btn--blue btn--sm">Save</button>
+                                        <button class="btn btn--link btn--sm">{{'Cancel'|translate}}</button>
+                                        <button class="btn btn--blue btn--sm">{{'Save'|translate}}</button>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div class="col-sm-10">
-                            <label class="label">Name</label>
+                            <label class="label">{{'Name'|translate}}</label>
                             <input type="text" class="input">
                         </div>
                     </div>
                     <div>
-                        <label class="label">Description</label>
+                        <label class="label">{{'Description'|translate}}</label>
                         <textarea class="input" name="" id="" cols="30" rows="5"></textarea>
                     </div>
 
                     <div class="t--c">
-                        <button class="btn btn--link">Clear</button>
-                        <button class="btn btn--blue" (click)="addNewProduct()">Create</button>
+                        <button class="btn btn--link">{{'Clear'|translate}}</button>
+                        <button class="btn btn--blue" (click)="addNewProduct()">{{'Create'|translate}}</button>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    
+
 </div>

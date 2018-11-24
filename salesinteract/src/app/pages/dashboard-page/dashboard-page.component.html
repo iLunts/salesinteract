@@ -7,25 +7,30 @@
             <i class="header__icon-icon icon-dashboard"></i>
           </div>
           <div>
-            <p class="header__title">Dashboard</p>
+            <p class="header__title">{{'Dashboard'|translate}}</p>
             <ul class="header__breadcrumbs">
               <li class="header__breadcrumbs-item">
-                <a href="" class="header__breadcrumbs-link"> Home page </a>
+                <a href="" class="header__breadcrumbs-link"> {{'Home page'|translate}} </a>
               </li>
               <li class="header__breadcrumbs-item">
                 <span href="" class="header__breadcrumbs-span">
-                  Dashboard page
+                  {{'Dashboard page'|translate}}
                 </span>
               </li>
             </ul>
           </div>
         </div>
 
-        <button class="btn btn--blue btn--new" (click)="openSidebarNewCompany()" >
+        <button
+          class="btn btn--blue btn--new"
+          (click)="openSidebarNewCompany()"
+        >
           <i class="btn__icon icon-new-plus"></i>
           <span class="btn__text hidden--xs">
-            <span class="btn__text-text">Create new company</span>
-            <span class="btn__text-text btn__text-text--second">Click to create new company</span>
+            <span class="btn__text-text">{{'Create new company'|translate}}</span>
+            <span class="btn__text-text btn__text-text--second"
+              >{{'Click to create new company'|translate}}</span
+            >
           </span>
         </button>
       </section>
@@ -37,10 +42,9 @@
       <div class="panel">
         <div class="panel__header">
           <div>
-            <p class="panel__header-title">Personal statistics</p>
+            <p class="panel__header-title">{{'Personal statistics'|translate}}</p>
             <p class="panel__header-text">
-              September - Here you can see your achievements / touches for this
-              period
+              {{'September - Here you can see your achievements / touches for this period'|translate}}
             </p>
           </div>
 
@@ -82,7 +86,7 @@
         <div class="panel__body" [collapse]="isCollapsedTopBar">
           <div class="row row--divider">
             <div class="col-md-3 col-xs-12">
-              <p class="t--semi-bold">Task history</p>
+              <p class="t--semi-bold">{{'Task history'|translate}}</p>
               <app-task-history-list
                 [taskData]="dashboardData.history"
               ></app-task-history-list>
@@ -91,7 +95,7 @@
             <div class="col-md-6 col-xs-12">
               <div class="row row--divider">
                 <div class="col-md-4 col-sm-5 col-xs-12">
-                  <p class="t--semi-bold">Contacten</p>
+                  <p class="t--semi-bold">{{'Contacts'|translate}}</p>
                   <app-contact-list
                     [contactenList]="contactenList"
                     [contactData]="dashboardData?.statistics.contacts"
@@ -100,17 +104,15 @@
                 </div>
 
                 <div class="col-md-8 col-sm-7 col-xs-12">
-                  <p class="t--semi-bold">Complete tasks</p>
-                  <app-complete-task
-                    [completeData]="completeTaskList"
-                    >
+                  <p class="t--semi-bold">{{'Complete tasks'|translate}}</p>
+                  <app-complete-task [completeData]="completeTaskList">
                   </app-complete-task>
                 </div>
               </div>
             </div>
 
             <div class="col-md-3 col-xs-12">
-              <p class="t--semi-bold">Open quotations</p>
+              <p class="t--semi-bold">{{'Open quotations'|translate}}</p>
               <app-open-quotations-list
                 [openQuotationsData]="dashboardData.quotations"
               ></app-open-quotations-list>
@@ -127,7 +129,7 @@
       <div class="panel panel--filter">
         <div class="panel__title t--red">
           <i class="icon icon-too-late m--r-mini"></i>
-          <span class="t--semi-bold">Task overdue</span>
+          <span class="t--semi-bold">{{'Task overdue'|translate}}</span>
         </div>
         <div class="">
           <ul class="tab tab--h">
@@ -139,7 +141,7 @@
                 tabindex="0"
                 role="button"
               >
-                All
+                {{'All'|translate}}
               </button>
             </li>
             <li class="tab__item">
@@ -150,7 +152,7 @@
                 tabindex="0"
                 role="button"
               >
-                Follow
+                {{'Follow'|translate}}
               </button>
             </li>
             <li class="tab__item">
@@ -159,9 +161,8 @@
                 [(ngModel)]="taskOverdueFilter"
                 btnRadio="visit"
                 tabindex="0"
-                role="button"
-              >
-                Visit
+                role="button">
+                {{'Visit'|translate}}
               </button>
             </li>
           </ul>
@@ -192,7 +193,7 @@
                     id="send-email"
                   />
                   <label for="send-email" class="checkbox__label"
-                    >Not present</label
+                    >{{'Not present'|translate}}</label
                   >
                 </div>
               </li>
@@ -204,7 +205,7 @@
                     id="send-email"
                   />
                   <label for="send-email" class="checkbox__label"
-                    >Not interested</label
+                    >{{'Not interested'|translate}}</label
                   >
                 </div>
               </li>
@@ -216,7 +217,7 @@
                     id="send-email"
                   />
                   <label for="send-email" class="checkbox__label"
-                    >No time</label
+                    >{{'No time'|translate}}</label
                   >
                 </div>
               </li>
@@ -227,7 +228,7 @@
                     class="checkbox__input"
                     id="send-email"
                   />
-                  <label for="send-email" class="checkbox__label">Visit</label>
+                  <label for="send-email" class="checkbox__label">{{'Visit'|translate}}</label>
                 </div>
               </li>
             </ul>
@@ -246,7 +247,12 @@
 
       <!-- Task overdue list -->
       <div class="task-list">
-        <div class="panel panel--sm" *ngFor="let item of dashboardData.tasks | overdueTasks">
+        <div
+          class="panel panel--sm"
+          *ngFor="
+            let item of (dashboardData.tasks | overdueTasks | slice: 0:overdued)
+          "
+        >
           <div class="panel__body task-list__body">
             <div class="flex flex--middle col-lg-3">
               <img
@@ -283,12 +289,23 @@
               </button>
             </div>
           </div>
-
         </div>
-
-        <button class="task-list__more btn btn--gray btn--ssm">
-          Show more
-        </button>
+        <div *ngIf="(dashboardData.tasks | overdueTasks | count | gt: 5)">
+          <button
+            class="task-list__more btn btn--gray btn--ssm"
+            (click)="overdued = 100"
+            *ngIf="overdued == 5"
+          >
+            {{'Show more'|translate}}
+          </button>
+          <button
+            class="task-list__more btn btn--gray btn--ssm"
+            (click)="overdued = 5"
+            *ngIf="overdued == 100"
+          >
+            {{'Hide'|translate}}
+          </button>
+        </div>
       </div>
 
       <hr class="line line--dashed line--sm m--v" />
@@ -297,7 +314,7 @@
       <div class="panel panel--filter">
         <div class="panel__title t--green">
           <i class="icon icon-today m--r-mini"></i>
-          <span class="t--semi-bold">Task today</span>
+          <span class="t--semi-bold">{{'Task today'|translate}}</span>
         </div>
         <div class="">
           <ul class="tab tab--h">
@@ -309,7 +326,7 @@
                 tabindex="0"
                 role="button"
               >
-                All
+                {{'All'|translate}}
               </button>
             </li>
             <li class="tab__item">
@@ -320,7 +337,7 @@
                 tabindex="0"
                 role="button"
               >
-                Follow
+                {{'Follow'|translate}}
               </button>
             </li>
             <li class="tab__item">
@@ -331,7 +348,7 @@
                 tabindex="0"
                 role="button"
               >
-                Visit
+                {{'Visit'|translate}}
               </button>
             </li>
           </ul>
@@ -354,7 +371,14 @@
 
       <!-- Tasks today list -->
       <div class="task-list">
-        <div class="panel panel--sm" *ngFor="let item of dashboardData.tasks | filterByMoment: 'due' : date">
+        <div
+          class="panel panel--sm"
+          *ngFor="
+            let item of (dashboardData.tasks
+              | filterByMoment: 'due':date
+              | slice: 0:displayedTasks)
+          "
+        >
           <div class="panel__body task-list__body">
             <div class="flex flex--middle col-lg-3">
               <img
@@ -393,7 +417,26 @@
           </div>
         </div>
 
-        <a href="" class="task-list__more btn btn--gray btn--ssm">Show more</a>
+        <div
+          *ngIf="
+            (dashboardData.tasks | filterByMoment: 'due':date | count | gt: 5)
+          "
+        >
+          <button
+            class="task-list__more btn btn--gray btn--ssm"
+            (click)="displayedTasks = 100"
+            *ngIf="displayedTasks == 5"
+          >
+            {{'Show more'|translate}}
+          </button>
+          <button
+            class="task-list__more btn btn--gray btn--ssm"
+            (click)="displayedTasks = 5"
+            *ngIf="displayedTasks == 100"
+          >
+            {{'Hide'|translate}}
+          </button>
+        </div>
       </div>
     </div>
 
@@ -401,7 +444,7 @@
     <div class="col-lg-4">
       <div class="panel">
         <div class="panel__header">
-          <p class="panel__header-title">Task calendar</p>
+          <p class="panel__header-title">{{'Task calendar'|translate}}</p>
           <button
             class="btn btn--circle btn--ssm btn--gray m--l"
             popover="Here you see your future/past tasks on date."
@@ -418,7 +461,8 @@
             class="calendar"
             #ucCalendar
             [options]="calendarOptions"
-            (dayClick)='loadTasks($event)'>
+            (dayClick)="loadTasks($event)"
+          >
           </ng-fullcalendar>
         </div>
         <!-- </div> -->
@@ -428,64 +472,54 @@
 </div>
 
 <!-- Sidebar panel create new company -->
-<app-sidebar-new-company [(Hidden)]='isOpenSidebarNewCompany'
+<app-sidebar-new-company
+  [(Hidden)]="isOpenSidebarNewCompany"
   [ngClass]="{ open: isOpenSidebarNewCompany }"
 ></app-sidebar-new-company>
 
 <!-- Templates for popovers -->
 <ng-template #dashPersonalStatistics>
-  <p class="t--md">Here you can see the following statistics for a period.</p>
+  <p class="t--md">{{'Here you can see the following statistics for a period'|translate}}</p>
   <p class="t--md">
-    <b>Task history</b> - With whom you had the latest contact.
+    <b>{{'Task history'|translate}}</b> - {{'With whom you had the latest contact'|translate}}.
   </p>
   <p class="t--md">
-    <b>Contacts</b> - Leads, Prospects and Customers where you were in touch in
-    this period
+    <b>{{'Contacts'|translate}}</b> - {{'Leads, Prospects and Customers where you were in touch inthis period'|translate}}
   </p>
   <p class="t--md">
-    <b>Completed tasks</b> - Overview of your tasks used during this period.
+    <b>{{'Completed tasks'|translate}}</b> - {{'Overview of your tasks used during this period'|translate}}
   </p>
   <p class="t--md">
-    <b>Open quotations</b> - Quotations you have sent and its validity.
+    <b>{{'Open quotations'|translate}}</b> - {{'Quotations you have sent and its validity'|translate}}
   </p>
 </ng-template>
 
 <ng-template #dashTaskToday>
   <p class="t--md">
-    Here you see the leads, prospects and customers where a task is still open
-    to deal with.
+    {{'Here you see the leads, prospects and customers where a task is still opento deal with'|translate}}
   </p>
   <p class="t--md">
-    Overdue tasks are handled to late. Your manager receives a notification of
-    this so it is its up to you to keep you manager and you customers happy.
+    {{'Overdue tasks are handled to late Your manager receives a notification of this so it is its up to you to keep you manager and you customers happy'|translate}}
   </p>
-  <p class="t--md">Today are the tasks you have to deal with today.</p>
+  <p class="t--md">{{'Today are the tasks you have to deal with today'|translate}}</p>
+  <p class="t--md">{{"Once you've entered companies, you'll see the following options:" |translate}} </p>
   <p class="t--md">
-    Once you've entered companies, you'll see the following options:
-  </p>
-  <p class="t--md">
-    If you <b>click on a company name</b> you will be directed to the detailed
-    company page.
+    {{'If you <b>click on a company name</b> you will be directed to the detailed company page'|translate}}
   </p>
   <p class="t--md">
-    If you <b>click on contact</b> you will be directed to the detailed contact
-    page.
+    {{'If you <b>click on contact</b> you will be directed to the detailed contact page'|translate}}
   </p>
   <p class="t--md">
-    Previous results such as "Contact had no time", "Callback appointment", etc,
-    indicate what the previous status of your task handling was.
+    {{'Previous results such as "Contact had no time", "Callback appointment", etc,indicate what the previous status of your task handling was'|translate}}
   </p>
   <p class="t--md">
-    <span class="badge badge--gray">'Task'</span> indicates what action to take.
-    By clicking here you can create a new task.<br />
+    <span class="badge badge--gray">{{'Task'|translate}}</span> {{'indicates what action to take, By clicking here you can create a new task'|translate}}<br />
   </p>
   <p class="t--md">
-    With each task you create here, the prospect / customer will receive an
-    email immediately.<br />
-    This way you build a relationship with your relationship even faster.
+    {{'With each task you create here, the prospect / customer will receive an email immediately'|translate}}<br />
+    {{'This way you build a relationship with your relationship even faster'|translate}}
   </p>
   <p class="t--md">
-    The date field on the right gives you an overview of forward scheduled tasks
-    to come.
+    {{'The date field on the right gives you an overview of forward scheduled tasks to come'|translate}}
   </p>
 </ng-template>

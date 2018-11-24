@@ -8,11 +8,11 @@
 						<i class="header__icon-icon icon-calendar"></i>
 					</div>
 					<div>
-						<p class="header__title">Calendar</p>
+						<p class="header__title">{{'Calendar'|translate}}</p>
 						<ul class="header__breadcrumbs">
 							<li class="header__breadcrumbs-item">
 								<span href="" class="header__breadcrumbs-span">
-									Home page
+									{{'Home page'|translate}}
 								</span>
 							</li>
 						</ul>
@@ -26,13 +26,13 @@
 		<div class="col-lg-12">
 			<div class="panel">
 				<div *ngIf="calendarOptions">
-					<ng-fullcalendar 
-						class="calendar" 
-						#ucCalendar 
-						[options]="calendarOptions" 
-						(eventClick)="eventClick($event.detail)" 
+					<ng-fullcalendar
+						class="calendar"
+						#ucCalendar
+						[options]="calendarOptions"
+						(eventClick)="eventClick($event.detail)"
 						(eventDrop)="updateEvent($event.detail)"
-						(eventResize)="updateEvent($event.detail)" 
+						(eventResize)="updateEvent($event.detail)"
 						(clickButton)="clickButton($event.detail)"
 						>
 					</ng-fullcalendar>

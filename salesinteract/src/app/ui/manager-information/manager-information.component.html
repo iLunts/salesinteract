@@ -6,13 +6,13 @@
 	<div *ngIf="isEdit">
 		<div class="panel__group">
 			<span class="panel__group-text">
-				Account managers 
+				{{'Account managers'|translate}}
 				<span class="badge badge--gray badge--rounded">12</span>
 			</span>
 		</div>
 		<div class="panel__body">
-			<input class="manager__search input input--sm" type="text" placeholder="Please type name" />
-	
+			<input class="manager__search input input--sm" type="text" placeholder="{{'Please type name'|translate}}" />
+
 			<ul class="manager__list">
 				<li class="manager__item" *ngFor="let manager of managerList">
 					<div class="flex flex--middle">
@@ -32,10 +32,10 @@
 					</div>
 				</li>
 			</ul>
-	
+
 			<div class="t--c m--t">
-				<button class="btn btn--link btn--sm" (click)="edit()">Cancel</button>
-				<button class="btn btn--blue btn--sm" (click)="edit()">Save</button>
+				<button class="btn btn--link btn--sm" (click)="edit()">{{'Cancel'|translate}}</button>
+				<button class="btn btn--blue btn--sm" (click)="edit()">{{'Save'|translate}}</button>
 			</div>
 		</div>
 	</div>
@@ -46,7 +46,7 @@
 	<div *ngIf="!isEdit">
 		<div class="panel__group">
 			<span class="panel__group-text">
-				Account managers 
+				{{'Account managers'|translate}}
 				<span class="badge badge--gray badge--rounded">12</span>
 			</span>
 			<div class="panel__group-btns">

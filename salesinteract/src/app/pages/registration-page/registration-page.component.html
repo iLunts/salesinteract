@@ -6,8 +6,8 @@
 
 			<!-- Registration social networks-->
 			<div>
-				<p class="t--h4 m--b-sm">Registration</p>
-				<p class="t--muted t--md m--b">Use one of the following providers to start a quick registration process.</p>
+				<p class="t--h4 m--b-sm">{{'Registration'|translate}}</p>
+				<p class="t--muted t--md m--b">{{'Use one of the following providers to start a quick registration process'|translate}}</p>
 				<div class="row">
 					<div class="col-sm-6">
 						<button class="registration__btn registration__btn--facebook btn btn--gray">
@@ -39,42 +39,42 @@
 			<!-- Registration email-->
 			<div>
 				<!-- <p class="t--h3 m--b-sm">Registration</p> -->
-				<p class="t--muted t--md m--b">Register through your email adres.</p>
+				<p class="t--muted t--md m--b">{{'Register through your email adres'|translate}}</p>
 				<div>
-					<label for="" class="label">E-mail address</label>
+					<label for="" class="label">{{'E-mail address'|translate}}</label>
 					<input type="email" class="input" placeholder="example@salesinteract.com" [(ngModel)]="email">
 				</div>
 				<div class="checkbox checkbox--sm m--b">
 					<input class="checkbox__input" type="checkbox" id="agree" [(ngModel)]="agree">
 					<label class="checkbox__label" for="agree">
-						Yes, I agree to the 
-						<a class="link link--line t--blue" href="https://www.salesinteract.com/terms-of-service/?_ga=2.157596345.2018200033.1542471224-1613555883.1542361943" target="_blank">terms of service</a>
+						{{'Yes, I agree to the'|translate}}
+						<a class="link link--line t--blue" href="https://www.salesinteract.com/terms-of-service/?_ga=2.157596345.2018200033.1542471224-1613555883.1542361943" target="_blank">{{'terms of service'|translate}}</a>
 					</label>
 				</div>
 				<p class="t--md m--b t--regular t--gray">
-					By registering, you confirm that you have read and agree to the 
-					<a class="link link--line t--blue" href="https://www.salesinteract.com/privacy-policy/?_ga=2.228024094.2018200033.1542471224-1613555883.1542361943">privacy policy</a> 
-					and the 
-					<a class="link link--line t--blue" href="https://www.salesinteract.com/dpa/?_ga=2.152419130.2018200033.1542471224-1613555883.1542361943">data processing agreement</a>.
+					{{'By registering, you confirm that you have read and agree to the'|translate}}
+					<a class="link link--line t--blue" href="https://www.salesinteract.com/privacy-policy/?_ga=2.228024094.2018200033.1542471224-1613555883.1542361943">{{'privacy policy'|translate}}</a>
+					{{'and the'|translate}}
+					<a class="link link--line t--blue" href="https://www.salesinteract.com/dpa/?_ga=2.152419130.2018200033.1542471224-1613555883.1542361943">{{'data processing agreement'|translate}}</a>.
 				</p>
 				<div class="flex flex--middle flex--space-between">
-					<button class="btn btn--blue" (click)="registration()" [disabled]="!email?.length && !agree">Register</button>
-					<button class="btn btn--link" [routerLink]="['/login']">Cancel</button>
+					<button class="btn btn--blue" (click)="registration()" [disabled]="!email?.length && !agree">{{'Register'|translate}}</button>
+					<button class="btn btn--link" [routerLink]="['/login']">{{'Cancel'|translate}}</button>
 				</div>
 			</div>
 		</div>
 
 		<div class="registration__panel-right">
 			<div>
-				<h2 class="registration__panel-title">Start your 30-day free trail</h2>
-				<p class="registration__panel-text">Salesinteract is an interactive CRM system that enables organizations to realize faster, better and larger sales. </p>
-				<p class="registration__panel-text">Salesinteract brings structure to the sales process, makes your sales insightful, lets employees work more efficiently and challenges you to achieve the best results for the organization. Understand your customers and change your way of selling.</p>
+				<h2 class="registration__panel-title">{{'Start your 30-day free trail'|translate}}</h2>
+				<p class="registration__panel-text">{{'Salesinteract is an interactive CRM system that enables organizations to realize faster, better and larger sales'|translate}} </p>
+				<p class="registration__panel-text">{{'Salesinteract brings structure to the sales process, makes your sales insightful, lets employees work more efficiently and challenges you to achieve the best results for the organization, Understand your customers and change your way of selling'|translate}}</p>
 			</div>
 
 			<p class="registration__panel-copyright m--t-xlg">
-				2018 Copyright <b>Salesinteract</b>
+				2018 {{'Copyright'|translate}} <b>Salesinteract</b>
 			</p>
-			
+
 		</div>
 	</div>
 </div>

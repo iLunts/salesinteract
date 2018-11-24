@@ -1,3 +1,6 @@
+import { Token, ConnectedOrganisation } from './../../model/tokenDetails';
+import { AuthenticationService, IAuthenticationService } from './../../services/auth.service';
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,7 +10,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TopMenuComponent implements OnInit {
 
-  constructor() { }
+  user: Token;
+  currentOrganisation: ConnectedOrganisation;
+  constructor(protected $http: HttpClient, protected service: IAuthenticationService) {
+
+    this.user = this.service.getUserData();
+
+    this.user.connectedOrganisations.forEach(x => {
+        if (x.id === this.user.organisationId) {
+        this.currentOrganisation = x;
+        }
+    });
+  }
 
   ngOnInit() {
   }

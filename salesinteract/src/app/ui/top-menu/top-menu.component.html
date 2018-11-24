@@ -11,8 +11,8 @@
 			<div class="top-menu__overlay"></div>
 
 			<div class="top-menu__dropdown">
-				<p class="top-menu__dropdown-title">Companyes</p>
-				
+				<p class="top-menu__dropdown-title">{{'Companyes'|translate}}</p>
+
 				<ul class="top-menu__dropdown-list">
 					<li class="top-menu__dropdown-item">
 						<a href="" class="top-menu__dropdown-link">
@@ -43,8 +43,8 @@
 					</li>
 				</ul>
 
-				<p class="top-menu__dropdown-title">Contacts</p>
-				
+				<p class="top-menu__dropdown-title">{{'Contacts'|translate}}</p>
+
 				<ul class="top-menu__dropdown-list">
 					<li class="top-menu__dropdown-item">
 						<a href="" class="top-menu__dropdown-link">
@@ -88,16 +88,16 @@
 			<i class="btn__icon icon-message"></i>
 			<span class="btn__notification"></span>
 		</a>
-		
+
 		<a href="" class="btn btn--circle btn--sm btn--gray">
 			<i class="btn__icon icon-exit"></i>
 		</a>
 
 		<div class="top-menu__companies">
-			<img class="top-menu__companies-avatar avatar avatar--sm" src="https://cdn.worldvectorlogo.com/logos/coca-cola-1.svg" alt="">
+			<img class="top-menu__companies-avatar avatar avatar--sm" src="{{currentOrganisation.logo}}" alt="">
 			<div class="hidden--xs">
-				<p class="top-menu__companies-name">Coca Cola LTD inc.</p>
-				<p class="top-menu__companies-desc">company</p>
+				<p class="top-menu__companies-name">{{currentOrganisation.name}}</p>
+				<p class="top-menu__companies-desc">{{'company'|translate}}</p>
 			</div>
 			<i class="top-menu__companies-icon icon-arrow-down-fill"></i>
 		</div>

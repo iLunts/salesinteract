@@ -1,53 +1,53 @@
 <div class="panel panel--tab">
 	<div class="panel__group">
 		<span class="panel__group-text">
-			Task type 
+			{{'Task type'|translate}}
 		</span>
 	</div>
 
 	<div class="panel__body">
-		
+
 		<div class="row">
 			<div class="col-lg-6">
 				<div class="checkbox">
 					<input type="radio" class="checkbox__input" name="task-type" id="type-np" [checked]="taskType == 'np'" (change)="changeTaskType('np')" />
-					<label for="type-np" class="checkbox__label">Not present</label>
+					<label for="type-np" class="checkbox__label">{{'Not present'|translate}}</label>
 				</div>
 			</div>
 			<div class="col-lg-6">
 				<div class="checkbox">
 					<input type="radio" class="checkbox__input" name="task-type" id="type-sdht" [checked]="taskType == 'sdht'" (change)="changeTaskType('sdht')" />
-					<label for="type-sdht" class="checkbox__label">Sales do not have time</label>
+					<label for="type-sdht" class="checkbox__label">{{'Sales do not have time'|translate}}</label>
 				</div>
 			</div>
 			<div class="col-lg-6">
 				<div class="checkbox">
 					<input type="radio" class="checkbox__input" name="task-type" id="type-ni" [checked]="taskType == 'ni'" (change)="changeTaskType('ni')" />
-					<label for="type-ni" class="checkbox__label">Not interested</label>
+					<label for="type-ni" class="checkbox__label">{{'Not interested'|translate}}</label>
 				</div>
 			</div>
 			<div class="col-lg-6">
 				<div class="checkbox">
 					<input type="radio" class="checkbox__input" name="task-type" id="type-se" [checked]="taskType == 'se'" (change)="changeTaskType('si')" />
-					<label for="type-se" class="checkbox__label">Send information</label>
+					<label for="type-se" class="checkbox__label">{{'Send information'|translate}}</label>
 				</div>
 			</div>
 			<div class="col-lg-6">
 				<div class="checkbox">
 					<input type="radio" class="checkbox__input" name="task-type" id="type-nt" [checked]="taskType == 'nt'" (change)="changeTaskType('nt')" />
-					<label for="type-nt" class="checkbox__label">No time</label>
+					<label for="type-nt" class="checkbox__label">{{'No time'|translate}}</label>
 				</div>
 			</div>
 			<div class="col-lg-6">
 				<div class="checkbox">
 					<input type="radio" class="checkbox__input" name="task-type" id="type-cbl" [checked]="taskType == 'cbl'" (change)="changeTaskType('cbl')" />
-					<label for="type-cbl" class="checkbox__label">Call back later</label>
+					<label for="type-cbl" class="checkbox__label">{{'Call back later'|translate}}</label>
 				</div>
 			</div>
 			<div class="col-lg-6">
 				<div class="checkbox">
 					<input type="radio" class="checkbox__input" name="task-type" id="type-v" [checked]="taskType == 'v'" (change)="changeTaskType('v')" />
-					<label for="type-v" class="checkbox__label">Visit</label>
+					<label for="type-v" class="checkbox__label">{{'Visit'|translate}}</label>
 				</div>
 			</div>
 		</div>

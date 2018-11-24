@@ -1,7 +1,7 @@
 <div class="panel panel--tab">
     <div class="panel__group">
         <span class="panel__group-text">
-            Contact
+            {{'Contact'|translate}}
         </span>
     </div>
     <div class="panel__body">
@@ -9,69 +9,69 @@
         <div class="placeholder">
             <div class="placeholder__img"></div>
             <p class="placeholder__title">
-                Click to to upload a profile picture
+                {{'Click to to upload a profile picture'|translate}}
             </p>
             <p class="placeholder__desc">
-                (Max file size: 25 MB; Allowed formats: Documents, presentations and images)
+                {{'(Max file size: 25 MB; Allowed formats: Documents, presentations and images)'|translate}}
             </p>
             <input class="placeholder__input" type="file">
         </div>
 
         <div class="panel__group">
             <span class="panel__group-text">
-                General information
+                {{'General information'|translate}}
             </span>
         </div>
 
 		<div class="row">
 			<div class="col-xs-6">
-				<label class="label">First name</label>
+				<label class="label">{{'First name'|translate}}</label>
 				<input type="text" class="input">
 			</div>
 			<div class="col-xs-6">
-				<label class="label">Surname</label>
-				<input type="text" class="input">
-			</div>
-		</div>
-
-		<div class="row">
-			<div class="col-xs-6">
-				<label class="label">Phone number</label>
-				<input type="text" class="input">
-			</div>
-			<div class="col-xs-6">
-				<label class="label">E-mail adress</label>
+				<label class="label">{{'Surname'|translate}}</label>
 				<input type="text" class="input">
 			</div>
 		</div>
 
 		<div class="row">
 			<div class="col-xs-6">
-				<label class="label">Job title</label>
+				<label class="label">{{'Phone number'|translate}}</label>
 				<input type="text" class="input">
 			</div>
 			<div class="col-xs-6">
-				<label class="label">Gender</label>
+				<label class="label">{{'E-mail adress'|translate}}</label>
+				<input type="text" class="input">
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-xs-6">
+				<label class="label">{{'Job title'|translate}}</label>
+				<input type="text" class="input">
+			</div>
+			<div class="col-xs-6">
+				<label class="label">{{'Gender'|translate}}</label>
 				<select class="input">
-					<option value="male">Male</option>
-					<option value="famale">Famale</option>
+					<option value="male">{{'Male'|translate}}</option>
+					<option value="famale">{{'Famale'|translate}}</option>
 				</select>
 			</div>
 		</div>
 
 		<div class="row">
 			<div class="col-xs-6">
-				<label class="label">Default language</label>
+				<label class="label">{{'Default language'|translate}}</label>
 				<select class="input">
-					<option value="english">English</option>
-					<option value="nederlands">Nederlands</option>
+					<option value="english">{{'English'|translate}}</option>
+					<option value="nederlands">{{'Nederlands'|translate}}</option>
 				</select>
 			</div>
 			<div class="col-xs-6">
-				<label class="label">Time zone</label>
+				<label class="label">{{'Time zone'|translate}}</label>
 				<select class="input">
-					<option value="europe/amsterdam">Europe/Amsterdam</option>
-					<option value="other">Other</option>
+					<option value="europe/amsterdam">{{'Europe/Amsterdam'|translate}}</option>
+					<option value="other">{{'Other'|translate}}</option>
 				</select>
 			</div>
 		</div>
@@ -80,30 +80,30 @@
             <tab heading="Account manager">
                 <app-new-contact-account-manager></app-new-contact-account-manager>
             </tab>
-            
+
             <tab heading="Social">
                 <app-new-contact-social-online></app-new-contact-social-online>
             </tab>
-            
+
             <tab heading="Description">
                 <app-new-contact-description></app-new-contact-description>
             </tab>
         </tabset>
 	</div>
-	
+
 </div>
 
 <div class="panel">
 	<div class="panel__body">
 		<div class="t--c">
 			<button class="btn btn--blue">
-				Task followup
+				{{'Task followup'|translate}}
 			</button>
 		</div>
 	</div>
 </div>
 
 <div class="m--t-md t--c">
-    <button class="btn btn--link">Clear</button>
-    <button class="btn btn--blue">Save</button>
+    <button class="btn btn--link">{{'Clear'|translate}}</button>
+    <button class="btn btn--blue">{{'Save'|translate}}</button>
 </div>

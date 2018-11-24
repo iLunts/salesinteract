@@ -21,6 +21,10 @@ export class DashboardPageComponent implements OnInit {
   taskTodayFilter = 'all';
   taskOverdueFilter = 'all';
 
+  overdued = 5;
+  displayedTasks = 5;
+
+
   isCollapsedTopBar = false;
   isOpenSidebarNewCompany = false;
   single: any[];

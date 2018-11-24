@@ -9,11 +9,11 @@
 						<i class="header__icon-icon icon-setting"></i>
 					</div>
 					<div>
-						<p class="header__title">Form fields list</p>
+						<p class="header__title">{{'Form fields list'|translate}}</p>
 						<ul class="header__breadcrumbs">
 							<li class="header__breadcrumbs-item">
 								<span href="" class="header__breadcrumbs-span">
-									Home page
+									{{'Home page'|translate}}
 								</span>
 							</li>
 						</ul>
@@ -34,9 +34,9 @@
 					</label>
 				</div>
 
-				<span class="badge badge--green m--reset" *ngIf="item.published">Published</span>
-				<span class="badge badge--red m--reset" *ngIf="!item.published">Unpublished</span>
-				
+				<span class="badge badge--green m--reset" *ngIf="item.published">{{'Published'|translate}}</span>
+				<span class="badge badge--red m--reset" *ngIf="!item.published">{{'Unpublished'|translate}}</span>
+
 				<button class="btn btn--circle btn--gray btn--ssm" [routerLink]="['/settings', 'survey', item.id, 'edit']">
 					<i class="btn__icon icon-edit"></i>
 				</button>

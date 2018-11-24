@@ -9,16 +9,16 @@
             <i class="header__icon-icon icon-crm"></i>
           </div>
           <div>
-            <p class="header__title">Companies</p>
+            <p class="header__title">{{'Companies'|translate}}</p>
             <ul class="header__breadcrumbs">
               <li class="header__breadcrumbs-item">
                 <a href="" class="header__breadcrumbs-link">
-                  Home page
+                  {{'Home page'|translate}}
                 </a>
               </li>
               <li class="header__breadcrumbs-item">
                 <span href="" class="header__breadcrumbs-span">
-                  CRM page
+                  {{'CRM page'|translate}}
                 </span>
               </li>
             </ul>
@@ -28,8 +28,8 @@
           <button class="btn btn--blue btn--new" (click)="openSidebarNewCompany()">
             <i class="btn__icon icon-new-plus"></i>
             <span class="btn__text">
-              <span class="btn__text-text">Create new company</span>
-              <span class="btn__text-text btn__text-text--second">Click what you need adding</span>
+              <span class="btn__text-text">{{'Create new company'|translate}}</span>
+              <span class="btn__text-text btn__text-text--second">{{'Click what you need adding'|translate}}</span>
             </span>
           </button>
         </div>
@@ -39,22 +39,22 @@
 				<div class="panel__title">
           <div class="checkbox checkbox--sm">
             <input type="checkbox" class="checkbox__input" id="select-all">
-            <label class="checkbox__label" for="select-all">Select all</label>
+            <label class="checkbox__label" for="select-all">{{'Select all'|translate}}</label>
           </div>
 				</div>
 				<div class="">
 					<ul class="tab tab--h">
 						<li class="tab__item active">
-							<a href="" class="tab__link">All</a>
+							<a href="" class="tab__link">{{'All'|translate}}</a>
 						</li>
 						<li class="tab__item">
-							<a href="" class="tab__link">Lead</a>
+							<a href="" class="tab__link">{{'Lead'|translate}}</a>
 						</li>
 						<li class="tab__item">
-							<a href="" class="tab__link">Prospect</a>
+							<a href="" class="tab__link">{{'Prospect'|translate}}</a>
 						</li>
 						<li class="tab__item">
-							<a href="" class="tab__link">Customer</a>
+							<a href="" class="tab__link">{{'Customer'|translate}}</a>
 						</li>
 					</ul>
         </div>
@@ -62,7 +62,7 @@
         <!-- Export -->
         <button class="btn btn--gray btn--sm m--l-sm">
           <svg-icon class="btn__icon m--r-mini" src="assets/svg/export-file.svg"></svg-icon>
-          <span>Export to Excel</span>
+          <span>{{'Export to Excel'|translate}}</span>
         </button>
 
 				<div class="flex flex--middle">
@@ -72,9 +72,9 @@
             <select class="input-group__input"
                     tooltip="Show companies of:"
                     container="body">
-              <option value="">All managers</option>
-              <option value="">Marc Burgh</option>
-              <option value="">Peter Koper</option>
+              <option value="">{{'All managers'|translate}}</option>
+              <option value="">{{'Marc Burgh'|translate}}</option>
+              <option value="">{{'Peter Koper'|translate}}</option>
             </select>
           </div>
           <div class="input-group">
@@ -83,10 +83,10 @@
           </div>
           <div class="col-lg-5 p--reset m--l-sm">
             <select class="input input--sm m--reset" tooltip="Showing 1 to 4 of 4 entries (filtered from 12 total entries)" placement="left" container="body">
-              <option value="10">10 items</option>
-              <option value="25">25 items</option>
-              <option value="50">50 items</option>
-              <option value="100">100 items</option>
+              <option value="10">10 {{'items'|translate}}</option>
+              <option value="25">25 {{'items'|translate}}</option>
+              <option value="50">50 {{'items'|translate}}</option>
+              <option value="100">100 {{'items'|translate}}</option>
             </select>
           </div>
 
@@ -123,7 +123,7 @@
               <img class="avatar avatar--square m--r-sm" [src]="item.companyImage" alt="">
               <div>
                 <span class="contact-list__title">{{item.companyName}}</span>
-                <p class="contact-list__type">Company name</p>
+                <p class="contact-list__type">{{'Company name'|translate}}</p>
               </div>
             </div>
             <div class="col-lg-1 t--c">
@@ -171,6 +171,6 @@
 
 <!-- Templates for popovers -->
 <ng-template #crmCompanies>
-    <p class="t--md">Here you see companies with their contacts and the status of the companies and contacts you manage.</p>
-    <p class="t--md">By clicking on the filter you can also see company and contacts or other account managers.</p>
+    <p class="t--md">{{'Here you see companies with their contacts and the status of the companies and contacts you manage'|translate}}</p>
+    <p class="t--md">{{'By clicking on the filter you can also see company and contacts or other account managers'|translate}}</p>
 </ng-template>

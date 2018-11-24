@@ -56,7 +56,7 @@ import { SurveyTextareaFieldComponent } from './ui/survey/survey-textarea-field/
 import { SurveyCheckboxFieldComponent } from './ui/survey/survey-checkbox-field/survey-checkbox-field.component';
 import { SurveyRadioFieldComponent } from './ui/survey/survey-radio-field/survey-radio-field.component';
 import { AngularSvgIconModule } from 'angular-svg-icon';
-import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS, HttpClient } from '@angular/common/http';
 import { SurveyMultiplyFieldComponent } from './ui/survey/survey-multiply-field/survey-multiply-field.component';
 import { SearchCocTabComponent } from './components/search-coc-tab/search-coc-tab.component';
 import { CrmPageComponent } from './pages/crm-page/crm-page.component';
@@ -84,9 +84,27 @@ import { SidebarOpenQuotationsComponent } from './ui/sidebar-open-quotations/sid
 import { SidebarTaskHistoryComponent } from './ui/sidebar-task-history/sidebar-task-history.component';
 import { OverdueTasksPipe } from './pipes/overdueTasks.pipe';
 import { TokenInterceptor } from './guards/auth.interceptor';
+import { CountPipe } from './pipes/count.pipe';
+import { GtPipe } from './pipes/gt.pipe';
+import { TranslateModule, TranslateLoader, MissingTranslationHandler, MissingTranslationHandlerParams } from '@ngx-translate/core';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 
 export function tokenGetter() {
   return localStorage.getItem('access_token');
+}
+
+export function HttpLoaderFactory(http: HttpClient) {
+  return new TranslateHttpLoader(http);
+}
+
+export class MyMissingTranslationHandler implements MissingTranslationHandler {
+  handle(params: MissingTranslationHandlerParams) {
+      if (params.translateService.currentLang === params.translateService.defaultLang) {
+          return params.key;
+      } else {
+          return params.key;
+      }
+  }
 }
 
 
@@ -155,11 +173,21 @@ export function tokenGetter() {
     SidebarOpenQuotationsComponent,
     SidebarTaskHistoryComponent,
     FilterByMomentPipe,
-    OverdueTasksPipe
+    OverdueTasksPipe,
+    CountPipe,
+    GtPipe
   ],
   imports: [
     HttpClientModule,
     FormsModule,
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: HttpLoaderFactory,
+        deps: [HttpClient]
+      },
+      missingTranslationHandler: {provide: MissingTranslationHandler, useClass: MyMissingTranslationHandler},
+    }),
     BrowserModule,
     RouterModule,
     routing,

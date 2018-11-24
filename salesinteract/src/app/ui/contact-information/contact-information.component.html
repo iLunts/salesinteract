@@ -4,10 +4,10 @@
 	<!-- Edit mode -->
 	<!-- ********* -->
 	<div *ngIf="isEdit && !isMoreContacts">
-		
+
 		<div class="panel__group">
 			<span class="panel__group-text">
-				Contact information
+				{{'Contact information'|translate}}
 			</span>
 			<div class="panel__group-btns">
 				<button class="btn btn--circle btn--red btn--sm">
@@ -34,11 +34,11 @@
 				</div>
 				<div class="col-lg-8 col-sm-12 col-xs-8">
 					<div>
-						<label class="label">First Name:</label>
+						<label class="label">{{'First Name:'|translate}}</label>
 						<input type="text" class="input">
 					</div>
 					<div>
-						<label class="label">Last Name:</label>
+						<label class="label">{{'Last Name:'|translate}}</label>
 						<input type="text" class="input">
 					</div>
 				</div>
@@ -47,42 +47,42 @@
 			<div class="row">
 				<div class="col-lg-12 col-sm-12 col-xs-12">
 					<div>
-						<label class="label">E-mail address:</label>
+						<label class="label">{{'E-mail address:'|translate}}</label>
 						<input type="text" class="input">
 					</div>
 					<div>
-						<label class="label">Phone number:</label>
+						<label class="label">{{'Phone number:'|translate}}</label>
 						<input type="text" class="input">
 					</div>
 					<div>
-						<label class="label">Function:</label>
+						<label class="label">{{'Function:'|translate}}</label>
 						<input type="text" class="input">
 					</div>
-					
+
 					<div>
-						<label class="label">Sex:</label>
+						<label class="label">{{'Sex:'|translate}}</label>
 						<div class="row">
 							<div class="col-lg-6">
 								<div class="checkbox">
 									<input type="radio" class="checkbox__input" name="sex" id="man">
-									<label for="man" name="sex" class="checkbox__label">Man</label>
+									<label for="man" name="sex" class="checkbox__label">{{'Male'|translate}}</label>
 								</div>
 							</div>
 							<div class="col-lg-6">
 								<div class="checkbox">
 									<input type="radio" class="checkbox__input" name="sex" id="woman">
-									<label for="woman" name="sex" class="checkbox__label">Woman</label>
+									<label for="woman" name="sex" class="checkbox__label">{{'Female'|translate}}</label>
 								</div>
 							</div>
 						</div>
 					</div>
 
 					<div>
-						<label class="label">Standard language:</label>
+						<label class="label">{{'Standard language:'|translate}}</label>
 						<input type="text" class="input">
 					</div>
 					<div>
-						<label class="label">Time zone:</label>
+						<label class="label">{{'Time zone:'|translate}}</label>
 						<input type="text" class="input">
 					</div>
 				</div>
@@ -91,7 +91,7 @@
 
 		<div class="panel__group">
 			<span class="panel__group-text">
-				Online / Social links
+			{{'Online / Social links'|translate}}
 			</span>
 		</div>
 		<div class="panel__body">
@@ -111,29 +111,29 @@
 
 		<div class="panel__group">
 			<span class="panel__group-text">
-				Description
+				{{'Description'|translate}}
 			</span>
 		</div>
-		
+
 		<div class="panel__body">
 			<textarea class="input" rows="6" placeholder="Lorem Ipsum is simply dummy text of the printing"></textarea>
-			
+
 			<div class="t--c m--t">
-				<button class="btn btn--link btn--sm" (click)="edit()">Cancel</button>
-				<button class="btn btn--blue btn--sm" (click)="edit()">Save</button>
+				<button class="btn btn--link btn--sm" (click)="edit()">{{'Cancel'|translate}}</button>
+				<button class="btn btn--blue btn--sm" (click)="edit()">{{'Save'|translate}}</button>
 			</div>
 		</div>
 	</div>
-	
+
 
 	<!-- ********* -->
 	<!-- Show mode -->
 	<!-- ********* -->
 	<div *ngIf="!isEdit && !isMoreContacts">
-		
+
 		<div class="panel__group">
 			<span class="panel__group-text">
-				Contact information
+				{{'Contact information'|translate}}
 			</span>
 			<div class="panel__group-btns">
 				<button class="btn btn--circle btn--blue btn--sm" (click)="edit()">
@@ -151,8 +151,8 @@
 					</div>
 				</div>
 				<div class="col-lg-8">
-					<p class="m--b-sm t--h4 t--semi-bold">Grant Marshall</p>
-					
+					<p class="m--b-sm t--h4 t--semi-bold">{{'Grant Marshall'|translate}}</p>
+
 					<p class="m--b-sm">
 						<i class="icon-mail m--r-mini t--gray"></i>
 						marshall@yahoo.com
@@ -200,11 +200,11 @@
 				</div>
 			</div>
 
-			<p class="m--v-sm">Roident est duis duis sit occaecat ea eiusmod laboris mollit ullamco mollit nisi veniam…</p>
+			<p class="m--v-sm">{{'Roident est duis duis sit occaecat ea eiusmod laboris mollit ullamco mollit nisi veniam'|translate}}</p>
 			<div class="t--c">
 				<button class="btn btn--blue btn--sm" (click)="showMoreContacts()">
 					<i class="btn__icon icon-contacts icon icon--md"></i>
-					<span class="btn__text">Show other contacts</span>
+					<span class="btn__text">{{'Show other contacts'|translate}}</span>
 				</button>
 			</div>
 		</div>
@@ -249,6 +249,6 @@
 				</li>
 			</ul>
 		</div>
-		
+
 	</div>
 </div>

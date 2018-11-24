@@ -16,8 +16,8 @@
 	</div>
 	<div class="panel__body">
 		<p class="file-item__name">{{file.name}}</p>
-		<p class="file-item__added">Added: <b>{{file.added}}</b></p>
-		<p class="file-item__view">Last viewed: <b>{{file.view}}</b></p>
+		<p class="file-item__added">{{'Added:'|translate}} <b>{{file.added}}</b></p>
+		<p class="file-item__view">{{'Last viewed:'|translate}} <b>{{file.view}}</b></p>
 	</div>
 </div>
 
@@ -25,7 +25,7 @@
 <ng-template #template class="modal-sm">
 	<div class="modal-header">
 		<h4 class="modal-title pull-left">
-			File name: "Show 121_ma.jpg"
+		{{'File name:'|translate}} "Show 121_ma.jpg"
 		</h4>
 		<button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
 			<span aria-hidden="true">&times;</span>

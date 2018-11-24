@@ -3,7 +3,7 @@
 
   <div class="sidebar__panel">
     <header class="sidebar__header">
-      <p class="sidebar__header-title">Create new {{tabHeading}}</p>
+      <p class="sidebar__header-title">{{'Create new'|translate}} {{tabHeading}}</p>
       <a (click)='close()' class="sidebar__close">
         <i class="icon-close"></i>
       </a>
@@ -14,7 +14,7 @@
       <div class="panel">
         <div class="panel__group">
           <span class="panel__group-text">
-              Company information
+              {{'Company information'|translate}}
           </span>
         </div>
 
@@ -24,20 +24,20 @@
               <div class="placeholder placeholder--sm">
                 <div class="placeholder__img"></div>
                 <p class="placeholder__title">
-                    Click to select file
+                    {{'Click to select file'|translate}}
                 </p>
                 <input class="placeholder__input" type="file">
               </div>
             </div>
             <div class="col-sm-7">
                 <div>
-                    <label class="label">Company name</label>
+                    <label class="label">{{'Company name'|translate}}</label>
                     <div class="input-group input-group--required">
                         <input type="text" [(ngModel)]="companyName" class="input-group__input">
                     </div>
                 </div>
                 <div>
-                    <label class="label">Phone number</label>
+                    <label class="label">{{'Phone number'|translate}}</label>
                     <input type="text" class="input" placeholder="+4 (900) ">
                 </div>
             </div>

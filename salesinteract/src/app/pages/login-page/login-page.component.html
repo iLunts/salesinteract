@@ -6,69 +6,69 @@
 
 			<!-- Login -->
 			<div *ngIf="!isResetPassword">
-				<p class="t--h3 m--b-sm">Login</p>
+				<p class="t--h3 m--b-sm">{{'Login'|translate}}</p>
 				<!-- <p class="t--muted t--md m--b">To reset your password we need your email address</p> -->
 				<div [ngClass]="{'error-field': error}">
-					<label for="" class="label">E-mail address</label>
+					<label for="" class="label">{{'E-mail address'|translate}}</label>
 					<input type="email" class="input" placeholder="example@salesinteract.com" [(ngModel)]='email'>
 				</div>
 				<div [ngClass]="{'error-field': error}">
-					<label for="" class="label">Password</label>
+					<label for="" class="label">{{'Password'|translate}}</label>
 					<input type="password" class="input" placeholder="********" [(ngModel)]='password'>
 				</div>
 				<div class="error-block" *ngIf='error'>
-					Incorrect login or password
+					{{'Incorrect login or password'|translate}}
 				</div>
 				<div class="flex flex--middle flex--space-between">
-					<button class="btn btn--blue" (click)="login()" [disabled]="!email?.length && !password?.length">Login</button>
-          			<button class="btn btn--link" (click)="resetPassword()">Forgot password?</button>
+					<button class="btn btn--blue" (click)="login()" [disabled]="!email?.length && !password?.length">{{'Login'|translate}}</button>
+          			<button class="btn btn--link" (click)="resetPassword()">{{'Forgot password?'|translate}}</button>
 				</div>
 			</div>
 
 			<!-- Reset password -->
 			<div *ngIf="isResetPassword">
-				<p class="t--h3 m--b-sm">Reset password</p>
-				<p class="t--muted t--md m--b">To reset your password we need your email address</p>
+				<p class="t--h3 m--b-sm">{{'Reset password'|translate}}</p>
+				<p class="t--muted t--md m--b">{{'To reset your password we need your email address'|translate}}</p>
 				<div>
-					<label for="" class="label">E-mail address</label>
+					<label for="" class="label">{{'E-mail address'|translate}}</label>
 					<input type="email" class="input" placeholder="example@salesinteract.com">
 				</div>
 				<div class="flex flex--middle flex--space-between">
-					<button class="btn btn--blue">Send</button>
-					<button class="btn btn--link" (click)="resetPassword()">Cancel</button>
+					<button class="btn btn--blue">{{'Send'|translate}}</button>
+					<button class="btn btn--link" (click)="resetPassword()">{{'Cancel'|translate}}</button>
 				</div>
 			</div>
 
 			<!-- Reset password with error -->
 			<div *ngIf="isResetPasswordError">
-				<p>Dit e-mailadres is niet bekend bij ons</p>
+				<p>{{'Dit e-mailadres is niet bekend bij ons'|translate}}</p>
 				<div class="flex flex--middle flex--space-between">
-					<button class="btn btn--blue">Probeer nogmaals</button>
+					<button class="btn btn--blue">{{'Probeer nogmaals'|translate}}</button>
 				</div>
 			</div>
 
 			<!-- Reset password without error -->
 			<div *ngIf="isResetPasswordError">
-				<p>Dit e-mailadres is niet bekend bij ons</p>
+				<p>{{'Dit e-mailadres is niet bekend bij ons'|translate}}</p>
 				<div class="flex flex--middle flex--space-between">
-					<button class="btn btn--blue">Probeer nogmaals</button>
+					<button class="btn btn--blue">{{'Probeer nogmaals'|translate}}</button>
 				</div>
 			</div>
 		</div>
 
 		<div class="login__panel-right">
 			<div>
-				<h2 class="login__panel-title">Interactive Easy to use Sales CRM</h2>
-				<p class="login__panel-text">Next generation CRM for companies that take their sales serious</p>
-				<p class="login__panel-text">If you wanna be part of the big shift in marketing, connect with your customers</p>
+				<h2 class="login__panel-title">{{'Interactive Easy to use Sales CRM'|translate}}</h2>
+				<p class="login__panel-text">{{'Next generation CRM for companies that take their sales serious'|translate}}</p>
+				<p class="login__panel-text">{{'If you wanna be part of the big shift in marketing, connect with your customers'|translate}}</p>
 			</div>
 			<div class="m--t-xlg t--c">
-				<p class="t--regular">Do not have an account?</p>
-				<button class="btn btn--green" [routerLink]="['/register']">Register now</button>
+				<p class="t--regular">{{'Do not have an account?'|translate}}</p>
+				<button class="btn btn--green" [routerLink]="['/register']">{{'Register now'|translate}}</button>
 			</div>
 
 			<p class="login__panel-copyright">
-				2018 Copyright <b>Salesinteract</b>
+				2018 {{'Copyright'|translate}} <b>Salesinteract</b>
 			</p>
 
 		</div>

@@ -6,7 +6,7 @@
             </span>
             <div>
                 <p class="aside__header-name">Coen van der Kolk</p>
-                <p class="aside__header-role">Administrator</p>
+                <p class="aside__header-role">{{'Administrator'|translate}}</p>
             </div>
         </div>
 
@@ -18,7 +18,7 @@
                             [attr.aria-expanded]="!isCollapsed" aria-controls="collapseBasic">
                             <span>
                                 <i class="aside__link-icon icon-dashboard"></i>
-                                Dashboard
+                                {{'Dashboard'|translate}}
                             </span>
                             <i class="aside__link-icon aside__link-icon--arrow icon-arrow-down-fill"></i>
                     </button>
@@ -26,17 +26,17 @@
                     <ul class="aside__menu" [collapse]="!isCollapsed">
                         <li class="aside__item">
                             <a [routerLink]="['','dashboard']" routerLinkActive="active" class="aside__link">
-                                My dashboard
+                                {{'My dashboard'|translate}}
                             </a>
                         </li>
                         <li class="aside__item">
                             <a [routerLink]="['','statistics']" routerLinkActive="active" class="aside__link">
-                                Statistics
+                                {{'Statistics'|translate}}
                             </a>
                         </li>
                         <li class="aside__item">
                             <a [routerLink]="['','quick-views']" routerLinkActive="active" class="aside__link">
-                                Quick views
+                                {{'Quick views'|translate}}
                             </a>
                         </li>
                     </ul>
@@ -44,55 +44,55 @@
                 <!-- <li class="aside__item">
                     <a [routerLink]="['dashboard']" routerLinkActive="active" class="aside__link">
                         <i class="aside__link-icon icon-dashboard"></i>
-                        Dashboard
+                        {{'Dashboard'|translate}}
                     </a>
                 </li> -->
                 <li class="aside__item">
                     <a [routerLink]="['','crm']" class="aside__link" routerLinkActive="active">
                         <i class="aside__link-icon icon-crm"></i>
-                        CRM
+                        {{'CRM'|translate}}
                     </a>
                 </li>
                 <li class="aside__item">
                     <a class="aside__link" [routerLink]="['','calendar']" routerLinkActive="active">
                         <i class="aside__link-icon icon-calendar"></i>
-                        Calendar
+                        {{'Calendar'|translate}}
                     </a>
                 </li>
                 <li class="aside__item">
                     <a class="aside__link" [routerLink]="['','products']" routerLinkActive="active">
                         <i class="aside__link-icon icon-box"></i>
-                        Products
+                        {{'Products'|translate}}
                     </a>
                 </li>
                 <li class="aside__item">
                     <a class="aside__link">
                         <i class="aside__link-icon icon-messages"></i>
-                        Communications center
+                        {{'Communications center'|translate}}
                     </a>
                 </li>
                 <li class="aside__item">
                     <a class="aside__link">
                         <i class="aside__link-icon icon-team"></i>
-                        My team
+                        {{'My team'|translate}}
                     </a>
                 </li>
                 <li class="aside__item">
                     <a class="aside__link" [routerLink]="['','shared-files']" routerLinkActive="active">
                         <i class="aside__link-icon icon-mail"></i>
-                        Shared files
+                        {{'Shared files'|translate}}
                     </a>
                 </li>
                 <li class="aside__item">
                     <a [routerLink]="['','settings']" class="aside__link" routerLinkActive="active">
                         <i class="aside__link-icon icon-setting"></i>
-                        Settings
+                        {{'Settings'|translate}}
                     </a>
                 </li>
                 <li class="aside__item">
                     <a href="https://intercom.help/salesinteract" class="aside__link" target="_blank">
                         <i class="aside__link-icon icon-help"></i>
-                        Help
+                        {{'Help'|translate}}
                     </a>
                 </li>
             </ul>
@@ -111,13 +111,13 @@
             <li class="aside__item">
                 <a href="" class="aside__link">
                     <i class="aside__link-icon icon-exit"></i>
-                    Exit
+                    {{'Exit'|translate}}
                 </a>
             </li>
         </ul>
 
         <p class="aside__copyright">
-            © Copyright <a href="" class="link">Salesinteract</a> 2018
+            © {{'Copyright'|translate}} <a href="" class="link">Salesinteract</a> 2018
         </p>
     </div>
 </aside>
