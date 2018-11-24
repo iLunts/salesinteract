@@ -1,11 +1,11 @@
 <aside class="aside">
     <div>
         <div class="aside__header" (click)="switchRoute()">
-            <span class="aside__header-avatar avatar">
-                <i class="avatar__icon icon-profile"></i>
+            <span class="aside__header-avatar avatar" [style.backgroundImage]="'url('+ user.photo +')'">
+                <i *ngIf='!user.photo' class="avatar__icon icon-profile"></i>
             </span>
             <div>
-                <p class="aside__header-name">Coen van der Kolk</p>
+                <p class="aside__header-name">{{user.firstname}} {{user.lastname}}</p>
                 <p class="aside__header-role">{{'Administrator'|translate}}</p>
             </div>
         </div>
