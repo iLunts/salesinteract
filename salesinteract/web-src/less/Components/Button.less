@@ -666,6 +666,17 @@ a{
 // ------------------------------------------------------------
 .btn-group{
     position: relative;
+
+    & + .btn-group,
+    & + .btn{
+        margin-left: 10px;
+    }
+
+    &.open{
+        .dropdown-toggle{
+            box-shadow: none;
+        }
+    }
 }
 
 

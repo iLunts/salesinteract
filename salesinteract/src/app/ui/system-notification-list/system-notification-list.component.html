@@ -1,0 +1,20 @@
+<ul class="notification-list list list--v list--line">
+	<li class="notification-list__item list__item" *ngFor="let item of notificationList">
+		<div class="notification-list__content">
+			<span class="notification-list__avatar avatar avatar--sm avatar--empty"></span>
+			<div>
+				<a class="notification-list__name">{{item.name}}</a>
+				<p class="notification-list__desc">{{item.desc}}</p>
+			</div>
+		</div>
+		<div class="notification-list__status">
+			<span class="badge badge--red" *ngIf="item.new">{{'New'|translate}}</span>
+			<p class="notification-list__status-date">{{item.date}}</p>
+		</div>
+	</li>
+</ul>
+<div class="t--c">
+	<button class="btn btn--ssm btn--gray m--t-sm">
+		{{'See all alerts' | translate}}
+	</button>
+</div>

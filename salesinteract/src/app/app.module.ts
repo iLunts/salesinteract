@@ -90,6 +90,7 @@ import { TranslateModule, TranslateLoader, MissingTranslationHandler, MissingTra
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { SidebarSelectCompanyComponent } from './ui/sidebar-select-company/sidebar-select-company.component';
 import { EqPipe } from './pipes/eq.pipe';
+import { SystemNotificationListComponent } from './ui/system-notification-list/system-notification-list.component';
 
 export function tokenGetter() {
   return localStorage.getItem('access_token');
@@ -179,7 +180,8 @@ export class MyMissingTranslationHandler implements MissingTranslationHandler {
     CountPipe,
     GtPipe,
     SidebarSelectCompanyComponent,
-    EqPipe
+    EqPipe,
+    SystemNotificationListComponent
   ],
   imports: [
     HttpClientModule,

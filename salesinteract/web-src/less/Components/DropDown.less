@@ -32,6 +32,21 @@
         border: none;
         border-radius: 0;
 
+        &.dropdown-menu-right {
+            right: 0;
+            left: auto
+        }
+
+        &.dropdown-menu-left {
+            right: auto;
+            left: 0
+        }
+
+        &.dropdown-menu-center {
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
         &&--fixed{
 
             &-200{
@@ -46,6 +61,11 @@
             .dropdown-menu__link{
                 font-size: .8rem;
             }
+        }
+
+        // Modificator '.dropdown-menu.dropdown-menu--md'
+        &&--md{
+            min-width: 300px;   
         }
 
         // Element '.open .dropdown-menu'

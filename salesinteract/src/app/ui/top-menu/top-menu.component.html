@@ -78,15 +78,46 @@
 		</div>
 	</div>
 	<div class="flex flex--middle">
-		<a href="" class="btn btn--circle btn--sm btn--gray">
+		<div class="btn-group" 
+			 dropdown
+			 placement="bottom right">
+			<button dropdownToggle 
+					type="button" 
+					class="btn btn--circle btn--sm btn--gray dropdown-toggle" 
+					aria-controls="dropdown-basic"
+					tooltip="{{'System notification'|translate}}"
+					placement="bottom"
+					container="body"
+					>
+				<i class="btn__icon icon-notification"></i>
+			</button>
+			<div *dropdownMenu class="dropdown-menu dropdown-menu--md dropdown-menu-center" role="menu" aria-labelledby="button-basic">
+				<app-system-notification-list></app-system-notification-list>
+			</div>
+			<!-- <ul *dropdownMenu class="dropdown-menu dropdown-menu-center" role="menu" aria-labelledby="button-basic">
+				<li role="menuitem"><a class="dropdown-item" href="#">Action</a></li>
+				<li role="menuitem"><a class="dropdown-item" href="#">Another action</a></li>
+				<li role="menuitem"><a class="dropdown-item" href="#">Something else here</a></li>
+			</ul> -->
+		</div>
+		<!-- <a class="btn btn--circle btn--sm btn--gray" 
+			tooltip="{{'System notification'|translate}}"
+			placement="bottom"
+			container="body">
 			<i class="btn__icon icon-notification"></i>
-		</a>
-		<a href="" class="btn btn--circle btn--sm btn--gray">
-			<i class="btn__icon icon-trophy"></i>
-		</a>
-		<a href="" class="btn btn--circle btn--sm btn--gray btn--notification">
+		</a> -->
+		<a class="btn btn--circle btn--sm btn--gray btn--notification"
+			tooltip="{{'Communication center'|translate}}"
+			placement="bottom"
+			container="body">
 			<i class="btn__icon icon-message"></i>
 			<span class="btn__notification"></span>
+		</a>
+		<a class="btn btn--circle btn--sm btn--gray"
+			tooltip="{{'Promotion notification'|translate}}"
+			placement="bottom"
+			container="body">
+			<i class="btn__icon icon-trophy"></i>
 		</a>
 
 		<a href="" class="btn btn--circle btn--sm btn--gray">
