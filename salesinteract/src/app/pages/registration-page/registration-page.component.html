@@ -1,7 +1,8 @@
 <div class="registration">
 	<div class="registration__panel">
 
-		<div class="registration__panel-left">
+		<!-- Step 1 -->
+		<div class="registration__panel-left" *ngIf="step == 1">
 			<img class="registration__panel-logo" src="/assets/img/logo.png" alt="">
 
 			<!-- Registration social networks-->
@@ -38,7 +39,6 @@
 
 			<!-- Registration email-->
 			<div>
-				<!-- <p class="t--h3 m--b-sm">Registration</p> -->
 				<p class="t--muted t--md m--b">{{'Register through your email adres'|translate}}</p>
 				<div>
 					<label for="" class="label">{{'E-mail address'|translate}}</label>
@@ -64,17 +64,46 @@
 			</div>
 		</div>
 
-		<div class="registration__panel-right">
+		<div class="registration__panel-right" *ngIf="step == 1">
 			<div>
-				<h2 class="registration__panel-title">{{'Start your 30-day free trail'|translate}}</h2>
-				<p class="registration__panel-text">{{'Salesinteract is an interactive CRM system that enables organizations to realize faster, better and larger sales'|translate}} </p>
-				<p class="registration__panel-text">{{'Salesinteract brings structure to the sales process, makes your sales insightful, lets employees work more efficiently and challenges you to achieve the best results for the organization, Understand your customers and change your way of selling'|translate}}</p>
+				<h2 class="registration__panel-title">{{'Go ahead Start your free 30-Day Trial'|translate}}</h2>
+				<p class="registration__panel-text">{{'Next generation CRM for companies that take their sales serious'|translate}} </p>
+				<p class="registration__panel-text">{{'If you wanna be part of the big shift in marketing, connect with your customers'|translate}} </p>
 			</div>
 
 			<p class="registration__panel-copyright m--t-xlg">
 				2018 {{'Copyright'|translate}} <b>Salesinteract</b>
 			</p>
+		</div>
 
+		<!-- Step 2 -->
+		<div class="registration__panel-left" *ngIf="step == 2">
+			<img class="registration__panel-logo" src="/assets/img/logo.png" alt="">
+
+			<!-- Registration information-->
+			<div>
+				<p class="t--gray t--md t--bold m--b">{{'Please confirm you email and activate verification link'|translate}}</p>
+			</div>
+			<div class="flex flex--middle flex--space-between">
+				<button class="btn btn--blue" (click)="registration()" [disabled]="!email?.length && !agree">{{'Check email'|translate}}</button>
+				<button class="btn btn--link" [routerLink]="['/']">{{'Go to site'|translate}}</button>
+			</div>
+		</div>
+	
+		<div class="registration__panel-right" *ngIf="step == 2">
+			<div>
+				<h2 class="registration__panel-title">{{'Thanks'|translate}}</h2>
+				<p class="registration__panel-text">{{'Clearly you are an important person... a mover and a shaker. You are probably very attractive and intelligent, too.'|translate}} </p>
+				<p class="registration__panel-text">{{'That is why you just purchased this amazing software license. You know it is going to help turn your business into a titan of industry.'|translate}} </p>
+				<p class="registration__panel-text">{{'Books will be written. Songs will be sung. Parades will be thrown.'|translate}} </p>
+				<p class="registration__panel-text">{{'Go forth and build something incredible.'|translate}} </p>
+				<p class="registration__panel-text">{{'Oh, you will receive an e-mail with a confirmation link which is valid for one hour. You can now close this window.'|translate}} </p>
+				<!-- <p class="registration__panel-text">{{''|translate}} </p> -->
+			</div>
+
+			<p class="registration__panel-copyright m--t-xlg">
+				2018 {{'Copyright'|translate}} <b>Salesinteract</b>
+			</p>
 		</div>
 	</div>
 </div>

@@ -7,9 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RegistrationPageComponent implements OnInit {
 
+  step: number = 1;
+
   constructor() { }
 
   ngOnInit() {
+  }
+
+  registration(){
+    this.step += 1;
   }
 
 }

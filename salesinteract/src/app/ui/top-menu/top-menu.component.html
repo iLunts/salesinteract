@@ -78,6 +78,8 @@
 		</div>
 	</div>
 	<div class="flex flex--middle">
+
+		<!-- System notification -->
 		<div class="btn-group" 
 			 dropdown
 			 placement="bottom right">
@@ -90,37 +92,57 @@
 					container="body"
 					>
 				<i class="btn__icon icon-notification"></i>
+				<span class="btn__notification"></span>
 			</button>
 			<div *dropdownMenu class="dropdown-menu dropdown-menu--md dropdown-menu-center" role="menu" aria-labelledby="button-basic">
-				<app-system-notification-list></app-system-notification-list>
+				<app-header-notification-list [NotificationList]="systemNotificationList"></app-header-notification-list>
 			</div>
-			<!-- <ul *dropdownMenu class="dropdown-menu dropdown-menu-center" role="menu" aria-labelledby="button-basic">
-				<li role="menuitem"><a class="dropdown-item" href="#">Action</a></li>
-				<li role="menuitem"><a class="dropdown-item" href="#">Another action</a></li>
-				<li role="menuitem"><a class="dropdown-item" href="#">Something else here</a></li>
-			</ul> -->
 		</div>
-		<!-- <a class="btn btn--circle btn--sm btn--gray" 
-			tooltip="{{'System notification'|translate}}"
-			placement="bottom"
-			container="body">
-			<i class="btn__icon icon-notification"></i>
-		</a> -->
-		<a class="btn btn--circle btn--sm btn--gray btn--notification"
-			tooltip="{{'Communication center'|translate}}"
-			placement="bottom"
-			container="body">
-			<i class="btn__icon icon-message"></i>
-			<span class="btn__notification"></span>
-		</a>
-		<a class="btn btn--circle btn--sm btn--gray"
-			tooltip="{{'Promotion notification'|translate}}"
-			placement="bottom"
-			container="body">
-			<i class="btn__icon icon-trophy"></i>
-		</a>
 
-		<a href="" class="btn btn--circle btn--sm btn--gray">
+		<!-- Communication center -->
+		<div class="btn-group" 
+			 dropdown
+			 placement="bottom right">
+			<button dropdownToggle 
+					type="button" 
+					class="btn btn--circle btn--sm btn--gray dropdown-toggle" 
+					aria-controls="dropdown-basic"
+					tooltip="{{'Communication center'|translate}}"
+					placement="bottom"
+					container="body"
+					>
+				<i class="btn__icon icon-message"></i>
+				<span class="btn__notification"></span>
+			</button>
+			<div *dropdownMenu class="dropdown-menu dropdown-menu--md dropdown-menu-center" role="menu" aria-labelledby="button-basic">
+				<app-header-notification-list [NotificationList]="systemNotificationList"></app-header-notification-list>
+			</div>
+		</div>
+
+		<!-- Communication center -->
+		<div class="btn-group" 
+			 dropdown
+			 placement="bottom right">
+			<button dropdownToggle 
+					type="button" 
+					class="btn btn--circle btn--sm btn--gray dropdown-toggle" 
+					aria-controls="dropdown-basic"
+					tooltip="{{'Promotion notification'|translate}}"
+					placement="bottom"
+					container="body"
+					>
+				<i class="btn__icon icon-trophy"></i>
+				<span class="btn__notification" [hidden]="true"></span>
+			</button>
+			<div *dropdownMenu class="dropdown-menu dropdown-menu--md dropdown-menu-center" role="menu" aria-labelledby="button-basic">
+				<app-header-notification-list [NotificationList]="systemNotificationList"></app-header-notification-list>
+			</div>
+		</div>
+
+		<a class="btn btn--circle btn--sm btn--gray"
+			tooltip="{{'Logout'|translate}}"
+			placement="bottom"
+			container="body">
 			<i class="btn__icon icon-exit"></i>
 		</a>
 
@@ -141,3 +163,10 @@
   [CompanyList]="user.connectedOrganisations"
   [ngClass]="{'open': isOpenSidebarSelectCompany}"
 ></app-sidebar-select-company>
+
+<!-- Sidebar panel notification -->
+<!-- <app-sidebar-notification
+	class="open"
+	[(Hidden)]="isOpenSidebarNotification"
+	[ngClass]="{'open': isOpenSidebarNotification}"
+></app-sidebar-notification> -->

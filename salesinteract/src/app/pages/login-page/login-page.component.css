@@ -55,6 +55,7 @@
   justify-content: flex-end;
   flex-direction: column;
   flex-wrap: wrap;
+  align-self: stretch;
   min-width: 500px;
   min-height: 500px;
   padding: 40px;
